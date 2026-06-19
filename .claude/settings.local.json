@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:www.benirugs.com)",
+      "WebSearch",
+      "WebFetch(domain:www.dwr.com)",
+      "WebFetch(domain:www.the-citizenry.com)",
+      "WebFetch(domain:www.revivalrugs.com)",
+      "WebFetch(domain:the-citizenry.com)",
+      "WebFetch(domain:www.pinterest.com)",
+      "WebFetch(domain:www.instagram.com)",
+      "WebFetch(domain:maisonatlas.com)",
+      "WebFetch(domain:www.namecheap.com)",
+      "WebFetch(domain:who.is)",
+      "WebFetch(domain:instantdomainsearch.com)",
+      "Skill(run)",
+      "PowerShell(python --version; node --version; npx --version 2>$null)",
+      "PowerShell(Start-Process python -ArgumentList '-m', 'http.server', '8743', '--directory', 'C:\\\\Users\\\\nigel\\\\Moroccan-Rug-Website' -WindowStyle Hidden; Start-Sleep -Seconds 2; Invoke-WebRequest -Uri 'http://localhost:8743/' -UseBasicParsing | Select-Object -ExpandProperty StatusCode)",
+      "PowerShell(head *)"
+    ]
+  }
+}

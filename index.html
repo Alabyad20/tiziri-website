@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TIZIRI — Handwoven Moroccan Rugs</title>
+    <meta name="description" content="Authentic handwoven Moroccan rugs sourced directly from Berber artisans in the Atlas region. One of a kind. Delivered worldwide.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="nav" id="nav">
+        <div class="nav__logo">
+            <a href="/">TIZIRI</a>
+        </div>
+
+        <div class="nav__links">
+            <div class="nav__item nav__item--has-mega">
+                <span>Collections</span>
+                <div class="nav__mega">
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Style</span>
+                        <a href="#">Beni Ourain</a>
+                        <a href="#">Azilal</a>
+                        <a href="#">Boucherouite</a>
+                        <a href="#">Mrirt</a>
+                        <a href="#">Contemporary</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Size</span>
+                        <a href="#">Small (under 150cm)</a>
+                        <a href="#">Medium (150–250cm)</a>
+                        <a href="#">Large (250cm+)</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">Featured</span>
+                        <a href="#">New In</a>
+                        <a href="#">One of a Kind</a>
+                        <a href="#">All Rugs</a>
+                    </div>
+                    <div class="nav__mega-image">
+                        <img src="./rug-photos/IMG-20260607-WA0056.jpg" alt="Moroccan rug in front of a mosque with palm trees">
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="nav__item">The Craft</a>
+            <a href="#" class="nav__item">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+            <a href="#" class="nav__cart" aria-label="Cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="nav__cart-count">0</span>
+            </a>
+            <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">✕</button>
+        <nav class="mobile-menu__links">
+            <a href="#">Collections</a>
+            <a href="#">Beni Ourain</a>
+            <a href="#">Azilal</a>
+            <a href="#">Contemporary</a>
+            <a href="#">The Craft</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+
+    <!-- ============================================
+         SECTION 1 — HERO
+         ============================================ -->
+    <section class="hero">
+        <div class="hero__image">
+            <img
+                src="./rug-photos/IMG-20260530-WA0492.jpg"
+                alt="Handwoven green Moroccan rug displayed on a rooftop terrace with the Atlas Mountains behind"
+                loading="eager"
+                fetchpriority="high">
+        </div>
+        <div class="hero__content">
+            <h1 class="hero__headline">
+                Woven in Morocco.<br>
+                Made for one home.
+            </h1>
+            <a href="#" class="hero__cta">Explore the Collection →</a>
+        </div>
+        <div class="hero__scroll-line"></div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 2 — MANIFESTO
+         ============================================ -->
+    <section class="manifesto">
+        <div class="manifesto__inner fade-up">
+            <h2 class="manifesto__headline">Every rug is singular.</h2>
+            <p class="manifesto__text">
+                Hand-knotted by Berber artisans across the Atlas region, each piece is woven
+                once — in one place, at one moment in time. No two are the same. No design
+                is repeated. When it finds its home, it is finished.
+            </p>
+            <a href="#" class="link-text">Shop all rugs</a>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 3 — FEATURED COLLECTIONS
+         ============================================ -->
+    <section class="collections">
+        <div class="collections__header fade-up">
+            <span class="label">The Collections</span>
+        </div>
+
+        <div class="collections__grid">
+
+            <a href="#" class="collection-card fade-up">
+                <div class="collection-card__image">
+                    <img
+                        src="./rug-photos/IMG-20260530-WA0277.jpg"
+                        alt="Beni Ourain rug — classic ivory wool with subtle geometric pattern"
+                        loading="lazy">
+                </div>
+                <div class="collection-card__info">
+                    <span class="collection-card__name">Beni Ourain</span>
+                    <span class="collection-card__desc">The classic. Ivory wool, geometric form.</span>
+                    <span class="collection-card__cta">Shop Beni Ourain →</span>
+                </div>
+            </a>
+
+            <a href="#" class="collection-card fade-up" style="transition-delay: 100ms;">
+                <div class="collection-card__image">
+                    <img
+                        src="./rug-photos/IMG-20260530-WA0417.jpg"
+                        alt="Colourful Azilal rug displayed in a terracotta archway with garden behind"
+                        loading="lazy">
+                </div>
+                <div class="collection-card__info">
+                    <span class="collection-card__name">Azilal &amp; Vintage</span>
+                    <span class="collection-card__desc">Bold colour. Tribal pattern. Alive in any room.</span>
+                    <span class="collection-card__cta">Shop Azilal →</span>
+                </div>
+            </a>
+
+            <a href="#" class="collection-card fade-up" style="transition-delay: 200ms;">
+                <div class="collection-card__image">
+                    <img
+                        src="./rug-photos/IMG-20260530-WA0503.jpg"
+                        alt="Contemporary Moroccan rug with abstract Picasso-inspired face motif"
+                        loading="lazy">
+                </div>
+                <div class="collection-card__info">
+                    <span class="collection-card__name">Contemporary</span>
+                    <span class="collection-card__desc">Moroccan craft. Modern sensibility.</span>
+                    <span class="collection-card__cta">Shop Contemporary →</span>
+                </div>
+            </a>
+
+        </div>
+
+        <div class="collections__footer fade-up">
+            <a href="#" class="link-text">View all collections →</a>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 4 — EDITORIAL BREAK
+         ============================================ -->
+    <section class="editorial-break">
+        <div class="editorial-break__image">
+            <img
+                src="./rug-photos/IMG-20260607-WA0146.jpg"
+                alt="Handwoven Moroccan rug laid flat in an olive grove, Atlas region, Morocco"
+                loading="lazy">
+        </div>
+        <span class="editorial-break__caption">Atlas Region, Morocco</span>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 5 — THE STORY
+         ============================================ -->
+    <section class="story">
+        <div class="story__inner">
+            <div class="story__text fade-up">
+                <h2 class="story__headline">
+                    Sourced directly.<br>
+                    Chosen by hand.
+                </h2>
+                <p class="story__body">
+                    We travel to the Atlas Mountains, the souks of Marrakech, and the cooperatives
+                    of the Middle Atlas to find pieces that are genuinely worth owning. Not
+                    catalogued. Not manufactured to order. Found.
+                </p>
+                <p class="story__body">
+                    Each rug in this collection has been selected in person — for the quality of
+                    its wool, the integrity of its weave, and something harder to name: the sense
+                    that it belongs somewhere specific, waiting for the right room.
+                </p>
+                <p class="story__body">
+                    We bring fewer pieces than most. That is the point.
+                </p>
+                <a href="#" class="link-text">Our story →</a>
+            </div>
+            <div class="story__image fade-up" style="transition-delay: 150ms;">
+                <img
+                    src="./rug-photos/IMG-20260607-WA0056.jpg"
+                    alt="Handwoven Moroccan rug displayed in front of a mosque with palm trees and blue sky"
+                    loading="lazy">
+            </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 6 — TRUST SIGNALS
+         ============================================ -->
+    <section class="trust">
+        <div class="trust__grid">
+
+            <div class="trust__item fade-up">
+                <div class="trust__icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M18 4C11 4 7 10 7 16C7 23 13 30 18 32C23 30 29 23 29 16C29 10 25 4 18 4Z"/>
+                        <path d="M13 16Q15.5 11 18 16Q20.5 21 23 16"/>
+                    </svg>
+                </div>
+                <span class="trust__title">Handwoven in Morocco</span>
+                <p class="trust__text">Every rug is made by hand by Berber artisans. No machines. No shortcuts.</p>
+            </div>
+
+            <div class="trust__item fade-up" style="transition-delay: 100ms;">
+                <div class="trust__icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1">
+                        <polygon points="18,4 22,14 32,15 25,22 27,32 18,27 9,32 11,22 4,15 14,14"/>
+                    </svg>
+                </div>
+                <span class="trust__title">One of a Kind</span>
+                <p class="trust__text">Each piece is singular. Once it sells, it is gone. No reorders, no reprints.</p>
+            </div>
+
+            <div class="trust__item fade-up" style="transition-delay: 200ms;">
+                <div class="trust__icon">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1">
+                        <path d="M7 18 A11 11 0 1 0 18 7"/>
+                        <polyline points="7,7 7,18 18,18"/>
+                    </svg>
+                </div>
+                <span class="trust__title">Free Returns</span>
+                <p class="trust__text">14 days to live with it. If it is not right for your space, we will collect it.</p>
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 7 — VIDEO
+         ============================================ -->
+    <section class="video-section">
+        <video
+            class="video-section__video"
+            id="heroVideo"
+            muted
+            loop
+            playsinline
+            poster="./rug-photos/IMG-20260530-WA0433.jpg">
+            <source src="./rug-videos/VID-20260616-WA0008.mp4" type="video/mp4">
+            <source src="./rug-videos/VID-20260616-WA0007.mp4" type="video/mp4">
+            <source src="./rug-videos/VID-20260613-WA0079.mp4" type="video/mp4">
+        </video>
+        <div class="video-section__overlay">
+            <p class="video-section__text">
+                The pile. The knot.<br>The fringe. Things that matter.
+            </p>
+            <a href="#" class="video-section__cta">See all rugs →</a>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 8 — RECENT ARRIVALS
+         ============================================ -->
+    <section class="arrivals">
+        <div class="arrivals__header fade-up">
+            <div class="arrivals__header-text">
+                <span class="label">Recently Added</span>
+                <h2 class="arrivals__headline">One of a kind — when they find a home, they are gone.</h2>
+            </div>
+            <a href="#" class="link-text arrivals__view-all">View all →</a>
+        </div>
+
+        <div class="arrivals__grid">
+
+            <a href="#" class="product-card fade-up">
+                <div class="product-card__image">
+                    <img src="./rug-photos/IMG-20260608-WA0039.jpg" alt="Cream Beni Ourain rug with diamond trellis pattern" loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Tislit</span>
+                    <span class="product-card__meta">Middle Atlas · 200 × 310 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <a href="#" class="product-card fade-up" style="transition-delay: 80ms;">
+                <div class="product-card__image">
+                    <img src="./rug-photos/IMG-20260530-WA0420.jpg" alt="Colourful vintage Moroccan rug in terracotta archway" loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Aziza</span>
+                    <span class="product-card__meta">Azilal Region · 180 × 290 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <a href="#" class="product-card fade-up" style="transition-delay: 160ms;">
+                <div class="product-card__image">
+                    <img src="./rug-photos/IMG-20260607-WA0123.jpg" alt="Large blue and white Mrirt rug with intricate geometric pattern" loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Nour</span>
+                    <span class="product-card__meta">Middle Atlas · 250 × 380 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <a href="#" class="product-card fade-up" style="transition-delay: 240ms;">
+                <div class="product-card__image">
+                    <img src="./rug-photos/IMG-20260530-WA0264.jpg" alt="White Moroccan rug with pink and purple abstract geometric motifs" loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Sama</span>
+                    <span class="product-card__meta">Atlas Region · 160 × 250 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 9 — INSTAGRAM STRIP (placeholder)
+         ============================================ -->
+    <section class="instagram">
+        <div class="instagram__header fade-up">
+            <p class="instagram__handle">@tiziri</p>
+            <p class="instagram__sub">Follow the collection from Morocco.</p>
+        </div>
+        <div class="instagram__grid">
+            <a href="#" class="instagram__tile">
+                <img src="./rug-photos/IMG-20260530-WA0433.jpg" alt="Moroccan rug outdoors" loading="lazy">
+            </a>
+            <a href="#" class="instagram__tile">
+                <img src="./rug-photos/IMG-20260530-WA0417.jpg" alt="Azilal rug in terracotta archway" loading="lazy">
+            </a>
+            <a href="#" class="instagram__tile">
+                <img src="./rug-photos/IMG-20260607-WA0056.jpg" alt="Rug in front of Moroccan mosque" loading="lazy">
+            </a>
+            <a href="#" class="instagram__tile">
+                <img src="./rug-photos/IMG-20260608-WA0039.jpg" alt="Classic Beni Ourain rug" loading="lazy">
+            </a>
+            <a href="#" class="instagram__tile">
+                <img src="./rug-photos/IMG-20260530-WA0503.jpg" alt="Contemporary face-motif rug" loading="lazy">
+            </a>
+            <a href="#" class="instagram__tile">
+                <img src="./rug-photos/IMG-20260607-WA0146.jpg" alt="Rug in olive grove" loading="lazy">
+            </a>
+        </div>
+        <div class="instagram__footer fade-up">
+            <a href="#" class="link-text">Follow on Instagram →</a>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SECTION 10 — NEWSLETTER + FOOTER
+         ============================================ -->
+    <section class="newsletter">
+        <div class="newsletter__inner fade-up">
+            <h2 class="newsletter__headline">Become an Insider</h2>
+            <p class="newsletter__text">
+                New arrivals, craft stories, and occasional dispatches from Morocco.<br>
+                No noise. Unsubscribe any time.
+            </p>
+            <form class="newsletter__form" id="newsletterForm" novalidate>
+                <input
+                    type="email"
+                    class="newsletter__input"
+                    placeholder="Your email address"
+                    aria-label="Email address"
+                    required>
+                <button type="submit" class="newsletter__btn">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="footer__logo">TIZIRI</div>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <span class="footer__heading">Shop</span>
+                        <a href="#">All Rugs</a>
+                        <a href="#">Beni Ourain</a>
+                        <a href="#">Azilal</a>
+                        <a href="#">Boucherouite</a>
+                        <a href="#">Contemporary</a>
+                        <a href="#">Large Format</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Learn</span>
+                        <a href="#">The Craft</a>
+                        <a href="#">How They Are Made</a>
+                        <a href="#">The Regions</a>
+                        <a href="#">Our Story</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Help</span>
+                        <a href="#">Shipping &amp; Delivery</a>
+                        <a href="#">Returns</a>
+                        <a href="#">Care Guide</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Trade Enquiries</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="Pinterest">Pinterest</a>
+                </div>
+                <div class="footer__legal">
+                    <span>© 2026 Tiziri — Handwoven in Morocco</span>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

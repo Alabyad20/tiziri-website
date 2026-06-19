@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Rugs — TIZIRI</title>
+    <meta name="description" content="Browse our complete collection of handwoven Moroccan rugs. Beni Ourain, Azilal, Mrirt, Boucherouite and contemporary pieces — sourced directly from Berber artisans.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+
+    <!-- ============================================
+         NAVIGATION
+         ============================================ -->
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__logo">
+            <a href="../index.html">TIZIRI</a>
+        </div>
+
+        <div class="nav__links">
+            <div class="nav__item nav__item--has-mega">
+                <span>Collections</span>
+                <div class="nav__mega">
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Style</span>
+                        <a href="index.html#beni-ourain">Beni Ourain</a>
+                        <a href="index.html#azilal">Azilal</a>
+                        <a href="index.html#boucherouite">Boucherouite</a>
+                        <a href="index.html#mrirt">Mrirt</a>
+                        <a href="index.html#contemporary">Contemporary</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Size</span>
+                        <a href="index.html#small">Small (under 200 cm)</a>
+                        <a href="index.html#medium">Medium (200–300 cm)</a>
+                        <a href="index.html#large">Large (300 cm+)</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">Featured</span>
+                        <a href="index.html">New In</a>
+                        <a href="index.html">One of a Kind</a>
+                        <a href="index.html">All Rugs</a>
+                    </div>
+                    <div class="nav__mega-image">
+                        <img src="../rug-photos/IMG-20260607-WA0056.jpg" alt="Moroccan rug in front of a mosque with palm trees">
+                    </div>
+                </div>
+            </div>
+            <a href="#" class="nav__item">The Craft</a>
+            <a href="#" class="nav__item">Contact</a>
+        </div>
+
+        <div class="nav__actions">
+            <a href="#" class="nav__cart" aria-label="Cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="nav__cart-count">0</span>
+            </a>
+            <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU -->
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">✕</button>
+        <nav class="mobile-menu__links">
+            <a href="index.html">Collections</a>
+            <a href="index.html#beni-ourain">Beni Ourain</a>
+            <a href="index.html#azilal">Azilal</a>
+            <a href="index.html#contemporary">Contemporary</a>
+            <a href="#">The Craft</a>
+            <a href="#">Contact</a>
+        </nav>
+    </div>
+
+
+    <!-- ============================================
+         PAGE HEADER
+         ============================================ -->
+    <div class="page-header">
+        <div class="page-header__inner">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">TIZIRI</a>
+                <span class="breadcrumb__sep">/</span>
+                <span id="breadcrumbCurrent">All Rugs</span>
+            </nav>
+            <h1 class="page-header__title" id="collectionTitle">All Rugs</h1>
+            <p class="page-header__sub" id="collectionSub">Every piece hand-selected. Each one woven once.</p>
+        </div>
+    </div>
+
+
+    <!-- ============================================
+         FILTER BAR
+         ============================================ -->
+    <div class="filter-bar" id="filterBar">
+        <div class="filter-bar__inner">
+
+            <div class="filter-bar__group">
+                <span class="filter-bar__label">Style</span>
+                <div class="filter-bar__buttons" role="group" aria-label="Filter by style">
+                    <button class="filter-btn active" data-filter="style" data-value="all">All</button>
+                    <button class="filter-btn" data-filter="style" data-value="beni-ourain">Beni Ourain</button>
+                    <button class="filter-btn" data-filter="style" data-value="azilal">Azilal</button>
+                    <button class="filter-btn" data-filter="style" data-value="boucherouite">Boucherouite</button>
+                    <button class="filter-btn" data-filter="style" data-value="mrirt">Mrirt</button>
+                    <button class="filter-btn" data-filter="style" data-value="contemporary">Contemporary</button>
+                </div>
+            </div>
+
+            <div class="filter-bar__divider" aria-hidden="true"></div>
+
+            <div class="filter-bar__group">
+                <span class="filter-bar__label">Size</span>
+                <div class="filter-bar__buttons" role="group" aria-label="Filter by size">
+                    <button class="filter-btn active" data-filter="size" data-value="all">All</button>
+                    <button class="filter-btn" data-filter="size" data-value="small">Small</button>
+                    <button class="filter-btn" data-filter="size" data-value="medium">Medium</button>
+                    <button class="filter-btn" data-filter="size" data-value="large">Large</button>
+                </div>
+            </div>
+
+            <span class="filter-bar__count">
+                <span id="visibleCount">12</span> rugs
+            </span>
+
+        </div>
+    </div>
+
+
+    <!-- ============================================
+         CATALOGUE
+         ============================================ -->
+    <main class="catalogue">
+        <div class="catalogue__grid" id="catalogueGrid">
+
+            <!-- 1. Tislit — Beni Ourain — Large -->
+            <a href="../rugs/tislit.html" class="product-card fade-up"
+               data-style="beni-ourain" data-size="large">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260608-WA0039.jpg"
+                         alt="Cream Beni Ourain rug with diamond trellis pattern, Middle Atlas"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Tislit</span>
+                    <span class="product-card__type">Beni Ourain</span>
+                    <span class="product-card__meta">Middle Atlas · 200 × 310 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 2. Aziza — Azilal — Medium -->
+            <a href="../rugs/aziza.html" class="product-card fade-up"
+               data-style="azilal" data-size="medium">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0420.jpg"
+                         alt="Colourful vintage Azilal rug with multicolour field, Azilal Region"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Aziza</span>
+                    <span class="product-card__type">Azilal</span>
+                    <span class="product-card__meta">Azilal Region · 180 × 290 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 3. Nour — Mrirt — Large -->
+            <a href="../rugs/nour.html" class="product-card fade-up"
+               data-style="mrirt" data-size="large">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260607-WA0123.jpg"
+                         alt="Large blue and ivory Mrirt rug with interlocking geometric pattern"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Nour</span>
+                    <span class="product-card__type">Mrirt</span>
+                    <span class="product-card__meta">Middle Atlas · 250 × 380 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 4. Sama — Contemporary — Medium -->
+            <a href="../rugs/sama.html" class="product-card fade-up"
+               data-style="contemporary" data-size="medium">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0264.jpg"
+                         alt="Contemporary Moroccan rug with abstract colourfield and geometric motifs"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Sama</span>
+                    <span class="product-card__type">Contemporary</span>
+                    <span class="product-card__meta">Atlas Region · 160 × 250 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 5. Lalla — Beni Ourain — Large -->
+            <a href="../rugs/lalla.html" class="product-card fade-up"
+               data-style="beni-ourain" data-size="large">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0277.jpg"
+                         alt="Classic ivory Beni Ourain with geometric lozenges, High Atlas"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Lalla</span>
+                    <span class="product-card__type">Beni Ourain</span>
+                    <span class="product-card__meta">High Atlas · 230 × 325 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 6. Imane — Contemporary — Medium -->
+            <a href="../rugs/imane.html" class="product-card fade-up"
+               data-style="contemporary" data-size="medium">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0503.jpg"
+                         alt="Contemporary rug with hand-painted face portrait and graphic border"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Imane</span>
+                    <span class="product-card__type">Contemporary</span>
+                    <span class="product-card__meta">Marrakech · 150 × 235 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 7. Fatima — Azilal — Medium -->
+            <a href="../rugs/fatima.html" class="product-card fade-up"
+               data-style="azilal" data-size="medium">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0417.jpg"
+                         alt="Bold Azilal rug with tribal field and coloured fringe, Azilal Region"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Fatima</span>
+                    <span class="product-card__type">Azilal</span>
+                    <span class="product-card__meta">Azilal Region · 165 × 270 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 8. Malika — Boucherouite — Small -->
+            <a href="../rugs/malika.html" class="product-card fade-up"
+               data-style="boucherouite" data-size="small">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0433.jpg"
+                         alt="Boucherouite rug woven from recycled textile in muted outdoor tones"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Malika</span>
+                    <span class="product-card__type">Boucherouite</span>
+                    <span class="product-card__meta">Middle Atlas · 110 × 175 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 9. Zara — Mrirt — Medium -->
+            <a href="../rugs/zara.html" class="product-card fade-up"
+               data-style="mrirt" data-size="medium">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260607-WA0147.jpg"
+                         alt="Mrirt rug with warm earth tones and traditional medallion motif"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Zara</span>
+                    <span class="product-card__type">Mrirt</span>
+                    <span class="product-card__meta">Middle Atlas · 195 × 285 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+            <!-- 10. Siham — Beni Ourain — Small — SOLD -->
+            <a href="../rugs/siham.html" class="product-card product-card--sold fade-up"
+               data-style="beni-ourain" data-size="small">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260608-WA0027.jpg"
+                         alt="Ivory Beni Ourain with fine pile and diamond lattice, High Atlas"
+                         loading="lazy">
+                    <span class="product-card__badge product-card__badge--sold">Sold</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Siham</span>
+                    <span class="product-card__type">Beni Ourain</span>
+                    <span class="product-card__meta">High Atlas · 120 × 185 cm</span>
+                    <span class="product-card__price">—</span>
+                </div>
+            </a>
+
+            <!-- 11. Tamurt — Azilal — Medium — SOLD -->
+            <a href="../rugs/tamurt.html" class="product-card product-card--sold fade-up"
+               data-style="azilal" data-size="medium">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260530-WA0496.jpg"
+                         alt="Azilal rug with earthy palette and abstract woven motifs"
+                         loading="lazy">
+                    <span class="product-card__badge product-card__badge--sold">Sold</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Tamurt</span>
+                    <span class="product-card__type">Azilal</span>
+                    <span class="product-card__meta">Atlas Region · 140 × 220 cm</span>
+                    <span class="product-card__price">—</span>
+                </div>
+            </a>
+
+            <!-- 12. Amira — Boucherouite — Small -->
+            <a href="../rugs/amira.html" class="product-card fade-up"
+               data-style="boucherouite" data-size="small">
+                <div class="product-card__image">
+                    <img src="../rug-photos/IMG-20260531-WA0035.jpg"
+                         alt="Boucherouite rug in warm tones woven from recycled textile"
+                         loading="lazy">
+                    <span class="product-card__badge">1 Available</span>
+                </div>
+                <div class="product-card__info">
+                    <span class="product-card__name">Amira</span>
+                    <span class="product-card__type">Boucherouite</span>
+                    <span class="product-card__meta">Middle Atlas · 130 × 195 cm</span>
+                    <span class="product-card__price">$0,000</span>
+                </div>
+            </a>
+
+        </div>
+
+        <!-- Empty state -->
+        <div class="catalogue__empty" id="catalogueEmpty" aria-live="polite" hidden>
+            <p class="catalogue__empty-msg">No rugs in this selection.</p>
+            <button class="catalogue__empty-reset link-text" id="resetFilters">Clear filters →</button>
+        </div>
+
+    </main>
+
+
+    <!-- ============================================
+         FOOTER
+         ============================================ -->
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="footer__logo">TIZIRI</div>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <span class="footer__heading">Shop</span>
+                        <a href="index.html">All Rugs</a>
+                        <a href="index.html#beni-ourain">Beni Ourain</a>
+                        <a href="index.html#azilal">Azilal</a>
+                        <a href="index.html#boucherouite">Boucherouite</a>
+                        <a href="index.html#contemporary">Contemporary</a>
+                        <a href="index.html#large">Large Format</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Learn</span>
+                        <a href="#">The Craft</a>
+                        <a href="#">How They Are Made</a>
+                        <a href="#">The Regions</a>
+                        <a href="#">Our Story</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Help</span>
+                        <a href="#">Shipping &amp; Delivery</a>
+                        <a href="#">Returns</a>
+                        <a href="#">Care Guide</a>
+                        <a href="#">FAQ</a>
+                        <a href="#">Contact</a>
+                        <a href="#">Trade Enquiries</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="#" aria-label="Instagram">Instagram</a>
+                    <a href="#" aria-label="Pinterest">Pinterest</a>
+                </div>
+                <div class="footer__legal">
+                    <span>© 2026 Tiziri — Handwoven in Morocco</span>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/collections.js"></script>
+</body>
+</html>
