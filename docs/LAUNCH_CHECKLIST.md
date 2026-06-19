@@ -1,51 +1,56 @@
 # TIZIRI — Launch Checklist
 
+*Last updated: 2026-06-18*
+
 ---
 
 ## Required before launch
 
 **Content**
 - [ ] Set real prices on all 10 available product pages (currently `$0,000`)
+- [ ] Update prices on `collections/index.html` and homepage arrivals grid (same placeholders)
 - [ ] Confirm image-to-rug assignments are correct (wrong rug in a sale = immediate return)
 - [ ] Review all 10 product descriptions — dimensions, origin, age must be accurate
 
 **Domain & deployment**
-- [ ] Acquire domain (`tiziri.com` or `tiziri.co`)
-- [ ] Find-and-replace `https://tiziri.com` placeholder across all 17 HTML files, `sitemap.xml`, and `robots.txt`
+- [x] ~~Acquire domain~~ — **tizirirugs.com** purchased 2026-06-18
+- [x] ~~Replace `https://tiziri.com` placeholder~~ — done across all 22 files
 - [ ] Deploy to static host (Netlify / Vercel / Cloudflare Pages)
-- [ ] Configure DNS and confirm HTTPS is active (browsers warn on HTTP — kills trust instantly)
+- [ ] Configure DNS and confirm HTTPS is active at tizirirugs.com
 
 **Legal**
-- [ ] Write Privacy Policy (required — newsletter form collects email)
-- [ ] Write Terms & Conditions (required — you have a stated returns policy; customers will look for this before buying)
-- [ ] Wire both into the footer (currently `href="#"`)
+- [x] ~~Write Privacy Policy~~ — `privacy/index.html` complete, wired in all footers
+- [x] ~~Write Terms & Conditions~~ — `terms/index.html` complete, wired in all footers
+- [x] ~~Write Shipping & Returns~~ — `shipping/index.html` complete, wired in all footers
+
+**Navigation & links**
+- [ ] Wire Instagram footer social link (`href="#"` → `https://instagram.com/tiziri`) on all 20 pages
+- [ ] Decide on Pinterest: create account and wire link, or remove it from all 20 footers
 
 **QA**
 - [ ] Test enquiry CTA on all 10 available product pages — this is your entire purchase flow
 - [ ] Test contact form end-to-end on mobile and desktop
 - [ ] Test mobile menu on iPhone Safari and Android Chrome — most buyers will be on mobile
 - [ ] Confirm all images load and sold pages show greyscale/sold state correctly
-- [ ] Wire Instagram footer links (`href="#"` → `https://instagram.com/tiziri`) — dead social links undermine credibility
+- [ ] Cross-browser check: Chrome, Safari, Firefox, Edge
 
 ---
 
 ## Recommended within 30 days of launch
 
-- [ ] **Install analytics** — you cannot improve what you cannot measure. Plausible is simpler and needs no cookie banner; GA4 is free but needs consent if you're targeting EU customers
-- [ ] **Connect newsletter form to Klaviyo or Mailchimp** — your email list is the highest-ROI sales channel for a small luxury brand; every visitor who doesn't buy today is a future buyer if you can reach them again
-- [ ] **Submit sitemap to Google Search Console** — tells Google the site exists and surfaces indexing errors early
-- [ ] **Validate OG tags** on 2–3 pages using Facebook's Sharing Debugger — TIZIRI is a visual brand and Instagram/WhatsApp shares are likely to drive traffic; broken previews waste every share
-- [ ] **Run a Lighthouse audit** — page speed directly affects mobile conversion; flag anything scoring below 80 on Performance
+- [ ] **Install analytics** — Plausible (no cookie banner needed) or GA4 (needs consent for EU)
+- [ ] **Connect newsletter form** to Klaviyo or Mailchimp
+- [ ] **Submit sitemap** to Google Search Console (`https://tizirirugs.com/sitemap.xml`)
+- [ ] **Validate OG tags** with Facebook Sharing Debugger on 2–3 key pages
+- [ ] **Run Lighthouse audit** — target 90+ on Performance, Accessibility, SEO
 
 ---
 
 ## Future improvements
 
-These will improve the business but have low urgency at launch.
-
-- [ ] **Shipping & Returns stub page** — currently `href="#"` in the footer; customers check this before buying. A simple one-pager covering delivery time, cost, and the 14-day return policy is a trust signal worth adding in the first month
-- [ ] **Product JSON-LD structured data** — enables Google rich results (price, availability) in search. Worth adding once the site has traction and is being indexed regularly
-- [ ] **Care Guide page** — reduces buyer anxiety about owning a handwoven rug; supports upsell and repeat contact
-- [ ] **`srcset` on hero and editorial images** — marginal performance gain after WebP compression; revisit if Lighthouse flags it
-- [ ] **WhatsApp enquiry option** — for a direct-sourcing brand at this price point, WhatsApp is often how serious buyers want to communicate. A single link alongside the contact form could meaningfully increase enquiry rate
-- [ ] **FAQ page** — handle the three questions you will hear repeatedly: authenticity, sizing advice, returns. Reduces friction at the decision stage
+- [ ] **Care Guide page** — currently a dead footer link on all 20 pages; reduces buyer anxiety about owning a handwoven rug
+- [ ] **FAQ page** — currently a dead footer link on all 20 pages; handles authenticity, sizing, returns questions
+- [ ] **Product JSON-LD structured data** — enables Google rich results once the site has traction
+- [ ] **WhatsApp enquiry option** — at this price point, many serious buyers prefer WhatsApp
+- [ ] **`srcset` on hero and editorial images** — marginal gain after WebP; revisit if Lighthouse flags it
+- [ ] **Instagram live feed** — replace static homepage strip with real posts

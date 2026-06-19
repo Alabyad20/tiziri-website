@@ -1,6 +1,6 @@
 # TIZIRI — Project Status
 
-*Last updated: 2026-06-18 — Contact page complete. Phase 2 pages done.*
+*Last updated: 2026-06-18 — All pages built. Domain live. Pre-launch QA in progress.*
 
 ---
 
@@ -14,11 +14,11 @@
 - Manifesto text block with fade-up animation
 - 3-column collection cards with hover CTA reveal
 - Full-bleed editorial image break
-- 50/50 story split layout
+- 50/50 story split layout wired to Our Story page
 - 3-column trust signal row (Handwoven / One of a Kind / Free Returns)
 - Autoplay video section (IntersectionObserver, muted/looped)
 - 4-column recent arrivals product grid
-- 6-image Instagram strip
+- 6-image Instagram strip (static images; live feed pending)
 - Newsletter email capture with client-side validation and success state
 - Full footer with 3-column link layout
 
@@ -27,104 +27,105 @@
 - Typography stack: Cormorant Garamond (serif) + Jost (sans)
 - Responsive layout with `clamp()` gutters, 1440px max-width
 - All section styles and responsive breakpoints
+- Policy page layout (`.policy-page`, `.policy-section`, `.policy-table`, `.policy-list`)
 
 ### Product detail pages (`rugs/`)
-- 12 pages: Tislit, Aziza, Nour, Sama, Lalla, Imane, Fatima, Malika, Zara (available) + Siham, Tamurt (sold) + Amira (available)
+- 12 pages: Tislit, Aziza, Nour, Sama, Lalla, Imane, Fatima, Malika, Zara, Amira (available) + Siham, Tamurt (sold)
 - 56/44 two-column sticky-gallery layout (desktop), stacked on tablet/mobile
 - Thumbnail image switcher with fade transition and keyboard navigation (`js/product.js`)
 - Editorial description, spec table (origin / dimensions / materials / pile / age)
 - "Enquire About This Piece →" CTA — mailto link pre-filled with rug name and dimensions
 - Sold pages: greyscale gallery, "View Available Rugs →" CTA linking back to filtered collection
 - 3-card related rugs section per page
-- Homepage arrivals cards and all collections page cards wired to product pages
+- **Prices: all pages still show `$0,000` placeholder — must be set before launch**
 
-### JavaScript (`js/main.js`)
-- Nav scroll behaviour, mobile menu toggle
-- Fade-up IntersectionObserver animations
-- Video autoplay on scroll entry
-- Newsletter form handling
+### JavaScript
+- `js/main.js` — nav scroll behaviour, mobile menu toggle, fade-up animations, video autoplay, newsletter form
+- `js/product.js` — thumbnail switcher with keyboard navigation
+- `js/contact.js` — contact form mailto handler with success state
 
 ### Collection listing page (`collections/index.html`)
 - 12-card catalogue grid with product data and real images
-- Sticky filter bar: Style (All / Beni Ourain / Azilal / Boucherouite / Mrirt / Contemporary) + Size (All / Small / Medium / Large)
-- URL hash routing — e.g. `/collections/#beni-ourain` activates the correct filter and updates the page title
+- Sticky filter bar: Style + Size filters
+- URL hash routing (e.g. `/collections/#beni-ourain`)
 - Sold state (Siham, Tamurt — greyscale + Sold badge)
 - Empty state with "Clear filters" reset
-- Breadcrumb nav with dynamic title/subtitle
-- All homepage nav and footer Shop links wired to the collections page with correct hash anchors
+
+### Editorial pages
+- `craft/index.html` — three weaving traditions, four regions, video, closing CTA
+- `story/index.html` — brand origin, direct-sourcing philosophy, values section
 
 ### Contact page (`contact/index.html`)
-- Page header: "Contact" / "We read everything."
-- 2-column layout: info panel (40%) + form (60%), stacks on tablet
-- Info panel: serif "Let's talk." lead, direct email, Instagram, trade &amp; wholesale note
-- Form: Name + Email (side by side), Topic (select), Message (textarea)
-- On submit: builds `mailto:` URL pre-filled with all fields, opens email client, shows success state
-- `js/contact.js`: 30-line handler, no external dependencies
-- Nav Contact link wired on all 16 pages (desktop nav, mobile menu, footer Help column, footer Trade Enquiries)
+- 2-column layout: info panel + form
+- Form builds mailto URL and opens email client on submit
+- Instagram link wired to `https://instagram.com/tiziri` (contact page only)
 
-### Our Story page (`story/index.html`)
-- Editorial long-form about the brand's origin and sourcing philosophy
-- Page header: "Our Story" / "Where it begins."
-- Opening editorial image break
-- Story intro: centered serif lead + body
-- Chapter 1 — "The beginning.": sourcing origin, personal connection to Morocco
-- Chapter 2 — "Direct. Always.": no intermediaries, honest photography, no warehouse
-- Three-image strip (3-col grid, collapses to 1 on mobile)
-- Values section (dark stone bg): three italic serif statements on craft, curation, returns
-- Closing CTA: "The rug was woven once…" quote + "See the Collection →"
-- Footer Our Story link wired on all 16 pages
+### Policy pages
+- `shipping/index.html` — delivery timeframes, returns (14-day, free collection)
+- `privacy/index.html` — GDPR-compliant, plain English, 8 sections
+- `terms/index.html` — 9 sections covering sale, statutory rights, governing law
 
-### The Craft page (`craft/index.html`)
-- Editorial long-form page: three weaving traditions, four regions, video, closing CTA
-- Technique 1 — Hand-Knotted (Beni Ourain · Mrirt): "The oldest method." — image left, text right
-- Technique 2 — Hand-Woven (Azilal · Vintage): "Weft over warp. Colour from plants." — text left, image right
-- Technique 3 — Boucherouite: "Nothing wasted." — image left, text right
-- Regions section: High Atlas / Azilal / Middle Atlas / Marrakech on dark stone background
-- Autoplay video section with editorial copy and "See the Collection →" CTA
-- Nav wired: all 14 pages (homepage, collections, 12 rug pages) link to `craft/index.html`
+### SEO & metadata
+- Open Graph + Twitter Card tags on all 22 pages
+- Canonical URLs on all 22 pages
+- `sitemap.xml` — 20 URLs with priorities and changefreq
+- `robots.txt` — allow all, Sitemap pointer
+- Domain: **tizirirugs.com** — acquired, set across all files
+
+### Images
+- 119 rug photos converted from JPEG to WebP (quality 82, max 1600px longest side)
+- Average compression: ~70% file size reduction
 
 ### Documentation (`docs/`)
 - `brand-strategy.md` — positioning, voice, colour, typography
 - `development-plan.md` — phased build roadmap
 - `homepage-storyboard.md` — section-by-section layout notes
 - `asset-map.md` — image inventory
+- `LAUNCH_CHECKLIST.md` — prioritised pre/post-launch task list
 
 ---
 
-## Pending Work
+## Remaining Work
 
-### Phase 2 — Pages to Build
-- ~~**Collection / listing page**~~ — **Done**
-- ~~**Product detail page**~~ — **Done**
-- ~~**The Craft page**~~ — **Done**
-- ~~**Our Story page**~~ — **Done**
-- ~~**Contact page**~~ — **Done**
-
-### Phase 3 — Commerce & Backend
-- Wire up commerce model (see Remaining Decisions)
-- Connect newsletter form to Klaviyo or Mailchimp
-- Resolve Instagram grid (static swap / API / third-party embed)
-
-### Phase 4 — Pre-Launch
-- Compress and convert all `rug-photos/` to WebP (target: under 300 KB each)
-- Add `srcset` for hero and editorial images
-- Add Open Graph and Twitter card meta tags to all pages
-- Create `sitemap.xml` and `robots.txt`
-- Add Product structured data (JSON-LD) to product pages
-- Write Privacy Policy and Terms & Conditions pages
-- Add cookie consent if using analytics or Meta Pixel
-- Set up analytics (GA4 or Plausible)
-- Acquire domain and configure HTTPS
+### Must complete before launch
+- Set real prices on all 10 available product pages (and collections/index.html + homepage grid)
+- Wire Instagram footer social links (`href="#"` → `https://instagram.com/tiziri`) on all 20 pages
 - Deploy to static host (Netlify / Vercel / Cloudflare Pages)
-- Cross-browser and cross-device QA
-- Lighthouse accessibility audit
+- Configure DNS and confirm HTTPS active at tizirirugs.com
 
-### Known Gaps on Current Homepage
-- All `href="#"` links — no pages behind them yet
-- Product card prices show placeholder `$0,000`
-- Cart icon count stuck at 0, no cart functionality
-- Newsletter form has no backend connection
-- Instagram strip uses static images, not a live feed
+### QA (required before launch)
+- Test enquiry CTA on all 10 available product pages
+- Test contact form end-to-end on mobile and desktop
+- Test mobile menu on iPhone Safari and Android Chrome
+- Confirm all images load; sold pages show greyscale + sold state
+- Cross-browser check: Chrome, Safari, Firefox, Edge
+
+### Within 30 days of launch
+- Install analytics (Plausible recommended — no cookie banner required)
+- Connect newsletter form to Klaviyo or Mailchimp
+- Submit sitemap to Google Search Console
+- Validate OG tags with Facebook Sharing Debugger
+- Run Lighthouse audit (target 90+ Performance, Accessibility, SEO)
+
+### Future improvements
+- Care Guide page (currently dead footer link)
+- FAQ page (currently dead footer link)
+- Product JSON-LD structured data
+- WhatsApp enquiry option
+- `srcset` on hero and editorial images
+
+---
+
+## Known Dead Links (as of 2026-06-18)
+
+| Link | Location | Status |
+|---|---|---|
+| Cart icon | Nav — all 20 pages | No cart system (expected) |
+| Care Guide | Footer — all 20 pages | Page not built |
+| FAQ | Footer — all 20 pages | Page not built |
+| Instagram (footer social) | Footer — all 20 pages | Needs `https://instagram.com/tiziri` |
+| Pinterest (footer social) | Footer — all 20 pages | No account set up |
+| Instagram tiles + Follow link | Homepage only | No live feed |
 
 ---
 
@@ -133,6 +134,7 @@
 | Area | Decision |
 |---|---|
 | Brand name | **TIZIRI** (Tamazight: moonlight) — replaces retired MAISON ATLAS |
+| Domain | **tizirirugs.com** — acquired 2026-06-18 |
 | Site architecture | Static HTML/CSS/JS — no framework, no build tool |
 | Typefaces | Cormorant Garamond (serif) + Jost (sans), loaded via Google Fonts |
 | Colour palette | Bone `#F5F0E8` base, stone `#2C2A25` text, terracotta `#B5593C` accent |
@@ -142,19 +144,18 @@
 | Trust signals | Handwoven in Morocco · One of a Kind · Free Returns (14 days) |
 | Contact email | abdelkebirlabyad@gmail.com |
 | Instagram handle | @tiziri |
+| Images | WebP at quality 82, max 1600px — originals kept as backup |
+| Commerce model | Enquiry-based (mailto CTAs) — appropriate for early stage |
 
 ---
 
-## Remaining Decisions
+## Open Decisions
 
 | Decision | Options | Notes |
 |---|---|---|
-| Commerce model | Shopify vs static + enquiry flow | Enquiry flow recommended for early stage |
-| Pricing | Per rug, TBD | Not set for any piece yet |
+| Pricing | Per rug, TBD | Must be set before launch |
 | Newsletter platform | Klaviyo vs Mailchimp | — |
-| Domain | **tizirirugs.com** | Acquired — all 22 pages updated |
-| Hosting | Netlify / Vercel / Cloudflare Pages | All suitable for static; all free tier |
-| Instagram feed | Static swap / Basic Display API / third-party embed | — |
-| Additional photography | Studio shots or further location shoots? | June 7/8 batches are strong candidates for Story page |
-| Analytics | Google Analytics 4 vs Plausible | Plausible is privacy-first, simpler GDPR story |
-| Pinterest | Account setup | Listed in brand docs as TBD |
+| Hosting | Netlify / Vercel / Cloudflare Pages | All free tier, all suitable |
+| Instagram feed | Static swap / API / third-party embed | Live feed is post-launch |
+| Analytics | Google Analytics 4 vs Plausible | Plausible = no cookie banner |
+| Pinterest | Account setup | Remove footer link until account exists |
