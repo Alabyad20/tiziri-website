@@ -152,7 +152,7 @@
 | Commerce model | Shopify vs static + enquiry flow | Enquiry flow recommended for early stage |
 | Pricing | Per rug, TBD | Not set for any piece yet |
 | Newsletter platform | Klaviyo vs Mailchimp | — |
-| Domain | tiziri.com vs tiziri.co | Not yet acquired — verify availability |
+| Domain | **tizirirugs.com** | Acquired — all 22 pages updated |
 | Hosting | Netlify / Vercel / Cloudflare Pages | All suitable for static; all free tier |
 | Instagram feed | Static swap / Basic Display API / third-party embed | — |
 | Additional photography | Studio shots or further location shoots? | June 7/8 batches are strong candidates for Story page |
