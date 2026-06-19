@@ -1,0 +1,21 @@
+# Claude Code (local tool settings — not project code)
+.claude/
+
+# OS artifacts
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor artifacts
+.vscode/
+.idea/
+*.suo
+*.user
+
+# Node (in case a build tool or package manager is added later)
+node_modules/
+npm-debug.log*
+
+# Temp files
+*.tmp
+*.log
