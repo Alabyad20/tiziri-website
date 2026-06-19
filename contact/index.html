@@ -147,7 +147,10 @@
             <!-- Form -->
             <div class="contact-form-wrap fade-up" style="transition-delay: 100ms;">
 
-                <form id="contactForm" novalidate>
+                <form id="contactForm" name="contact" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+
+                    <input type="hidden" name="form-name" value="contact">
+                    <p style="display:none"><input name="bot-field"></p>
 
                     <div class="contact-form__row">
                         <div class="contact-form__group">
@@ -155,6 +158,7 @@
                             <input
                                 type="text"
                                 id="contactName"
+                                name="name"
                                 class="contact-form__input"
                                 placeholder="Full name"
                                 required
@@ -165,6 +169,7 @@
                             <input
                                 type="email"
                                 id="contactEmail"
+                                name="email"
                                 class="contact-form__input"
                                 placeholder="you@example.com"
                                 required
@@ -174,7 +179,7 @@
 
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="contactTopic">Topic</label>
-                        <select id="contactTopic" class="contact-form__select" required>
+                        <select id="contactTopic" name="topic" class="contact-form__select" required>
                             <option value="" disabled selected>Select a topic</option>
                             <option value="General enquiry">General enquiry</option>
                             <option value="Specific rug enquiry">Specific rug enquiry</option>
@@ -188,6 +193,7 @@
                         <label class="contact-form__label" for="contactMessage">Message</label>
                         <textarea
                             id="contactMessage"
+                            name="message"
                             class="contact-form__textarea"
                             placeholder="Tell us what you have in mind…"
                             required></textarea>
