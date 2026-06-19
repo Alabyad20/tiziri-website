@@ -14,14 +14,27 @@ if (form && success) {
 
         if (!name || !email || !topic || !message) return;
 
-        fetch('/', {
+        const payload = {
+            access_key: '88348fe5-bfcc-4067-850c-5840672658b6',
+            name,
+            email,
+            subject: 'TIZIRI — ' + topic,
+            message: 'Topic: ' + topic + '\n\n' + message
+        };
+
+        fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(new FormData(form)).toString()
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload)
         })
-        .then(() => {
-            form.style.display = 'none';
-            success.style.display = 'block';
+        .then(res => res.json())
+        .then(data => {
+            if (data.success) {
+                form.style.display = 'none';
+                success.style.display = 'block';
+            } else {
+                throw new Error('Web3Forms error');
+            }
         })
         .catch(() => {
             const subject = encodeURIComponent('TIZIRI — ' + topic);
