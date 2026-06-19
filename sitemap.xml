@@ -1,40 +1,40 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     <!-- Core pages -->
     <url>
         <loc>https://tizirirugs.com/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/collections/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/craft/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/story/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/contact/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/shipping/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
@@ -52,13 +52,13 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/privacy/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/terms/</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
@@ -66,61 +66,61 @@
     <!-- Available rugs -->
     <url>
         <loc>https://tizirirugs.com/rugs/tislit.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/aziza.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nour.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sama.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lalla.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/imane.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/fatima.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/malika.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zara.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/amira.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -128,13 +128,13 @@
     <!-- Sold rugs — kept for SEO continuity -->
     <url>
         <loc>https://tizirirugs.com/rugs/siham.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/tamurt.html</loc>
-        <lastmod>2026-06-18</lastmod>
+        <lastmod>2026-06-19</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
