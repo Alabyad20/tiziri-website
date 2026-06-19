@@ -1,6 +1,6 @@
 # TIZIRI — Project Status
 
-*Last updated: 2026-06-18 — Deployed to Netlify. DNS connection to tizirirugs.com pending.*
+*Last updated: 2026-06-19 — Live at https://tizirirugs.com. DNS and HTTPS confirmed.*
 
 ---
 
@@ -92,16 +92,16 @@
 | Host | Netlify | Team: Tiziri (abdelkebirlabyad@gmail.com) |
 | Netlify URL | Live | `https://creative-snickerdoodle-11b3de.netlify.app` |
 | Site ID | — | `177a362b-cd55-45d3-a01c-6d492c61b39c` |
-| Custom domain | Pending | tizirirugs.com — DNS config required |
-| HTTPS | Pending | Auto-provisioned once DNS propagates |
+| Custom domain | Live | tizirirugs.com — DNS configured 2026-06-19 |
+| HTTPS | Live | SSL certificate provisioned 2026-06-19 |
 
 ---
 
 ## Remaining Work
 
 ### Must complete before launch
-- Configure DNS: add tizirirugs.com custom domain in Netlify dashboard and update GoDaddy records
-- Confirm HTTPS is active at tizirirugs.com after DNS propagates
+- ~~Configure DNS: add tizirirugs.com custom domain in Netlify dashboard and update GoDaddy records~~ — done 2026-06-19
+- ~~Confirm HTTPS is active at tizirirugs.com after DNS propagates~~ — confirmed 2026-06-19
 - Review all 10 product descriptions — dimensions, origin, age must be accurate
 
 ### QA (do on live domain after DNS)

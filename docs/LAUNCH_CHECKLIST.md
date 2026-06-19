@@ -1,6 +1,6 @@
 # TIZIRI — Launch Checklist
 
-*Last updated: 2026-06-18*
+*Last updated: 2026-06-19*
 
 ---
 
@@ -15,7 +15,7 @@
 - [x] ~~Acquire domain~~ — **tizirirugs.com** purchased 2026-06-18
 - [x] ~~Replace `https://tiziri.com` placeholder~~ — done across all 22 files
 - [x] ~~Deploy to static host~~ — live at `https://creative-snickerdoodle-11b3de.netlify.app`
-- [ ] Configure DNS and confirm HTTPS is active at tizirirugs.com
+- [x] ~~Configure DNS and confirm HTTPS is active at tizirirugs.com~~ — done 2026-06-19
 
 **Legal**
 - [x] ~~Write Privacy Policy~~ — `privacy/index.html` complete, wired in all footers
@@ -24,7 +24,7 @@
 
 **Navigation & links**
 - [x] ~~Wire Instagram footer social link~~ — done across all 20 pages
-- [ ] Decide on Pinterest: create account and wire link, or remove it from all 20 footers
+- [x] ~~Decide on Pinterest~~ — wired to https://pinterest.com/tizirirugs across all 20 pages
 
 **QA**
 - [ ] Test enquiry CTA on all 10 available product pages — this is your entire purchase flow
