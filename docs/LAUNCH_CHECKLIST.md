@@ -7,15 +7,14 @@
 ## Required before launch
 
 **Content**
-- [ ] Set real prices on all 10 available product pages (currently `$0,000`)
-- [ ] Update prices on `collections/index.html` and homepage arrivals grid (same placeholders)
+- [x] ~~Set prices~~ — price on enquiry; `$0,000` placeholders removed from all product pages, cards, and grids
 - [ ] Confirm image-to-rug assignments are correct (wrong rug in a sale = immediate return)
 - [ ] Review all 10 product descriptions — dimensions, origin, age must be accurate
 
 **Domain & deployment**
 - [x] ~~Acquire domain~~ — **tizirirugs.com** purchased 2026-06-18
 - [x] ~~Replace `https://tiziri.com` placeholder~~ — done across all 22 files
-- [ ] Deploy to static host (Netlify / Vercel / Cloudflare Pages)
+- [x] ~~Deploy to static host~~ — live at `https://creative-snickerdoodle-11b3de.netlify.app`
 - [ ] Configure DNS and confirm HTTPS is active at tizirirugs.com
 
 **Legal**
@@ -24,7 +23,7 @@
 - [x] ~~Write Shipping & Returns~~ — `shipping/index.html` complete, wired in all footers
 
 **Navigation & links**
-- [ ] Wire Instagram footer social link (`href="#"` → `https://instagram.com/tiziri`) on all 20 pages
+- [x] ~~Wire Instagram footer social link~~ — done across all 20 pages
 - [ ] Decide on Pinterest: create account and wire link, or remove it from all 20 footers
 
 **QA**

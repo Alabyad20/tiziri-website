@@ -1,6 +1,6 @@
 # TIZIRI — Project Status
 
-*Last updated: 2026-06-18 — All pages built. Domain live. Pre-launch QA in progress.*
+*Last updated: 2026-06-18 — Deployed to Netlify. DNS connection to tizirirugs.com pending.*
 
 ---
 
@@ -85,15 +85,26 @@
 
 ---
 
+## Deployment
+
+| Item | Status | Detail |
+|---|---|---|
+| Host | Netlify | Team: Tiziri (abdelkebirlabyad@gmail.com) |
+| Netlify URL | Live | `https://creative-snickerdoodle-11b3de.netlify.app` |
+| Site ID | — | `177a362b-cd55-45d3-a01c-6d492c61b39c` |
+| Custom domain | Pending | tizirirugs.com — DNS config required |
+| HTTPS | Pending | Auto-provisioned once DNS propagates |
+
+---
+
 ## Remaining Work
 
 ### Must complete before launch
-- Set real prices on all 10 available product pages (and collections/index.html + homepage grid)
-- Wire Instagram footer social links (`href="#"` → `https://instagram.com/tiziri`) on all 20 pages
-- Deploy to static host (Netlify / Vercel / Cloudflare Pages)
-- Configure DNS and confirm HTTPS active at tizirirugs.com
+- Configure DNS: add tizirirugs.com custom domain in Netlify dashboard and update GoDaddy records
+- Confirm HTTPS is active at tizirirugs.com after DNS propagates
+- Review all 10 product descriptions — dimensions, origin, age must be accurate
 
-### QA (required before launch)
+### QA (do on live domain after DNS)
 - Test enquiry CTA on all 10 available product pages
 - Test contact form end-to-end on mobile and desktop
 - Test mobile menu on iPhone Safari and Android Chrome
@@ -155,7 +166,7 @@
 |---|---|---|
 | Pricing | Per rug, TBD | Must be set before launch |
 | Newsletter platform | Klaviyo vs Mailchimp | — |
-| Hosting | Netlify / Vercel / Cloudflare Pages | All free tier, all suitable |
+| Hosting | **Netlify** — deployed 2026-06-18 | Site ID: 177a362b-cd55-45d3-a01c-6d492c61b39c |
 | Instagram feed | Static swap / API / third-party embed | Live feed is post-launch |
 | Analytics | Google Analytics 4 vs Plausible | Plausible = no cookie banner |
 | Pinterest | Account setup | Remove footer link until account exists |
