@@ -16,7 +16,12 @@
       "Skill(run)",
       "PowerShell(python --version; node --version; npx --version 2>$null)",
       "PowerShell(Start-Process python -ArgumentList '-m', 'http.server', '8743', '--directory', 'C:\\\\Users\\\\nigel\\\\Moroccan-Rug-Website' -WindowStyle Hidden; Start-Sleep -Seconds 2; Invoke-WebRequest -Uri 'http://localhost:8743/' -UseBasicParsing | Select-Object -ExpandProperty StatusCode)",
-      "PowerShell(head *)"
+      "PowerShell(head *)",
+      "PowerShell($env:NETLIFY_AUTH_TOKEN; [System.Environment]::GetEnvironmentVariable\\(\"NETLIFY_AUTH_TOKEN\", \"User\"\\); [System.Environment]::GetEnvironmentVariable\\(\"NETLIFY_AUTH_TOKEN\", \"Machine\"\\))",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
     ]
   }
 }
