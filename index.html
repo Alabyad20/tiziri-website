@@ -418,14 +418,19 @@
                 No noise. Unsubscribe any time.
             </p>
             <form class="newsletter__form" id="newsletterForm" novalidate>
+                <div style="position:absolute;left:-5000px" aria-hidden="true">
+                    <input type="text" name="b_889c1e9a473495b663abe6c0e_664108de2c" tabindex="-1" value="">
+                </div>
                 <input
                     type="email"
+                    name="EMAIL"
                     class="newsletter__input"
                     placeholder="Your email address"
                     aria-label="Email address"
                     required>
                 <button type="submit" class="newsletter__btn">Subscribe</button>
             </form>
+            <p id="newsletterSuccess" style="display:none;color:inherit;margin-top:1rem;font-family:'Jost',sans-serif;font-size:0.85rem;letter-spacing:0.08em;text-transform:uppercase;">You're in. Welcome.</p>
         </div>
     </section>
 
@@ -476,6 +481,7 @@
     </footer>
 
     <script src="js/main.js"></script>
+    <script src="js/newsletter.js"></script>
 </body>
 </html>
 
