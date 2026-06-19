@@ -47,12 +47,21 @@ for = "/*.html"
 
 [headers.values]
 Cache-Control = "public, max-age=0, must-revalidate"
+Accept-Ranges = "none"
 
 [[headers]]
 for = "/*/index.html"
 
 [headers.values]
 Cache-Control = "public, max-age=0, must-revalidate"
+Accept-Ranges = "none"
+
+[[headers]]
+for = "/"
+
+[headers.values]
+Cache-Control = "public, max-age=0, must-revalidate"
+Accept-Ranges = "none"
 
 [[redirects]]
 from = "https://www.tizirirugs.com/*"
