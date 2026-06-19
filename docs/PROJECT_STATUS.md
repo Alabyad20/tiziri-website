@@ -1,6 +1,6 @@
 # TIZIRI — Project Status
 
-*Last updated: 2026-06-18*
+*Last updated: 2026-06-18 — Contact page complete. Phase 2 pages done.*
 
 ---
 
@@ -28,14 +28,60 @@
 - Responsive layout with `clamp()` gutters, 1440px max-width
 - All section styles and responsive breakpoints
 
+### Product detail pages (`rugs/`)
+- 12 pages: Tislit, Aziza, Nour, Sama, Lalla, Imane, Fatima, Malika, Zara (available) + Siham, Tamurt (sold) + Amira (available)
+- 56/44 two-column sticky-gallery layout (desktop), stacked on tablet/mobile
+- Thumbnail image switcher with fade transition and keyboard navigation (`js/product.js`)
+- Editorial description, spec table (origin / dimensions / materials / pile / age)
+- "Enquire About This Piece →" CTA — mailto link pre-filled with rug name and dimensions
+- Sold pages: greyscale gallery, "View Available Rugs →" CTA linking back to filtered collection
+- 3-card related rugs section per page
+- Homepage arrivals cards and all collections page cards wired to product pages
+
 ### JavaScript (`js/main.js`)
 - Nav scroll behaviour, mobile menu toggle
 - Fade-up IntersectionObserver animations
 - Video autoplay on scroll entry
 - Newsletter form handling
 
-### Collections page scaffold (`collections/index.html`)
-- Initial structure in place
+### Collection listing page (`collections/index.html`)
+- 12-card catalogue grid with product data and real images
+- Sticky filter bar: Style (All / Beni Ourain / Azilal / Boucherouite / Mrirt / Contemporary) + Size (All / Small / Medium / Large)
+- URL hash routing — e.g. `/collections/#beni-ourain` activates the correct filter and updates the page title
+- Sold state (Siham, Tamurt — greyscale + Sold badge)
+- Empty state with "Clear filters" reset
+- Breadcrumb nav with dynamic title/subtitle
+- All homepage nav and footer Shop links wired to the collections page with correct hash anchors
+
+### Contact page (`contact/index.html`)
+- Page header: "Contact" / "We read everything."
+- 2-column layout: info panel (40%) + form (60%), stacks on tablet
+- Info panel: serif "Let's talk." lead, direct email, Instagram, trade &amp; wholesale note
+- Form: Name + Email (side by side), Topic (select), Message (textarea)
+- On submit: builds `mailto:` URL pre-filled with all fields, opens email client, shows success state
+- `js/contact.js`: 30-line handler, no external dependencies
+- Nav Contact link wired on all 16 pages (desktop nav, mobile menu, footer Help column, footer Trade Enquiries)
+
+### Our Story page (`story/index.html`)
+- Editorial long-form about the brand's origin and sourcing philosophy
+- Page header: "Our Story" / "Where it begins."
+- Opening editorial image break
+- Story intro: centered serif lead + body
+- Chapter 1 — "The beginning.": sourcing origin, personal connection to Morocco
+- Chapter 2 — "Direct. Always.": no intermediaries, honest photography, no warehouse
+- Three-image strip (3-col grid, collapses to 1 on mobile)
+- Values section (dark stone bg): three italic serif statements on craft, curation, returns
+- Closing CTA: "The rug was woven once…" quote + "See the Collection →"
+- Footer Our Story link wired on all 16 pages
+
+### The Craft page (`craft/index.html`)
+- Editorial long-form page: three weaving traditions, four regions, video, closing CTA
+- Technique 1 — Hand-Knotted (Beni Ourain · Mrirt): "The oldest method." — image left, text right
+- Technique 2 — Hand-Woven (Azilal · Vintage): "Weft over warp. Colour from plants." — text left, image right
+- Technique 3 — Boucherouite: "Nothing wasted." — image left, text right
+- Regions section: High Atlas / Azilal / Middle Atlas / Marrakech on dark stone background
+- Autoplay video section with editorial copy and "See the Collection →" CTA
+- Nav wired: all 14 pages (homepage, collections, 12 rug pages) link to `craft/index.html`
 
 ### Documentation (`docs/`)
 - `brand-strategy.md` — positioning, voice, colour, typography
@@ -48,11 +94,11 @@
 ## Pending Work
 
 ### Phase 2 — Pages to Build
-- **Collection / listing page** — grid, filter bar (style / size / colour), sold state
-- **Product detail page** — image viewer, full spec (origin, dimensions, materials, knot density), price, scarcity copy, related rugs
-- **The Craft page** — editorial long-form: techniques, regions, possible video embed
-- **Our Story page** — founder/sourcing story, location photography
-- **Contact page** — enquiry form, trade enquiry option
+- ~~**Collection / listing page**~~ — **Done**
+- ~~**Product detail page**~~ — **Done**
+- ~~**The Craft page**~~ — **Done**
+- ~~**Our Story page**~~ — **Done**
+- ~~**Contact page**~~ — **Done**
 
 ### Phase 3 — Commerce & Backend
 - Wire up commerce model (see Remaining Decisions)

@@ -4,7 +4,7 @@ All photos are in `rug-photos/`. All videos are in `rug-videos/`.
 
 ---
 
-## Photos in Active Use (Homepage)
+## Photos in Active Use (Homepage + Collections)
 
 | File | Section | Role | Alt text (as coded) |
 |---|---|---|---|
@@ -18,7 +18,11 @@ All photos are in `rug-photos/`. All videos are in `rug-videos/`.
 | `IMG-20260608-WA0039.jpg` | Arrivals + Instagram | Product card (Tislit) · Instagram tile 4 | Cream Beni Ourain rug with diamond trellis pattern |
 | `IMG-20260530-WA0420.jpg` | Arrivals | Product card (Aziza) | Colourful vintage Moroccan rug in terracotta archway |
 | `IMG-20260607-WA0123.jpg` | Arrivals | Product card (Nour) | Large blue and white Mrirt rug with intricate geometric pattern |
-| `IMG-20260530-WA0264.jpg` | Arrivals | Product card (Sama) | White Moroccan rug with pink and purple abstract geometric motifs |
+| `IMG-20260530-WA0264.jpg` | Arrivals + Collections | Product card (Sama) | White Moroccan rug with pink and purple abstract geometric motifs |
+| `IMG-20260607-WA0147.jpg` | Collections | Product card (Zara — Mrirt) | Mrirt rug with warm earth tones and traditional medallion motif |
+| `IMG-20260608-WA0027.jpg` | Collections | Product card (Siham — sold) | Ivory Beni Ourain with fine pile and diamond lattice, High Atlas |
+| `IMG-20260530-WA0496.jpg` | Collections | Product card (Tamurt — sold) | Azilal rug with earthy palette and abstract woven motifs |
+| `IMG-20260531-WA0035.jpg` | Collections | Product card (Amira — Boucherouite) | Boucherouite rug in warm tones woven from recycled textile |
 
 ---
 
@@ -46,16 +50,16 @@ All remaining files in `rug-photos/` are unassigned. Key candidates for product 
 `WA0418.jpg` · `WA0419.jpg` · `WA0420.jpg` *(used: Aziza card)* · `WA0421.jpg` · `WA0422.jpg` · `WA0423.jpg` · `WA0424.jpg` · `WA0425.jpg` · `WA0426.jpg` · `WA0427.jpg` · `WA0428.jpg` · `WA0429.jpg` · `WA0430.jpg` · `WA0431.jpg` · `WA0432.jpg` · `WA0433.jpg` *(used: video poster)* · `WA0434.jpg` · `WA0435.jpg` · `WA0436.jpg`
 
 ### Batch: May 30 (WA0492 series)
-`WA0492.jpg` *(used: hero)* · `WA0496.jpg` · `WA0503.jpg` *(used: Contemporary card)*
+`WA0492.jpg` *(used: hero)* · `WA0496.jpg` *(used: Tamurt card)* · `WA0503.jpg` *(used: Contemporary card)*
 
 ### Batch: May 31
-`IMG-20260531-WA0035.jpg`
+`IMG-20260531-WA0035.jpg` *(used: Amira card)*
 
 ### Batch: June 7 (location shoot)
-`WA0030.jpg` · `WA0031.jpg` · `WA0035.jpg` · `WA0055.jpg` · `WA0056.jpg` *(used: story + mega + instagram)* · `WA0082.jpg` · `WA0123.jpg` *(used: Nour card)* · `WA0146.jpg` *(used: editorial break + instagram)* · `WA0147.jpg` · `WA0148.jpg` · `WA0149.jpg`
+`WA0030.jpg` · `WA0031.jpg` · `WA0035.jpg` · `WA0055.jpg` · `WA0056.jpg` *(used: story + mega + instagram)* · `WA0082.jpg` · `WA0123.jpg` *(used: Nour card)* · `WA0146.jpg` *(used: editorial break + instagram)* · `WA0147.jpg` *(used: Zara card)* · `WA0148.jpg` · `WA0149.jpg`
 
 ### Batch: June 8 (studio/detail shoot)
-`WA0010.jpg` · `WA0014.jpg` · `WA0015.jpg` · `WA0022.jpg` · `WA0027.jpg` · `WA0039.jpg` *(used: Tislit card)* · `WA0040.jpg`
+`WA0010.jpg` · `WA0014.jpg` · `WA0015.jpg` · `WA0022.jpg` · `WA0027.jpg` *(used: Siham card)* · `WA0039.jpg` *(used: Tislit card)* · `WA0040.jpg`
 
 ---
 
