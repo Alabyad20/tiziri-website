@@ -1,25 +1,17 @@
 <svg width="300" height="72" viewBox="0 0 300 72" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
-    <mask id="crescent-reversed">
-      <rect width="300" height="72" fill="black"/>
-      <circle cx="20" cy="36" r="14" fill="white"/>
-      <circle cx="27" cy="36" r="11" fill="black"/>
-    </mask>
   </defs>
 
   <!-- Dark background -->
   <rect width="300" height="72" fill="#1A1814"/>
 
-  <!-- Crescent mark — warm sand -->
-  <rect width="300" height="72" fill="#C4B49A" mask="url(#crescent-reversed)"/>
+  <!-- Tifinagh ta (ⵜ) mark — warm sand -->
+  <line x1="22" y1="20" x2="22" y2="52" stroke="#C4B49A" stroke-width="1.5" stroke-linecap="square"/>
+  <line x1="7"  y1="36" x2="37" y2="36" stroke="#C4B49A" stroke-width="1.5" stroke-linecap="square"/>
 
   <!-- TIZIRI wordmark — ivory -->
-  <text
-    x="50" y="47"
+  <text x="56" y="48"
     font-family="'Cormorant Garamond', Cormorant, Georgia, serif"
-    font-weight="300"
-    font-size="28"
-    fill="#F5F0E8"
-    letter-spacing="8">TIZIRI</text>
+    font-weight="300" font-size="32" fill="#F5F0E8" letter-spacing="8">TIZIRI</text>
 </svg>
