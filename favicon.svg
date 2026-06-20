@@ -1,0 +1,30 @@
+<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <clipPath id="c">
+      <circle cx="110" cy="110" r="107"/>
+    </clipPath>
+    <mask id="m">
+      <circle cx="110" cy="72" r="22" fill="white"/>
+      <circle cx="121" cy="66" r="18" fill="black"/>
+    </mask>
+  </defs>
+
+  <g clip-path="url(#c)">
+    <!-- Sky -->
+    <circle cx="110" cy="110" r="107" fill="#E8D4B0"/>
+
+    <!-- Back mountain — straight angular lines, lighter terracotta -->
+    <path d="M 0,162 L 68,118 L 110,136 L 160,108 L 220,128 L 220,220 L 0,220 Z"
+          fill="#C87840"/>
+
+    <!-- Front mountain — straight angular lines, deep terracotta -->
+    <path d="M 0,178 L 62,152 L 100,164 L 148,144 L 220,160 L 220,220 L 0,220 Z"
+          fill="#B84020"/>
+
+    <!-- Crescent moon -->
+    <circle cx="110" cy="72" r="22" fill="#F0E2C4" mask="url(#m)"/>
+  </g>
+
+  <!-- Circle border -->
+  <circle cx="110" cy="110" r="107" fill="none" stroke="#1A1410" stroke-width="2"/>
+</svg>

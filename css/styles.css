@@ -40,7 +40,7 @@ a {
 :root {
     --bone:        #F5F0E8;
     --stone:       #2C2A25;
-    --terracotta:  #B5593C;
+    --terracotta:  #B84020;
     --sky:         #8BA7B8;
     --sand:        #C8A97A;
     --indigo:      #1E2D4A;
@@ -1003,7 +1003,7 @@ a {
     letter-spacing: 0.18em;
     text-transform: uppercase;
     color: var(--white);
-    background: var(--stone);
+    background: var(--terracotta);
     border: none;
     cursor: pointer;
     white-space: nowrap;
@@ -1012,7 +1012,7 @@ a {
 }
 
 .newsletter__btn:hover {
-    background: var(--terracotta);
+    background: var(--stone);
 }
 
 .newsletter__btn.success {
@@ -1810,23 +1810,23 @@ a {
     display: block;
     width: 100%;
     padding: 17px 24px;
-    background: var(--stone);
-    color: var(--bone);
+    background: var(--terracotta);
+    color: var(--white);
     font-family: var(--sans);
     font-weight: 400;
     font-size: 11px;
     letter-spacing: 0.2em;
     text-transform: uppercase;
     text-align: center;
-    border: 1px solid var(--stone);
+    border: 1px solid var(--terracotta);
     cursor: pointer;
     transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease;
     margin-bottom: 28px;
 }
 
 .product__cta:hover {
-    background: var(--terracotta);
-    border-color: var(--terracotta);
+    background: var(--stone);
+    border-color: var(--stone);
     color: var(--white);
 }
 
