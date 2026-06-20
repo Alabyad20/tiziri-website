@@ -1,14 +1,23 @@
-<svg width="300" height="72" viewBox="0 0 300 72" xmlns="http://www.w3.org/2000/svg">
+<svg width="360" height="72" viewBox="0 0 360 72" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
+    <clipPath id="c">
+      <circle cx="32" cy="36" r="31"/>
+    </clipPath>
+    <mask id="m">
+      <circle cx="32" cy="21" r="6.5" fill="white"/>
+      <circle cx="35" cy="19.5" r="5.3" fill="black"/>
+    </mask>
   </defs>
-
-  <!-- Tifinagh ta (ⵜ) mark — warm sand -->
-  <line x1="22" y1="20" x2="22" y2="52" stroke="#C4B49A" stroke-width="1.5" stroke-linecap="square"/>
-  <line x1="7"  y1="36" x2="37" y2="36" stroke="#C4B49A" stroke-width="1.5" stroke-linecap="square"/>
-
-  <!-- TIZIRI wordmark — charcoal -->
-  <text x="56" y="48"
+  <!-- Circle mark -->
+  <g clip-path="url(#c)">
+    <circle cx="32" cy="36" r="31" fill="#E8D4B0"/>
+    <path d="M 1,46 C 10,35 22,34 32,37 C 42,40 54,36 63,33 L 63,68 L 1,68 Z" fill="#C87840"/>
+    <path d="M 1,51 C 10,43 22,41 32,44 C 42,47 54,43 63,40 L 63,68 L 1,68 Z" fill="#B84020"/>
+    <circle cx="32" cy="21" r="6.5" fill="#F0E2C4" mask="url(#m)"/>
+  </g>
+  <!-- TIZIRI wordmark -->
+  <text x="80" y="47"
     font-family="'Cormorant Garamond', Cormorant, Georgia, serif"
-    font-weight="300" font-size="32" fill="#1C1C1A" letter-spacing="8">TIZIRI</text>
+    font-weight="300" font-size="28" fill="#1C1C1A" letter-spacing="8">TIZIRI</text>
 </svg>
