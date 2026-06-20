@@ -2777,3 +2777,33 @@ a {
     border-radius: 50%;
     background: var(--terracotta);
 }
+
+/* ============================================
+   WHATSAPP BUTTON
+   ============================================ */
+
+.whatsapp-btn {
+    position: fixed;
+    bottom: 28px;
+    right: 28px;
+    width: 54px;
+    height: 54px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    z-index: 999;
+    transition: transform 250ms ease, box-shadow 250ms ease;
+    text-decoration: none;
+}
+
+.whatsapp-btn:hover {
+    transform: scale(1.08);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.26);
+}
+
+.whatsapp-btn svg {
+    display: block;
+}
