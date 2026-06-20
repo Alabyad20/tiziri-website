@@ -2,22 +2,23 @@
   <defs>
     <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
     <clipPath id="c">
-      <circle cx="32" cy="36" r="31"/>
+      <circle cx="36" cy="36" r="34"/>
     </clipPath>
     <mask id="m">
-      <circle cx="32" cy="21" r="6.5" fill="white"/>
-      <circle cx="35" cy="19.5" r="5.3" fill="black"/>
+      <circle cx="36" cy="23" r="7" fill="white"/>
+      <circle cx="39.5" cy="21" r="5.7" fill="black"/>
     </mask>
   </defs>
-  <!-- Circle mark -->
+
   <g clip-path="url(#c)">
-    <circle cx="32" cy="36" r="31" fill="#E8D4B0"/>
-    <path d="M 1,46 C 10,35 22,34 32,37 C 42,40 54,36 63,33 L 63,68 L 1,68 Z" fill="#C87840"/>
-    <path d="M 1,51 C 10,43 22,41 32,44 C 42,47 54,43 63,40 L 63,68 L 1,68 Z" fill="#B84020"/>
-    <circle cx="32" cy="21" r="6.5" fill="#F0E2C4" mask="url(#m)"/>
+    <circle cx="36" cy="36" r="34" fill="#E8D4B0"/>
+    <path d="M 2,51 L 23,37 L 36,43 L 52,34 L 70,40 L 70,72 L 2,72 Z" fill="#C87840"/>
+    <path d="M 2,57 L 21,48 L 33,52 L 49,46 L 70,51 L 70,72 L 2,72 Z" fill="#B84020"/>
+    <circle cx="36" cy="23" r="7" fill="#F0E2C4" mask="url(#m)"/>
   </g>
-  <!-- TIZIRI wordmark -->
-  <text x="80" y="47"
+  <circle cx="36" cy="36" r="34" fill="none" stroke="#1A1410" stroke-width="0.8"/>
+
+  <text x="84" y="47"
     font-family="'Cormorant Garamond', Cormorant, Georgia, serif"
     font-weight="300" font-size="28" fill="#1C1C1A" letter-spacing="8">TIZIRI</text>
 </svg>

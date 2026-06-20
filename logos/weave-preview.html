@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>TIZIRI — Weave Mark Variations</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { background: #F5F0E8; font-family: 'Jost', sans-serif; font-weight: 300; color: #1A1410; }
+    h1 { font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 28px; letter-spacing: 6px; text-transform: uppercase; text-align: center; padding: 56px 0 8px; }
+    .subtitle { text-align: center; font-size: 11px; letter-spacing: 3px; text-transform: uppercase; color: #A8A098; margin-bottom: 64px; }
+
+    .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; max-width: 960px; margin: 0 auto; }
+
+    .variant { padding: 48px 40px; border-right: 1px solid #DDD8CE; }
+    .variant:last-child { border-right: none; }
+
+    .variant-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #A8A098; margin-bottom: 6px; }
+    .variant-name { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 300; margin-bottom: 4px; }
+    .variant-desc { font-size: 11px; color: #A8A098; margin-bottom: 32px; line-height: 1.6; }
+
+    .marks { display: flex; flex-direction: column; gap: 20px; align-items: flex-start; }
+    .mark-row { display: flex; align-items: center; gap: 16px; }
+    .mark-row span { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #C0BAB0; }
+
+    img { display: block; }
+    .mark-lg { width: 120px; height: 120px; }
+    .mark-sm { width: 48px; height: 48px; }
+    .mark-xs { width: 28px; height: 28px; }
+
+    /* Dark versions */
+    .dark-mark { background: #1A1410; display: inline-block; padding: 16px; }
+
+    .recommendation { max-width: 960px; margin: 0 auto; padding: 48px 40px; border-top: 1px solid #DDD8CE; }
+    .rec-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #B84020; margin-bottom: 12px; }
+    .rec-title { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 300; margin-bottom: 12px; }
+    .rec-body { font-size: 13px; line-height: 1.8; color: #5A5248; max-width: 560px; }
+  </style>
+</head>
+<body>
+
+  <h1>TIZIRI</h1>
+  <p class="subtitle">Weave Mark — Three Variations</p>
+
+  <div class="grid">
+
+    <!-- V1 -->
+    <div class="variant">
+      <p class="variant-label">Variation 01</p>
+      <p class="variant-name">The Cross</p>
+      <p class="variant-desc">Single crossing. Two diagonals meeting at center. Warp meets weft.</p>
+      <div class="marks">
+        <div class="mark-row">
+          <img src="tiziri-mark-v1.svg" class="mark-lg" alt="V1 large">
+          <span>Full</span>
+        </div>
+        <div class="mark-row">
+          <img src="tiziri-mark-v1.svg" class="mark-sm" alt="V1 medium">
+          <span>Profile</span>
+        </div>
+        <div class="mark-row">
+          <img src="tiziri-mark-v1.svg" class="mark-xs" alt="V1 small">
+          <span>Nav</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- V2 -->
+    <div class="variant">
+      <p class="variant-label">Variation 02</p>
+      <p class="variant-name">The Loom</p>
+      <p class="variant-desc">Double crossing. Two pairs of parallels — black warp, terracotta weft. Reads as woven structure.</p>
+      <div class="marks">
+        <div class="mark-row">
+          <img src="tiziri-mark-v2.svg" class="mark-lg" alt="V2 large">
+          <span>Full</span>
+        </div>
+        <div class="mark-row">
+          <img src="tiziri-mark-v2.svg" class="mark-sm" alt="V2 medium">
+          <span>Profile</span>
+        </div>
+        <div class="mark-row">
+          <img src="tiziri-mark-v2.svg" class="mark-xs" alt="V2 small">
+          <span>Nav</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- V3 -->
+    <div class="variant">
+      <p class="variant-label">Variation 03</p>
+      <p class="variant-name">The Reed</p>
+      <p class="variant-desc">Offset asymmetric. Two warp threads crossed by a single terracotta weft. Intentionally off-centre.</p>
+      <div class="marks">
+        <div class="mark-row">
+          <img src="tiziri-mark-v3.svg" class="mark-lg" alt="V3 large">
+          <span>Full</span>
+        </div>
+        <div class="mark-row">
+          <img src="tiziri-mark-v3.svg" class="mark-sm" alt="V3 medium">
+          <span>Profile</span>
+        </div>
+        <div class="mark-row">
+          <img src="tiziri-mark-v3.svg" class="mark-xs" alt="V3 small">
+          <span>Nav</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="recommendation">
+    <p class="rec-label">Recommendation</p>
+    <p class="rec-title">Variation 02 — The Loom</p>
+    <p class="rec-body">
+      V2 is the strongest mark. The two-colour structure (black warp + terracotta weft) immediately reads as woven textile without being literal. It holds at every size — from embroidered rug label to Instagram profile to nav favicon. The four-line grid is complex enough to carry the brand at large scale, yet simple enough to stitch by hand at 1cm. V1 risks reading as a target or crosshair. V3 has strong asymmetry but the offset feels accidental rather than intentional at small sizes.
+    </p>
+  </div>
+
+</body>
+</html>
