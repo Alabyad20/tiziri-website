@@ -128,8 +128,8 @@ a {
 }
 
 .nav__logo-mark {
-    width: 28px;
-    height: 28px;
+    width: 36px;
+    height: 36px;
     display: block;
     flex-shrink: 0;
     border-radius: 50%;
@@ -1058,8 +1058,8 @@ a {
 }
 
 .footer__logo-mark {
-    width: 22px;
-    height: 22px;
+    width: 28px;
+    height: 28px;
     display: block;
     flex-shrink: 0;
     border-radius: 50%;
