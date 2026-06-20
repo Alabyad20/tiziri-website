@@ -1,4 +1,4 @@
-'use strict';
+﻿'use strict';
 
 const form    = document.getElementById('contactForm');
 const success = document.getElementById('contactSuccess');
@@ -45,7 +45,7 @@ if (form && success) {
                 message
             );
             window.location.href =
-                'mailto:abdelkebirlabyad@gmail.com?subject=' + subject + '&body=' + body;
+                'mailto:hello@tizirirugs.com?subject=' + subject + '&body=' + body;
         });
     });
 }
