@@ -114,6 +114,9 @@ a {
 
 /* Logo */
 .nav__logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     font-family: var(--serif);
     font-weight: 400;
     font-size: 15px;
@@ -121,6 +124,14 @@ a {
     text-transform: uppercase;
     color: var(--white);
     transition: color 400ms ease;
+    text-decoration: none;
+}
+
+.nav__logo-mark {
+    width: 18px;
+    height: 18px;
+    display: block;
+    flex-shrink: 0;
 }
 
 .nav.scrolled .nav__logo a {
@@ -1032,6 +1043,9 @@ a {
 }
 
 .footer__logo {
+    display: flex;
+    align-items: center;
+    gap: 9px;
     font-family: var(--serif);
     font-weight: 400;
     font-size: 14px;
@@ -1040,6 +1054,14 @@ a {
     color: var(--bone);
     flex-shrink: 0;
     padding-top: 2px;
+}
+
+.footer__logo-mark {
+    width: 14px;
+    height: 14px;
+    display: block;
+    flex-shrink: 0;
+    margin-top: -2px;
 }
 
 .footer__cols {

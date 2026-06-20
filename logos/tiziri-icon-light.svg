@@ -1,0 +1,15 @@
+<svg width="400" height="400" viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <mask id="crescent-icon-light">
+      <rect width="400" height="400" fill="black"/>
+      <circle cx="200" cy="200" r="85" fill="white"/>
+      <circle cx="245" cy="200" r="71" fill="black"/>
+    </mask>
+  </defs>
+
+  <!-- Parchment background -->
+  <rect width="400" height="400" fill="#EDE7D9"/>
+
+  <!-- Crescent mark — warm sand -->
+  <rect width="400" height="400" fill="#C4B49A" mask="url(#crescent-icon-light)"/>
+</svg>
