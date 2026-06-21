@@ -26,6 +26,7 @@ const meta = {
     'boucherouite': { title: 'Boucherouite',     sub: 'Woven from recycled textile. Nothing wasted.' },
     'mrirt':        { title: 'Mrirt',            sub: 'Fine-pile rugs from the Middle Atlas. Traditional form.' },
     'contemporary': { title: 'Contemporary',     sub: 'Moroccan craft. Modern sensibility.' },
+    'kilim':        { title: 'Kilim',            sub: 'Flat weave. Graphic. Reversible.' },
 };
 
 function applyFilters() {
@@ -75,7 +76,7 @@ document.getElementById('resetFilters')?.addEventListener('click', () => {
 });
 
 /* Read URL hash on load and on change */
-const styleValues = new Set(['beni-ourain', 'azilal', 'boujaad', 'boucherouite', 'mrirt', 'contemporary']);
+const styleValues = new Set(['beni-ourain', 'azilal', 'boujaad', 'boucherouite', 'mrirt', 'contemporary', 'kilim']);
 const sizeValues  = new Set(['small', 'medium', 'large']);
 
 function applyHash() {
