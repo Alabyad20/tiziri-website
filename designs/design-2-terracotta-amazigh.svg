@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 1060" width="700" height="1060">
+  <title>TIZIRI Design 2 — Ivory, Terracotta + Amazigh Symbols</title>
+
+  <!-- Canvas -->
+  <rect width="700" height="1060" fill="#C8B8A0"/>
+
+  <!-- ── INFO PANEL ── -->
+  <rect x="0" y="960" width="700" height="100" fill="#1C1C1C"/>
+  <text x="350" y="994" text-anchor="middle"
+        font-family="Georgia, serif" font-size="16" font-weight="bold"
+        fill="#F2EDE0" letter-spacing="2">TIZIRI — DESIGN 2: IVORY + TERRACOTTA + AMAZIGH</text>
+  <text x="350" y="1016" text-anchor="middle"
+        font-family="Georgia, serif" font-size="12" fill="#9A9186">
+    Ivory (#F2EDE0)  ×  Terracotta (#C4622D)  |  Amazigh tribal symbols  |  High-pile wool
+  </text>
+  <text x="350" y="1036" text-anchor="middle"
+        font-family="Georgia, serif" font-size="12" fill="#9A9186">
+    Berber motifs on ivory field with terracotta accent bands
+  </text>
+  <!-- Swatches -->
+  <rect x="248" y="1047" width="24" height="10" fill="#F2EDE0" stroke="#555" stroke-width="0.5"/>
+  <text x="277" y="1056" font-family="Arial,sans-serif" font-size="9" fill="#777">Ivory</text>
+  <rect x="358" y="1047" width="24" height="10" fill="#C4622D"/>
+  <text x="387" y="1056" font-family="Arial,sans-serif" font-size="9" fill="#777">Terracotta</text>
+
+  <!-- ── RUG BODY ── -->
+  <rect x="30" y="25" width="640" height="925" fill="#F2EDE0"/>
+
+  <!-- Border system — terracotta accent lines -->
+  <rect x="30" y="25"  width="640" height="925" fill="none" stroke="#1C1C1C"  stroke-width="8"/>
+  <rect x="46" y="41"  width="608" height="893" fill="none" stroke="#C4622D"  stroke-width="2"/>
+  <rect x="54" y="49"  width="592" height="877" fill="none" stroke="#1C1C1C"  stroke-width="5"/>
+  <rect x="67" y="62"  width="566" height="851" fill="none" stroke="#C4622D"  stroke-width="1.5"/>
+  <rect x="76" y="71"  width="548" height="833" fill="none" stroke="#1C1C1C"  stroke-width="1"/>
+
+  <!-- ── TOP TERRACOTTA BAND ── -->
+  <rect x="82" y="77" width="536" height="40" fill="#C4622D"/>
+  <!-- zigzag ivory line through top band -->
+  <polyline fill="none" stroke="#F2EDE0" stroke-width="2.2"
+    points="82,97 97,85 112,109 127,85 142,109 157,85 172,109 187,85 202,109
+            217,85 232,109 247,85 262,109 277,85 292,109 307,85 322,109 337,85
+            352,109 367,85 382,109 397,85 412,109 427,85 442,109 457,85 472,109
+            487,85 502,109 517,85 532,109 547,85 562,109 577,85 592,109 607,85
+            618,109"/>
+
+  <!-- ═══════════════════════════════════════════
+       AMAZIGH SYMBOLS — ivory field y=117 to y=773
+       7 rows × 5 cols (35 symbols total)
+       Odd rows x: 136 243 350 457 564
+       Even rows x: 162 269 376 483 590
+       ═══════════════════════════════════════════ -->
+
+  <!-- ── ROW 1  y=164 ── -->
+  <!-- A: Nested diamond  (136,164) -->
+  <g transform="translate(136,164)">
+    <polygon points="0,-23 23,0 0,23 -23,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- B: Cross with dots  (243,164) -->
+  <g transform="translate(243,164)">
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C4622D" stroke-width="3"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#C4622D" stroke-width="3"/>
+    <circle cx="20"  cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="-20" cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"  cy="-20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="0"  r="3"   fill="#C4622D"/>
+  </g>
+  <!-- C: 8-point star  (350,164) -->
+  <g transform="translate(350,164)">
+    <line x1="-20" y1="0"   x2="20"  y2="0"   stroke="#C4622D" stroke-width="3"/>
+    <line x1="0"   y1="-20" x2="0"   y2="20"  stroke="#C4622D" stroke-width="3"/>
+    <line x1="-14" y1="-14" x2="14"  y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="14"  y1="-14" x2="-14" y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+  </g>
+  <!-- D: Diamond with inner cross  (457,164) -->
+  <g transform="translate(457,164)">
+    <polygon points="0,-25 25,0 0,25 -25,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="-12" y1="0"   x2="12" y2="0"   stroke="#C4622D" stroke-width="2"/>
+    <line x1="0"   y1="-12" x2="0"  y2="12"  stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- E: Comb  (564,164) -->
+  <g transform="translate(564,164)">
+    <rect x="-22" y="6"   width="44" height="5" fill="#C4622D"/>
+    <rect x="-17" y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="-7"  y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="3"   y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="13"  y="-14" width="5"  height="20" fill="#C4622D"/>
+  </g>
+
+  <!-- ── ROW 2  y=257 (shifted +26) ── -->
+  <!-- F: Eye/horizontal lozenge  (162,257) -->
+  <g transform="translate(162,257)">
+    <polygon points="-28,0 0,-14 28,0 0,14" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#C4622D"/>
+  </g>
+  <!-- G: Hourglass triangles  (269,257) -->
+  <g transform="translate(269,257)">
+    <polygon points="0,-20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0, 20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- H: Triple nested diamond  (376,257) -->
+  <g transform="translate(376,257)">
+    <polygon points="0,-28 28,0 0,28 -28,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-17 17,0 0,17 -17,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <polygon points="0,-7  7,0  0,7  -7,0"  fill="#C4622D"/>
+  </g>
+  <!-- A: Nested diamond  (483,257) -->
+  <g transform="translate(483,257)">
+    <polygon points="0,-23 23,0 0,23 -23,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- B: Cross with dots  (590,257) -->
+  <g transform="translate(590,257)">
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C4622D" stroke-width="3"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#C4622D" stroke-width="3"/>
+    <circle cx="20"  cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="-20" cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"  cy="-20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="0"  r="3"   fill="#C4622D"/>
+  </g>
+
+  <!-- ── ROW 3  y=350 ── -->
+  <!-- C: 8-point star  (136,350) -->
+  <g transform="translate(136,350)">
+    <line x1="-20" y1="0"   x2="20"  y2="0"   stroke="#C4622D" stroke-width="3"/>
+    <line x1="0"   y1="-20" x2="0"   y2="20"  stroke="#C4622D" stroke-width="3"/>
+    <line x1="-14" y1="-14" x2="14"  y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="14"  y1="-14" x2="-14" y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+  </g>
+  <!-- D: Diamond with inner cross  (243,350) -->
+  <g transform="translate(243,350)">
+    <polygon points="0,-25 25,0 0,25 -25,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="-12" y1="0"   x2="12" y2="0"   stroke="#C4622D" stroke-width="2"/>
+    <line x1="0"   y1="-12" x2="0"  y2="12"  stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- E: Comb  (350,350) -->
+  <g transform="translate(350,350)">
+    <rect x="-22" y="6"   width="44" height="5" fill="#C4622D"/>
+    <rect x="-17" y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="-7"  y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="3"   y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="13"  y="-14" width="5"  height="20" fill="#C4622D"/>
+  </g>
+  <!-- F: Eye  (457,350) -->
+  <g transform="translate(457,350)">
+    <polygon points="-28,0 0,-14 28,0 0,14" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#C4622D"/>
+  </g>
+  <!-- G: Hourglass  (564,350) -->
+  <g transform="translate(564,350)">
+    <polygon points="0,-20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0, 20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+
+  <!-- ── ROW 4  y=444 (shifted +26) ── -->
+  <!-- H  (162,444) -->
+  <g transform="translate(162,444)">
+    <polygon points="0,-28 28,0 0,28 -28,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-17 17,0 0,17 -17,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <polygon points="0,-7  7,0  0,7  -7,0"  fill="#C4622D"/>
+  </g>
+  <!-- A  (269,444) -->
+  <g transform="translate(269,444)">
+    <polygon points="0,-23 23,0 0,23 -23,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- B  (376,444) -->
+  <g transform="translate(376,444)">
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C4622D" stroke-width="3"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#C4622D" stroke-width="3"/>
+    <circle cx="20"  cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="-20" cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"  cy="-20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="0"  r="3"   fill="#C4622D"/>
+  </g>
+  <!-- C  (483,444) -->
+  <g transform="translate(483,444)">
+    <line x1="-20" y1="0"   x2="20"  y2="0"   stroke="#C4622D" stroke-width="3"/>
+    <line x1="0"   y1="-20" x2="0"   y2="20"  stroke="#C4622D" stroke-width="3"/>
+    <line x1="-14" y1="-14" x2="14"  y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="14"  y1="-14" x2="-14" y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+  </g>
+  <!-- D  (590,444) -->
+  <g transform="translate(590,444)">
+    <polygon points="0,-25 25,0 0,25 -25,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="-12" y1="0"   x2="12" y2="0"   stroke="#C4622D" stroke-width="2"/>
+    <line x1="0"   y1="-12" x2="0"  y2="12"  stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+
+  <!-- ── ROW 5  y=537 ── -->
+  <!-- E  (136,537) -->
+  <g transform="translate(136,537)">
+    <rect x="-22" y="6"   width="44" height="5" fill="#C4622D"/>
+    <rect x="-17" y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="-7"  y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="3"   y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="13"  y="-14" width="5"  height="20" fill="#C4622D"/>
+  </g>
+  <!-- F  (243,537) -->
+  <g transform="translate(243,537)">
+    <polygon points="-28,0 0,-14 28,0 0,14" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#C4622D"/>
+  </g>
+  <!-- G  (350,537) -->
+  <g transform="translate(350,537)">
+    <polygon points="0,-20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0, 20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- H  (457,537) -->
+  <g transform="translate(457,537)">
+    <polygon points="0,-28 28,0 0,28 -28,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-17 17,0 0,17 -17,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <polygon points="0,-7  7,0  0,7  -7,0"  fill="#C4622D"/>
+  </g>
+  <!-- A  (564,537) -->
+  <g transform="translate(564,537)">
+    <polygon points="0,-23 23,0 0,23 -23,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+
+  <!-- ── ROW 6  y=630 (shifted +26) ── -->
+  <!-- B  (162,630) -->
+  <g transform="translate(162,630)">
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C4622D" stroke-width="3"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#C4622D" stroke-width="3"/>
+    <circle cx="20"  cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="-20" cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"  cy="-20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="0"  r="3"   fill="#C4622D"/>
+  </g>
+  <!-- C  (269,630) -->
+  <g transform="translate(269,630)">
+    <line x1="-20" y1="0"   x2="20"  y2="0"   stroke="#C4622D" stroke-width="3"/>
+    <line x1="0"   y1="-20" x2="0"   y2="20"  stroke="#C4622D" stroke-width="3"/>
+    <line x1="-14" y1="-14" x2="14"  y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="14"  y1="-14" x2="-14" y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+  </g>
+  <!-- D  (376,630) -->
+  <g transform="translate(376,630)">
+    <polygon points="0,-25 25,0 0,25 -25,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="-12" y1="0"   x2="12" y2="0"   stroke="#C4622D" stroke-width="2"/>
+    <line x1="0"   y1="-12" x2="0"  y2="12"  stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- E  (483,630) -->
+  <g transform="translate(483,630)">
+    <rect x="-22" y="6"   width="44" height="5" fill="#C4622D"/>
+    <rect x="-17" y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="-7"  y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="3"   y="-14" width="5"  height="20" fill="#C4622D"/>
+    <rect x="13"  y="-14" width="5"  height="20" fill="#C4622D"/>
+  </g>
+  <!-- F  (590,630) -->
+  <g transform="translate(590,630)">
+    <polygon points="-28,0 0,-14 28,0 0,14" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="4" fill="#C4622D"/>
+  </g>
+
+  <!-- ── ROW 7  y=724 ── -->
+  <!-- G  (136,724) -->
+  <g transform="translate(136,724)">
+    <polygon points="0,-20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0, 20  22,0 -22,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- H  (243,724) -->
+  <g transform="translate(243,724)">
+    <polygon points="0,-28 28,0 0,28 -28,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-17 17,0 0,17 -17,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <polygon points="0,-7  7,0  0,7  -7,0"  fill="#C4622D"/>
+  </g>
+  <!-- A  (350,724) -->
+  <g transform="translate(350,724)">
+    <polygon points="0,-23 23,0 0,23 -23,0" fill="none" stroke="#C4622D" stroke-width="2.5"/>
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="none" stroke="#C4622D" stroke-width="2"/>
+    <circle cx="0" cy="0" r="3" fill="#C4622D"/>
+  </g>
+  <!-- B  (457,724) -->
+  <g transform="translate(457,724)">
+    <line x1="-20" y1="0" x2="20" y2="0" stroke="#C4622D" stroke-width="3"/>
+    <line x1="0" y1="-20" x2="0" y2="20" stroke="#C4622D" stroke-width="3"/>
+    <circle cx="20"  cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="-20" cy="0"  r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"  cy="-20" r="3.5" fill="#C4622D"/>
+    <circle cx="0"   cy="0"  r="3"   fill="#C4622D"/>
+  </g>
+  <!-- C  (564,724) -->
+  <g transform="translate(564,724)">
+    <line x1="-20" y1="0"   x2="20"  y2="0"   stroke="#C4622D" stroke-width="3"/>
+    <line x1="0"   y1="-20" x2="0"   y2="20"  stroke="#C4622D" stroke-width="3"/>
+    <line x1="-14" y1="-14" x2="14"  y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+    <line x1="14"  y1="-14" x2="-14" y2="14"  stroke="#C4622D" stroke-width="2.5"/>
+  </g>
+
+  <!-- ── BOTTOM TERRACOTTA BAND ── -->
+  <rect x="82" y="773" width="536" height="40" fill="#C4622D"/>
+  <!-- zigzag ivory line through bottom band -->
+  <polyline fill="none" stroke="#F2EDE0" stroke-width="2.2"
+    points="82,793 97,781 112,805 127,781 142,805 157,781 172,805 187,781 202,805
+            217,781 232,805 247,781 262,805 277,781 292,805 307,781 322,805 337,781
+            352,805 367,781 382,805 397,781 412,805 427,781 442,805 457,781 472,805
+            487,781 502,805 517,781 532,805 547,781 562,805 577,781 592,805 607,781
+            618,805"/>
+
+</svg>

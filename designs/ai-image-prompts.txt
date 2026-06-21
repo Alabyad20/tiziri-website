@@ -1,0 +1,52 @@
+TIZIRI — AI Image Generation Prompts
+Use these in Midjourney (free) or Adobe Firefly to generate photorealistic rug images.
+Pair each image with the matching SVG file to give your weavers both a photo reference AND an exact technical pattern.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESIGN 1 — BENI OURAIN CLASSIC (Ivory + Black Diamond Grid)
+Matching SVG: design-1-beni-ourain.svg
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MIDJOURNEY PROMPT:
+flat-lay overhead product photo of a handmade Moroccan Beni Ourain wool rug, ivory cream background with a classic repeating carbon black geometric diamond lozenge grid pattern covering the entire field, small black dot at centre of each diamond, simple double black border frame, thick fluffy high-pile texture, soft diffused natural light, no shadows, white surface, photorealistic, --ar 2:3 --style raw --v 6.1
+
+ADOBE FIREFLY PROMPT:
+Flat-lay top-down photograph of a luxury handwoven Moroccan Beni Ourain rug. Ivory cream wool background. Full-field repeating geometric diamond lozenge grid in carbon black. Small black dot centred inside each diamond. Minimalist double black border. High-pile fluffy texture. Soft natural light. Clean white background. Photorealistic product photography.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESIGN 2 — IVORY + TERRACOTTA + AMAZIGH SYMBOLS
+Matching SVG: design-2-terracotta-amazigh.svg
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MIDJOURNEY PROMPT:
+flat-lay overhead product photo of a handmade Moroccan Berber wool rug, ivory cream background, two horizontal terracotta burnt-orange bands with white zigzag lines (one near top, one near bottom), ivory field filled with scattered Amazigh Berber tribal geometric symbols in terracotta — nested diamonds, 8-point stars, comb motifs, eye lozenges, hourglass triangles, cross-dot patterns — hand-woven look, high-pile fluffy wool texture, soft diffused natural light, white surface, photorealistic, --ar 2:3 --style raw --v 6.1
+
+ADOBE FIREFLY PROMPT:
+Flat-lay top-down photograph of a handwoven Moroccan Amazigh Berber tribal rug. Ivory cream wool background. Two horizontal terracotta (burnt orange) accent bands running across the top and bottom sections with ivory zigzag lines through them. Central ivory field covered with scattered hand-woven Amazigh geometric motifs in terracotta: nested diamond shapes, 8-point asterisk stars, comb symbols, eye-shaped horizontal lozenges, hourglass triangles, cross with dots. High-pile wool texture. Soft natural light. Photorealistic product photography.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+DESIGN 3 — IVORY + SAGE GREEN LOZENGE
+Matching SVG: design-3-sage-lozenge.svg
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+MIDJOURNEY PROMPT:
+flat-lay overhead product photo of a handmade Moroccan Beni Ourain style wool rug, ivory cream background, full-field repeating sage olive-green geometric diamond lozenge shapes, each sage diamond contains a smaller ivory diamond cutout with a sage green centre dot, sage green accent lines in border, clean modern minimalist Berber design, high-pile fluffy wool texture, soft diffused natural light, white surface, photorealistic, --ar 2:3 --style raw --v 6.1
+
+ADOBE FIREFLY PROMPT:
+Flat-lay top-down photograph of a handwoven Moroccan Berber rug. Ivory cream wool background. Full repeating pattern of sage olive-green filled diamond lozenge shapes across the entire field. Each green diamond has a smaller ivory diamond cut into its centre with a sage green dot at the very centre. Border uses sage green accent lines inside a black outer frame. Clean modern boho minimalist aesthetic. High-pile wool texture. Soft natural light. Photorealistic product photography.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+HOW TO USE MIDJOURNEY (free tier)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+1. Go to midjourney.com → sign in with Google
+2. Open any public channel (e.g. #general-image)
+3. Type /imagine and paste the prompt above
+4. Upscale your favourite result (click U1/U2/U3/U4)
+5. Download the full-size image
+
+HOW TO USE ADOBE FIREFLY (free tier)
+1. Go to firefly.adobe.com → sign in with free Adobe account
+2. Click "Generate Image"
+3. Paste the Adobe Firefly prompt above
+4. Choose "Photo" style
+5. Download your result
