@@ -1,4 +1,4 @@
-/* ============================================
+﻿/* ============================================
    TIZIRI — Collections Page
    ============================================ */
 
@@ -22,6 +22,7 @@ const meta = {
     'all':          { title: 'All Rugs',        sub: 'Every piece hand-selected. Each one woven once.' },
     'beni-ourain':  { title: 'Beni Ourain',      sub: 'The classic. Ivory wool, geometric form.' },
     'azilal':       { title: 'Azilal & Vintage', sub: 'Bold colour. Tribal pattern. Alive in any room.' },
+    'boujaad':      { title: 'Boujaad',           sub: 'Vivid colour. Bold tribal pattern. From the Khouribga plains.' },
     'boucherouite': { title: 'Boucherouite',     sub: 'Woven from recycled textile. Nothing wasted.' },
     'mrirt':        { title: 'Mrirt',            sub: 'Fine-pile rugs from the Middle Atlas. Traditional form.' },
     'contemporary': { title: 'Contemporary',     sub: 'Moroccan craft. Modern sensibility.' },
@@ -74,7 +75,7 @@ document.getElementById('resetFilters')?.addEventListener('click', () => {
 });
 
 /* Read URL hash on load and on change */
-const styleValues = new Set(['beni-ourain', 'azilal', 'boucherouite', 'mrirt', 'contemporary']);
+const styleValues = new Set(['beni-ourain', 'azilal', 'boujaad', 'boucherouite', 'mrirt', 'contemporary']);
 const sizeValues  = new Set(['small', 'medium', 'large']);
 
 function applyHash() {
