@@ -86,6 +86,33 @@ if (video) {
 }
 
 
+/* --- MEGA MENU --- */
+const megaItem  = document.querySelector('.nav__item--has-mega');
+const megaPanel = megaItem && megaItem.querySelector('.nav__mega');
+
+if (megaItem && megaPanel) {
+    let closeTimer = null;
+
+    function openMega() {
+        clearTimeout(closeTimer);
+        megaItem.classList.add('mega-open');
+    }
+
+    function scheduleMegaClose() {
+        closeTimer = setTimeout(() => megaItem.classList.remove('mega-open'), 300);
+    }
+
+    megaItem.addEventListener('mouseenter', openMega);
+    megaItem.addEventListener('mouseleave', scheduleMegaClose);
+    megaPanel.addEventListener('mouseenter', openMega);
+    megaPanel.addEventListener('mouseleave', scheduleMegaClose);
+
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') megaItem.classList.remove('mega-open');
+    });
+}
+
+
 /* --- NEWSLETTER FORM --- */
 const newsletterForm = document.getElementById('newsletterForm');
 

@@ -192,17 +192,15 @@ a {
     opacity: 0;
     pointer-events: none;
     transform: translateY(-6px);
-    /* 150ms delay on hide gives cursor time to reach the dropdown */
-    transition: opacity 280ms ease 150ms, transform 280ms ease 150ms;
+    transition: opacity 280ms ease, transform 280ms ease;
     border-top: 1px solid rgba(44, 42, 37, 0.08);
     box-shadow: 0 24px 48px rgba(44, 42, 37, 0.07);
 }
 
-.nav__item--has-mega:hover .nav__mega {
+.nav__item--has-mega.mega-open .nav__mega {
     opacity: 1;
     pointer-events: all;
     transform: translateY(0);
-    transition-delay: 0ms; /* show immediately on hover */
 }
 
 .nav__mega-heading {
