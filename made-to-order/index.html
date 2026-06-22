@@ -131,6 +131,55 @@
             text-align: center;
         }
 
+        /* Deposit band */
+        .mto-deposit {
+            background: #f7f4ef;
+            padding: 72px 24px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .mto-deposit__inner {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .mto-deposit__heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 300;
+            color: #1a1a1a;
+            margin: 0 0 16px;
+        }
+        .mto-deposit__text {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 300;
+            color: #666;
+            line-height: 1.75;
+            margin: 0 0 32px;
+        }
+        .mto-deposit__btn {
+            display: inline-block;
+            padding: 16px 40px;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 400;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #f7f4ef;
+            background: #c4622d;
+            transition: background 0.2s;
+        }
+        .mto-deposit__btn:hover { background: #1a1a1a; }
+        .mto-deposit__note {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 300;
+            color: #aaa;
+            margin: 16px 0 0;
+            letter-spacing: 0.04em;
+        }
+
         /* CTA band */
         .mto-cta {
             background: #1a1a1a;
@@ -765,6 +814,28 @@
             </div>
         </div>
     </main>
+
+
+    <!-- ============================================
+         PAY DEPOSIT
+         ============================================ -->
+    <section class="mto-deposit">
+        <div class="mto-deposit__inner">
+            <h2 class="mto-deposit__heading">Ready to place your order?</h2>
+            <p class="mto-deposit__text">
+                Once we've agreed your design, size and price on WhatsApp or email,
+                pay your 50% deposit below to confirm your order and start weaving.
+                The remaining balance is due before shipping.
+            </p>
+            <a href="https://buy.stripe.com/6oU00d4hT46y7S02uY2cg00"
+               target="_blank"
+               rel="noopener"
+               class="mto-deposit__btn">
+                Pay Deposit Securely via Stripe →
+            </a>
+            <p class="mto-deposit__note">Powered by Stripe · All major cards accepted · 100% secure</p>
+        </div>
+    </section>
 
 
     <!-- ============================================
