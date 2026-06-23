@@ -496,6 +496,30 @@
             <div class="ml-embedded" data-form="LDu1BC"></div>
         </div>
     </section>
+    <script>
+    (function () {
+        function styleMLForm() {
+            var btn = document.querySelector('.newsletter button[type="submit"]');
+            if (btn) {
+                btn.style.setProperty('background', '#B5593C', 'important');
+                btn.style.setProperty('border-color', '#B5593C', 'important');
+                btn.style.setProperty('border-radius', '0', 'important');
+                btn.style.setProperty('font-family', 'Jost, sans-serif', 'important');
+                btn.style.setProperty('font-size', '11px', 'important');
+                btn.style.setProperty('letter-spacing', '0.18em', 'important');
+                btn.style.setProperty('text-transform', 'uppercase', 'important');
+                btn.style.setProperty('color', '#ffffff', 'important');
+                btn.style.setProperty('padding', '15px 24px', 'important');
+                btn.style.setProperty('width', '100%', 'important');
+                btn.addEventListener('mouseenter', function () { this.style.setProperty('background', '#2C2A25', 'important'); this.style.setProperty('border-color', '#2C2A25', 'important'); });
+                btn.addEventListener('mouseleave', function () { this.style.setProperty('background', '#B5593C', 'important'); this.style.setProperty('border-color', '#B5593C', 'important'); });
+            }
+        }
+        var observer = new MutationObserver(function () { styleMLForm(); });
+        observer.observe(document.body, { childList: true, subtree: true });
+        setTimeout(styleMLForm, 1000);
+    })();
+    </script>
 
     <footer class="footer">
         <div class="footer__inner">
