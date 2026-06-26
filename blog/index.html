@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Journal — TIZIRI | Moroccan Rug Guides & Stories</title>
+    <meta name="description" content="Guides, stories and expertise on Moroccan rugs. How to choose, authenticate, style and care for Berber rugs from the Atlas Mountains.">
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="TIZIRI">
+    <meta property="og:locale"      content="en_GB">
+    <meta property="og:url"         content="https://tizirirugs.com/blog/">
+    <meta property="og:title"       content="Journal — TIZIRI">
+    <meta property="og:description" content="Guides, stories and expertise on Moroccan rugs.">
+    <meta property="og:image"       content="https://tizirirugs.com/rug-photos/IMG-20260607-WA0056.webp">
+    <meta name="twitter:card"       content="summary_large_image">
+    <link rel="canonical"           href="https://tizirirugs.com/blog/">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=7">
+    <script defer data-domain="tizirirugs.com" src="https://plausible.io/js/script.js"></script>
+    <style>
+        .journal-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            padding: 60px var(--gutter) 100px;
+            max-width: var(--max-w);
+            margin: 0 auto;
+        }
+        @media (max-width: 900px) {
+            .journal-grid { grid-template-columns: 1fr 1fr; gap: 28px; }
+        }
+        @media (max-width: 600px) {
+            .journal-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
+        .journal-card { display: block; color: inherit; }
+        .journal-card__img {
+            width: 100%; aspect-ratio: 4/3;
+            overflow: hidden; margin-bottom: 20px;
+        }
+        .journal-card__img img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 700ms cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+        .journal-card:hover .journal-card__img img { transform: scale(1.04); }
+        .journal-card__tag {
+            font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--terracotta); font-family: var(--sans); font-weight: 400;
+            margin-bottom: 8px; display: block;
+        }
+        .journal-card__title {
+            font-family: var(--serif); font-size: 22px; font-weight: 300;
+            line-height: 1.3; margin-bottom: 10px; color: var(--stone);
+        }
+        .journal-card__excerpt {
+            font-size: 13px; color: var(--mid-grey); line-height: 1.7;
+            margin-bottom: 14px;
+        }
+        .journal-card__read {
+            font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase;
+            color: var(--stone); border-bottom: 1px solid var(--stone);
+            padding-bottom: 2px; font-family: var(--sans); font-weight: 400;
+            display: inline-block;
+        }
+        .journal-feature {
+            grid-column: 1 / -1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 48px;
+            align-items: center;
+            padding-bottom: 48px;
+            border-bottom: 1px solid var(--warm-grey);
+            margin-bottom: 8px;
+        }
+        @media (max-width: 700px) {
+            .journal-feature { grid-template-columns: 1fr; }
+        }
+        .journal-feature__img {
+            width: 100%; aspect-ratio: 3/2; overflow: hidden;
+        }
+        .journal-feature__img img {
+            width: 100%; height: 100%; object-fit: cover;
+            transition: transform 700ms cubic-bezier(0.25,0.46,0.45,0.94);
+        }
+        .journal-feature:hover .journal-feature__img img { transform: scale(1.03); }
+        .journal-feature__content { padding: 20px 0; }
+        .journal-feature__tag {
+            font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--terracotta); font-family: var(--sans); font-weight: 400;
+            margin-bottom: 12px; display: block;
+        }
+        .journal-feature__title {
+            font-family: var(--serif); font-size: 36px; font-weight: 300;
+            line-height: 1.2; margin-bottom: 16px; color: var(--stone);
+        }
+        .journal-feature__excerpt {
+            font-size: 14px; color: var(--mid-grey); line-height: 1.8;
+            margin-bottom: 24px;
+        }
+        .journal-section-label {
+            font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+            color: var(--mid-grey); font-family: var(--sans); font-weight: 400;
+            padding: 0 var(--gutter);
+            max-width: var(--max-w); margin: 0 auto 32px;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__logo"><a href="../index.html"><img src="../logos/tiziri-mark.svg" class="nav__logo-mark" width="36" height="36" alt="" aria-hidden="true">TIZIRI</a></div>
+        <div class="nav__links">
+            <div class="nav__item nav__item--has-mega">
+                <span>Collections</span>
+                <div class="nav__mega">
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Style</span>
+                        <a href="../collections/index.html#beni-ourain">Beni Ourain</a>
+                        <a href="../collections/index.html#azilal">Azilal</a>
+                        <a href="../collections/index.html#boujaad">Boujaad</a>
+                        <a href="../collections/index.html#boucherouite">Boucherouite</a>
+                        <a href="../collections/index.html#mrirt">Mrirt</a>
+                        <a href="../collections/index.html#contemporary">Contemporary</a>
+                        <a href="../collections/index.html#kilim">Kilim</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Size</span>
+                        <a href="../collections/index.html#small">Small (under 150 cm)</a>
+                        <a href="../collections/index.html#medium">Medium (150–250 cm)</a>
+                        <a href="../collections/index.html#large">Large (250 cm+)</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">Featured</span>
+                        <a href="../collections/index.html">New In</a>
+                        <a href="../collections/index.html">All Rugs</a>
+                        <a href="../made-to-order/index.html">Made to Order</a>
+                    </div>
+                    <div class="nav__mega-image">
+                        <img src="../rug-photos/IMG-20260607-WA0056.webp" alt="Handwoven Moroccan rug">
+                    </div>
+                </div>
+            </div>
+            <a href="../craft/index.html" class="nav__item">The Craft</a>
+            <a href="index.html" class="nav__item" aria-current="page">Journal</a>
+            <a href="../contact/index.html" class="nav__item">Contact</a>
+        </div>
+        <div class="nav__actions">
+            <a href="#" class="nav__cart" aria-label="Cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="nav__cart-count">0</span>
+            </a>
+            <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">✕</button>
+        <nav class="mobile-menu__links">
+            <a href="../collections/index.html">Collections</a>
+            <a href="../collections/index.html#beni-ourain">Beni Ourain</a>
+            <a href="../collections/index.html#azilal">Azilal</a>
+            <a href="../collections/index.html#boujaad">Boujaad</a>
+            <a href="../craft/index.html">The Craft</a>
+            <a href="index.html">Journal</a>
+            <a href="../contact/index.html">Contact</a>
+        </nav>
+    </div>
+
+    <div class="page-header">
+        <div class="page-header__inner">
+            <nav class="breadcrumb" aria-label="Breadcrumb">
+                <a href="../index.html">TIZIRI</a>
+                <span class="breadcrumb__sep">/</span>
+                <span>Journal</span>
+            </nav>
+            <h1 class="page-header__title">Journal</h1>
+            <p class="page-header__sub">Guides, stories and expertise.</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="journal-grid">
+
+            <!-- FEATURED POST -->
+            <a href="beni-ourain-rug-guide/index.html" class="journal-feature">
+                <div class="journal-feature__img">
+                    <img src="../rug-photos/IMG-20260607-WA0056.webp" alt="Beni Ourain rug — cream wool with geometric diamond pattern" loading="lazy">
+                </div>
+                <div class="journal-feature__content">
+                    <span class="journal-feature__tag">Buying Guide</span>
+                    <h2 class="journal-feature__title">The Complete Guide to Beni Ourain Rugs</h2>
+                    <p class="journal-feature__excerpt">Everything you need to know about the most sought-after Moroccan rug in the world. From the High Atlas villages where they are made, to how to spot a genuine one, style it in your home and care for it for decades.</p>
+                    <span class="journal-card__read">Read the guide</span>
+                </div>
+            </a>
+
+            <!-- POST 2 -->
+            <a href="how-to-authenticate-moroccan-rug/index.html" class="journal-card">
+                <div class="journal-card__img">
+                    <img src="../rug-photos/IMG-20260530-WA0227.webp" alt="Close-up of hand-knotted Moroccan rug pile" loading="lazy">
+                </div>
+                <span class="journal-card__tag">Authenticity</span>
+                <h2 class="journal-card__title">How to Tell if a Moroccan Rug is Authentic</h2>
+                <p class="journal-card__excerpt">Seven things to look for — and four red flags that tell you a rug is machine-made or misrepresented.</p>
+                <span class="journal-card__read">Read the guide</span>
+            </a>
+
+            <!-- POST 3 -->
+            <a href="how-to-clean-moroccan-wool-rug/index.html" class="journal-card">
+                <div class="journal-card__img">
+                    <img src="../rug-photos/IMG-20260530-WA0224.webp" alt="Moroccan wool rug" loading="lazy">
+                </div>
+                <span class="journal-card__tag">Care</span>
+                <h2 class="journal-card__title">How to Clean a Moroccan Wool Rug Without Ruining It</h2>
+                <p class="journal-card__excerpt">The right way to clean, spot-treat and deep-wash a Berber wool rug — and the common mistakes that cause irreversible damage.</p>
+                <span class="journal-card__read">Read the guide</span>
+            </a>
+
+            <!-- POST 4 (coming soon placeholder) -->
+            <a href="#" class="journal-card" style="opacity:0.5; pointer-events:none;">
+                <div class="journal-card__img" style="background: var(--warm-grey); aspect-ratio: 4/3; display:flex; align-items:center; justify-content:center;">
+                    <span style="font-family: var(--serif); font-size: 18px; color: var(--mid-grey);">Coming soon</span>
+                </div>
+                <span class="journal-card__tag">Style</span>
+                <h2 class="journal-card__title">How to Style a Moroccan Rug in Your Home</h2>
+                <p class="journal-card__excerpt">From living room flat lays to wall art — five ways designers use Moroccan rugs as the foundation of a room.</p>
+                <span class="journal-card__read">Coming soon</span>
+            </a>
+
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../logos/tiziri-mark.svg" width="40" height="40" alt="Tiziri" aria-hidden="true">
+                    <p>Handwoven in Morocco.<br>Delivered worldwide.</p>
+                </div>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <span class="footer__heading">Collections</span>
+                        <a href="../collections/index.html#beni-ourain">Beni Ourain</a>
+                        <a href="../collections/index.html#azilal">Azilal</a>
+                        <a href="../collections/index.html#boujaad">Boujaad</a>
+                        <a href="../collections/index.html#boucherouite">Boucherouite</a>
+                        <a href="../made-to-order/index.html">Made to Order</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Learn</span>
+                        <a href="../craft/index.html">The Craft</a>
+                        <a href="index.html">Journal</a>
+                        <a href="../story/index.html">Our Story</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Help</span>
+                        <a href="../shipping/index.html">Shipping &amp; Delivery</a>
+                        <a href="../shipping/index.html#returns">Returns</a>
+                        <a href="../care/index.html">Care Guide</a>
+                        <a href="../faq/index.html">FAQ</a>
+                        <a href="../contact/index.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="https://instagram.com/tizirirugs" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://pinterest.com/tizirirugs" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+                <div class="footer__legal">
+                    <span>© 2026 Tiziri — Handwoven in Morocco</span>
+                    <a href="../privacy/index.html">Privacy Policy</a>
+                    <a href="../terms/index.html">Terms &amp; Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <a class="whatsapp-btn" href="https://wa.me/16175105376?text=Hi%2C%20I%E2%80%99m%20interested%20in%20one%20of%20your%20Moroccan%20rugs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
