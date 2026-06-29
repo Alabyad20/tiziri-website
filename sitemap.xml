@@ -4,13 +4,13 @@
     <!-- Core pages -->
     <url>
         <loc>https://tizirirugs.com/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/collections/</loc>
-        <lastmod>2026-06-19</lastmod>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
@@ -472,6 +472,80 @@
     <url>
         <loc>https://tizirirugs.com/rugs/nawal.html</loc>
         <lastmod>2026-06-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+
+    <!-- June 2026 batch — June 28 -->
+    <url>
+        <loc>https://tizirirugs.com/rugs/rachida.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/saadia.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/nabila.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/majda.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/soumia.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/fadwa.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/latifa.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/ikram.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/sirine.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/najoua.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/wahiba.html</loc>
+        <lastmod>2026-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/rugs/karima2.html</loc>
+        <lastmod>2026-06-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
