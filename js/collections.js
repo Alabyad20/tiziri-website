@@ -15,8 +15,9 @@ if (!grid) throw new Error('No catalogue grid found');
 
 const cards = [...grid.querySelectorAll('.product-card')];
 
-let activeStyle = 'all';
-let activeSize  = 'all';
+let activeStyle  = 'all';
+let activeSize   = 'all';
+let activeSearch = '';
 
 const meta = {
     'all':          { title: 'All Rugs',        sub: 'Every piece hand-selected. Each one woven once.' },
@@ -30,11 +31,14 @@ const meta = {
 };
 
 function applyFilters() {
+    const q = activeSearch.toLowerCase();
     let visible = 0;
     cards.forEach(card => {
-        const styleMatch = activeStyle === 'all' || card.dataset.style === activeStyle;
-        const sizeMatch  = activeSize  === 'all' || card.dataset.size  === activeSize;
-        const show = styleMatch && sizeMatch;
+        const styleMatch  = activeStyle === 'all' || card.dataset.style === activeStyle;
+        const sizeMatch   = activeSize  === 'all' || card.dataset.size  === activeSize;
+        const name        = card.querySelector('.product-card__name')?.textContent.toLowerCase() || '';
+        const searchMatch = !q || name.includes(q);
+        const show = styleMatch && sizeMatch && searchMatch;
         card.hidden = !show;
         if (show) visible++;
     });
@@ -74,6 +78,14 @@ document.getElementById('resetFilters')?.addEventListener('click', () => {
     setStyle('all');
     setSize('all');
 });
+
+const searchEl = document.getElementById('rugSearch');
+if (searchEl) {
+    searchEl.addEventListener('input', e => {
+        activeSearch = e.target.value.trim();
+        applyFilters();
+    });
+}
 
 /* Read URL hash on load and on change */
 const styleValues = new Set(['beni-ourain', 'azilal', 'boujaad', 'boucherouite', 'mrirt', 'contemporary', 'kilim']);

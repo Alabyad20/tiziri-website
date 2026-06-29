@@ -1641,6 +1641,40 @@ a {
 }
 
 
+.filter-bar__search {
+    font-family: var(--sans);
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.15em;
+    color: var(--stone);
+    background: none;
+    border: none;
+    border-bottom: 1px solid rgba(44, 42, 37, 0.25);
+    padding: 0 0 2px;
+    outline: none;
+    width: 120px;
+    transition: border-color 200ms ease;
+}
+
+.filter-bar__search::placeholder {
+    color: var(--mid-grey);
+    font-weight: 300;
+}
+
+.filter-bar__search:focus {
+    border-bottom-color: var(--stone);
+}
+
+.filter-bar__search::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    width: 10px;
+    height: 10px;
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 10'%3E%3Cpath d='M1 1l8 8M9 1l-8 8' stroke='%239B9590' stroke-width='1.5' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-size: contain;
+}
+
+
 /* ============================================
    CATALOGUE
    ============================================ */
