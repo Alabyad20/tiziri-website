@@ -1,5 +1,6 @@
 # Claude Code (local tool settings — not project code)
 .claude/
+.agents/
 
 # OS artifacts
 .DS_Store
