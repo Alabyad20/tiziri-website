@@ -20,6 +20,10 @@ npm-debug.log*
 *.tmp
 *.log
 
+# Local admin tool — not part of the website
+admin.js
+admin.html
+
 # Video files — too large for GitHub (use external storage instead)
 *.mp4
 *.mov
