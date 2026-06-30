@@ -218,6 +218,103 @@
         }
         .mto-cta__btn:hover { background: #c4622d; color: #fff; }
 
+        /* Size guide */
+        .mto-sizes {
+            padding: 72px 24px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .mto-sizes__heading {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(1.6rem, 3vw, 2.2rem);
+            font-weight: 300;
+            letter-spacing: 0.04em;
+            text-align: center;
+            margin: 0 0 8px;
+            color: #1a1a1a;
+        }
+        .mto-sizes__sub {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 300;
+            color: #888;
+            text-align: center;
+            margin: 0 0 48px;
+            letter-spacing: 0.04em;
+        }
+        .mto-sizes__grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 16px;
+        }
+        @media (max-width: 900px) {
+            .mto-sizes__grid { grid-template-columns: repeat(3, 1fr); }
+        }
+        @media (max-width: 560px) {
+            .mto-sizes__grid { grid-template-columns: 1fr 1fr; }
+        }
+        .mto-size-card {
+            border: 1px solid #e8e3db;
+            padding: 28px 16px 24px;
+            text-align: center;
+            background: #fff;
+        }
+        .mto-size-card--custom {
+            background: #f7f4ef;
+            border-color: #c4622d;
+        }
+        .mto-size-card__label {
+            display: block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.72rem;
+            font-weight: 400;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: #c4622d;
+            margin-bottom: 10px;
+        }
+        .mto-size-card__name {
+            display: block;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+        }
+        .mto-size-card__cm {
+            display: block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.9rem;
+            font-weight: 400;
+            color: #1a1a1a;
+            margin-bottom: 4px;
+        }
+        .mto-size-card__ft {
+            display: block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.78rem;
+            font-weight: 300;
+            color: #999;
+            margin-bottom: 16px;
+        }
+        .mto-size-card__note {
+            display: block;
+            font-family: 'Jost', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 300;
+            color: #888;
+            line-height: 1.5;
+        }
+        .mto-sizes__footnote {
+            font-family: 'Jost', sans-serif;
+            font-size: 0.8rem;
+            font-weight: 300;
+            color: #aaa;
+            text-align: center;
+            margin: 24px 0 0;
+            letter-spacing: 0.03em;
+        }
+
         /* Catalogue section heading */
         .catalogue-heading {
             font-family: 'Cormorant Garamond', serif;
@@ -365,6 +462,63 @@
                     <p>We commission the weaving with our Berber artisan partners in the Atlas region. Once complete, your rug ships directly from Morocco to your door â€” no extra leg, no delay. Delivered in 6â€“8 weeks from deposit.</p>
                 </div>
             </div>
+        </div>
+    </section>
+
+
+    <!-- ============================================
+         SIZE GUIDE
+         ============================================ -->
+    <section>
+        <div class="mto-sizes">
+            <h2 class="mto-sizes__heading">Available Sizes</h2>
+            <p class="mto-sizes__sub">All sizes woven to order. Exact dimensions can be adjusted — just ask.</p>
+
+            <div class="mto-sizes__grid">
+
+                <div class="mto-size-card">
+                    <span class="mto-size-card__label">Small</span>
+                    <span class="mto-size-card__name">S</span>
+                    <span class="mto-size-card__cm">100 &times; 150 cm</span>
+                    <span class="mto-size-card__ft">3 ft 3 in &times; 5 ft</span>
+                    <span class="mto-size-card__note">Ideal for hallways, beside beds &amp; small seating areas</span>
+                </div>
+
+                <div class="mto-size-card">
+                    <span class="mto-size-card__label">Medium</span>
+                    <span class="mto-size-card__name">M</span>
+                    <span class="mto-size-card__cm">160 &times; 230 cm</span>
+                    <span class="mto-size-card__ft">5 ft 3 in &times; 7 ft 7 in</span>
+                    <span class="mto-size-card__note">Perfect under a dining table or in a living room</span>
+                </div>
+
+                <div class="mto-size-card">
+                    <span class="mto-size-card__label">Large</span>
+                    <span class="mto-size-card__name">L</span>
+                    <span class="mto-size-card__cm">200 &times; 300 cm</span>
+                    <span class="mto-size-card__ft">6 ft 7 in &times; 9 ft 10 in</span>
+                    <span class="mto-size-card__note">Anchors a full living room or large dining space</span>
+                </div>
+
+                <div class="mto-size-card">
+                    <span class="mto-size-card__label">Extra Large</span>
+                    <span class="mto-size-card__name">XL</span>
+                    <span class="mto-size-card__cm">250 &times; 350 cm</span>
+                    <span class="mto-size-card__ft">8 ft 2 in &times; 11 ft 6 in</span>
+                    <span class="mto-size-card__note">Statement piece for open-plan &amp; large rooms</span>
+                </div>
+
+                <div class="mto-size-card mto-size-card--custom">
+                    <span class="mto-size-card__label">Custom</span>
+                    <span class="mto-size-card__name">✦</span>
+                    <span class="mto-size-card__cm">Any size</span>
+                    <span class="mto-size-card__ft">cm or ft — your choice</span>
+                    <span class="mto-size-card__note">Tell us exactly what you need and we'll make it</span>
+                </div>
+
+            </div>
+
+            <p class="mto-sizes__footnote">Runner sizes also available — typically 80 &times; 200 cm or 80 &times; 300 cm. Ask us for a quote.</p>
         </div>
     </section>
 
