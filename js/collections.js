@@ -1,22 +1,27 @@
-﻿/* ============================================
+/* ============================================
    TIZIRI — Collections Page
    ============================================ */
 
 'use strict';
 
-const grid      = document.getElementById('catalogueGrid');
-const countEl   = document.getElementById('visibleCount');
-const emptyEl   = document.getElementById('catalogueEmpty');
-const titleEl   = document.getElementById('collectionTitle');
-const subEl     = document.getElementById('collectionSub');
-const crumbEl   = document.getElementById('breadcrumbCurrent');
+const grid    = document.getElementById('catalogueGrid');
+const countEl = document.getElementById('visibleCount');
+const emptyEl = document.getElementById('catalogueEmpty');
+const titleEl = document.getElementById('collectionTitle');
+const subEl   = document.getElementById('collectionSub');
+const crumbEl = document.getElementById('breadcrumbCurrent');
 
 if (!grid) throw new Error('No catalogue grid found');
 
 const cards = [...grid.querySelectorAll('.product-card')];
 
+// Save original DOM order for "featured" sort
+const originalOrder = [...cards];
+
 let activeStyle  = 'all';
 let activeSize   = 'all';
+let activeRoom   = 'all';
+let activeSort   = 'featured';
 let activeSearch = '';
 
 const meta = {
@@ -30,20 +35,42 @@ const meta = {
     'kilim':        { title: 'Kilim',            sub: 'Flat weave. Graphic. Reversible.' },
 };
 
+function applySort() {
+    const sorted = [...cards];
+    if (activeSort === 'price-asc') {
+        sorted.sort((a, b) => {
+            const pa = parseFloat(a.dataset.priceNum) || Infinity;
+            const pb = parseFloat(b.dataset.priceNum) || Infinity;
+            return pa - pb;
+        });
+    } else if (activeSort === 'price-desc') {
+        sorted.sort((a, b) => {
+            const pa = parseFloat(a.dataset.priceNum) || -Infinity;
+            const pb = parseFloat(b.dataset.priceNum) || -Infinity;
+            return pb - pa;
+        });
+    } else {
+        // featured = original DOM order
+        sorted.sort((a, b) => originalOrder.indexOf(a) - originalOrder.indexOf(b));
+    }
+    sorted.forEach(card => grid.appendChild(card));
+}
+
 function applyFilters() {
     const q = activeSearch.toLowerCase();
     let visible = 0;
     cards.forEach(card => {
         const styleMatch  = activeStyle === 'all' || card.dataset.style === activeStyle;
         const sizeMatch   = activeSize  === 'all' || card.dataset.size  === activeSize;
+        const roomMatch   = activeRoom  === 'all' || card.dataset.room  === activeRoom;
         const name        = card.querySelector('.product-card__name')?.textContent.toLowerCase() || '';
         const searchMatch = !q || name.includes(q);
-        const show = styleMatch && sizeMatch && searchMatch;
+        const show = styleMatch && sizeMatch && roomMatch && searchMatch;
         card.hidden = !show;
         if (show) visible++;
     });
-    if (countEl)  countEl.textContent = visible;
-    if (emptyEl)  emptyEl.hidden = visible > 0;
+    if (countEl) countEl.textContent = visible;
+    if (emptyEl) emptyEl.hidden = visible > 0;
 }
 
 function setStyle(value) {
@@ -66,17 +93,38 @@ function setSize(value) {
     applyFilters();
 }
 
+function setRoom(value) {
+    activeRoom = value;
+    document.querySelectorAll('[data-filter="room"]').forEach(btn =>
+        btn.classList.toggle('active', btn.dataset.value === value)
+    );
+    applyFilters();
+}
+
 document.querySelectorAll('[data-filter="style"]').forEach(btn =>
     btn.addEventListener('click', () => setStyle(btn.dataset.value))
 );
-
 document.querySelectorAll('[data-filter="size"]').forEach(btn =>
     btn.addEventListener('click', () => setSize(btn.dataset.value))
 );
+document.querySelectorAll('[data-filter="room"]').forEach(btn =>
+    btn.addEventListener('click', () => setRoom(btn.dataset.value))
+);
+
+const sortEl = document.getElementById('sortSelect');
+if (sortEl) {
+    sortEl.addEventListener('change', () => {
+        activeSort = sortEl.value;
+        applySort();
+        applyFilters();
+    });
+}
 
 document.getElementById('resetFilters')?.addEventListener('click', () => {
     setStyle('all');
     setSize('all');
+    setRoom('all');
+    if (sortEl) { sortEl.value = 'featured'; activeSort = 'featured'; applySort(); }
 });
 
 const searchEl = document.getElementById('rugSearch');
@@ -90,12 +138,14 @@ if (searchEl) {
 /* Read URL hash on load and on change */
 const styleValues = new Set(['beni-ourain', 'azilal', 'boujaad', 'boucherouite', 'mrirt', 'contemporary', 'kilim']);
 const sizeValues  = new Set(['small', 'medium', 'large']);
+const roomValues  = new Set(['living-room', 'bedroom', 'dining-room', 'hallway']);
 
 function applyHash() {
     const hash = location.hash.slice(1);
-    if (styleValues.has(hash)) setStyle(hash);
+    if (styleValues.has(hash))     setStyle(hash);
     else if (sizeValues.has(hash)) setSize(hash);
-    else { setStyle('all'); setSize('all'); }
+    else if (roomValues.has(hash)) setRoom(hash);
+    else { setStyle('all'); setSize('all'); setRoom('all'); }
 }
 
 applyHash();

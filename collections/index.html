@@ -240,6 +240,21 @@
 
             <div class="filter-bar__divider" aria-hidden="true"></div>
 
+            <div class="filter-bar__divider" aria-hidden="true"></div>
+
+            <div class="filter-bar__group">
+                <span class="filter-bar__label">Room</span>
+                <div class="filter-bar__buttons" role="group" aria-label="Filter by room">
+                    <button class="filter-btn active" data-filter="room" data-value="all">All</button>
+                    <button class="filter-btn" data-filter="room" data-value="living-room">Living Room</button>
+                    <button class="filter-btn" data-filter="room" data-value="bedroom">Bedroom</button>
+                    <button class="filter-btn" data-filter="room" data-value="dining-room">Dining Room</button>
+                    <button class="filter-btn" data-filter="room" data-value="hallway">Hallway</button>
+                </div>
+            </div>
+
+            <div class="filter-bar__divider" aria-hidden="true"></div>
+
             <div class="filter-bar__group">
                 <label for="rugSearch" class="filter-bar__label">Name</label>
                 <input type="search" id="rugSearch" class="filter-bar__search"
@@ -247,8 +262,19 @@
                        aria-label="Search rugs by name">
             </div>
 
+            <div class="filter-bar__divider" aria-hidden="true"></div>
+
+            <div class="filter-bar__group">
+                <label for="sortSelect" class="filter-bar__label">Sort</label>
+                <select id="sortSelect" class="filter-bar__sort" aria-label="Sort rugs">
+                    <option value="featured">Featured</option>
+                    <option value="price-asc">Price: Low → High</option>
+                    <option value="price-desc">Price: High → Low</option>
+                </select>
+            </div>
+
             <span class="filter-bar__count">
-                <span id="visibleCount">71</span> rugs
+                <span id="visibleCount">73</span> rugs
             </span>
 
         </div>
@@ -263,7 +289,7 @@
 
             <!-- 1. Tislit — Beni Ourain — Large -->
             <a href="../rugs/tislit.html" class="product-card fade-up" aria-label="View Tislit"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260608-WA0039.webp"
                          alt="Cream Beni Ourain rug with diamond trellis pattern, Middle Atlas"
@@ -279,7 +305,7 @@
 
             <!-- 2. Aziza — Boujaad — Medium -->
             <a href="../rugs/aziza.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0420.webp"
                          alt="Colourful vintage Azilal rug with multicolour field, Azilal Region"
@@ -295,7 +321,7 @@
 
             <!-- 3. Nour — Mrirt — Large -->
             <a href="../rugs/nour.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0123.webp"
                          alt="Large blue and ivory Mrirt rug with interlocking geometric pattern"
@@ -311,7 +337,7 @@
 
             <!-- 4. Sama — Contemporary — Medium -->
             <a href="../rugs/sama.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0264.webp"
                          alt="Contemporary Moroccan rug with abstract colourfield and geometric motifs"
@@ -327,7 +353,7 @@
 
             <!-- 5. Lalla — Beni Ourain — Large -->
             <a href="../rugs/lalla.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0277.webp"
                          alt="Classic ivory Beni Ourain with geometric lozenges, High Atlas"
@@ -344,7 +370,7 @@
 
             <!-- 7. Fatima — Boujaad — Medium -->
             <a href="../rugs/fatima.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0417.webp"
                          alt="Bold Azilal rug with tribal field and coloured fringe, Azilal Region"
@@ -360,7 +386,7 @@
 
             <!-- 8. Malika — Boujaad — Small -->
             <a href="../rugs/malika.html" class="product-card fade-up"
-               data-style="boujaad" data-size="small">
+               data-style="boujaad" data-size="small" data-room="hallway">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0433.webp"
                          alt="Boucherouite rug woven from recycled textile in muted outdoor tones"
@@ -376,7 +402,7 @@
 
             <!-- 9. Zara — Mrirt — Medium -->
             <a href="../rugs/zara.html" class="product-card fade-up"
-               data-style="mrirt" data-size="medium">
+               data-style="mrirt" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0147.webp"
                          alt="Mrirt rug with warm earth tones and traditional medallion motif"
@@ -392,7 +418,7 @@
 
             <!-- 10. Siham — Beni Ourain — Small — SOLD -->
             <a href="../rugs/siham.html" class="product-card product-card--sold fade-up"
-               data-style="beni-ourain" data-size="small">
+               data-style="beni-ourain" data-size="small" data-room="hallway">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260608-WA0027.webp"
                          alt="Ivory Beni Ourain with fine pile and diamond lattice, High Atlas"
@@ -408,8 +434,8 @@
             </a>
 
             <!-- 11. Nabila — Contemporary — Large -->
-            <a href="../rugs/nabila.html" class="product-card fade-up"
-               data-style="contemporary" data-size="large">
+            <a href="../rugs/nabila.html" class="product-card fade-up" data-price-num="1850"
+               data-style="contemporary" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_163956.jpg"
                          alt="Forest green contemporary Moroccan rug with black abstract line art and checkerboard border"
@@ -420,12 +446,13 @@
                     <span class="product-card__name">Nabila</span>
                     <span class="product-card__type">Forest Green Abstract Rug</span>
                     <span class="product-card__meta">Contemporary &middot; 315 × 212 cm (10 ft 4 in × 6 ft 11 in)</span>
+                    <span class="product-card__price">$1,850</span>
                 </div>
             </a>
 
             <!-- 13. Rania — Mrirt — Large -->
-            <a href="../rugs/rania.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+            <a href="../rugs/rania.html" class="product-card fade-up" data-price-num="1450"
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260615-WA0039.webp"
                          alt="Authentic Mrirt Moroccan rug with terracotta and olive abstract forms on ivory ground"
@@ -436,6 +463,7 @@
                     <span class="product-card__name">Rania</span>
                     <span class="product-card__type">Terracotta &amp; Olive Mrirt</span>
                     <span class="product-card__meta">Mrirt · 303 × 205 cm (9 ft 11 in × 6 ft 9 in)</span>
+                    <span class="product-card__price">$1,450</span>
                 </div>
             </a>
 
@@ -443,7 +471,7 @@
 
             <!-- 14. Kenza — Beni Ourain — Large -->
             <a href="../rugs/kenza.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260608-WA0014.webp"
                          alt="Ivory Beni Ourain rug with dark teal diamond trellis pattern"
@@ -459,7 +487,7 @@
 
             <!-- 15. Houda — Beni Ourain — Large -->
             <a href="../rugs/houda.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260608-WA0010.webp"
                          alt="Ivory Beni Ourain rug with subtle raised diamond pattern"
@@ -475,7 +503,7 @@
 
             <!-- 16. Wafaa — Mrirt — Large -->
             <a href="../rugs/wafaa.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260608-WA0040.webp"
                          alt="Large ivory Mrirt rug with ultra-high pile"
@@ -492,7 +520,7 @@
 
             <!-- 18. Tafat — Mrirt — Large -->
             <a href="../rugs/tafat.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0055.webp"
                          alt="Olive green Mrirt Moroccan rug with concentric geometric lines"
@@ -508,7 +536,7 @@
 
             <!-- 19. Zineb — Mrirt — Large -->
             <a href="../rugs/zineb.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0082.webp"
                          alt="Stone grey Mrirt Moroccan rug with raised cobblestone texture"
@@ -524,7 +552,7 @@
 
             <!-- 20. Yasmine — Contemporary — Large -->
             <a href="../rugs/yasmine.html" class="product-card fade-up"
-               data-style="contemporary" data-size="large">
+               data-style="contemporary" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0146.webp"
                          alt="Ivory contemporary rug with terracotta and black vertical stripe composition"
@@ -540,7 +568,7 @@
 
             <!-- 21. Karima — Mrirt — Large -->
             <a href="../rugs/karima.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0148.webp"
                          alt="Rich saffron yellow Mrirt rug with deep high pile"
@@ -556,7 +584,7 @@
 
             <!-- 22. Chaima — Mrirt — Large -->
             <a href="../rugs/chaima.html" class="product-card fade-up"
-               data-style="mrirt" data-size="large">
+               data-style="mrirt" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260607-WA0149.webp"
                          alt="Multicolour Boucherouite rug in patchwork squares of bright colours"
@@ -572,7 +600,7 @@
 
             <!-- 23. Jamila — Beni Ourain — Large -->
             <a href="../rugs/jamila.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0257.webp"
                          alt="Ivory Beni Ourain rug with brown Amazigh geometric symbols and figures"
@@ -588,7 +616,7 @@
 
             <!-- 24. Bouchra — Contemporary — Large -->
             <a href="../rugs/bouchra.html" class="product-card fade-up"
-               data-style="contemporary" data-size="large">
+               data-style="contemporary" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0259.webp"
                          alt="Ivory contemporary rug with burgundy rectangular grid pattern"
@@ -604,7 +632,7 @@
 
             <!-- 25. Ghita — Contemporary — Large -->
             <a href="../rugs/ghita.html" class="product-card fade-up"
-               data-style="contemporary" data-size="large">
+               data-style="contemporary" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0260.webp"
                          alt="Abstract contemporary rug with dark brown, mauve and rose colour blocks on ivory"
@@ -620,7 +648,7 @@
 
             <!-- 26. Ilham — Beni Ourain — Medium -->
             <a href="../rugs/ilham.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="medium">
+               data-style="beni-ourain" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0261.webp"
                          alt="Ivory Beni Ourain rug with brown horizontal comb pattern repeat"
@@ -636,7 +664,7 @@
 
             <!-- 27. Loubna — Mrirt — Medium -->
             <a href="../rugs/loubna.html" class="product-card fade-up"
-               data-style="mrirt" data-size="medium">
+               data-style="mrirt" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0262.webp"
                          alt="Deep charcoal Mrirt rug with dense high pile"
@@ -652,7 +680,7 @@
 
             <!-- 28. Meryem — Beni Ourain — Large -->
             <a href="../rugs/meryem.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0267.webp"
                          alt="Ivory Beni Ourain rug with black architectural tribal geometric motifs"
@@ -668,7 +696,7 @@
 
             <!-- 29. Naima — Beni Ourain — Large -->
             <a href="../rugs/naima.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0268.webp"
                          alt="Ivory Beni Ourain rug with brown Amazigh figures and geometric marks"
@@ -684,7 +712,7 @@
 
             <!-- 30. Hassania — Contemporary — Large -->
             <a href="../rugs/rajaa.html" class="product-card fade-up"
-               data-style="contemporary" data-size="large">
+               data-style="contemporary" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0271.webp"
                          alt="Grey contemporary Moroccan rug with large ivory abstract shapes"
@@ -700,7 +728,7 @@
 
             <!-- 31. Salma — Beni Ourain — Large -->
             <a href="../rugs/salma.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0272.webp"
                          alt="Ivory Beni Ourain rug with sage green diamond geometric pattern"
@@ -716,7 +744,7 @@
 
             <!-- 32. Oumaima — Azilal — Medium -->
             <a href="../rugs/oumaima.html" class="product-card fade-up"
-               data-style="azilal" data-size="medium">
+               data-style="azilal" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0273.webp"
                          alt="Rose pink and ivory checkerboard Azilal rug"
@@ -732,7 +760,7 @@
 
             <!-- 33. Souad — Beni Ourain — Large -->
             <a href="../rugs/souad.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260530-WA0276.webp"
                          alt="Ivory Beni Ourain rug with concentric nested chevron lines"
@@ -748,7 +776,7 @@
 
             <!-- 34. Lamia — Boujaad — Large -->
             <a href="../rugs/lamia.html" class="product-card fade-up"
-               data-style="boujaad" data-size="large">
+               data-style="boujaad" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/Made%20to%20Order/IMG-20260621-WA0118.jpg"
                          alt="Large burnt orange Boujaad rug with broad grey abstract stripes"
@@ -764,7 +792,7 @@
 
             <!-- 35. Lina — Boujaad — Medium -->
             <a href="../rugs/lina.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Made%20to%20Order/IMG-20260621-WA0128.jpg"
                          alt="Blush pink Boujaad rug with two bold Amazigh double-diamond motifs"
@@ -780,7 +808,7 @@
 
             <!-- 37. Setti — Kilim — Medium -->
             <a href="../rugs/setti.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Made%20to%20Order/IMG-20260621-WA0170.jpg"
                          alt="Cobalt blue flat-woven Moroccan kilim with bold ivory zigzag border"
@@ -796,7 +824,7 @@
 
             <!-- 38. Dina — Kilim — Medium -->
             <a href="../rugs/dina.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Made%20to%20Order/IMG-20260621-WA0175.jpg"
                          alt="Blue-grey flat-woven kilim with large diamond lozenge in deeper indigo"
@@ -812,7 +840,7 @@
 
             <!-- 39. Maha — Boujaad — Medium -->
             <a href="../rugs/maha.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0004.jpg"
                          alt="Multicolour diamond-field Boujaad rug in vivid tones"
@@ -828,7 +856,7 @@
 
             <!-- 40. Manal — Boujaad — Medium -->
             <a href="../rugs/manal.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0005.jpg"
                          alt="Colour-block Boujaad in bold jewel tones with geometric field"
@@ -844,7 +872,7 @@
 
             <!-- 41. Mouna — Boujaad — Medium -->
             <a href="../rugs/mouna.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0006.jpg"
                          alt="Rich red Boujaad rug with dense geometric motif field"
@@ -860,7 +888,7 @@
 
             <!-- 42. Najat — Boujaad — Medium -->
             <a href="../rugs/najat.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0007.jpg"
                          alt="Ivory Boujaad rug with fine diamond lattice and multicolour geometric field"
@@ -876,7 +904,7 @@
 
             <!-- 43. Nihal — Boujaad — Medium -->
             <a href="../rugs/nihal.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0008.jpg"
                          alt="Terracotta and orange Boujaad rug with warm geometric field"
@@ -892,7 +920,7 @@
 
             <!-- 44. Noura — Boujaad — Medium -->
             <a href="../rugs/noura.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0011.jpg"
                          alt="Colourful diamond-field Boujaad with vivid multicolour geometric motifs"
@@ -908,7 +936,7 @@
 
             <!-- 45. Rahma — Boujaad — Medium -->
             <a href="../rugs/rahma.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0012.jpg"
                          alt="Wave-stripe Boujaad rug in undulating bands of warm colour"
@@ -924,7 +952,7 @@
 
             <!-- 46. Rim — Boujaad — Medium -->
             <a href="../rugs/rim.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0013.jpg"
                          alt="Ivory Boujaad rug with figurative and geometric motifs across the field"
@@ -940,7 +968,7 @@
 
             <!-- 47. Sabah — Boujaad — Medium -->
             <a href="../rugs/sabah.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0014.jpg"
                          alt="Bold diamond Boujaad in deep red and multicolour geometric field"
@@ -956,7 +984,7 @@
 
             <!-- 48. Amal — Kilim — Medium -->
             <a href="../rugs/amal.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0021.jpg"
                          alt="Flat-woven Kilim with bold indigo blue and ivory stacked triangle forms"
@@ -972,7 +1000,7 @@
 
             <!-- 49. Asma — Kilim — Medium -->
             <a href="../rugs/asma.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0022.jpg"
                          alt="Flat-woven Kilim in single saturated chartreuse yellow-green"
@@ -988,7 +1016,7 @@
 
             <!-- 50. Basma — Kilim — Medium -->
             <a href="../rugs/basma.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0023.jpg"
                          alt="Pale sand-yellow flat-woven Kilim with subtle intersecting line lattice"
@@ -1004,7 +1032,7 @@
 
             <!-- 51. Hanan — Kilim — Medium -->
             <a href="../rugs/hanan.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0025.jpg"
                          alt="Dusty violet flat-woven Kilim with precise diamond grid lattice"
@@ -1020,7 +1048,7 @@
 
             <!-- 52. Hasna — Kilim — Medium -->
             <a href="../rugs/hasna.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0026.jpg"
                          alt="Ivory flat-woven Kilim with two large dark maroon abstract forms"
@@ -1036,7 +1064,7 @@
 
             <!-- 53. Hayat — Kilim — Medium -->
             <a href="../rugs/hayat.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0027.jpg"
                          alt="Natural tone flat-woven Kilim in camel, sand and brown with diamond lattice"
@@ -1052,7 +1080,7 @@
 
             <!-- 54. Hind — Kilim — Medium -->
             <a href="../rugs/hind.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0028.jpg"
                          alt="Ivory flat-woven Kilim with bold orange and grey geometric bands"
@@ -1068,7 +1096,7 @@
 
             <!-- 55. Inas — Kilim — Medium -->
             <a href="../rugs/inas.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0031.jpg"
                          alt="Flat-woven Kilim in vivid red and forest green with ivory geometric check"
@@ -1084,7 +1112,7 @@
 
             <!-- 56. Jihane — Kilim — Medium -->
             <a href="../rugs/jihane.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0033.jpg"
                          alt="White flat-woven Kilim with single oversized indigo blue cross motif"
@@ -1100,7 +1128,7 @@
 
             <!-- 57. Khadija — Kilim — Medium -->
             <a href="../rugs/khadija.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0036.jpg"
                          alt="Deep teal flat-woven Kilim with precise ivory diamond lattice"
@@ -1116,7 +1144,7 @@
 
             <!-- 58. Layla — Kilim — Medium -->
             <a href="../rugs/layla.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0037.jpg"
                          alt="Vintage flat-woven Kilim in warm golden amber and deep navy"
@@ -1132,7 +1160,7 @@
 
             <!-- 59. Leila — Kilim — Medium -->
             <a href="../rugs/leila.html" class="product-card fade-up"
-               data-style="kilim" data-size="medium">
+               data-style="kilim" data-room="dining-room" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260621-WA0038.jpg"
                          alt="Vivid emerald green and ivory flat-woven Kilim with stacked triangle motifs"
@@ -1148,7 +1176,7 @@
 
             <!-- 60. Sana — Beni Ourain — Medium -->
             <a href="../rugs/sana.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="medium">
+               data-style="beni-ourain" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0039.jpg"
                          alt="Beni Ourain rug in olive green and ivory with bold concentric diamond pattern"
@@ -1166,7 +1194,7 @@
 
             <!-- 62. Safiya — Mrirt — Medium -->
             <a href="../rugs/safiya.html" class="product-card fade-up"
-               data-style="mrirt" data-size="medium">
+               data-style="mrirt" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0041.jpg"
                          alt="High-pile Mrirt rug in ivory with bold cobalt blue abstract geometric lines"
@@ -1182,7 +1210,7 @@
 
             <!-- 63. Soundouss — Contemporary — Medium -->
             <a href="../rugs/soundouss.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0043.jpg"
                          alt="Contemporary hand-knotted rug in white wool with scattered multicolour abstract art motifs"
@@ -1198,7 +1226,7 @@
 
             <!-- 64. Wisal — Contemporary — Medium -->
             <a href="../rugs/wisal.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0044.jpg"
                          alt="Contemporary hand-knotted Moroccan rug in ivory and warm amber with bold abstract rectangular grid"
@@ -1214,7 +1242,7 @@
 
             <!-- 65. Yousra — Mrirt — Medium -->
             <a href="../rugs/yousra.html" class="product-card fade-up"
-               data-style="mrirt" data-size="medium">
+               data-style="mrirt" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0045.jpg"
                          alt="High-pile Mrirt rug in ivory and sage green with flowing horizontal wave stripe pattern"
@@ -1230,7 +1258,7 @@
 
             <!-- 66. Zahra — Contemporary — Medium -->
             <a href="../rugs/zahra.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0046.jpg"
                          alt="Contemporary Moroccan rug in bold colour-block sections of olive, hot pink, red and orange"
@@ -1246,7 +1274,7 @@
 
             <!-- 67. Halima — Contemporary — Medium -->
             <a href="../rugs/halima.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0087.jpg"
                          alt="Contemporary hand-knotted rug in ivory with bold blush pink and terracotta abstract shapes"
@@ -1262,7 +1290,7 @@
 
             <!-- 68. Nawal — Mrirt — Medium -->
             <a href="../rugs/nawal.html" class="product-card fade-up"
-               data-style="mrirt" data-size="medium">
+               data-style="mrirt" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/IMG-20260618-WA0082.jpg"
                          alt="Dark teal Mrirt runner with ivory diamond lattice pattern, high pile"
@@ -1277,8 +1305,8 @@
             </a>
 
             <!-- 69. Rachida — Beni Ourain — Medium -->
-            <a href="../rugs/rachida.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="medium">
+            <a href="../rugs/rachida.html" class="product-card fade-up" data-price-num="1350"
+               data-style="beni-ourain" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_121836.jpg"
                          alt="Ivory Beni Ourain rug with subtle diamond lattice and plush high pile"
@@ -1289,12 +1317,13 @@
                     <span class="product-card__name">Rachida</span>
                     <span class="product-card__type">Ivory Beni Ourain Diamond Lattice</span>
                     <span class="product-card__meta">Beni Ourain · 300 × 200 cm</span>
+                    <span class="product-card__price">$1,350</span>
                 </div>
             </a>
 
             <!-- 70. Saadia — Beni Ourain — Medium -->
-            <a href="../rugs/saadia.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large">
+            <a href="../rugs/saadia.html" class="product-card fade-up" data-price-num="1400"
+               data-style="beni-ourain" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_124144_1.jpg"
                          alt="Ivory Beni Ourain rug with diamond lattice and distinctive long braided tassel fringe"
@@ -1305,12 +1334,13 @@
                     <span class="product-card__name">Saadia</span>
                     <span class="product-card__type">Ivory Beni Ourain with Tassel Fringe</span>
                     <span class="product-card__meta">Beni Ourain · 315 × 190 cm</span>
+                    <span class="product-card__price">$1,400</span>
                 </div>
             </a>
 
             <!-- 71. Fadwa — Contemporary — Medium -->
             <a href="../rugs/fadwa.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_133321.jpg"
                          alt="Picasso-inspired art Moroccan rug with abstract cubist face in cobalt blue, mustard yellow and charcoal grey"
@@ -1320,13 +1350,13 @@
                 <div class="product-card__info">
                     <span class="product-card__name">Fadwa</span>
                     <span class="product-card__type">Picasso-Inspired Abstract Art Rug</span>
-                    <span class="product-card__meta">Contemporary &middot; 300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)</span>
+                    <span class="product-card__meta">Contemporary · 287 × 207 cm (9 ft 5 in × 6 ft 9 in)</span>
                 </div>
             </a>
 
             <!-- 72. Latifa — Contemporary — Medium -->
-            <a href="../rugs/latifa.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+            <a href="../rugs/latifa.html" class="product-card fade-up" data-price-num="1200"
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134504.jpg"
                          alt="All-ivory carved Moroccan rug with sculpted maze labyrinth pattern"
@@ -1337,12 +1367,13 @@
                     <span class="product-card__name">Latifa</span>
                     <span class="product-card__type">Carved Ivory Maze Rug</span>
                     <span class="product-card__meta">Contemporary · 271 × 200 cm</span>
+                    <span class="product-card__price">$1,200</span>
                 </div>
             </a>
 
             <!-- 73. Ikram — Contemporary — Large -->
             <a href="../rugs/ikram.html" class="product-card fade-up"
-               data-style="contemporary" data-size="large">
+               data-style="contemporary" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141042.jpg"
                          alt="Black and white Moroccan rug with checkerboard field and hand-drawn line art"
@@ -1357,8 +1388,8 @@
             </a>
 
             <!-- 74. Sirine — Contemporary — Medium -->
-            <a href="../rugs/sirine.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+            <a href="../rugs/sirine.html" class="product-card fade-up" data-price-num="1200"
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_144855.jpg"
                          alt="Bold colour-block Moroccan rug with navy, lime green, taupe and hot pink geometric fields"
@@ -1369,12 +1400,13 @@
                     <span class="product-card__name">Sirine</span>
                     <span class="product-card__type">Bold Colour-Block Geometric Rug</span>
                     <span class="product-card__meta">Contemporary · 248 × 160 cm (8 ft 2 in × 5 ft 3 in)</span>
+                    <span class="product-card__price">$1,200</span>
                 </div>
             </a>
 
             <!-- 75. Najoua — Boujaad — Medium -->
-            <a href="../rugs/najoua.html" class="product-card fade-up"
-               data-style="boujaad" data-size="medium">
+            <a href="../rugs/najoua.html" class="product-card fade-up" data-price-num="1100"
+               data-style="boujaad" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151206.jpg"
                          alt="Cobalt blue Boujaad rug with white rectangular grid motifs across the full plush field"
@@ -1385,12 +1417,13 @@
                     <span class="product-card__name">Najoua</span>
                     <span class="product-card__type">Cobalt Blue Boujaad with White Grid</span>
                     <span class="product-card__meta">Boujaad · 245 × 160 cm (8 ft 0 in × 5 ft 3 in)</span>
+                    <span class="product-card__price">$1,100</span>
                 </div>
             </a>
 
             <!-- 76. Karima (new) — Contemporary — Medium -->
-            <a href="../rugs/karima2.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+            <a href="../rugs/karima2.html" class="product-card fade-up" data-price-num="1050"
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/karima/IMG_20260627_153554.jpg"
                          alt="Cream and beige contemporary Moroccan rug with scattered royal blue rectangles"
@@ -1401,13 +1434,14 @@
                     <span class="product-card__name">Karima</span>
                     <span class="product-card__type">Cream &amp; Royal Blue Rectangle Rug</span>
                     <span class="product-card__meta">Contemporary · 244 × 157 cm</span>
+                    <span class="product-card__price">$1,050</span>
                 </div>
             </a>
 
 
             <!-- 78. Wahiba — Boujaad — Large -->
             <a href="../rugs/wahiba.html" class="product-card fade-up"
-               data-style="boujaad" data-size="large">
+               data-style="boujaad" data-size="large" data-room="living-room">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161709.jpg"
                          alt="Vivid tribal Boujaad rug with diamond and eye motifs in red, pink, orange and teal"
@@ -1422,8 +1456,8 @@
             </a>
 
             <!-- 79. Majda — Contemporary — Medium -->
-            <a href="../rugs/majda.html" class="product-card fade-up"
-               data-style="contemporary" data-size="medium">
+            <a href="../rugs/majda.html" class="product-card fade-up" data-price-num="1400"
+               data-style="contemporary" data-size="medium" data-room="bedroom">
                 <div class="product-card__image">
                     <img src="../rug-photos/Newly%20taken%20photos/majda/IMG_20260627_174044.jpg"
                          alt="Abstract art Moroccan rug with turquoise, olive, pink and yellow colour blocks on cream"
@@ -1434,6 +1468,7 @@
                     <span class="product-card__name">Majda</span>
                     <span class="product-card__type">Abstract Art Moroccan Rug</span>
                     <span class="product-card__meta">Contemporary · 286 × 194 cm (9 ft 5 in × 6 ft 4 in)</span>
+                    <span class="product-card__price">$1,400</span>
                 </div>
             </a>
 
