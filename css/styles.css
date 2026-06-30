@@ -2014,12 +2014,24 @@ a {
     border: 1px solid var(--terracotta);
     cursor: pointer;
     transition: background-color 250ms ease, border-color 250ms ease, color 250ms ease;
-    margin-bottom: 28px;
+    margin-bottom: 12px;
 }
 
 .product__cta:hover {
     background: var(--stone);
     border-color: var(--stone);
+    color: var(--white);
+}
+
+.product__cta--secondary {
+    background: transparent;
+    color: var(--stone);
+    border-color: var(--stone);
+    margin-bottom: 28px;
+}
+
+.product__cta--secondary:hover {
+    background: var(--stone);
     color: var(--white);
 }
 
