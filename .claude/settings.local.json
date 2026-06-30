@@ -21,7 +21,11 @@
       "Bash(git add *)",
       "Bash(git commit -m ' *)",
       "Bash(git remote *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "WebFetch(domain:tizirirugs.com)",
+      "WebFetch(domain:amberinteriordesign.com)",
+      "WebFetch(domain:www.burnhamdesign.com)",
+      "PowerShell(Get-PSDrive C | Select-Object @{Name='Free\\(GB\\)';Expression={[math]::Round\\($_.Free/1GB,2\\)}}, @{Name='Used\\(GB\\)';Expression={[math]::Round\\($_.Used/1GB,2\\)}})"
     ]
   }
 }
