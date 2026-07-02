@@ -30,3 +30,6 @@ admin.html
 *.mov
 *.avi
 *.mkv
+
+# Rug Design Studio — standalone app, not part of this site's deploy
+rug-designer/
