@@ -40,3 +40,9 @@ logos/capture*.html
 logos/preview.html
 logos/weave-preview.html
 logos/convert.js
+
+# Internal planning/design artifacts — not part of the live site, were being
+# deployed and publicly crawlable (brand strategy, launch checklist, mockups)
+docs/
+designs/
+inspiration/
