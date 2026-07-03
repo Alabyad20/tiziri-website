@@ -1833,6 +1833,20 @@ a {
     aspect-ratio: 4 / 5;
 }
 
+.product__gallery-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    color: var(--mid-grey);
+    text-transform: uppercase;
+}
+
 .product__gallery-main img {
     width: 100%;
     height: 100%;

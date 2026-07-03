@@ -158,7 +158,9 @@ def build_product_schema(rug, store):
         "name": rug["name"],
         "description": rug["description"],
         "url": url,
-        "image": rug["images"] if rug["images"] else [f"{SITE}/rug-photos/IMG-20260607-WA0056.webp"],
+        # omitted entirely (not a fallback stock photo) when no real photos exist yet --
+        # see the "offers" comment below for the same reasoning
+        **({"image": rug["images"]} if rug["images"] else {}),
         "sku": sku_for(rug["slug"]),
         "brand": {"@type": "Brand", "name": "TIZIRI"},
         "category": rug["category"],
