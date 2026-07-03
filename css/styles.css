@@ -3292,3 +3292,28 @@ textarea:focus-visible,
     outline: 2px solid var(--terracotta);
     outline-offset: 2px;
 }
+
+.product__sizes {
+    list-style: none;
+    margin: 12px 0 0;
+    padding: 0;
+    border-top: 1px solid var(--warm-grey);
+}
+.product__sizes li {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid var(--warm-grey);
+    font-size: 13px;
+    font-family: var(--sans);
+    color: var(--stone);
+}
+.product__sizes li span:first-child { color: var(--mid-grey); }
+.product__sizes li span:last-child { font-weight: 400; }
+.product__size-note {
+    font-size: 12px;
+    color: var(--mid-grey);
+    font-family: var(--sans);
+    margin: 10px 0 18px;
+    line-height: 1.6;
+}
