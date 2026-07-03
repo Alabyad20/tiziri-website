@@ -150,3 +150,11 @@ function applyHash() {
 
 applyHash();
 window.addEventListener('hashchange', applyHash);
+
+/* Read ?q= on load (populates the Name search box, e.g. from Google's sitelinks search box) */
+const initialQuery = new URLSearchParams(location.search).get('q');
+if (initialQuery && searchEl) {
+    searchEl.value = initialQuery;
+    activeSearch = initialQuery.trim();
+    applyFilters();
+}

@@ -1,4 +1,5 @@
 [build]
+  command = "python3 scripts/schema_tools.py build"
   publish = "."
 
 # Cache static assets aggressively; never cache HTML

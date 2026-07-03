@@ -1,0 +1,62 @@
+{
+  "organization": {
+    "@type": "Organization",
+    "@id": "https://tizirirugs.com/#organization",
+    "name": "TIZIRI",
+    "url": "https://tizirirugs.com",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://tizirirugs.com/apple-touch-icon.png",
+      "width": 180,
+      "height": 180
+    },
+    "email": "hello@tizirirugs.com",
+    "telephone": "+16175105376",
+    "sameAs": [
+      "https://www.instagram.com/tizirirugs",
+      "https://www.pinterest.com/tizirirugs"
+    ]
+  },
+  "organizationRef": {
+    "@type": "Organization",
+    "@id": "https://tizirirugs.com/#organization"
+  },
+  "website": {
+    "@type": "WebSite",
+    "@id": "https://tizirirugs.com/#website",
+    "url": "https://tizirirugs.com",
+    "name": "TIZIRI",
+    "description": "Authentic handwoven Moroccan rugs sourced directly from Berber artisans in the Atlas region. One of a kind. Delivered worldwide.",
+    "publisher": { "@id": "https://tizirirugs.com/#organization" },
+    "potentialAction": {
+      "@type": "SearchAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://tizirirugs.com/collections/?q={search_term_string}"
+      },
+      "query-input": "required name=search_term_string"
+    }
+  },
+  "returnPolicy": {
+    "@type": "MerchantReturnPolicy",
+    "@id": "https://tizirirugs.com/#return-policy",
+    "applicableCountry": "US",
+    "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+    "merchantReturnDays": 14,
+    "returnMethod": "https://schema.org/ReturnByMail",
+    "returnFees": "https://schema.org/FreeReturn",
+    "refundType": "https://schema.org/FullRefund"
+  },
+  "shippingDetailsUSA": {
+    "@type": "OfferShippingDetails",
+    "@id": "https://tizirirugs.com/#shipping-usa",
+    "shippingRate": { "@type": "MonetaryAmount", "value": "0", "currency": "USD" },
+    "shippingDestination": { "@type": "DefinedRegion", "addressCountry": "US" },
+    "deliveryTime": {
+      "@type": "ShippingDeliveryTime",
+      "handlingTime": { "@type": "QuantitativeValue", "minValue": 0, "maxValue": 2, "unitCode": "DAY" },
+      "transitTime": { "@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "DAY" }
+    }
+  },
+  "priceValidDays": 90
+}
