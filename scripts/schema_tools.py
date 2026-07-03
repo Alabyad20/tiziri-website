@@ -2,12 +2,15 @@
 """
 TIZIRI structured-data tools.
 
-  seed  - parse existing rugs/*.html pages into data/rugs.json (one-time / re-runnable bootstrap)
-  build - regenerate JSON-LD in every page from data/rugs.json + data/store.json (the real generator)
+  seed    - parse existing rugs/*.html pages into data/rugs.json (one-time / re-runnable bootstrap)
+  build   - regenerate JSON-LD in every page from data/rugs.json + data/store.json (the real generator)
+  sitemap - regenerate sitemap.xml from data/rugs.json + BLOG_POSTS, preserving the
+            hand-curated "Sold rugs" section as-is
 
 Run from the repo root:
     python3 scripts/schema_tools.py seed
     python3 scripts/schema_tools.py build
+    python3 scripts/schema_tools.py sitemap
 """
 import json
 import os
@@ -368,6 +371,95 @@ def build_blog(store):
     return results
 
 
+# Static pages that aren't rugs or blog posts. (path, changefreq, priority)
+STATIC_PAGES = [
+    ("", "weekly", "1.0"),
+    ("collections/", "weekly", "0.9"),
+    ("craft/", "monthly", "0.7"),
+    ("story/", "monthly", "0.6"),
+    ("contact/", "monthly", "0.6"),
+    ("shipping/", "monthly", "0.5"),
+    ("care/", "monthly", "0.5"),
+    ("faq/", "monthly", "0.5"),
+    ("made-to-order/", "monthly", "0.8"),
+    ("privacy/", "yearly", "0.3"),
+    ("terms/", "yearly", "0.3"),
+]
+
+SITEMAP_URL_RE = re.compile(
+    r"<url>\s*<loc>(.*?)</loc>\s*<lastmod>(.*?)</lastmod>\s*"
+    r"<changefreq>(.*?)</changefreq>\s*<priority>(.*?)</priority>\s*</url>",
+    re.DOTALL,
+)
+
+
+def _sitemap_url(loc, lastmod, changefreq, priority):
+    return (
+        f"    <url>\n"
+        f"        <loc>{loc}</loc>\n"
+        f"        <lastmod>{lastmod}</lastmod>\n"
+        f"        <changefreq>{changefreq}</changefreq>\n"
+        f"        <priority>{priority}</priority>\n"
+        f"    </url>"
+    )
+
+
+def build_sitemap(rugs, today_str):
+    """Regenerates the auto-derivable sections (static pages, active rugs, blog
+    posts). Preserves the hand-curated "Sold rugs" section verbatim by reading
+    it back out of the existing file, since which rugs are sold isn't tracked
+    in data/rugs.json and shouldn't be guessed."""
+    path = os.path.join(ROOT, "sitemap.xml")
+    with open(path, "r", encoding="utf-8") as f:
+        existing = f.read()
+
+    m = re.search(
+        r"(<!-- Sold rugs.*?-->.*?)(?=\s*</urlset>)", existing, re.DOTALL
+    )
+    sold_block = m.group(1).rstrip() if m else ""
+    sold_slugs = set()
+    if sold_block:
+        for loc, *_ in SITEMAP_URL_RE.findall(sold_block):
+            sold_slugs.add(loc.rstrip("/").rsplit("/", 1)[-1].replace(".html", ""))
+
+    blocks = ['<?xml version="1.0" encoding="UTF-8"?>',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+              "", "    <!-- Core pages -->"]
+    for slug, changefreq, priority in STATIC_PAGES:
+        blocks.append(_sitemap_url(f"{SITE}/{slug}", today_str, changefreq, priority))
+
+    blocks.append("")
+    blocks.append("    <!-- Blog posts -->")
+    for meta in BLOG_POSTS.values():
+        blocks.append(_sitemap_url(meta["url"], meta.get("dateModified", meta["datePublished"]), "monthly", "0.6"))
+
+    blocks.append("")
+    blocks.append("    <!-- Available rugs -->")
+    for rug in rugs:
+        if rug["slug"] in sold_slugs:
+            continue
+        blocks.append(_sitemap_url(f"{SITE}/rugs/{rug['slug']}.html", today_str, "monthly", "0.9"))
+
+    if sold_block:
+        blocks.append("")
+        blocks.append(sold_block)
+
+    blocks.append("")
+    blocks.append("</urlset>")
+    blocks.append("")
+    return path, "\n".join(blocks)
+
+
+def sitemap():
+    rugs = load_json(DATA_RUGS)
+    today_str = date.today().isoformat()
+    path, content = build_sitemap(rugs, today_str)
+    with open(path, "w", encoding="utf-8") as f:
+        f.write(content)
+    n_urls = content.count("<url>")
+    print(f"Regenerated sitemap.xml with {n_urls} URLs.")
+
+
 def build():
     rugs = load_json(DATA_RUGS)
     store = load_json(DATA_STORE)
@@ -406,7 +498,7 @@ def build():
 
 
 if __name__ == "__main__":
-    if len(sys.argv) != 2 or sys.argv[1] not in ("seed", "build"):
+    if len(sys.argv) != 2 or sys.argv[1] not in ("seed", "build", "sitemap"):
         print(__doc__)
         sys.exit(1)
-    {"seed": seed, "build": build}[sys.argv[1]]()
+    {"seed": seed, "build": build, "sitemap": sitemap}[sys.argv[1]]()
