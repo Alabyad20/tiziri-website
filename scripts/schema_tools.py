@@ -357,6 +357,16 @@ BLOG_POSTS = {
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/boujaad-rug-guide/",
     },
+    "blog/kilim-rug-guide/index.html": {
+        "headline": "The Complete Guide to Moroccan Kilim Rugs",
+        "description": (
+            "Everything you need to know about Moroccan kilim rugs — how flat-weave differs "
+            "from pile, where to use one, how to spot a genuine hand-woven kilim, and what to pay."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260621-WA0021.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/kilim-rug-guide/",
+    },
 }
 
 
