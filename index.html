@@ -28,7 +28,7 @@
     <link rel="stylesheet" href="css/styles.css?v=7">
     <script defer data-domain="tizirirugs.com" src="https://plausible.io/js/script.js"></script>
     <script type="application/ld+json">
-    {
+            {
       "@context": "https://schema.org",
       "@graph": [
         {
@@ -44,7 +44,10 @@
           },
           "email": "hello@tizirirugs.com",
           "telephone": "+16175105376",
-          "sameAs": ["https://www.instagram.com/tizirirugs", "https://www.pinterest.com/tizirirugs"]
+          "sameAs": [
+            "https://www.instagram.com/tizirirugs",
+            "https://www.pinterest.com/tizirirugs"
+          ]
         },
         {
           "@type": "WebSite",
@@ -52,7 +55,17 @@
           "url": "https://tizirirugs.com",
           "name": "TIZIRI",
           "description": "Authentic handwoven Moroccan rugs sourced directly from Berber artisans in the Atlas region. One of a kind. Delivered worldwide.",
-          "publisher": {"@id": "https://tizirirugs.com/#organization"}
+          "publisher": {
+            "@id": "https://tizirirugs.com/#organization"
+          },
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+              "@type": "EntryPoint",
+              "urlTemplate": "https://tizirirugs.com/collections/?q={search_term_string}"
+            },
+            "query-input": "required name=search_term_string"
+          }
         }
       ]
     }
