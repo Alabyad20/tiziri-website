@@ -376,6 +376,7 @@ STATIC_PAGES = [
     ("", "weekly", "1.0"),
     ("collections/", "weekly", "0.9"),
     ("craft/", "monthly", "0.7"),
+    ("blog/", "weekly", "0.7"),
     ("story/", "monthly", "0.6"),
     ("contact/", "monthly", "0.6"),
     ("shipping/", "monthly", "0.5"),
