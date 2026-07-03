@@ -79,7 +79,12 @@ def seed():
         price = int(m_price.group(1).replace(",", "")) if m_price else None
 
         m_avail = re.search(r'"availability":\s*"https://schema\.org/(\w+)"', html)
-        availability = m_avail.group(1) if m_avail else "InStock"
+        if m_avail:
+            availability = m_avail.group(1)
+        elif 'product__avail--sold' in html:
+            availability = "SoldOut"
+        else:
+            availability = "InStock"
 
         images = []
         m_main = re.search(r'<img\s+src="([^"]+)"[^>]*\bid="mainImage"', html, re.DOTALL)
