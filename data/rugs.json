@@ -1107,9 +1107,10 @@
     "currency": "USD",
     "availability": "InStock",
     "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0123.webp",
-      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0082.webp",
-      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0055.webp"
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0123.jpg",
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0128.jpg",
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0129.jpg",
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0130.jpg"
     ],
     "stripeLink": null,
     "rating": null,
