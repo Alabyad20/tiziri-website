@@ -22,7 +22,7 @@ DATA_STORE = os.path.join(ROOT, "data", "store.json")
 SITE = "https://tizirirugs.com"
 
 LDJSON_RE = re.compile(
-    r'(<script type="application/ld\+json">\s*)(\{.*?\})(\s*</script>)', re.DOTALL
+    r'(<script type="application/ld\+json">)(.*?)(</script>)', re.DOTALL
 )
 
 
@@ -234,6 +234,10 @@ def build_breadcrumb_schema(rug):
 
 
 def replace_ldjson_blocks(html, new_blocks, path):
+    """Idempotent by construction: always replaces the full <script>...</script>
+    span (tags included) with a fixed-format block, never appending to whatever
+    whitespace happened to already be there. Re-running on already-generated
+    output must produce byte-identical results."""
     matches = list(LDJSON_RE.finditer(html))
     if len(matches) != len(new_blocks):
         raise ValueError(
@@ -242,12 +246,13 @@ def replace_ldjson_blocks(html, new_blocks, path):
     out = html
     for m, block in reversed(list(zip(matches, new_blocks))):
         payload = json.dumps(block, indent=2, ensure_ascii=False)
-        # re-validate before writing anything
-        json.loads(payload)
+        json.loads(payload)  # re-validate before writing anything
+        # every line (including the opening brace) gets exactly one 4-space indent
         indented = "\n".join(
             ("    " + line if line.strip() else line) for line in payload.splitlines()
         )
-        out = out[:m.start(2)] + indented + out[m.end(2):]
+        replacement = f'{m.group(1)}\n{indented}\n    {m.group(3)}'
+        out = out[:m.start()] + replacement + out[m.end():]
     return out
 
 
