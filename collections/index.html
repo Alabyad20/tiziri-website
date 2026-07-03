@@ -34,9 +34,8 @@
       "name": "Handwoven Moroccan Rugs — TIZIRI",
       "description": "Browse our complete collection of handwoven Moroccan rugs. Beni Ourain, Azilal, Mrirt, Boucherouite and contemporary pieces — sourced directly from Berber artisans.",
       "url": "https://tizirirugs.com/collections/",
-      "numberOfItems": 72,
+      "numberOfItems": 69,
       "itemListElement": [
-        {"@type": "ListItem", "position": 1,  "name": "Tislit — Ivory Diamond Beni Ourain",        "url": "https://tizirirugs.com/rugs/tislit.html"},
         {"@type": "ListItem", "position": 2,  "name": "Aziza — Plant-Dyed Vintage Boujaad",         "url": "https://tizirirugs.com/rugs/aziza.html"},
         {"@type": "ListItem", "position": 3,  "name": "Nour — Blue & Ivory Mrirt",                 "url": "https://tizirirugs.com/rugs/nour.html"},
         {"@type": "ListItem", "position": 5,  "name": "Lalla — Ivory Lozenge Beni Ourain",         "url": "https://tizirirugs.com/rugs/lalla.html"},
@@ -212,6 +211,15 @@
         <div class="filter-bar__inner">
 
             <div class="filter-bar__group">
+                <label for="rugSearch" class="filter-bar__label">Name</label>
+                <input type="search" id="rugSearch" class="filter-bar__search"
+                       placeholder="e.g. Soumia" autocomplete="off" spellcheck="false"
+                       aria-label="Search rugs by name">
+            </div>
+
+            <div class="filter-bar__divider" aria-hidden="true"></div>
+
+            <div class="filter-bar__group">
                 <span class="filter-bar__label">Style</span>
                 <div class="filter-bar__buttons" role="group" aria-label="Filter by style">
                     <button class="filter-btn active" data-filter="style" data-value="all">All</button>
@@ -255,15 +263,6 @@
             <div class="filter-bar__divider" aria-hidden="true"></div>
 
             <div class="filter-bar__group">
-                <label for="rugSearch" class="filter-bar__label">Name</label>
-                <input type="search" id="rugSearch" class="filter-bar__search"
-                       placeholder="e.g. Soumia" autocomplete="off" spellcheck="false"
-                       aria-label="Search rugs by name">
-            </div>
-
-            <div class="filter-bar__divider" aria-hidden="true"></div>
-
-            <div class="filter-bar__group">
                 <label for="sortSelect" class="filter-bar__label">Sort</label>
                 <select id="sortSelect" class="filter-bar__sort" aria-label="Sort rugs">
                     <option value="featured">Featured</option>
@@ -285,22 +284,6 @@
          ============================================ -->
     <main class="catalogue">
         <div class="catalogue__grid" id="catalogueGrid">
-
-            <!-- 1. Tislit — Beni Ourain — Large -->
-            <a href="../rugs/tislit.html" class="product-card fade-up" aria-label="View Tislit"
-               data-style="beni-ourain" data-size="large" data-room="living-room">
-                <div class="product-card__image">
-                    <img src="../rug-photos/IMG-20260608-WA0039.webp"
-                         alt="Cream Beni Ourain rug with diamond trellis pattern, Middle Atlas"
-                         loading="lazy">
-                    <span class="product-card__badge">1 Available</span>
-                </div>
-                <div class="product-card__info">
-                    <span class="product-card__name">Tislit</span>
-                    <span class="product-card__type">Ivory Diamond Beni Ourain</span>
-                    <span class="product-card__meta">Middle Atlas · 200 × 310 cm</span>
-                </div>
-            </a>
 
             <!-- 2. Aziza — Boujaad — Medium -->
             <a href="../rugs/aziza.html" class="product-card fade-up"
@@ -464,22 +447,6 @@
                 <div class="product-card__info">
                     <span class="product-card__name">Kenza</span>
                     <span class="product-card__type">Teal &amp; Ivory Beni Ourain</span>
-                    <span class="product-card__meta">Morocco &middot; 300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)</span>
-                </div>
-            </a>
-
-            <!-- 15. Houda — Beni Ourain — Large -->
-            <a href="../rugs/houda.html" class="product-card fade-up"
-               data-style="beni-ourain" data-size="large" data-room="living-room">
-                <div class="product-card__image">
-                    <img src="../rug-photos/IMG-20260608-WA0010.webp"
-                         alt="Ivory Beni Ourain rug with subtle raised diamond pattern"
-                         loading="lazy">
-                    <span class="product-card__badge">1 Available</span>
-                </div>
-                <div class="product-card__info">
-                    <span class="product-card__name">Houda</span>
-                    <span class="product-card__type">Ivory Texture Beni Ourain</span>
                     <span class="product-card__meta">Morocco &middot; 300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)</span>
                 </div>
             </a>
