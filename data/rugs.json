@@ -164,7 +164,9 @@
     "price": null,
     "currency": "USD",
     "availability": "InStock",
-    "images": [],
+    "images": [
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0149.webp"
+    ],
     "stripeLink": null,
     "rating": null,
     "reviews": []
