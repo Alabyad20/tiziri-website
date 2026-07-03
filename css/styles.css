@@ -3255,3 +3255,11 @@ a {
     .sticky-buy { display: flex; }
     .product-page { padding-bottom: 72px; }
 }
+.product__secure-note {
+    font-size: 11px;
+    color: var(--mid-grey);
+    font-family: var(--sans);
+    text-align: center;
+    margin: 8px 0 0;
+    letter-spacing: 0.02em;
+}
