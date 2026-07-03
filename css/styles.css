@@ -1050,6 +1050,10 @@ a {
     outline: none;
 }
 
+.newsletter__input:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--stone);
+}
+
 .newsletter__input::placeholder {
     color: var(--mid-grey);
 }
@@ -1116,6 +1120,10 @@ a {
     width: 100% !important;
     box-shadow: none !important;
     outline: none !important;
+}
+
+.newsletter .ml-form-embedContainer input[type="email"]:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--stone) !important;
 }
 
 .newsletter .ml-form-embedContainer input[type="email"]::placeholder {
