@@ -367,6 +367,26 @@ BLOG_POSTS = {
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/kilim-rug-guide/",
     },
+    "blog/contemporary-moroccan-rug-guide/index.html": {
+        "headline": "The Complete Guide to Contemporary Moroccan Rugs",
+        "description": (
+            "Everything you need to know about contemporary Moroccan rugs — how modern designs "
+            "are still hand-knotted by traditional weavers, how to buy one, and how to style it."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0259.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/contemporary-moroccan-rug-guide/",
+    },
+    "blog/mrirt-rug-guide/index.html": {
+        "headline": "The Complete Guide to Mrirt Rugs",
+        "description": (
+            "Everything you need to know about Mrirt rugs — the Middle Atlas weaving tradition "
+            "behind them, how they compare to Beni Ourain, how to buy one, and what to pay."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260607-WA0149.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/mrirt-rug-guide/",
+    },
 }
 
 
