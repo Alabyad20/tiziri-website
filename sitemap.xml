@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
     <!-- Core pages -->
     <url>
@@ -81,42 +82,63 @@
         <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0056.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/how-to-authenticate-moroccan-rug/</loc>
         <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0227.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/how-to-clean-moroccan-wool-rug/</loc>
         <lastmod>2026-06-26</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0224.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/boujaad-rug-guide/</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0420.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/kilim-rug-guide/</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0021.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0259.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/mrirt-rug-guide/</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0149.webp</image:loc>
+        </image:image>
     </url>
 
     <!-- Available rugs -->
@@ -125,138 +147,294 @@
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0021.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/amira.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260531-WA0035.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/asma.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0022.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/aziza.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0420.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0419.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0421.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0423.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/bahija.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/bahija/IMG_20260627_011505.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/bahija/IMG_20260627_011507.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/basma.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0023.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/bouchra.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0259.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/chaima.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0149.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/dina.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/dina/IMG_20260627_011514.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/dina/IMG_20260627_011523.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/dina/IMG_20260627_011525.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/fadwa.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_132155.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_132106.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_132403.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0503.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_132945.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_133026.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_133153.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_133321.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_132740.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/fatima.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0417.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0418.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0425.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ghita.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0260.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/halima.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0087.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0088.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0089.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hanan.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0025.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hasna.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0026.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hayat.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0027.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hind.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0028.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0029.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ibtissam.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ibtissam/IMG_20260627_011516.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ibtissam/IMG_20260627_011517.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ibtissam/IMG_20260627_011520.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ikram.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141042.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141107.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_140917.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141559.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141616.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141709.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141819.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141929.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_142148.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ilham.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0261.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/inas.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0031.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/jamila.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0257.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/jihane.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0033.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/karima.html</loc>
@@ -269,330 +447,831 @@
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_153554.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_153631.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_153643.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_153721.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_154238.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_154315.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_154401.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_154417.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/karima/IMG_20260627_154424.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/kenza.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260608-WA0014.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260608-WA0033.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/khadija.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0036.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lalla.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0277.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0278.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0276.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lamia.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lamia/IMG_20260627_013135.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lamia/IMG_20260627_013136.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lamia/IMG_20260627_013138.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/latifa.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134504.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134151.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134221.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134312.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134344.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_135125.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_135505.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_134910.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/latifa/IMG_20260627_135652.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/layla.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0037.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/leila.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0038.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lina.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lina/IMG_20260627_013142.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lina/IMG_20260627_013143.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lina/IMG_20260627_013144.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/loubna.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0262.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/maha.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0004.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/majda.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_174044.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_172921.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_172544.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_172705.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_173809.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_173826.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_173909.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_173946.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/majda/IMG_20260627_174106.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soumia/IMG_20260627_174355.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soumia/IMG_20260627_174416.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/malika.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0433.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0430.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0431.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/manal.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0005.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/meryem.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0267.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/mouna.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0006.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nabila.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_163956.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_164025.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_164042.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_164059.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_164109.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_164115.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_170354.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_170533.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nabila/IMG_20260627_171256.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nadia.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260613-WA0059.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/naima.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0268.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/najat.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0007.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/najoua.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151206.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151208.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151216.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151243.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151918.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151930.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_152042.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151701.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/najoua/IMG_20260627_151649.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nawal.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0082.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0083.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0084.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nesrine.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nesrine/IMG_20260627_011531.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nesrine/IMG_20260627_011539.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nihal.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0008.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nour.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0123.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0128.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0129.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0130.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/noura.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0011.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/oumaima.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0273.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rachida.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_121836.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_121809.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_121818.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_121144.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_121944.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_122509.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_122605.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_122640.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/rachida/IMG_20260627_122738.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rahma.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0012.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rajaa.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0271.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rania.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260615-WA0039.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rim.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0013.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/saadia.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_124144_1.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_123848.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_123855.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_124339.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_124342.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_125011.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_125059.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_125139.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/saadia/IMG_20260627_125234.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sabah.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0014.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/safiya.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0041.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/salma.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0272.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sama.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0264.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0265.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0263.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/samira.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/samira/IMG_20260627_011554.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sana.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0039.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sara.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0040.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/setti.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/setti/IMG_20260627_013147.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/setti/IMG_20260627_013153.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/setti/IMG_20260627_013155.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sirine.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_144855.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_144813.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_145040.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_145107.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_145327.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_145330.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_145442.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/IMG_20260627_145550.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/souad.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0278.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0279.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0280.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0281.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/soukaina.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soukaina/IMG_20260627_012057.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soukaina/IMG_20260627_012107.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soukaina/IMG_20260627_012108.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/soundouss.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0043.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/tafat.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0055.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0062.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0063.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0066.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0068.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0069.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0070.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0071.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0072.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0073.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/taous.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/taous/IMG_20260627_013028.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/taous/IMG_20260627_013031.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/taous/IMG_20260627_013034.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/touria.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/touria/IMG_20260627_013055.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/touria/IMG_20260627_013056.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/touria/IMG_20260627_013115.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/wafaa.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260608-WA0040.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/wahiba.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161709.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161842.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161846.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161903.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161051.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_161118.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_160926.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_162045.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/wahiba/IMG_20260627_162401.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/widad.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/widad/IMG_20260627_013205.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/widad/IMG_20260627_013444.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/widad/IMG_20260627_013445.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/wisal.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0044.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/yasmine.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0146.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/yousra.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0045.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zahra.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260618-WA0046.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zara.html</loc>
@@ -605,18 +1284,63 @@
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260619-WA0007.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260619-WA0003.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260619-WA0013.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260619-WA0017.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zhour.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zhour/IMG_20260627_013118.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zhour/IMG_20260627_013132.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zhour/IMG_20260627_013134.webp</image:loc>
+        </image:image>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zineb.html</loc>
         <lastmod>2026-07-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0082.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0074.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0090.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0086.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0098.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0075.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0092.webp</image:loc>
+        </image:image>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0099.webp</image:loc>
+        </image:image>
     </url>
 
 <!-- Sold rugs — kept for SEO continuity -->

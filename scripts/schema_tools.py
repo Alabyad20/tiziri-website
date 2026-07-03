@@ -439,13 +439,18 @@ SITEMAP_URL_RE = re.compile(
 )
 
 
-def _sitemap_url(loc, lastmod, changefreq, priority):
+def _sitemap_url(loc, lastmod, changefreq, priority, images=None):
+    image_lines = ""
+    if images:
+        for img in images:
+            image_lines += f"        <image:image>\n            <image:loc>{img}</image:loc>\n        </image:image>\n"
     return (
         f"    <url>\n"
         f"        <loc>{loc}</loc>\n"
         f"        <lastmod>{lastmod}</lastmod>\n"
         f"        <changefreq>{changefreq}</changefreq>\n"
         f"        <priority>{priority}</priority>\n"
+        f"{image_lines}"
         f"    </url>"
     )
 
@@ -469,7 +474,8 @@ def build_sitemap(rugs, today_str):
             sold_slugs.add(loc.rstrip("/").rsplit("/", 1)[-1].replace(".html", ""))
 
     blocks = ['<?xml version="1.0" encoding="UTF-8"?>',
-              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">',
+              '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"\n'
+              '        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">',
               "", "    <!-- Core pages -->"]
     for slug, changefreq, priority in STATIC_PAGES:
         blocks.append(_sitemap_url(f"{SITE}/{slug}", today_str, changefreq, priority))
@@ -477,14 +483,20 @@ def build_sitemap(rugs, today_str):
     blocks.append("")
     blocks.append("    <!-- Blog posts -->")
     for meta in BLOG_POSTS.values():
-        blocks.append(_sitemap_url(meta["url"], meta.get("dateModified", meta["datePublished"]), "monthly", "0.6"))
+        blocks.append(_sitemap_url(
+            meta["url"], meta.get("dateModified", meta["datePublished"]), "monthly", "0.6",
+            images=[meta["image"]],
+        ))
 
     blocks.append("")
     blocks.append("    <!-- Available rugs -->")
     for rug in rugs:
         if rug["slug"] in sold_slugs:
             continue
-        blocks.append(_sitemap_url(f"{SITE}/rugs/{rug['slug']}.html", today_str, "monthly", "0.9"))
+        images = [img.replace("&", "&amp;") for img in rug.get("images", [])]
+        blocks.append(_sitemap_url(
+            f"{SITE}/rugs/{rug['slug']}.html", today_str, "monthly", "0.9", images=images
+        ))
 
     if sold_block:
         blocks.append("")
