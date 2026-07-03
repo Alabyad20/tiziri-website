@@ -347,6 +347,16 @@ BLOG_POSTS = {
         "datePublished": "2026-06-26",
         "url": f"{SITE}/blog/how-to-clean-moroccan-wool-rug/",
     },
+    "blog/boujaad-rug-guide/index.html": {
+        "headline": "The Complete Guide to Boujaad Rugs",
+        "description": (
+            "Everything you need to know about Boujaad rugs — their bold color and history "
+            "in the Rehamna region, how to spot a genuine one, how to style it, and what to pay."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0420.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/boujaad-rug-guide/",
+    },
 }
 
 
