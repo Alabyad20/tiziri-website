@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rug Style Finder — TIZIRI</title>
-    <meta name="description" content="Three quick questions to find which Moroccan rug style actually suits your space — Beni Ourain, Boujaad, Mrirt, Kilim, Contemporary, or Azilal &amp; Boucherouite.">
+    <title>Custom Rug Design Wizard — TIZIRI</title>
+    <meta name="description" content="Design your own made-to-order Moroccan rug in a few clicks — choose a style, size, and colour direction, then send your enquiry straight through.">
     <meta property="og:type"        content="website">
     <meta property="og:site_name"   content="TIZIRI">
     <meta property="og:locale"      content="en_GB">
-    <meta property="og:url"         content="https://tizirirugs.com/style-finder/">
-    <meta property="og:title"       content="Rug Style Finder — TIZIRI">
-    <meta property="og:description" content="Three quick questions to find which Moroccan rug style actually suits your space.">
+    <meta property="og:url"         content="https://tizirirugs.com/custom-rug-wizard/">
+    <meta property="og:title"       content="Custom Rug Design Wizard — TIZIRI">
+    <meta property="og:description" content="Design your own made-to-order Moroccan rug in a few clicks — style, size, and colour direction, then send your enquiry straight through.">
     <meta property="og:image"       content="https://tizirirugs.com/rug-photos/IMG-20260607-WA0056.webp">
     <meta name="twitter:card"       content="summary_large_image">
-    <link rel="canonical"           href="https://tizirirugs.com/style-finder/">
+    <link rel="canonical"           href="https://tizirirugs.com/custom-rug-wizard/">
     <link rel="icon" type="image/svg+xml" href="../favicon.svg">
     <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
     <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
@@ -28,7 +28,7 @@
       "@type": "BreadcrumbList",
       "itemListElement": [
         { "@type": "ListItem", "position": 1, "name": "TIZIRI", "item": "https://tizirirugs.com/" },
-        { "@type": "ListItem", "position": 2, "name": "Rug Style Finder", "item": "https://tizirirugs.com/style-finder/" }
+        { "@type": "ListItem", "position": 2, "name": "Custom Rug Design Wizard", "item": "https://tizirirugs.com/custom-rug-wizard/" }
       ]
     }
     </script>
@@ -45,33 +45,49 @@
         .calc-step__label { display: block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); font-family: var(--sans); font-weight: 400; margin-bottom: 10px; }
         .calc-step__heading { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); font-weight: 300; color: var(--stone); margin: 0 0 24px; }
 
-        .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 14px; }
+        .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
         .calc-option {
             font-family: var(--sans); font-size: 14px; font-weight: 400; color: var(--stone);
-            background: var(--white); border: 1px solid var(--warm-grey); padding: 22px 18px;
+            background: var(--white); border: 1px solid var(--warm-grey); padding: 20px 18px;
             cursor: pointer; text-align: left; transition: border-color 200ms ease, background 200ms ease;
         }
         .calc-option:hover { border-color: var(--sand); }
         .calc-option.active { border-color: var(--stone); background: var(--warm-grey); }
-        .calc-option__title { display: block; font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 6px; }
+        .calc-option__title { display: block; font-family: var(--serif); font-size: 18px; font-weight: 400; margin-bottom: 4px; }
         .calc-option__sub { display: block; font-size: 12.5px; color: var(--mid-grey); line-height: 1.5; }
+        .calc-option__price { display: block; font-size: 13px; color: var(--terracotta); margin-top: 6px; font-family: var(--sans); }
 
-        .finder-result[hidden] { display: none; }
-        .finder-result { margin-top: 48px; }
-        .finder-result__label { display: block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); font-family: var(--sans); font-weight: 400; margin-bottom: 14px; }
-        .finder-result__card { display: grid; grid-template-columns: 200px 1fr; gap: 28px; background: var(--stone); color: var(--bone); padding: 32px; }
-        .finder-result__img { width: 100%; aspect-ratio: 4/3; overflow: hidden; }
-        .finder-result__img img { width: 100%; height: 100%; object-fit: cover; }
-        .finder-result__name { font-family: var(--serif); font-size: clamp(26px, 4vw, 34px); font-weight: 300; margin: 0 0 10px; }
-        .finder-result__why { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--bone-dim, #EDE6D8); opacity: 0.9; margin: 0 0 22px; max-width: 50ch; }
-        .finder-result__actions { display: flex; gap: 14px; flex-wrap: wrap; }
-        .finder-result__actions a {
+        .step-nav { display: flex; justify-content: space-between; margin-top: 28px; }
+        .step-nav button {
+            font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+            background: none; border: none; color: var(--mid-grey); cursor: pointer;
+            border-bottom: 1px solid var(--mid-grey); padding-bottom: 2px;
+        }
+        .step-nav button:hover { color: var(--stone); border-bottom-color: var(--stone); }
+        .step-nav button[hidden] { visibility: hidden; }
+
+        .wizard-notes { margin-top: 20px; }
+        .wizard-notes textarea {
+            width: 100%; font-family: var(--sans); font-size: 14px; padding: 14px;
+            border: 1px solid var(--warm-grey); resize: vertical; min-height: 90px;
+        }
+        .wizard-notes textarea:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 1px; }
+        .wizard-notes label { display: block; font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-grey); font-family: var(--sans); margin-bottom: 8px; }
+
+        .wizard-summary[hidden] { display: none; }
+        .wizard-summary { margin-top: 48px; background: var(--stone); color: var(--bone); padding: 36px; }
+        .wizard-summary__label { display: block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); font-family: var(--sans); font-weight: 400; margin-bottom: 18px; }
+        .wizard-summary__rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 28px; }
+        .wizard-summary__row { display: flex; justify-content: space-between; gap: 16px; font-family: var(--sans); font-size: 14px; border-bottom: 1px solid rgba(245,240,232,0.14); padding-bottom: 10px; }
+        .wizard-summary__row-label { color: var(--sand); }
+        .wizard-summary__row-value { color: var(--bone); text-align: right; }
+        .wizard-summary__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .wizard-summary__actions a {
             font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--sans);
             padding: 13px 22px; white-space: nowrap;
         }
-        .finder-result__actions a.calc-cta-primary { background: var(--terracotta); color: var(--bone); }
-        .finder-result__actions a.calc-cta-secondary { border: 1px solid var(--sand); color: var(--sand); }
-        @media (max-width: 560px) { .finder-result__card { grid-template-columns: 1fr; } }
+        .wizard-summary__actions a.calc-cta-primary { background: var(--terracotta); color: var(--bone); }
+        .wizard-summary__actions a.calc-cta-secondary { border: 1px solid var(--sand); color: var(--sand); }
 
         .calc-reset { margin-top: 20px; }
         .calc-reset button {
@@ -150,7 +166,7 @@
             <a href="../blog/moroccan-rug-styling-guide/index.html">Styling Guide</a>
             <a href="../blog/moroccan-rug-sizing-guide/index.html">Sizing Guide</a>
             <a href="../size-calculator/index.html">Size Calculator</a>
-                        <a href="../style-finder/index.html">Style Finder</a>
+            <a href="../style-finder/index.html">Style Finder</a>
                         <a href="../custom-rug-wizard/index.html">Custom Design Wizard</a>
             <a href="../craft/index.html">The Craft</a>
             <a href="../blog/index.html">Journal</a>
@@ -165,17 +181,18 @@
                 <nav class="breadcrumb" aria-label="Breadcrumb">
                     <a href="../index.html">TIZIRI</a>
                     <span class="breadcrumb__sep">/</span>
-                    <span>Rug Style Finder</span>
+                    <span>Custom Rug Design Wizard</span>
                 </nav>
-                <h1 class="page-header__title">Rug Style Finder</h1>
-                <p class="page-header__sub">Three questions. One style that actually suits your space.</p>
+                <h1 class="page-header__title">Custom Rug Design Wizard</h1>
+                <p class="page-header__sub">Style, size, and colour — then send it straight through.</p>
             </div>
         </div>
 
         <div class="calc-page__inner">
 
             <p class="calc-intro">
-                Seven Moroccan weaving traditions live in this catalogue, and they're built for genuinely different rooms and tastes. Answer honestly rather than aspirationally — the best match is the one you'll actually want to live with.
+                This builds a real made-to-order enquiry using our actual sizing and pricing — see the
+                <a href="../blog/custom-made-to-order-rug-guide/index.html">custom rug guide</a> for how the process works after you send it.
             </p>
 
             <div class="finder-progress" id="progress">
@@ -184,91 +201,126 @@
                 <span class="finder-progress__dot" data-step="3"></span>
             </div>
 
-            <!-- QUESTION 1 -->
-            <div class="calc-step" id="q1">
-                <span class="calc-step__label">Question 1 of 3</span>
-                <h2 class="calc-step__heading">Which palette pulls you in?</h2>
+            <!-- STEP 1: Style -->
+            <div class="calc-step" id="step1">
+                <span class="calc-step__label">Step 1 of 3</span>
+                <h2 class="calc-step__heading">Which style?</h2>
                 <div class="calc-options">
-                    <button class="calc-option" data-q="1" data-a="ivory">
-                        <span class="calc-option__title">Ivory &amp; natural tones</span>
+                    <button class="calc-option" data-step="1" data-value="Beni Ourain">
+                        <span class="calc-option__title">Beni Ourain</span>
+                        <span class="calc-option__sub">Ivory, high pile, restrained lattice</span>
+                    </button>
+                    <button class="calc-option" data-step="1" data-value="Boujaad">
+                        <span class="calc-option__title">Boujaad</span>
+                        <span class="calc-option__sub">Bold colour, dense tribal geometry</span>
+                    </button>
+                    <button class="calc-option" data-step="1" data-value="Mrirt">
+                        <span class="calc-option__title">Mrirt</span>
+                        <span class="calc-option__sub">High pile, bolder graphic palette</span>
+                    </button>
+                    <button class="calc-option" data-step="1" data-value="Kilim">
+                        <span class="calc-option__title">Kilim</span>
+                        <span class="calc-option__sub">Flat-woven, durable, reversible</span>
+                    </button>
+                    <button class="calc-option" data-step="1" data-value="Contemporary">
+                        <span class="calc-option__title">Contemporary</span>
+                        <span class="calc-option__sub">Modern abstract, hand-knotted</span>
+                    </button>
+                    <button class="calc-option" data-step="1" data-value="Azilal / Boucherouite">
+                        <span class="calc-option__title">Azilal / Boucherouite</span>
+                        <span class="calc-option__sub">Free-form, one of a kind</span>
+                    </button>
+                    <button class="calc-option" data-step="1" data-value="Not sure yet">
+                        <span class="calc-option__title">Not sure yet</span>
+                        <span class="calc-option__sub">Happy to get advice in the enquiry</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Size -->
+            <div class="calc-step" id="step2" hidden>
+                <span class="calc-step__label">Step 2 of 3</span>
+                <h2 class="calc-step__heading">What size?</h2>
+                <div class="calc-options">
+                    <button class="calc-option" data-step="2" data-value="Small (100 x 150cm)" data-price="$350">
+                        <span class="calc-option__title">Small</span>
+                        <span class="calc-option__sub">100 × 150cm</span>
+                        <span class="calc-option__price">$350</span>
+                    </button>
+                    <button class="calc-option" data-step="2" data-value="Medium (160 x 230cm)" data-price="$650">
+                        <span class="calc-option__title">Medium</span>
+                        <span class="calc-option__sub">160 × 230cm</span>
+                        <span class="calc-option__price">$650</span>
+                    </button>
+                    <button class="calc-option" data-step="2" data-value="Large (200 x 300cm)" data-price="$950">
+                        <span class="calc-option__title">Large</span>
+                        <span class="calc-option__sub">200 × 300cm</span>
+                        <span class="calc-option__price">$950</span>
+                    </button>
+                    <button class="calc-option" data-step="2" data-value="Extra Large (250 x 350cm)" data-price="$1,400">
+                        <span class="calc-option__title">Extra Large</span>
+                        <span class="calc-option__sub">250 × 350cm</span>
+                        <span class="calc-option__price">$1,400</span>
+                    </button>
+                    <button class="calc-option" data-step="2" data-value="Runner (80 x 200 or 80 x 300cm)" data-price="Price on enquiry">
+                        <span class="calc-option__title">Runner</span>
+                        <span class="calc-option__sub">80 × 200 or 80 × 300cm</span>
+                        <span class="calc-option__price">Price on enquiry</span>
+                    </button>
+                    <button class="calc-option" data-step="2" data-value="Custom size" data-price="Price on enquiry">
+                        <span class="calc-option__title">Custom Size</span>
+                        <span class="calc-option__sub">Tell us your exact dimensions</span>
+                        <span class="calc-option__price">Price on enquiry</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 3: Colour -->
+            <div class="calc-step" id="step3" hidden>
+                <span class="calc-step__label">Step 3 of 3</span>
+                <h2 class="calc-step__heading">Which colour direction?</h2>
+                <div class="calc-options">
+                    <button class="calc-option" data-step="3" data-value="Ivory &amp; natural tones">
+                        <span class="calc-option__title">Ivory &amp; Natural</span>
                         <span class="calc-option__sub">Undyed wool, warm neutrals</span>
                     </button>
-                    <button class="calc-option" data-q="1" data-a="bold">
-                        <span class="calc-option__title">Bold &amp; saturated</span>
+                    <button class="calc-option" data-step="3" data-value="Bold &amp; saturated">
+                        <span class="calc-option__title">Bold &amp; Saturated</span>
                         <span class="calc-option__sub">Colour that fills the room</span>
                     </button>
-                    <button class="calc-option" data-q="1" data-a="muted">
-                        <span class="calc-option__title">One muted accent tone</span>
+                    <button class="calc-option" data-step="3" data-value="One muted accent tone">
+                        <span class="calc-option__title">One Muted Accent</span>
                         <span class="calc-option__sub">Quiet, but not neutral</span>
                     </button>
-                    <button class="calc-option" data-q="1" data-a="practical">
-                        <span class="calc-option__title">Whatever's practical</span>
-                        <span class="calc-option__sub">Colour matters less than function</span>
+                    <button class="calc-option" data-step="3" data-value="Open to the weaver's interpretation">
+                        <span class="calc-option__title">Open to Suggestion</span>
+                        <span class="calc-option__sub">Happy to be guided</span>
                     </button>
+                </div>
+
+                <div class="wizard-notes">
+                    <label for="wizardNotes">Anything else? (optional)</label>
+                    <textarea id="wizardNotes" placeholder="A specific colour, motif, timeline, or anything else worth knowing…"></textarea>
                 </div>
             </div>
 
-            <!-- QUESTION 2 -->
-            <div class="calc-step" id="q2" hidden>
-                <span class="calc-step__label">Question 2 of 3</span>
-                <h2 class="calc-step__heading">How much pattern do you actually want?</h2>
-                <div class="calc-options">
-                    <button class="calc-option" data-q="2" data-a="minimal">
-                        <span class="calc-option__title">Barely any</span>
-                        <span class="calc-option__sub">Texture over pattern</span>
-                    </button>
-                    <button class="calc-option" data-q="2" data-a="dense">
-                        <span class="calc-option__title">Dense &amp; tribal</span>
-                        <span class="calc-option__sub">Fills the whole field</span>
-                    </button>
-                    <button class="calc-option" data-q="2" data-a="graphic">
-                        <span class="calc-option__title">Bold but structured</span>
-                        <span class="calc-option__sub">Stripes, bands, medallions</span>
-                    </button>
-                    <button class="calc-option" data-q="2" data-a="abstract">
-                        <span class="calc-option__title">A few abstract shapes</span>
-                        <span class="calc-option__sub">Not tribal geometry</span>
-                    </button>
-                </div>
+            <div class="step-nav">
+                <button type="button" id="backBtn" hidden>← Back</button>
+                <span></span>
             </div>
 
-            <!-- QUESTION 3 -->
-            <div class="calc-step" id="q3" hidden>
-                <span class="calc-step__label">Question 3 of 3</span>
-                <h2 class="calc-step__heading">Where is it going, and how will it be used?</h2>
-                <div class="calc-options">
-                    <button class="calc-option" data-q="3" data-a="calm">
-                        <span class="calc-option__title">Bedroom or calm space</span>
-                        <span class="calc-option__sub">Soft underfoot matters</span>
-                    </button>
-                    <button class="calc-option" data-q="3" data-a="focal">
-                        <span class="calc-option__title">Living room focal point</span>
-                        <span class="calc-option__sub">The room's main statement</span>
-                    </button>
-                    <button class="calc-option" data-q="3" data-a="durable">
-                        <span class="calc-option__title">Kitchen, hallway, or dining</span>
-                        <span class="calc-option__sub">Durability matters most</span>
-                    </button>
-                    <button class="calc-option" data-q="3" data-a="accent">
-                        <span class="calc-option__title">A small accent piece</span>
-                        <span class="calc-option__sub">Layered, or a smaller space</span>
-                    </button>
+            <!-- SUMMARY -->
+            <div class="wizard-summary" id="summary" hidden>
+                <span class="wizard-summary__label">Your custom rug</span>
+                <div class="wizard-summary__rows">
+                    <div class="wizard-summary__row"><span class="wizard-summary__row-label">Style</span><span class="wizard-summary__row-value" id="sumStyle"></span></div>
+                    <div class="wizard-summary__row"><span class="wizard-summary__row-label">Size</span><span class="wizard-summary__row-value" id="sumSize"></span></div>
+                    <div class="wizard-summary__row"><span class="wizard-summary__row-label">Price</span><span class="wizard-summary__row-value" id="sumPrice"></span></div>
+                    <div class="wizard-summary__row"><span class="wizard-summary__row-label">Colour</span><span class="wizard-summary__row-value" id="sumColour"></span></div>
                 </div>
-            </div>
-
-            <!-- RESULT -->
-            <div class="finder-result" id="result" hidden>
-                <span class="finder-result__label">Your match</span>
-                <div class="finder-result__card">
-                    <div class="finder-result__img"><img id="resultImg" src="" alt=""></div>
-                    <div>
-                        <h2 class="finder-result__name" id="resultName"></h2>
-                        <p class="finder-result__why" id="resultWhy"></p>
-                        <div class="finder-result__actions">
-                            <a href="#" id="resultShop" class="calc-cta-primary">Shop This Style</a>
-                            <a href="#" id="resultGuide" class="calc-cta-secondary">Read the Style Guide</a>
-                        </div>
-                    </div>
+                <div class="wizard-summary__actions">
+                    <a href="#" id="sendBtn" class="calc-cta-primary">Send My Enquiry</a>
+                    <a href="../made-to-order/index.html" class="calc-cta-secondary">Back to Made to Order</a>
                 </div>
             </div>
 
@@ -330,7 +382,7 @@
     </footer>
 
     <script src="../js/main.js"></script>
-    <script src="../js/style-finder.js?v=1"></script>
+    <script src="../js/custom-rug-wizard.js?v=1"></script>
     <a class="whatsapp-btn" href="https://wa.me/16175105376?text=Hi%2C%20I%E2%80%99m%20interested%20in%20one%20of%20your%20Moroccan%20rugs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>

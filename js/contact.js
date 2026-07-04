@@ -3,6 +3,38 @@
 const form    = document.getElementById('contactForm');
 const success = document.getElementById('contactSuccess');
 
+/* Pre-fill from a query string, e.g. ?design=green-wave or
+   ?style=Mrirt&size=Large%20(200%20x%20300cm)&price=%24950&colour=Bold — used by the
+   Made-to-Order page's "Enquire about this design" links and the Custom Rug Design Wizard. */
+(function prefillFromQuery() {
+    const params = new URLSearchParams(window.location.search);
+    const topicEl   = document.getElementById('contactTopic');
+    const messageEl = document.getElementById('contactMessage');
+    if (!topicEl || !messageEl) return;
+
+    const design = params.get('design');
+    const style  = params.get('style');
+    const size   = params.get('size');
+    const price  = params.get('price');
+    const colour = params.get('colour');
+    const notes  = params.get('notes');
+
+    if (!design && !style && !size && !colour) return;
+
+    topicEl.value = 'Specific rug enquiry';
+
+    const lines = [];
+    if (design) lines.push(`I'm interested in the "${design.replace(/-/g, ' ')}" made-to-order design.`);
+    if (style)  lines.push(`Style: ${style}`);
+    if (size)   lines.push(`Size: ${size}`);
+    if (price)  lines.push(`Price: ${price}`);
+    if (colour) lines.push(`Colour direction: ${colour}`);
+    if (notes)  lines.push(`Notes: ${notes}`);
+    lines.push('', 'Please let me know more.');
+
+    messageEl.value = lines.join('\n');
+})();
+
 if (form && success) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
