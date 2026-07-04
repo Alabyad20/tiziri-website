@@ -173,6 +173,24 @@
             <image:loc>https://tizirirugs.com/rug-photos/IMG-20260619-WA0007.webp</image:loc>
         </image:image>
     </url>
+    <url>
+        <loc>https://tizirirugs.com/blog/how-much-does-a-moroccan-rug-cost/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260607-WA0149.webp</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/blog/moroccan-rug-sizing-guide/</loc>
+        <lastmod>2026-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260619-WA0007.webp</image:loc>
+        </image:image>
+    </url>
 
     <!-- Available rugs -->
     <url>

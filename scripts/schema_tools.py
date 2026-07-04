@@ -419,6 +419,27 @@ BLOG_POSTS = {
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/moroccan-rug-styling-guide/",
     },
+    "blog/how-much-does-a-moroccan-rug-cost/index.html": {
+        "headline": "How Much Does a Moroccan Rug Cost? Real 2026 Prices",
+        "description": (
+            "Real Moroccan rug prices by size and format — what determines cost, why "
+            "identical-looking rugs vary in price, and what to be wary of when a price "
+            "looks too good to be true."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260607-WA0149.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/how-much-does-a-moroccan-rug-cost/",
+    },
+    "blog/moroccan-rug-sizing-guide/index.html": {
+        "headline": "Moroccan Rug Sizing Guide",
+        "description": (
+            "How to choose the right rug size for a living room, bedroom, dining room or "
+            "hallway — with real measurements, not guesswork."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260619-WA0007.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/moroccan-rug-sizing-guide/",
+    },
 }
 
 
