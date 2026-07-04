@@ -543,6 +543,39 @@ BLOG_POSTS = {
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/how-to-store-a-moroccan-rug/",
     },
+    "blog/rug-stain-what-to-do-right-now/index.html": {
+        "headline": "Rug Stain? What to Do Right Now",
+        "description": (
+            "The first five minutes after a spill matter more than anything else. What "
+            "to do immediately for wine, water, oil, and pet stains on a hand-knotted "
+            "wool rug."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0224.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/rug-stain-what-to-do-right-now/",
+    },
+    "blog/rug-pad-guide/index.html": {
+        "headline": "Do You Need a Rug Pad?",
+        "description": (
+            "Why a rug pad matters for a hand-knotted wool rug — anti-slip safety, "
+            "floor protection, and cushioning — and how to choose the right one for "
+            "your floor type."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0227.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/rug-pad-guide/",
+    },
+    "blog/moroccan-rug-modern-minimalist-interior/index.html": {
+        "headline": "A Moroccan Rug in a Modern, Minimalist Interior",
+        "description": (
+            "Why a handmade Moroccan rug works in a minimalist space — the one warm, "
+            "textured, imperfect element in an otherwise pared-back room — and how to "
+            "choose the right one."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0259.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/moroccan-rug-modern-minimalist-interior/",
+    },
 }
 
 
