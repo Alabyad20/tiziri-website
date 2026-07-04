@@ -502,6 +502,27 @@ BLOG_POSTS = {
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/vintage-vs-new-moroccan-rugs/",
     },
+    "blog/rug-layering-guide/index.html": {
+        "headline": "Rug Layering Guide: How to Layer Moroccan Rugs",
+        "description": (
+            "How to layer a Moroccan rug over jute, sisal, or a larger neutral base — "
+            "proportion rules, material pairing, and which styles layer best."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0273.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/rug-layering-guide/",
+    },
+    "blog/moroccan-rug-gift-guide/index.html": {
+        "headline": "Moroccan Rug Gift Guide",
+        "description": (
+            "Why a handmade Moroccan rug makes a genuinely lasting gift — for "
+            "housewarmings, weddings, and anniversaries — and how to choose a size and "
+            "style for someone else's home."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0433.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/moroccan-rug-gift-guide/",
+    },
 }
 
 

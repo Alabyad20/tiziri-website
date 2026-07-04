@@ -245,6 +245,24 @@
             <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0417.webp</image:loc>
         </image:image>
     </url>
+    <url>
+        <loc>https://tizirirugs.com/blog/rug-layering-guide/</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0273.webp</image:loc>
+        </image:image>
+    </url>
+    <url>
+        <loc>https://tizirirugs.com/blog/moroccan-rug-gift-guide/</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0433.webp</image:loc>
+        </image:image>
+    </url>
 
     <!-- Available rugs -->
     <url>
