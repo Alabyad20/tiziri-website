@@ -471,6 +471,37 @@ BLOG_POSTS = {
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/dining-room-rug-guide/",
     },
+    "blog/beni-ourain-vs-mrirt/index.html": {
+        "headline": "Beni Ourain vs Mrirt: What's the Difference?",
+        "description": (
+            "Beni Ourain and Mrirt rugs share the same high pile and Atlas Mountains "
+            "origin — here's what actually separates them, and how to choose between "
+            "the two."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0277.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/beni-ourain-vs-mrirt/",
+    },
+    "blog/hand-knotted-vs-tufted-vs-machine-made/index.html": {
+        "headline": "Hand-Knotted vs Tufted vs Machine-Made Rugs",
+        "description": (
+            "What actually separates a hand-knotted rug from a tufted or machine-made "
+            "one — construction, durability, lifespan, and how to tell which you're buying."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0227.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/hand-knotted-vs-tufted-vs-machine-made/",
+    },
+    "blog/vintage-vs-new-moroccan-rugs/index.html": {
+        "headline": "Vintage vs New Moroccan Rugs",
+        "description": (
+            "What actually distinguishes a vintage Moroccan rug from a new one — "
+            "natural dyes, wear character, availability, and how to choose between them."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0417.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/vintage-vs-new-moroccan-rugs/",
+    },
 }
 
 
