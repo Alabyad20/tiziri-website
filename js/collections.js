@@ -21,6 +21,7 @@ const originalOrder = [...cards];
 let activeStyle  = 'all';
 let activeSize   = 'all';
 let activeRoom   = 'all';
+let activeColor  = 'all';
 let activeSort   = 'featured';
 let activeSearch = '';
 
@@ -63,9 +64,10 @@ function applyFilters() {
         const styleMatch  = activeStyle === 'all' || card.dataset.style === activeStyle;
         const sizeMatch   = activeSize  === 'all' || card.dataset.size  === activeSize;
         const roomMatch   = activeRoom  === 'all' || card.dataset.room  === activeRoom;
+        const colorMatch  = activeColor === 'all' || card.dataset.color === activeColor;
         const name        = card.querySelector('.product-card__name')?.textContent.toLowerCase() || '';
         const searchMatch = !q || name.includes(q);
-        const show = styleMatch && sizeMatch && roomMatch && searchMatch;
+        const show = styleMatch && sizeMatch && roomMatch && colorMatch && searchMatch;
         card.hidden = !show;
         if (show) visible++;
     });
@@ -101,6 +103,14 @@ function setRoom(value) {
     applyFilters();
 }
 
+function setColor(value) {
+    activeColor = value;
+    document.querySelectorAll('[data-filter="color"]').forEach(btn =>
+        btn.classList.toggle('active', btn.dataset.value === value)
+    );
+    applyFilters();
+}
+
 document.querySelectorAll('[data-filter="style"]').forEach(btn =>
     btn.addEventListener('click', () => setStyle(btn.dataset.value))
 );
@@ -109,6 +119,9 @@ document.querySelectorAll('[data-filter="size"]').forEach(btn =>
 );
 document.querySelectorAll('[data-filter="room"]').forEach(btn =>
     btn.addEventListener('click', () => setRoom(btn.dataset.value))
+);
+document.querySelectorAll('[data-filter="color"]').forEach(btn =>
+    btn.addEventListener('click', () => setColor(btn.dataset.value))
 );
 
 const sortEl = document.getElementById('sortSelect');
@@ -124,6 +137,7 @@ document.getElementById('resetFilters')?.addEventListener('click', () => {
     setStyle('all');
     setSize('all');
     setRoom('all');
+    setColor('all');
     if (sortEl) { sortEl.value = 'featured'; activeSort = 'featured'; applySort(); }
 });
 
@@ -139,13 +153,15 @@ if (searchEl) {
 const styleValues = new Set(['beni-ourain', 'azilal', 'boujaad', 'boucherouite', 'mrirt', 'contemporary', 'kilim']);
 const sizeValues  = new Set(['small', 'medium', 'large']);
 const roomValues  = new Set(['living-room', 'bedroom', 'dining-room', 'hallway']);
+const colorValues = new Set(['ivory', 'blue', 'green', 'orange', 'pink', 'yellow', 'brown', 'grey', 'black', 'purple', 'multicolor']);
 
 function applyHash() {
     const hash = location.hash.slice(1);
     if (styleValues.has(hash))     setStyle(hash);
     else if (sizeValues.has(hash)) setSize(hash);
     else if (roomValues.has(hash)) setRoom(hash);
-    else { setStyle('all'); setSize('all'); setRoom('all'); }
+    else if (colorValues.has(hash)) setColor(hash);
+    else { setStyle('all'); setSize('all'); setRoom('all'); setColor('all'); }
 }
 
 applyHash();
