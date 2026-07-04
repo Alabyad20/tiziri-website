@@ -440,6 +440,27 @@ BLOG_POSTS = {
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/moroccan-rug-sizing-guide/",
     },
+    "blog/living-room-rug-guide/index.html": {
+        "headline": "Living Room Rug Guide: Size, Placement & Style",
+        "description": (
+            "How to choose the right Moroccan rug size and placement for a living room — "
+            "sofa layouts, coffee table clearance, open-plan spaces, and which styles work "
+            "best."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260607-WA0123.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/living-room-rug-guide/",
+    },
+    "blog/bedroom-rug-guide/index.html": {
+        "headline": "Bedroom Rug Guide: Size, Placement & Style",
+        "description": (
+            "How to size and place a Moroccan rug in a bedroom — under the bed, beside it, "
+            "or as a runner, sized for twin, queen and king frames."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0277.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/bedroom-rug-guide/",
+    },
 }
 
 
