@@ -478,7 +478,7 @@ BLOG_POSTS = {
             "origin — here's what actually separates them, and how to choose between "
             "the two."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0277.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0272.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/beni-ourain-vs-mrirt/",
     },
