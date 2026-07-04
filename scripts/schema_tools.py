@@ -523,6 +523,26 @@ BLOG_POSTS = {
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/moroccan-rug-gift-guide/",
     },
+    "blog/custom-made-to-order-rug-guide/index.html": {
+        "headline": "Custom Moroccan Rug Guide: How Made-to-Order Works",
+        "description": (
+            "How commissioning a made-to-order Moroccan rug actually works — the 3-step "
+            "process, real timelines, sizing, and what to have ready before you enquire."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260607-WA0056.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/custom-made-to-order-rug-guide/",
+    },
+    "blog/how-to-store-a-moroccan-rug/index.html": {
+        "headline": "How to Store a Moroccan Rug",
+        "description": (
+            "How to clean, roll, and store a hand-knotted wool rug for months or years "
+            "without moth damage, mildew, or crease lines that never come out."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0224.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/how-to-store-a-moroccan-rug/",
+    },
 }
 
 
