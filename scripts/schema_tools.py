@@ -387,10 +387,46 @@ BLOG_POSTS = {
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/mrirt-rug-guide/",
     },
+    "blog/azilal-boucherouite-rug-guide/index.html": {
+        "headline": "Azilal & Boucherouite Rugs: Morocco's Free-Form Weaving Traditions",
+        "description": (
+            "Azilal and Boucherouite rugs both break from Morocco's geometric weaving "
+            "conventions — one improvised on the loom, one woven from recycled cloth. "
+            "What sets each apart, and how to buy one."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0273.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/azilal-boucherouite-rug-guide/",
+    },
+    "blog/complete-moroccan-rug-guide/index.html": {
+        "headline": "The Complete Guide to Moroccan Rugs",
+        "description": (
+            "Every Moroccan rug style explained in one place — Beni Ourain, Boujaad, Mrirt, "
+            "Kilim, Contemporary, Azilal and Boucherouite — plus how to buy, size, and care "
+            "for one."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260607-WA0056.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/complete-moroccan-rug-guide/",
+    },
+    "blog/moroccan-rug-styling-guide/index.html": {
+        "headline": "Moroccan Rug Styling Guide",
+        "description": (
+            "Simple, practical ways to choose, place, and style a handmade Moroccan rug in "
+            "your home — by room, by style, by colour, and by the mistakes worth avoiding."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260619-WA0007.webp",
+        "datePublished": "2026-07-03",
+        "url": f"{SITE}/blog/moroccan-rug-styling-guide/",
+    },
 }
 
 
 def build_blog(store):
+    """Regenerates only the first ld+json block (Article) on each blog post.
+    Some posts carry additional hand-authored blocks after it (BreadcrumbList,
+    FAQPage) which are left untouched — replace_ldjson_blocks' exact-count
+    check only applies to that first block here, not the whole page."""
     results = []
     for rel, meta in BLOG_POSTS.items():
         path = os.path.join(ROOT, rel)
@@ -411,7 +447,17 @@ def build_blog(store):
             "mainEntityOfPage": {"@type": "WebPage", "@id": meta["url"]},
             "url": meta["url"],
         }
-        new_html = replace_ldjson_blocks(html, [article], path)
+        matches = list(LDJSON_RE.finditer(html))
+        if not matches:
+            raise ValueError(f"{path}: expected at least 1 ld+json block, found 0")
+        m = matches[0]
+        payload = json.dumps(article, indent=2, ensure_ascii=False)
+        json.loads(payload)
+        indented = "\n".join(
+            ("    " + line if line.strip() else line) for line in payload.splitlines()
+        )
+        replacement = f'{m.group(1)}\n{indented}\n    {m.group(3)}'
+        new_html = html[:m.start()] + replacement + html[m.end():]
         results.append((path, new_html))
     return results
 
