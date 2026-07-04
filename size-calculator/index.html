@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rug Size Calculator — TIZIRI</title>
+    <meta name="description" content="Find the right Moroccan rug size for your living room, bedroom, dining room, or hallway in a few clicks — real measurements, not guesswork.">
+    <meta property="og:type"        content="website">
+    <meta property="og:site_name"   content="TIZIRI">
+    <meta property="og:locale"      content="en_GB">
+    <meta property="og:url"         content="https://tizirirugs.com/size-calculator/">
+    <meta property="og:title"       content="Rug Size Calculator — TIZIRI">
+    <meta property="og:description" content="Find the right Moroccan rug size for your living room, bedroom, dining room, or hallway in a few clicks.">
+    <meta property="og:image"       content="https://tizirirugs.com/rug-photos/IMG-20260619-WA0007.webp">
+    <meta name="twitter:card"       content="summary_large_image">
+    <link rel="canonical"           href="https://tizirirugs.com/size-calculator/">
+    <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../apple-touch-icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css?v=10">
+    <script defer data-domain="tizirirugs.com" src="https://plausible.io/js/script.js"></script>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "TIZIRI", "item": "https://tizirirugs.com/" },
+        { "@type": "ListItem", "position": 2, "name": "Rug Size Calculator", "item": "https://tizirirugs.com/size-calculator/" }
+      ]
+    }
+    </script>
+    <style>
+        .calc-page__inner { max-width: 780px; margin: 0 auto; padding: 60px var(--gutter) 100px; }
+
+        .calc-intro { font-size: 16px; line-height: 1.8; color: var(--stone); font-family: var(--sans); font-weight: 300; max-width: 60ch; margin-bottom: 8px; }
+        .calc-intro-link { font-size: 13px; font-family: var(--sans); }
+        .calc-intro-link a { color: var(--terracotta); border-bottom: 1px solid var(--terracotta); }
+
+        .calc-step { margin-top: 48px; }
+        .calc-step[hidden] { display: none; }
+        .calc-step__label { display: block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--terracotta); font-family: var(--sans); font-weight: 400; margin-bottom: 10px; }
+        .calc-step__heading { font-family: var(--serif); font-size: clamp(20px, 3vw, 26px); font-weight: 300; color: var(--stone); margin: 0 0 24px; }
+
+        .calc-options { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+        .calc-option {
+            font-family: var(--sans); font-size: 14px; font-weight: 400; color: var(--stone);
+            background: var(--white); border: 1px solid var(--warm-grey); padding: 22px 18px;
+            cursor: pointer; text-align: left; transition: border-color 200ms ease, background 200ms ease;
+        }
+        .calc-option:hover { border-color: var(--sand); }
+        .calc-option.active { border-color: var(--stone); background: var(--warm-grey); }
+        .calc-option__title { display: block; font-family: var(--serif); font-size: 19px; font-weight: 400; margin-bottom: 6px; }
+        .calc-option__sub { display: block; font-size: 12.5px; color: var(--mid-grey); line-height: 1.5; }
+
+        .calc-result {
+            margin-top: 48px; background: var(--stone); color: var(--bone); padding: 40px;
+        }
+        .calc-result[hidden] { display: none; }
+        .calc-result__label { display: block; font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--sand); font-family: var(--sans); font-weight: 400; margin-bottom: 14px; }
+        .calc-result__size { font-family: var(--serif); font-size: clamp(32px, 5vw, 44px); font-weight: 300; line-height: 1.1; margin: 0 0 6px; }
+        .calc-result__size-ft { font-family: var(--sans); font-size: 14px; color: var(--sand); margin: 0 0 20px; }
+        .calc-result__note { font-family: var(--sans); font-size: 14px; line-height: 1.8; color: var(--bone-dim, #EDE6D8); max-width: 55ch; margin: 0 0 28px; opacity: 0.9; }
+        .calc-result__actions { display: flex; gap: 14px; flex-wrap: wrap; }
+        .calc-result__actions a {
+            font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase; font-family: var(--sans);
+            padding: 13px 22px; white-space: nowrap;
+        }
+        .calc-result__actions a.calc-cta-primary { background: var(--terracotta); color: var(--bone); }
+        .calc-result__actions a.calc-cta-secondary { border: 1px solid var(--sand); color: var(--sand); }
+
+        .calc-reset { margin-top: 20px; }
+        .calc-reset button {
+            background: none; border: none; font-family: var(--sans); font-size: 12px;
+            letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-grey);
+            cursor: pointer; border-bottom: 1px solid var(--mid-grey); padding-bottom: 2px;
+        }
+        .calc-reset button:hover { color: var(--stone); border-bottom-color: var(--stone); }
+
+        .calc-custom { margin-top: 20px; }
+        .calc-custom summary { font-family: var(--sans); font-size: 13px; color: var(--terracotta); cursor: pointer; }
+        .calc-custom-form { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 18px; align-items: flex-end; }
+        .calc-field { display: flex; flex-direction: column; gap: 6px; }
+        .calc-field label { font-family: var(--sans); font-size: 11px; letter-spacing: 0.08em; text-transform: uppercase; color: var(--mid-grey); }
+        .calc-field input { font-family: var(--sans); font-size: 15px; padding: 10px 12px; border: 1px solid var(--warm-grey); width: 110px; }
+        .calc-field input:focus-visible { outline: 2px solid var(--terracotta); outline-offset: 1px; }
+        .calc-custom-form button {
+            font-family: var(--sans); font-size: 11px; letter-spacing: 0.14em; text-transform: uppercase;
+            background: var(--stone); color: var(--bone); border: none; padding: 12px 22px; cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">Skip to content</a>
+
+    <nav class="nav scrolled" id="nav">
+        <div class="nav__logo"><a href="../index.html"><img src="../logos/tiziri-mark.svg" class="nav__logo-mark" width="36" height="36" alt="" aria-hidden="true">TIZIRI</a></div>
+        <div class="nav__links">
+            <div class="nav__item nav__item--has-mega">
+                <span>Collections</span>
+                <div class="nav__mega">
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Style</span>
+                        <a href="../collections/index.html#beni-ourain">Beni Ourain</a>
+                        <a href="../collections/index.html#azilal">Azilal</a>
+                        <a href="../collections/index.html#boujaad">Boujaad</a>
+                        <a href="../collections/index.html#boucherouite">Boucherouite</a>
+                        <a href="../collections/index.html#mrirt">Mrirt</a>
+                        <a href="../collections/index.html#contemporary">Contemporary</a>
+                        <a href="../collections/index.html#kilim">Kilim</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">By Size</span>
+                        <a href="../collections/index.html#small">Small (under 150 cm)</a>
+                        <a href="../collections/index.html#medium">Medium (150–250 cm)</a>
+                        <a href="../collections/index.html#large">Large (250 cm+)</a>
+                    </div>
+                    <div class="nav__mega-col">
+                        <span class="nav__mega-heading">Featured</span>
+                        <a href="../collections/index.html">New In</a>
+                        <a href="../collections/index.html">All Rugs</a>
+                        <a href="../made-to-order/index.html">Made to Order</a>
+                        <a href="../blog/moroccan-rug-styling-guide/index.html">Styling Guide</a>
+                        <a href="../blog/moroccan-rug-sizing-guide/index.html">Sizing Guide</a>
+                        <a href="../size-calculator/index.html">Size Calculator</a>
+                    </div>
+                    <div class="nav__mega-image">
+                        <img src="../rug-photos/IMG-20260619-WA0007.webp" alt="Handwoven Moroccan rug">
+                    </div>
+                </div>
+            </div>
+            <a href="../craft/index.html" class="nav__item">The Craft</a>
+            <a href="../blog/index.html" class="nav__item">Journal</a>
+            <a href="../contact/index.html" class="nav__item">Contact</a>
+        </div>
+        <div class="nav__actions">
+            <a href="#" class="nav__cart" aria-label="Cart">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+                <span class="nav__cart-count">0</span>
+            </a>
+            <button class="nav__hamburger" id="hamburger" aria-label="Open menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+        <button class="mobile-menu__close" id="closeMenu" aria-label="Close menu">✕</button>
+        <nav class="mobile-menu__links">
+            <a href="../collections/index.html">Collections</a>
+            <a href="../made-to-order/index.html">Made to Order</a>
+            <a href="../blog/moroccan-rug-styling-guide/index.html">Styling Guide</a>
+            <a href="../blog/moroccan-rug-sizing-guide/index.html">Sizing Guide</a>
+                        <a href="../size-calculator/index.html">Size Calculator</a>
+            <a href="../craft/index.html">The Craft</a>
+            <a href="../blog/index.html">Journal</a>
+            <a href="../contact/index.html">Contact</a>
+        </nav>
+    </div>
+
+    <main id="main-content">
+
+        <div class="page-header">
+            <div class="page-header__inner">
+                <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <a href="../index.html">TIZIRI</a>
+                    <span class="breadcrumb__sep">/</span>
+                    <span>Rug Size Calculator</span>
+                </nav>
+                <h1 class="page-header__title">Rug Size Calculator</h1>
+                <p class="page-header__sub">Answer two questions, get a real size recommendation.</p>
+            </div>
+        </div>
+
+        <div class="calc-page__inner">
+
+            <p class="calc-intro">
+                No guesswork — the recommendations below use the same room-by-room measurements as our
+                <a href="../blog/moroccan-rug-sizing-guide/index.html">full sizing guide</a>, just narrowed to your specific room and furniture.
+            </p>
+
+            <!-- STEP 1: Room type -->
+            <div class="calc-step" id="step1">
+                <span class="calc-step__label">Step 1</span>
+                <h2 class="calc-step__heading">Which room is this for?</h2>
+                <div class="calc-options" id="roomOptions">
+                    <button class="calc-option" data-room="living">
+                        <span class="calc-option__title">Living Room</span>
+                        <span class="calc-option__sub">Sofa &amp; seating area</span>
+                    </button>
+                    <button class="calc-option" data-room="bedroom">
+                        <span class="calc-option__title">Bedroom</span>
+                        <span class="calc-option__sub">Under or beside the bed</span>
+                    </button>
+                    <button class="calc-option" data-room="dining">
+                        <span class="calc-option__title">Dining Room</span>
+                        <span class="calc-option__sub">Under the table &amp; chairs</span>
+                    </button>
+                    <button class="calc-option" data-room="hallway">
+                        <span class="calc-option__title">Entryway / Hallway</span>
+                        <span class="calc-option__sub">Runner format</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Living room layout -->
+            <div class="calc-step" id="step2-living" hidden>
+                <span class="calc-step__label">Step 2</span>
+                <h2 class="calc-step__heading">How do you want the rug to sit with your seating?</h2>
+                <div class="calc-options">
+                    <button class="calc-option" data-result="living-allin">
+                        <span class="calc-option__title">All-in</span>
+                        <span class="calc-option__sub">Every seat's legs fully on the rug — the most grounded look</span>
+                    </button>
+                    <button class="calc-option" data-result="living-front">
+                        <span class="calc-option__title">Front-legs-on</span>
+                        <span class="calc-option__sub">Only front legs on the rug — works for most living rooms</span>
+                    </button>
+                    <button class="calc-option" data-result="living-float">
+                        <span class="calc-option__title">Floating</span>
+                        <span class="calc-option__sub">Defines a zone in an open-plan space, no furniture touching</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Bedroom size -->
+            <div class="calc-step" id="step2-bedroom" hidden>
+                <span class="calc-step__label">Step 2</span>
+                <h2 class="calc-step__heading">What size is the bed?</h2>
+                <div class="calc-options">
+                    <button class="calc-option" data-result="bed-twin">
+                        <span class="calc-option__title">Twin / Single</span>
+                    </button>
+                    <button class="calc-option" data-result="bed-full">
+                        <span class="calc-option__title">Full / Double</span>
+                    </button>
+                    <button class="calc-option" data-result="bed-queen">
+                        <span class="calc-option__title">Queen</span>
+                    </button>
+                    <button class="calc-option" data-result="bed-king">
+                        <span class="calc-option__title">King</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Dining table -->
+            <div class="calc-step" id="step2-dining" hidden>
+                <span class="calc-step__label">Step 2</span>
+                <h2 class="calc-step__heading">What size is the table?</h2>
+                <div class="calc-options">
+                    <button class="calc-option" data-result="dining-4">
+                        <span class="calc-option__title">4-Seat</span>
+                        <span class="calc-option__sub">~120 × 75cm</span>
+                    </button>
+                    <button class="calc-option" data-result="dining-6">
+                        <span class="calc-option__title">6-Seat</span>
+                        <span class="calc-option__sub">~180 × 90cm</span>
+                    </button>
+                    <button class="calc-option" data-result="dining-8">
+                        <span class="calc-option__title">8-Seat</span>
+                        <span class="calc-option__sub">~220 × 100cm</span>
+                    </button>
+                    <button class="calc-option" data-result="dining-round">
+                        <span class="calc-option__title">Round (seats 6)</span>
+                        <span class="calc-option__sub">~150cm diameter</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- STEP 2: Hallway width -->
+            <div class="calc-step" id="step2-hallway" hidden>
+                <span class="calc-step__label">Step 2</span>
+                <h2 class="calc-step__heading">How wide is the passage?</h2>
+                <div class="calc-options">
+                    <button class="calc-option" data-result="hall-narrow">
+                        <span class="calc-option__title">Narrow</span>
+                        <span class="calc-option__sub">Under 90cm wide</span>
+                    </button>
+                    <button class="calc-option" data-result="hall-standard">
+                        <span class="calc-option__title">Standard</span>
+                        <span class="calc-option__sub">90–120cm wide</span>
+                    </button>
+                    <button class="calc-option" data-result="hall-wide">
+                        <span class="calc-option__title">Wide</span>
+                        <span class="calc-option__sub">Over 120cm wide</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- RESULT -->
+            <div class="calc-result" id="result" hidden>
+                <span class="calc-result__label">Recommended size</span>
+                <p class="calc-result__size" id="resultSize"></p>
+                <p class="calc-result__size-ft" id="resultSizeFt"></p>
+                <p class="calc-result__note" id="resultNote"></p>
+                <div class="calc-result__actions">
+                    <a href="#" id="resultShopLink" class="calc-cta-primary">Shop This Size</a>
+                    <a href="../blog/moroccan-rug-sizing-guide/index.html" class="calc-cta-secondary">Read the Full Sizing Guide</a>
+                </div>
+            </div>
+
+            <div class="calc-reset" id="resetWrap" hidden>
+                <button type="button" id="resetBtn">Start over</button>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer class="footer">
+        <div class="footer__inner">
+            <div class="footer__top">
+                <div class="footer__brand">
+                    <img src="../logos/tiziri-mark.svg" width="40" height="40" alt="Tiziri" aria-hidden="true">
+                    <p>Handwoven in Morocco.<br>Delivered worldwide.</p>
+                </div>
+                <div class="footer__cols">
+                    <div class="footer__col">
+                        <span class="footer__heading">Collections</span>
+                        <a href="../collections/index.html#beni-ourain">Beni Ourain</a>
+                        <a href="../collections/index.html#kilim">Kilim</a>
+                        <a href="../collections/index.html#boujaad">Boujaad</a>
+                        <a href="../made-to-order/index.html">Made to Order</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Learn</span>
+                        <a href="../craft/index.html">The Craft</a>
+                        <a href="../blog/index.html">Journal</a>
+                        <a href="../blog/moroccan-rug-styling-guide/index.html">Styling Guide</a>
+                        <a href="../blog/moroccan-rug-sizing-guide/index.html">Sizing Guide</a>
+                        <a href="../size-calculator/index.html">Size Calculator</a>
+                        <a href="../story/index.html">Our Story</a>
+                    </div>
+                    <div class="footer__col">
+                        <span class="footer__heading">Help</span>
+                        <a href="../care/index.html">Care Guide</a>
+                        <a href="../faq/index.html">FAQ</a>
+                        <a href="../contact/index.html">Contact</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <div class="footer__social">
+                    <a href="https://instagram.com/tizirirugs" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://pinterest.com/tizirirugs" target="_blank" rel="noopener">Pinterest</a>
+                </div>
+                <div class="footer__legal">
+                    <span>© 2026 Tiziri — Handwoven in Morocco</span>
+                    <a href="../privacy/index.html">Privacy Policy</a>
+                    <a href="../terms/index.html">Terms &amp; Conditions</a>
+                    <a href="../accessibility/index.html">Accessibility</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+    <script src="../js/size-calculator.js?v=1"></script>
+    <a class="whatsapp-btn" href="https://wa.me/16175105376?text=Hi%2C%20I%E2%80%99m%20interested%20in%20one%20of%20your%20Moroccan%20rugs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
+</body>
+</html>
