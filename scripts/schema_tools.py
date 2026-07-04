@@ -405,7 +405,7 @@ BLOG_POSTS = {
             "Kilim, Contemporary, Azilal and Boucherouite — plus how to buy, size, and care "
             "for one."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260607-WA0056.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0261.webp",
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/complete-moroccan-rug-guide/",
     },
@@ -426,7 +426,7 @@ BLOG_POSTS = {
             "identical-looking rugs vary in price, and what to be wary of when a price "
             "looks too good to be true."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260607-WA0149.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260621-WA0014.webp",
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/how-much-does-a-moroccan-rug-cost/",
     },
@@ -436,7 +436,7 @@ BLOG_POSTS = {
             "How to choose the right rug size for a living room, bedroom, dining room or "
             "hallway — with real measurements, not guesswork."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260619-WA0007.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260621-WA0011.webp",
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/moroccan-rug-sizing-guide/",
     },
@@ -488,7 +488,7 @@ BLOG_POSTS = {
             "What actually separates a hand-knotted rug from a tufted or machine-made "
             "one — construction, durability, lifespan, and how to tell which you're buying."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0227.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260608-WA0014.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/hand-knotted-vs-tufted-vs-machine-made/",
     },
@@ -508,7 +508,7 @@ BLOG_POSTS = {
             "How to layer a Moroccan rug over jute, sisal, or a larger neutral base — "
             "proportion rules, material pairing, and which styles layer best."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0273.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260531-WA0035.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/rug-layering-guide/",
     },
@@ -529,7 +529,7 @@ BLOG_POSTS = {
             "How commissioning a made-to-order Moroccan rug actually works — the 3-step "
             "process, real timelines, sizing, and what to have ready before you enquire."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260607-WA0056.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260618-WA0044.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/custom-made-to-order-rug-guide/",
     },
@@ -539,7 +539,7 @@ BLOG_POSTS = {
             "How to clean, roll, and store a hand-knotted wool rug for months or years "
             "without moth damage, mildew, or crease lines that never come out."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0224.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260608-WA0040.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/how-to-store-a-moroccan-rug/",
     },
@@ -550,7 +550,7 @@ BLOG_POSTS = {
             "to do immediately for wine, water, oil, and pet stains on a hand-knotted "
             "wool rug."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0224.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260621-WA0033.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/rug-stain-what-to-do-right-now/",
     },
@@ -561,7 +561,7 @@ BLOG_POSTS = {
             "floor protection, and cushioning — and how to choose the right one for "
             "your floor type."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0227.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260621-WA0038.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/rug-pad-guide/",
     },
@@ -572,7 +572,7 @@ BLOG_POSTS = {
             "textured, imperfect element in an otherwise pared-back room — and how to "
             "choose the right one."
         ),
-        "image": f"{SITE}/rug-photos/IMG-20260530-WA0259.webp",
+        "image": f"{SITE}/rug-photos/IMG-20260530-WA0271.webp",
         "datePublished": "2026-07-04",
         "url": f"{SITE}/blog/moroccan-rug-modern-minimalist-interior/",
     },
