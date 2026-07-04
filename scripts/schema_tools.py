@@ -430,6 +430,7 @@ STATIC_PAGES = [
     ("made-to-order/", "monthly", "0.8"),
     ("privacy/", "yearly", "0.3"),
     ("terms/", "yearly", "0.3"),
+    ("accessibility/", "yearly", "0.3"),
 ]
 
 SITEMAP_URL_RE = re.compile(
