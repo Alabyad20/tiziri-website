@@ -461,6 +461,16 @@ BLOG_POSTS = {
         "datePublished": "2026-07-03",
         "url": f"{SITE}/blog/bedroom-rug-guide/",
     },
+    "blog/dining-room-rug-guide/index.html": {
+        "headline": "Dining Room Rug Guide: Size, Placement & Style",
+        "description": (
+            "How to size a rug for under a dining table — chair clearance math, why "
+            "flat-weave beats pile here, and real dining room sizing by table shape."
+        ),
+        "image": f"{SITE}/rug-photos/IMG-20260621-WA0028.webp",
+        "datePublished": "2026-07-04",
+        "url": f"{SITE}/blog/dining-room-rug-guide/",
+    },
 }
 
 

@@ -5,79 +5,79 @@
     <!-- Core pages -->
     <url>
         <loc>https://tizirirugs.com/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/collections/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/craft/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/blog/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/story/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/contact/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/shipping/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/care/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/faq/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/made-to-order/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.8</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/privacy/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/terms/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/accessibility/</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
@@ -209,11 +209,20 @@
             <image:loc>https://tizirirugs.com/rug-photos/IMG-20260530-WA0277.webp</image:loc>
         </image:image>
     </url>
+    <url>
+        <loc>https://tizirirugs.com/blog/dining-room-rug-guide/</loc>
+        <lastmod>2026-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+        <image:image>
+            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260621-WA0028.webp</image:loc>
+        </image:image>
+    </url>
 
     <!-- Available rugs -->
     <url>
         <loc>https://tizirirugs.com/rugs/amal.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -222,7 +231,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/amira.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -231,7 +240,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/asma.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -240,7 +249,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/aziza.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -258,7 +267,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/bahija.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -270,7 +279,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/basma.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -279,7 +288,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/bouchra.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -288,7 +297,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/chaima.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -297,7 +306,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/fadwa.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -330,7 +339,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/fatima.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -345,7 +354,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ghita.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -354,7 +363,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/halima.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -369,7 +378,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hanan.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -378,7 +387,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hasna.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -387,7 +396,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hayat.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -396,7 +405,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/hind.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -408,7 +417,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ibtissam.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -423,7 +432,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ikram.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -456,7 +465,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/ilham.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -465,7 +474,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/inas.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -474,7 +483,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/jamila.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -483,7 +492,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/jihane.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -492,13 +501,13 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/karima.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/karima2.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -531,7 +540,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/kenza.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -543,7 +552,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/khadija.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -552,7 +561,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lalla.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -567,7 +576,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lamia.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -582,7 +591,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/latifa.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -615,7 +624,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/layla.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -624,7 +633,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/leila.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -633,7 +642,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/lina.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -648,7 +657,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/loubna.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -657,7 +666,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/maha.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -666,7 +675,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/majda.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -705,7 +714,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/malika.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -720,7 +729,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/manal.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -729,7 +738,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/meryem.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -738,7 +747,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/mouna.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -747,7 +756,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nabila.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -780,7 +789,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nadia.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -789,7 +798,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/naima.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -798,7 +807,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/najat.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -807,7 +816,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/najoua.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -840,7 +849,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nawal.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -855,7 +864,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nesrine.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -867,7 +876,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nihal.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -876,7 +885,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/nour.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -894,7 +903,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/noura.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -903,7 +912,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/oumaima.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -912,7 +921,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rachida.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -945,7 +954,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rahma.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -954,7 +963,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rajaa.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -963,7 +972,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rania.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -972,7 +981,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/rim.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -981,7 +990,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/saadia.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1014,7 +1023,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sabah.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1023,7 +1032,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/safiya.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1032,7 +1041,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/salma.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1041,7 +1050,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sama.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1056,7 +1065,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/samira.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1065,7 +1074,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sana.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1074,7 +1083,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sara.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1083,7 +1092,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/setti.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1098,7 +1107,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/sirine.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1128,7 +1137,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/souad.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1146,7 +1155,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/soukaina.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1161,7 +1170,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/soundouss.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1170,7 +1179,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/tafat.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1206,7 +1215,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/taous.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1221,7 +1230,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/touria.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1236,7 +1245,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/wafaa.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1245,7 +1254,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/wahiba.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1278,7 +1287,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/widad.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1293,7 +1302,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/wisal.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1302,7 +1311,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/yasmine.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1311,7 +1320,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/yousra.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1320,7 +1329,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zahra.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1329,13 +1338,13 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zara.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zeinab.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1353,7 +1362,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zhour.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
@@ -1368,7 +1377,7 @@
     </url>
     <url>
         <loc>https://tizirirugs.com/rugs/zineb.html</loc>
-        <lastmod>2026-07-03</lastmod>
+        <lastmod>2026-07-04</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
         <image:image>
