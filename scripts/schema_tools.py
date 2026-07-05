@@ -413,7 +413,7 @@ BLOG_POSTS = {
         "headline": "Moroccan Rug Styling Guide",
         "description": (
             "Simple, practical ways to choose, place, and style a handmade Moroccan rug in "
-            "your home — by room, by style, by colour, and by the mistakes worth avoiding."
+            "your home — by room, by style, by color, and by the mistakes worth avoiding."
         ),
         "image": f"{SITE}/rug-photos/IMG-20260619-WA0007.webp",
         "datePublished": "2026-07-03",
