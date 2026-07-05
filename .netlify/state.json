@@ -1,3 +1,22 @@
 {
-	"siteId": "177a362b-cd55-45d3-a01c-6d492c61b39c"
+	"siteId": "177a362b-cd55-45d3-a01c-6d492c61b39c",
+	"dbConnectionString": "postgres://localhost:57479/postgres",
+	"geolocation": {
+		"data": {
+			"city": "Revere",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "MA",
+				"name": "Massachusetts"
+			},
+			"timezone": "America/New_York",
+			"latitude": 42.4125,
+			"longitude": -71.0034,
+			"postalCode": "02151"
+		},
+		"timestamp": 1783218083379
+	}
 }
