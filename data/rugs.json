@@ -948,28 +948,6 @@
     "color": "multicolor"
   },
   {
-    "slug": "nadia",
-    "name": "Nadia",
-    "style": "Mrirt",
-    "category": "Mrirt Moroccan Rug",
-    "description": "A field of deep navy — indigo-dyed wool raised into squares, each one distinct. Photographed on red earth in full sun. The color is as saturated as it appears.",
-    "origin": "Morocco",
-    "dimensions": "To be confirmed",
-    "material": "Wool on cotton warp",
-    "pile": "High",
-    "age": "To be confirmed",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260613-WA0059.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "blue"
-  },
-  {
     "slug": "naima",
     "name": "Naima",
     "style": "Beni Ourain",
@@ -1394,30 +1372,6 @@
     "rating": null,
     "reviews": [],
     "color": "ivory"
-  },
-  {
-    "slug": "sama",
-    "name": "Sama",
-    "style": "Contemporary",
-    "category": "Contemporary Moroccan Rug",
-    "description": "A contemporary piece from the Atlas region. It holds its reference to Berber geometry without being nostalgic about it. The palette is restrained.",
-    "origin": "Atlas Region, Morocco",
-    "dimensions": "160 × 250 cm",
-    "material": "Wool on cotton warp, natural and synthetic dyes",
-    "pile": "Low to medium",
-    "age": "Contemporary (woven 2023–2024)",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0264.webp",
-      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0265.webp",
-      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0263.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "multicolor"
   },
   {
     "slug": "samira",
