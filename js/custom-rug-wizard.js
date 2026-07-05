@@ -70,7 +70,7 @@ function showSummary() {
     if (wizard.style) params.set('style', wizard.style);
     if (wizard.size) params.set('size', wizard.size);
     if (wizard.price) params.set('price', wizard.price);
-    if (wizard.colour) params.set('colour', wizard.colour);
+    if (wizard.colour) params.set('color', wizard.colour);
     const notes = notesEl.value.trim();
     if (notes) params.set('notes', notes);
 

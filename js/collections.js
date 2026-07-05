@@ -28,8 +28,8 @@ let activeSearch = '';
 const meta = {
     'all':          { title: 'All Rugs',        sub: 'Every piece hand-selected. Each one woven once.' },
     'beni-ourain':  { title: 'Beni Ourain',      sub: 'The classic. Ivory wool, geometric form.' },
-    'azilal':       { title: 'Azilal & Vintage', sub: 'Bold colour. Tribal pattern. Alive in any room.' },
-    'boujaad':      { title: 'Boujaad',           sub: 'Vivid colour. Bold tribal pattern. From the Khouribga plains.' },
+    'azilal':       { title: 'Azilal & Vintage', sub: 'Bold color. Tribal pattern. Alive in any room.' },
+    'boujaad':      { title: 'Boujaad',           sub: 'Vivid color. Bold tribal pattern. From the Khouribga plains.' },
     'boucherouite': { title: 'Boucherouite',     sub: 'Woven from recycled textile. Nothing wasted.' },
     'mrirt':        { title: 'Mrirt',            sub: 'Fine-pile rugs from the Middle Atlas. Traditional form.' },
     'contemporary': { title: 'Contemporary',     sub: 'Moroccan craft. Modern sensibility.' },

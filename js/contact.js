@@ -4,22 +4,38 @@ const form    = document.getElementById('contactForm');
 const success = document.getElementById('contactSuccess');
 
 /* Pre-fill from a query string, e.g. ?design=green-wave or
-   ?style=Mrirt&size=Large%20(200%20x%20300cm)&price=%24950&colour=Bold — used by the
-   Made-to-Order page's "Enquire about this design" links and the Custom Rug Design Wizard. */
+   ?style=Mrirt&size=Large%20(200%20x%20300cm)&price=%24950&color=Bold — used by the
+   Made-to-Order page's "Enquire about this design" links and the Custom Rug Design Wizard.
+   ?topic=trade is used by the Designer & Trade page's application CTA. */
 (function prefillFromQuery() {
     const params = new URLSearchParams(window.location.search);
     const topicEl   = document.getElementById('contactTopic');
     const messageEl = document.getElementById('contactMessage');
     if (!topicEl || !messageEl) return;
 
+    const topic  = params.get('topic');
     const design = params.get('design');
     const style  = params.get('style');
     const size   = params.get('size');
     const price  = params.get('price');
-    const colour = params.get('colour');
+    const color  = params.get('color');
     const notes  = params.get('notes');
 
-    if (!design && !style && !size && !colour) return;
+    if (topic === 'trade') {
+        topicEl.value = 'Designer & trade enquiry';
+        messageEl.value = [
+            "I'd like to apply for the Designer & Trade program.",
+            '',
+            'Business/studio name:',
+            'Website or portfolio:',
+            'Type of project (residential, hospitality, commercial):',
+            '',
+            'Please let me know more.'
+        ].join('\n');
+        return;
+    }
+
+    if (!design && !style && !size && !color) return;
 
     topicEl.value = 'Specific rug enquiry';
 
@@ -28,7 +44,7 @@ const success = document.getElementById('contactSuccess');
     if (style)  lines.push(`Style: ${style}`);
     if (size)   lines.push(`Size: ${size}`);
     if (price)  lines.push(`Price: ${price}`);
-    if (colour) lines.push(`Colour direction: ${colour}`);
+    if (color)  lines.push(`Color direction: ${color}`);
     if (notes)  lines.push(`Notes: ${notes}`);
     lines.push('', 'Please let me know more.');
 

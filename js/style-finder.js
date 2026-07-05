@@ -36,14 +36,14 @@ const STYLES = {
     },
     boujaad: {
         name: 'Boujaad',
-        why: "Bold, dense colour and loose tribal geometry from the Rehamna plains — you want a rug that's the room's obvious focal point, not a supporting player.",
+        why: "Bold, dense color and loose tribal geometry from the Rehamna plains — you want a rug that's the room's obvious focal point, not a supporting player.",
         image: 'IMG-20260530-WA0420.webp',
         shop: '../collections/index.html#boujaad',
         guide: '../blog/boujaad-rug-guide/index.html',
     },
     mrirt: {
         name: 'Mrirt',
-        why: "The same high pile as Beni Ourain, paired with a bolder, more graphic palette — warmth and colour in one piece, often called the modern Beni Ourain.",
+        why: "The same high pile as Beni Ourain, paired with a bolder, more graphic palette — warmth and color in one piece, often called the modern Beni Ourain.",
         image: 'IMG-20260607-WA0149.webp',
         shop: '../collections/index.html#mrirt',
         guide: '../blog/mrirt-rug-guide/index.html',

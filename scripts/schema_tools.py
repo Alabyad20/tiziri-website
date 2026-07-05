@@ -631,6 +631,7 @@ STATIC_PAGES = [
     ("care/", "monthly", "0.5"),
     ("faq/", "monthly", "0.5"),
     ("made-to-order/", "monthly", "0.8"),
+    ("trade/", "monthly", "0.6"),
     ("size-calculator/", "monthly", "0.7"),
     ("style-finder/", "monthly", "0.7"),
     ("custom-rug-wizard/", "monthly", "0.8"),
