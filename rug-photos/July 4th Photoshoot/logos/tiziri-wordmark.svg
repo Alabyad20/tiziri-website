@@ -1,0 +1,14 @@
+<svg width="220" height="56" viewBox="0 0 220 56" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
+  </defs>
+
+  <!-- TIZIRI wordmark only — charcoal -->
+  <text
+    x="4" y="40"
+    font-family="'Cormorant Garamond', Cormorant, Georgia, serif"
+    font-weight="300"
+    font-size="32"
+    fill="#1C1C1A"
+    letter-spacing="8">TIZIRI</text>
+</svg>

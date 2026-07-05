@@ -1,0 +1,24 @@
+<svg width="360" height="72" viewBox="0 0 360 72" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300&amp;display=swap');</style>
+    <clipPath id="c">
+      <circle cx="36" cy="36" r="34"/>
+    </clipPath>
+    <mask id="m">
+      <circle cx="36" cy="23" r="7" fill="white"/>
+      <circle cx="39.5" cy="21" r="5.7" fill="black"/>
+    </mask>
+  </defs>
+
+  <g clip-path="url(#c)">
+    <circle cx="36" cy="36" r="34" fill="#E8D4B0"/>
+    <path d="M 2,51 L 23,37 L 36,43 L 52,34 L 70,40 L 70,72 L 2,72 Z" fill="#C87840"/>
+    <path d="M 2,57 L 21,48 L 33,52 L 49,46 L 70,51 L 70,72 L 2,72 Z" fill="#B84020"/>
+    <circle cx="36" cy="23" r="7" fill="#F0E2C4" mask="url(#m)"/>
+  </g>
+  <circle cx="36" cy="36" r="34" fill="none" stroke="#1A1410" stroke-width="0.8"/>
+
+  <text x="84" y="47"
+    font-family="'Cormorant Garamond', Cormorant, Georgia, serif"
+    font-weight="300" font-size="28" fill="#1C1C1A" letter-spacing="8">TIZIRI</text>
+</svg>
