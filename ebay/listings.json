@@ -206,5 +206,13 @@
   "price": 1400,
   "video": true,
   "state": "live"
+ },
+ "bouchra": {
+  "sku": "BOUCHRA",
+  "offerId": "201046048011",
+  "listingId": "307045651405",
+  "price": 1300,
+  "video": true,
+  "state": "live"
  }
 }
