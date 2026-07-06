@@ -42,18 +42,18 @@
  "majda": {
   "sku": "MAJDA",
   "offerId": "200594210011",
-  "listingId": null,
+  "listingId": "307046040130",
   "price": 1400,
   "video": true,
-  "state": "draft"
+  "state": "live"
  },
  "nabila": {
   "sku": "NABILA",
   "offerId": "200595079011",
-  "listingId": null,
+  "listingId": "307046040161",
   "price": 1850,
   "video": true,
-  "state": "draft"
+  "state": "live"
  },
  "najat": {
   "sku": "NAJAT",
@@ -82,10 +82,10 @@
  "rania": {
   "sku": "RANIA",
   "offerId": "200596235011",
-  "listingId": null,
+  "listingId": "307046040208",
   "price": 1450,
   "video": false,
-  "state": "draft"
+  "state": "live"
  },
  "saadia": {
   "sku": "SAADIA",
@@ -122,10 +122,10 @@
  "warda": {
   "sku": "WARDA",
   "offerId": "200596785011",
-  "listingId": null,
+  "listingId": "307046054599",
   "price": 1100,
   "video": true,
-  "state": "draft"
+  "state": "live"
  },
  "samia": {
   "sku": "SAMIA",
@@ -170,10 +170,10 @@
  "rihab": {
   "sku": "RIHAB",
   "offerId": "200598031011",
-  "listingId": null,
+  "listingId": "307046054640",
   "price": 1400,
   "video": true,
-  "state": "draft"
+  "state": "live"
  },
  "zahia": {
   "sku": "ZAHIA",
