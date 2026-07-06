@@ -980,29 +980,6 @@
     "color": "blue"
   },
   {
-    "slug": "nesrine",
-    "name": "Nesrine",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "A bold geometric composition in ivory and cobalt blue — intersecting lines and angular forms filling a white wool field. Beni Ourain in spirit, graphic in character. The kind of rug that stops a room.",
-    "origin": "Middle Atlas, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nesrine/IMG_20260627_011531.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/nesrine/IMG_20260627_011539.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
-  },
-  {
     "slug": "nihal",
     "name": "Nihal",
     "style": "Boujaad",
@@ -1286,50 +1263,6 @@
     "color": "ivory"
   },
   {
-    "slug": "samira",
-    "name": "Samira",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "Deep forest green pile with an ivory diamond lattice — the classic Beni Ourain geometry in an unexpected, commanding palette. Grounded and modern at once. The kind of rug that makes a dark interior feel intentional and alive.",
-    "origin": "Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "Contemporary",
-    "price": 340,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/samira/IMG_20260627_011554.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "green"
-  },
-  {
-    "slug": "sana",
-    "name": "Sana",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "Beni Ourain from the Middle Atlas, hand-knotted in rich olive green and ivory wool. Bold concentric diamond pattern runs across the deep pile field. The kind of rug that brings warmth and character to any room.",
-    "origin": "Middle Atlas, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "Cut pile (deep)",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260618-WA0039.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "green"
-  },
-  {
     "slug": "siham",
     "name": "Siham",
     "style": "Beni Ourain",
@@ -1406,30 +1339,6 @@
     "color": "ivory"
   },
   {
-    "slug": "soukaina",
-    "name": "Soukaina",
-    "style": "Mrirt",
-    "category": "Mrirt Moroccan Rug",
-    "description": "A Mrirt runner woven in deep navy wool, its full field crossed by an all-over ivory diamond lattice. The high pile gives it warmth; the dark ground gives it presence. A runner that commands any corridor or room it enters.",
-    "origin": "Mrirt Region, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "Contemporary",
-    "price": 340,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soukaina/IMG_20260627_012057.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soukaina/IMG_20260627_012107.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/soukaina/IMG_20260627_012108.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "blue"
-  },
-  {
     "slug": "tafat",
     "name": "Tafat",
     "style": "Mrirt",
@@ -1457,54 +1366,6 @@
     "rating": null,
     "reviews": [],
     "color": "grey"
-  },
-  {
-    "slug": "taous",
-    "name": "Taous",
-    "style": "Geometric",
-    "category": "Geometric Moroccan Rug",
-    "description": "Ivory ground with bold cobalt blue geometric star and diamond motifs — a graphic two-tone palette that speaks without decoration. Large scale, high impact, and deeply Moroccan in spirit. The kind of rug that anchors a room on its own terms.",
-    "origin": "Middle Atlas, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/taous/IMG_20260627_013028.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/taous/IMG_20260627_013031.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/taous/IMG_20260627_013034.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
-  },
-  {
-    "slug": "touria",
-    "name": "Touria",
-    "style": "Kilim",
-    "category": "Kilim Moroccan Rug",
-    "description": "Soft lavender and ivory tones woven into repeating geometric Berber diamonds — the flatweave tradition at its most refined. Light, layerable, and quietly beautiful. Long tasselled ends finish the piece with the unhurried elegance of the High Atlas.",
-    "origin": "Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, flat-woven",
-    "pile": "Flat-weave",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/touria/IMG_20260627_013055.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/touria/IMG_20260627_013056.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/touria/IMG_20260627_013115.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "purple"
   },
   {
     "slug": "wafaa",
@@ -1561,30 +1422,6 @@
     "rating": null,
     "reviews": [],
     "color": "multicolor"
-  },
-  {
-    "slug": "widad",
-    "name": "Widad",
-    "style": "Boujaad",
-    "category": "Boujaad Moroccan Rug",
-    "description": "Caramel and ivory in alternating horizontal bands that form a quiet cross composition across the field. The palette is warm, the pile soft and dense. An unusually restrained Boujaad — the geometry minimal, the presence calm.",
-    "origin": "Beni Mellal Province, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool on wool warp",
-    "pile": "Medium-high, soft",
-    "age": "Vintage",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/widad/IMG_20260627_013205.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/widad/IMG_20260627_013444.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/widad/IMG_20260627_013445.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "brown"
   },
   {
     "slug": "yasmine",
@@ -1647,30 +1484,6 @@
       "https://tizirirugs.com/rug-photos/IMG-20260619-WA0003.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260619-WA0013.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260619-WA0017.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "multicolor"
-  },
-  {
-    "slug": "zhour",
-    "name": "Zhour",
-    "style": "Boujaad",
-    "category": "Boujaad Moroccan Rug",
-    "description": "Broad washes of orange, hot pink and crimson bloom across an ivory ground — large, painterly, unapologetic. A rug that owns its room. Mrirt pile, Boujaad spirit, and a presence that needs no explanation.",
-    "origin": "Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zhour/IMG_20260627_013118.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zhour/IMG_20260627_013132.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zhour/IMG_20260627_013134.webp"
     ],
     "stripeLink": null,
     "rating": null,
