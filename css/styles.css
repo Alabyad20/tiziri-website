@@ -891,8 +891,8 @@ a {
 
 .product-card__price-row {
     display: flex;
-    align-items: baseline;
-    gap: 8px;
+    flex-direction: column;
+    gap: 1px;
     margin-top: 2px;
 }
 
@@ -903,7 +903,8 @@ a {
 .product-card__price--compare {
     font-family: var(--sans);
     font-weight: 300;
-    font-size: 12px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
     color: var(--mid-grey);
     text-decoration: line-through;
     text-decoration-color: var(--terracotta);
