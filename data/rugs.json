@@ -117,7 +117,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/305x203cm/IMG_20260704_193505.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/305x203cm/IMG_20260704_194106.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/4gM00d6q132uc8gfhK2cg0g",
     "rating": null,
     "reviews": [],
     "color": "pink"
@@ -1536,7 +1536,7 @@
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260704-WA0523.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/9B66oB4hT9qS6NWfhK2cg0h",
     "rating": null,
     "reviews": [],
     "color": "ivory"
@@ -1566,7 +1566,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/242x159cm/IMG_20260704_183444.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/242x159cm/IMG_20260704_183501.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/14A6oBaGh6eG4FOfhK2cg0i",
     "rating": null,
     "reviews": [],
     "color": "multicolor"
@@ -1607,7 +1607,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/243x152%20cm/IMG_20260704_180346.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/243x152%20cm/IMG_20260704_180354.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/28E6oBcOp6eG2xG8Tm2cg0j",
     "rating": null,
     "reviews": [],
     "color": "green"
@@ -1615,13 +1615,13 @@
   {
     "slug": "sanaa",
     "name": "Sanaa",
-    "style": "Kilim",
-    "category": "Kilim Moroccan Rug",
-    "description": "A saturated chartreuse ground divided into a brick-like grid by black and white striped lines. Bold and graphic, flat-woven.",
+    "style": "Beni Ourain",
+    "category": "Beni Ourain Moroccan Rug",
+    "description": "A saturated chartreuse ground divided into a brick-like grid by black and white striped lines. Bold and graphic, medium pile.",
     "origin": "Morocco",
     "dimensions": "253 x 148 cm (8 ft 4 in &times; 4 ft 10 in)",
-    "material": "Wool, flat-woven",
-    "pile": "Flat-woven (no pile)",
+    "material": "Wool on cotton warp",
+    "pile": "Medium",
     "age": "New",
     "price": 1050,
     "currency": "USD",
@@ -1647,7 +1647,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/253x148%20cm/IMG_20260704_175304.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/253x148%20cm/IMG_20260704_175311.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/14A00d29L6eGego7Pi2cg0k",
     "rating": null,
     "reviews": [],
     "color": "green"
@@ -1688,7 +1688,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/284x212%20Cm/IMG_20260704_152120.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/284x212%20Cm/IMG_20260704_152134.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/28E5kx8y95aC8W46Le2cg0l",
     "rating": null,
     "reviews": [],
     "color": "ivory"
@@ -1696,13 +1696,13 @@
   {
     "slug": "kawtar",
     "name": "Kawtar",
-    "style": "Kilim",
-    "category": "Kilim Moroccan Rug",
-    "description": "An ivory ground crossed by a black grid, with a solid red block and a black block anchoring two corners. A quiet nod to Mondrian, woven flat.",
+    "style": "Beni Ourain",
+    "category": "Beni Ourain Moroccan Rug",
+    "description": "An ivory ground crossed by a black grid, with a solid red block and a black block anchoring two corners. A quiet nod to Mondrian, low pile.",
     "origin": "Morocco",
     "dimensions": "296 x 212 cm (9 ft 8 in &times; 6 ft 11 in)",
-    "material": "Wool, flat-woven",
-    "pile": "Flat-woven (no pile)",
+    "material": "Wool on cotton warp",
+    "pile": "Low",
     "age": "New",
     "price": 1450,
     "currency": "USD",
@@ -1751,7 +1751,7 @@
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260704-WA0529.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/5kQdR35lX46ygowedG2cg0n",
     "rating": null,
     "reviews": [],
     "color": "multicolor"
@@ -1792,7 +1792,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/298x211cm/IMG_20260704_130042.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/298x211cm/IMG_20260704_130042_1.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/eVq6oB9Cd46yc8g2uY2cg0o",
     "rating": null,
     "reviews": [],
     "color": "multicolor"
@@ -1833,7 +1833,7 @@
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/300x190cm/IMG_20260704_200514.webp",
       "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/300x190cm/IMG_20260704_200517.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/6oUcMZdSt6eG1tC2uY2cg0p",
     "rating": null,
     "reviews": [],
     "color": "green"
