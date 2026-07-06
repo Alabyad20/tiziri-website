@@ -55,6 +55,7 @@ a {
     --sans:   'Jost', system-ui, sans-serif;
 
     --nav-h:     72px;
+    --trust-h:   38px;
     --max-w:     1440px;
     --gutter:    clamp(20px, 5vw, 80px);
     --ease:      600ms cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -888,6 +889,33 @@ a {
     margin-top: 2px;
 }
 
+.product-card__price-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 2px;
+}
+
+.product-card__price-row .product-card__price {
+    margin-top: 0;
+}
+
+.product-card__price--compare {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 12px;
+    color: var(--mid-grey);
+    text-decoration: line-through;
+    text-decoration-color: var(--terracotta);
+    text-decoration-thickness: 1px;
+}
+
+.product-card__badge--save {
+    left: auto;
+    right: 12px;
+    color: var(--terracotta);
+}
+
 
 /* ============================================
    SECTION 9 — INSTAGRAM
@@ -1553,12 +1581,68 @@ a {
 
 
 /* ============================================
+   TRUST BAR
+   ============================================ */
+
+.trust-bar {
+    position: sticky;
+    top: var(--nav-h);
+    z-index: 51;
+    background: var(--indigo);
+}
+
+.trust-bar__inner {
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--gutter);
+    height: var(--trust-h);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.trust-bar__inner::-webkit-scrollbar {
+    display: none;
+}
+
+.trust-bar__item {
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 10px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--bone);
+    white-space: nowrap;
+}
+
+a.trust-bar__item {
+    text-decoration: none;
+    border-bottom: 1px solid rgba(245, 240, 232, 0.4);
+    padding-bottom: 1px;
+    transition: border-color 300ms ease;
+}
+
+a.trust-bar__item:hover {
+    border-color: var(--bone);
+}
+
+.trust-bar__sep {
+    color: rgba(245, 240, 232, 0.4);
+    font-size: 10px;
+}
+
+
+/* ============================================
    FILTER BAR
    ============================================ */
 
 .filter-bar {
     position: sticky;
-    top: var(--nav-h);
+    top: calc(var(--nav-h) + var(--trust-h));
     z-index: 50;
     background: var(--white);
     border-bottom: 1px solid rgba(44, 42, 37, 0.08);
