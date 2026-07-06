@@ -717,7 +717,7 @@
     "name": "Lina",
     "style": "Beni Ourain",
     "category": "Beni Ourain Moroccan Rug",
-    "description": "Blush pink deepening to plum in the shadows. Two bold double-diamond Amazigh motifs anchor the field, with a row of triangles at the base. The color has faded from use — which is how the best Beni Ourain rugs arrive, already broken in, already belonging somewhere.",
+    "description": "An ivory ground with a repeating diamond lattice in a soft, tone-on-tone weave. Quiet and understated, letting the pile texture and diamond structure carry the design.",
     "origin": "High Atlas, Morocco",
     "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
     "material": "Wool on wool warp",
@@ -734,7 +734,7 @@
     "stripeLink": null,
     "rating": null,
     "reviews": [],
-    "color": "pink"
+    "color": "ivory"
   },
   {
     "slug": "loubna",
@@ -1369,30 +1369,6 @@
     "rating": null,
     "reviews": [],
     "color": "green"
-  },
-  {
-    "slug": "setti",
-    "name": "Setti",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "Pure cobalt blue and ivory, with a bold zigzag border running the full length on both sides. High pile, hand-knotted — the geometry is sharp and the color vivid against the deep wool. Beni Ourain in spirit, graphic in character.",
-    "origin": "Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/setti/IMG_20260627_013147.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/setti/IMG_20260627_013153.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/setti/IMG_20260627_013155.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "blue"
   },
   {
     "slug": "siham",
