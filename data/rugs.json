@@ -22,28 +22,6 @@
     "color": "blue"
   },
   {
-    "slug": "amira",
-    "name": "Amira",
-    "style": "Boucherouite",
-    "category": "Boucherouite Moroccan Rug",
-    "description": "A compact Boucherouite in warm tones. Recycled textile, Middle Atlas tradition. A piece for a space that does not need to announce itself.",
-    "origin": "Middle Atlas, Morocco",
-    "dimensions": "130 × 195 cm",
-    "material": "Recycled textile (cotton, jersey, synthetics) on cotton warp",
-    "pile": "Flat to low",
-    "age": "Vintage (approx. 1980s–2000s)",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260531-WA0035.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "multicolor"
-  },
-  {
     "slug": "asma",
     "name": "Asma",
     "style": "Kilim",
@@ -1327,28 +1305,6 @@
     "color": "multicolor"
   },
   {
-    "slug": "safiya",
-    "name": "Safiya",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "Ivory high-pile Beni Ourain wool with bold cobalt blue abstract geometric lines crossing the field. The design is clean and graphic; the texture is dense and soft. Beni Ourain rugs from the Atlas Mountains are among the most tactile things you can put on a floor.",
-    "origin": "Middle Atlas, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "Cut pile (high)",
-    "age": "Contemporary",
-    "price": 340,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260618-WA0041.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
-  },
-  {
     "slug": "salma",
     "name": "Salma",
     "style": "Beni Ourain",
@@ -1539,28 +1495,6 @@
     "color": "blue"
   },
   {
-    "slug": "soundouss",
-    "name": "Soundouss",
-    "style": "Contemporary",
-    "category": "Contemporary Moroccan Rug",
-    "description": "White wool with scattered multicolor abstract art motifs — shapes, lines and forms in vivid color against a pure ivory ground. Hand-knotted, one of a kind, and unlike anything else in the room.",
-    "origin": "Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "Cut pile (medium)",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260618-WA0043.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
-  },
-  {
     "slug": "tafat",
     "name": "Tafat",
     "style": "Mrirt",
@@ -1718,28 +1652,6 @@
     "color": "brown"
   },
   {
-    "slug": "wisal",
-    "name": "Wisal",
-    "style": "Contemporary",
-    "category": "Contemporary Moroccan Rug",
-    "description": "Ivory and warm amber in a bold abstract rectangular grid. Hand-knotted in Morocco with deep pile — the amber lines cut through the field with confidence. A contemporary rug that earns attention without asking for it.",
-    "origin": "Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "Cut pile (medium)",
-    "age": "Contemporary",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260618-WA0044.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "multicolor"
-  },
-  {
     "slug": "yasmine",
     "name": "Yasmine",
     "style": "Contemporary",
@@ -1760,28 +1672,6 @@
     "rating": null,
     "reviews": [],
     "color": "multicolor"
-  },
-  {
-    "slug": "yousra",
-    "name": "Yousra",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "Ivory and sage green in high-pile Beni Ourain wool, with flowing horizontal wave stripes across the field. The long fibers are dense and soft underfoot. A fresh, rhythmic Beni Ourain from the Atlas Mountains.",
-    "origin": "Middle Atlas, Morocco",
-    "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "Cut pile (high)",
-    "age": "Contemporary",
-    "price": 340,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260618-WA0045.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
   },
   {
     "slug": "zara",
