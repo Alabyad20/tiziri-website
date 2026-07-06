@@ -1,0 +1,210 @@
+{
+ "tafat": {
+  "sku": "TAFAT",
+  "offerId": "200519151011",
+  "listingId": "307044668413",
+  "price": 1100,
+  "video": true,
+  "state": "live"
+ },
+ "fadwa": {
+  "sku": "FADWA",
+  "offerId": "200593690011",
+  "listingId": "307044729207",
+  "price": 1950,
+  "video": false,
+  "state": "live"
+ },
+ "ikram": {
+  "sku": "IKRAM",
+  "offerId": "200593696011",
+  "listingId": "307044729296",
+  "price": 1750,
+  "video": false,
+  "state": "live"
+ },
+ "karima2": {
+  "sku": "KARIMA2",
+  "offerId": "200593727011",
+  "listingId": "307044729323",
+  "price": 1050,
+  "video": false,
+  "state": "live"
+ },
+ "latifa": {
+  "sku": "LATIFA",
+  "offerId": "200593730011",
+  "listingId": "307044729338",
+  "price": 1200,
+  "video": false,
+  "state": "live"
+ },
+ "majda": {
+  "sku": "MAJDA",
+  "offerId": "200594210011",
+  "listingId": null,
+  "price": 1400,
+  "video": true,
+  "state": "draft"
+ },
+ "nabila": {
+  "sku": "NABILA",
+  "offerId": "200595079011",
+  "listingId": null,
+  "price": 1850,
+  "video": true,
+  "state": "draft"
+ },
+ "najat": {
+  "sku": "NAJAT",
+  "offerId": "200596217011",
+  "listingId": "307044729359",
+  "price": 1300,
+  "video": true,
+  "state": "live"
+ },
+ "najoua": {
+  "sku": "NAJOUA",
+  "offerId": "200596224011",
+  "listingId": "307044729389",
+  "price": 1100,
+  "video": false,
+  "state": "live"
+ },
+ "rachida": {
+  "sku": "RACHIDA",
+  "offerId": "200596230011",
+  "listingId": "307044729410",
+  "price": 1350,
+  "video": false,
+  "state": "live"
+ },
+ "rania": {
+  "sku": "RANIA",
+  "offerId": "200596235011",
+  "listingId": null,
+  "price": 1450,
+  "video": false,
+  "state": "draft"
+ },
+ "saadia": {
+  "sku": "SAADIA",
+  "offerId": "200596239011",
+  "listingId": "307044729453",
+  "price": 1400,
+  "video": false,
+  "state": "live"
+ },
+ "sirine": {
+  "sku": "SIRINE",
+  "offerId": "200596243011",
+  "listingId": "307044729473",
+  "price": 1200,
+  "video": false,
+  "state": "live"
+ },
+ "wahiba": {
+  "sku": "WAHIBA",
+  "offerId": "200596515011",
+  "listingId": "307044729492",
+  "price": 1800,
+  "video": true,
+  "state": "live"
+ },
+ "zineb": {
+  "sku": "ZINEB",
+  "offerId": "200596536011",
+  "listingId": "307044729564",
+  "price": 1300,
+  "video": false,
+  "state": "live"
+ },
+ "warda": {
+  "sku": "WARDA",
+  "offerId": "200596785011",
+  "listingId": null,
+  "price": 1100,
+  "video": true,
+  "state": "draft"
+ },
+ "samia": {
+  "sku": "SAMIA",
+  "offerId": "200597123011",
+  "listingId": "307044729596",
+  "price": 1050,
+  "video": true,
+  "state": "live"
+ },
+ "malak": {
+  "sku": "MALAK",
+  "offerId": "200597472011",
+  "listingId": "307044729633",
+  "price": 1050,
+  "video": true,
+  "state": "live"
+ },
+ "sanaa": {
+  "sku": "SANAA",
+  "offerId": "200597717011",
+  "listingId": "307044729653",
+  "price": 1050,
+  "video": true,
+  "state": "live"
+ },
+ "assia": {
+  "sku": "ASSIA",
+  "offerId": "200597744011",
+  "listingId": "307044729686",
+  "price": 1400,
+  "video": false,
+  "state": "live"
+ },
+ "kawtar": {
+  "sku": "KAWTAR",
+  "offerId": "200597979011",
+  "listingId": "307044729717",
+  "price": 1450,
+  "video": true,
+  "state": "live"
+ },
+ "rihab": {
+  "sku": "RIHAB",
+  "offerId": "200598031011",
+  "listingId": null,
+  "price": 1400,
+  "video": true,
+  "state": "draft"
+ },
+ "zahia": {
+  "sku": "ZAHIA",
+  "offerId": "200598161011",
+  "listingId": "307044729750",
+  "price": 1450,
+  "video": true,
+  "state": "live"
+ },
+ "ouafa": {
+  "sku": "OUAFA",
+  "offerId": "200598738011",
+  "listingId": "307044729777",
+  "price": 1300,
+  "video": true,
+  "state": "live"
+ },
+ "hafsa": {
+  "sku": "HAFSA",
+  "offerId": "200599394011",
+  "listingId": "307044729809",
+  "price": 1500,
+  "video": true,
+  "state": "live"
+ },
+ "sabrine": {
+  "sku": "SABRINE",
+  "offerId": "200599802011",
+  "listingId": "307044729833",
+  "price": 1400,
+  "video": true,
+  "state": "live"
+ }
+}
