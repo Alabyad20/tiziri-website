@@ -169,7 +169,7 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_133321.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/fadwa/IMG_20260627_132740.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/00w14h8y9dH85JS7Pi2cg0f",
     "rating": null,
     "reviews": [],
     "color": "multicolor"
@@ -465,7 +465,9 @@
     "price": 650,
     "currency": "USD",
     "availability": "InStock",
-    "images": [],
+    "images": [
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0148.webp"
+    ],
     "stripeLink": null,
     "rating": null,
     "reviews": [],
@@ -1459,7 +1461,9 @@
     "price": 650,
     "currency": "USD",
     "availability": "InStock",
-    "images": [],
+    "images": [
+      "https://tizirirugs.com/rug-photos/IMG-20260607-WA0147.webp"
+    ],
     "stripeLink": null,
     "rating": null,
     "reviews": [],
@@ -1514,7 +1518,7 @@
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0092.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0099.webp"
     ],
-    "stripeLink": null,
+    "stripeLink": "https://buy.stripe.com/7sYeV75lX6eG7S08Tm2cg0d",
     "rating": null,
     "reviews": [],
     "color": "grey"
