@@ -35,6 +35,8 @@ Everything you need is in this folder (`rug-photos/July 4th Photoshoot/Instagram
 >
 > So I did it myself. 27 rugs, each selected in person in Morocco, each one of a kind. All here in the US, ready to ship.
 >
+> tizirirugs.com
+>
 > #MoroccanRug #HandwovenRug #BerberRug #SmallBusiness #HomeDecor #OneOfAKind #RugsOfInstagram
 
 ### Day 3 — Reel: Hafsa
@@ -42,7 +44,7 @@ Everything you need is in this folder (`rug-photos/July 4th Photoshoot/Instagram
 
 > Hafsa — a repeating diamond checkerboard in dusty pink, grey and purple. An unusual three-color take on the classic lattice.
 >
-> Beni Ourain · 300 × 220 cm (9'10" × 7'3") · one of one. Link in bio.
+> Beni Ourain · 300 × 220 cm (9'10" × 7'3") · one of one. tizirirugs.com/rugs/hafsa
 >
 > #BeniOurain #MoroccanRug #HandwovenRug #InteriorDesign #PinkRug #WoolRug #RugsOfInstagram #HomeDecor
 
@@ -53,6 +55,8 @@ Everything you need is in this folder (`rug-photos/July 4th Photoshoot/Instagram
 >
 > Atlas mountains, Morocco. The wool, the weaver, the pattern — all from here. Every rug in the collection was selected in person, then shipped to the US.
 >
+> tizirirugs.com
+>
 > #Morocco #AtlasMountains #BerberRug #MoroccanRug #TravelAndHome #SlowDesign
 
 ### Day 7 — Reel: Warda
@@ -60,7 +64,7 @@ Everything you need is in this folder (`rug-photos/July 4th Photoshoot/Instagram
 
 > Warda — an ivory ground crossed by loose black lines, with blocks of mustard, terracotta and dusty blue breaking the field. Handwoven in Morocco.
 >
-> Contemporary · 241 × 163 cm (7'11" × 5'4"). Link in bio.
+> Contemporary · 241 × 163 cm (7'11" × 5'4"). tizirirugs.com/rugs/warda
 >
 > #MoroccanRug #ContemporaryRug #HandmadeRug #AbstractArt #InteriorStyling #LivingRoomDecor #WoolRug
 
@@ -75,14 +79,14 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R3 — Zahia** — `zahia_reel.mp4`
 > Zahia — a dense field of tribal symbols in muted burgundy, grey and orange, framed by a vivid striped border. Classic Boujaad energy.
 >
-> Boujaad · 298 × 211 cm (9'9" × 6'11") · one of one. Link in bio.
+> Boujaad · 298 × 211 cm (9'9" × 6'11") · one of one. tizirirugs.com/rugs/zahia
 >
 > #BoujaadRug #MoroccanRug #BerberRug #VintageStyle #BohoDecor #TribalRug #RugsOfInstagram
 
 **R4 — Ouafa** — `ouafa_reel.mp4`
 > Ouafa — a teal and ivory concentric rectangle pattern, carved in relief from a single high pile. Graphic and hypnotic.
 >
-> Mrirt · 300 × 190 cm (9'10" × 6'3"). Link in bio.
+> Mrirt · 300 × 190 cm (9'10" × 6'3"). tizirirugs.com/rugs/ouafa
 >
 > #MrirtRug #MoroccanRug #TealDecor #TextileArt #ModernRug #InteriorDesign #HandwovenRug
 
@@ -91,6 +95,8 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 >
 > Selected in person in Morocco. No wholesalers. No duplicates. When a rug sells, it's gone — the next one will be beautiful in a completely different way.
 >
+> The rug pictured: tizirirugs.com/rugs/assia
+>
 > #OneOfAKind #MoroccanRug #HandwovenRug #SlowDesign #ConsciousHome #InteriorDesign
 
 ### Week 3
@@ -98,14 +104,14 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R5 — Samia** — `samia_reel.mp4`
 > Samia — whimsical multicolor arrow motifs and a chain of nested diamonds on ivory. Playful, folk-art Azilal weaving.
 >
-> Azilal · 242 × 159 cm (7'11" × 5'3"). Link in bio.
+> Azilal · 242 × 159 cm (7'11" × 5'3"). tizirirugs.com/rugs/samia
 >
 > #AzilalRug #MoroccanRug #FolkArt #ColorfulHome #KidsRoomDecor #HandmadeRug #BerberRug
 
 **R6 — Kawtar** — `kawtar_reel.mp4`
 > Kawtar — an ivory ground crossed by a black grid, with a red block and a black block anchoring two corners. A quiet nod to Mondrian, woven flat.
 >
-> 296 × 212 cm (9'8" × 6'11"). Link in bio.
+> 296 × 212 cm (9'8" × 6'11"). tizirirugs.com/rugs/kawtar
 >
 > #MoroccanRug #Mondrian #MinimalistHome #ModernRug #FlatWeave #DesignLovers #InteriorDesign
 
@@ -114,6 +120,8 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 >
 > Hand-knotted wool pile, carved in relief. No machine could produce it — and no photo quite does it justice.
 >
+> The rug pictured: tizirirugs.com/rugs/tafat
+>
 > #NaturalWool #TextileArt #SlowDesign #Craftsmanship #MoroccanRug #WoolRug
 
 ### Week 4
@@ -121,14 +129,14 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R7 — Majda** — `majda_reel.mp4`
 > Majda — a dense abstract composition in ivory wool, turquoise, olive, blush and mustard. Every inch tells a different story. Handwoven in Morocco.
 >
-> Contemporary · 286 × 194 cm (9'5" × 6'4"). Link in bio.
+> Contemporary · 286 × 194 cm (9'5" × 6'4"). tizirirugs.com/rugs/majda
 >
 > #MoroccanRug #AbstractRug #ContemporaryArt #EclecticDecor #HandwovenRug #StatementRug
 
 **F-Fadwa — Feed photo: Fadwa** — `ig-upload/feed_fadwa.jpg`
 > Fadwa — an abstract cubist portrait, hand-knotted in cobalt blue, cerulean, mustard and charcoal on cream. Picasso's language, translated into wool.
 >
-> Contemporary · 287 × 207 cm (9'5" × 6'9") · one of one. Link in bio.
+> Contemporary · 287 × 207 cm (9'5" × 6'9") · one of one. tizirirugs.com/rugs/fadwa
 >
 > #MoroccanRug #ArtRug #Cubism #ContemporaryRug #HandKnotted #StatementRug #GalleryWall
 
@@ -144,21 +152,21 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R9 — Tafat** — `tafat_reel.mp4`
 > Tafat — carved plush pile in soft, weathered grey. The texture does the talking. Handwoven in Morocco.
 >
-> Mrirt · 290 × 199 cm (9'6" × 6'6"). Link in bio.
+> Mrirt · 290 × 199 cm (9'6" × 6'6"). tizirirugs.com/rugs/tafat
 >
 > #MrirtRug #GreyRug #NeutralHome #TexturedRug #MoroccanRug #QuietLuxury #WoolRug
 
 **R10 — Rihab** — `rihab_reel.mp4`
 > Rihab — a diagonal chain of diamonds in olive, mustard, pink and blue, scattered with small color accents. High pile, playful.
 >
-> Azilal · 297 × 203 cm (9'9" × 6'8"). Link in bio.
+> Azilal · 297 × 203 cm (9'9" × 6'8"). tizirirugs.com/rugs/rihab
 >
 > #AzilalRug #MoroccanRug #ColorLovers #PlayfulDecor #HandmadeRug #BerberRug
 
 **R11 — Malak** — `malak_reel.mp4`
 > Malak — a lime-green shag pile crossed by a bold orange diamond lattice. An unusual, high-energy colorway on the classic construction.
 >
-> Beni Ourain · 243 × 152 cm (7'12" × 5'0"). Link in bio.
+> Beni Ourain · 243 × 152 cm (7'12" × 5'0"). tizirirugs.com/rugs/malak
 >
 > #BeniOurain #GreenRug #DopamineDecor #MoroccanRug #BoldInteriors #HandwovenRug
 
@@ -167,21 +175,21 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R12 — Nabila** — `nabila_reel.mp4`
 > Nabila — deep forest green, free-form black line art. Contemporary Moroccan weaving at its most expressive.
 >
-> Contemporary · 315 × 212 cm (10'4" × 6'11"). Link in bio.
+> Contemporary · 315 × 212 cm (10'4" × 6'11"). tizirirugs.com/rugs/nabila
 >
 > #MoroccanRug #GreenInterior #ContemporaryRug #LineArt #StatementRug #InteriorDesign
 
 **F-Ikram — Feed photo: Ikram** — `ig-upload/feed_ikram.jpg`
 > Ikram — two worlds in one rug: a bold black-and-white checkerboard field on one side, hand-drawn line compositions on the other. Even the fringe alternates black and white.
 >
-> Contemporary · 300 × 211 cm (9'10" × 6'11") · for rooms that can hold a statement. Link in bio.
+> Contemporary · 300 × 211 cm (9'10" × 6'11") · for rooms that can hold a statement. tizirirugs.com/rugs/ikram
 >
 > #MoroccanRug #Checkerboard #BlackAndWhiteDecor #ContemporaryRug #GraphicDesign #StatementRug
 
 **R14 — Zineb** — `zineb_reel.mp4`
 > Zineb — a grey field divided into irregular raised squares. The texture of old stone, translated into wool. No dye, no added pattern — just structure.
 >
-> Mrirt · 300 × 200 cm (9'10" × 6'7"). Link in bio.
+> Mrirt · 300 × 200 cm (9'10" × 6'7"). tizirirugs.com/rugs/zineb
 >
 > #MrirtRug #GreyRug #TexturedRug #MinimalHome #QuietLuxury #MoroccanRug #WoolRug
 
@@ -190,21 +198,21 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R15 — Sanaa** — `sanaa_reel.mp4`
 > Sanaa — a saturated chartreuse ground divided into a brick-like grid. Bold, graphic, flat-woven.
 >
-> 253 × 148 cm (8'4" × 4'10"). Link in bio.
+> 253 × 148 cm (8'4" × 4'10"). tizirirugs.com/rugs/sanaa
 >
 > #MoroccanRug #ChartreuseDecor #BoldColor #FlatWeave #GraphicDesign #ModernHome
 
 **R16 — Sabrine** — `sabrine_reel.mp4`
 > Sabrine — an ivory ground scattered with confetti-like dots in neon pink, orange, blue, chartreuse and maroon. Minimal and playful.
 >
-> Contemporary · 306 × 199 cm (10'0" × 6'6"). Link in bio.
+> Contemporary · 306 × 199 cm (10'0" × 6'6"). tizirirugs.com/rugs/sabrine
 >
 > #MoroccanRug #ConfettiDecor #PlayfulInterior #MinimalismWithColor #ContemporaryRug #HandmadeRug
 
 **R17 — Najat** — `najat_reel.mp4`
 > Najat — an ivory ground crossed by a full diamond lattice in a spectrum of color: purple, blue, green, pink, orange. No two lozenges are the same. Handwoven in Morocco.
 >
-> Boujaad · 305 × 192 cm (10'0" × 6'4"). Link in bio.
+> Boujaad · 305 × 192 cm (10'0" × 6'4"). tizirirugs.com/rugs/najat
 >
 > #BoujaadRug #RainbowDecor #MoroccanRug #DiamondPattern #BerberRug #InteriorInspo
 
@@ -213,14 +221,14 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 **R18 — Wahiba** — `wahiba_reel.mp4`
 > Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Flip it for a flat-woven kilim-stripe reverse. Handwoven in Morocco.
 >
-> Boujaad · 307 × 186 cm (10'1" × 6'1") · two rugs in one. Link in bio.
+> Boujaad · 307 × 186 cm (10'1" × 6'1") · two rugs in one. tizirirugs.com/rugs/wahiba
 >
 > #BoujaadRug #ReversibleRug #MoroccanRug #TribalArt #ColorfulHome #BerberRug
 
 **R19 — Bouchra** — `bouchra_reel.mp4`
 > Bouchra — a grid of burgundy lines on ivory. Precise and architectural, warm at the same time. Handwoven in Morocco.
 >
-> Contemporary · 305 × 203 cm (10'0" × 6'8"). Link in bio.
+> Contemporary · 305 × 203 cm (10'0" × 6'8"). tizirirugs.com/rugs/bouchra
 >
 > #MoroccanRug #GridPattern #ArchitecturalDesign #BurgundyDecor #ContemporaryRug #HandwovenRug
 
