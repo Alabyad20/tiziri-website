@@ -916,34 +916,6 @@ a {
     margin-top: 2px;
 }
 
-.product-card__price-row {
-    display: flex;
-    flex-direction: column;
-    gap: 1px;
-    margin-top: 2px;
-}
-
-.product-card__price-row .product-card__price {
-    margin-top: 0;
-}
-
-.product-card__price--compare {
-    font-family: var(--sans);
-    font-weight: 300;
-    font-size: 11px;
-    letter-spacing: 0.02em;
-    color: var(--mid-grey);
-    text-decoration: line-through;
-    text-decoration-color: var(--terracotta);
-    text-decoration-thickness: 1px;
-}
-
-.product-card__badge--save {
-    left: auto;
-    right: 12px;
-    color: var(--terracotta);
-}
-
 
 /* ============================================
    SECTION 9 — INSTAGRAM
