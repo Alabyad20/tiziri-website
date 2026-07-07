@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TIZIRI — Instagram Launch Pack Preview</title>
+<style>
+  :root {
+    --bg: #fafafa; --card: #ffffff; --border: #dbdbdb;
+    --text: #262626; --muted: #8e8e8e; --link: #00376b; --accent: #b05c2a;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+  .wrap { max-width: 470px; margin: 0 auto; padding: 24px 0 80px; }
+  h1 { font-size: 22px; text-align: center; padding: 8px 16px 2px; letter-spacing: 2px; }
+  .sub { text-align: center; color: var(--muted); font-size: 13px; margin-bottom: 20px; padding: 0 16px; }
+  .phase { margin: 34px 12px 10px; font-size: 13px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); border-bottom: 2px solid var(--accent); padding-bottom: 6px; }
+  .post { background: var(--card); border: 1px solid var(--border); border-radius: 8px; margin: 0 12px 28px; overflow: hidden; }
+  .head { display: flex; align-items: center; gap: 10px; padding: 10px 12px; }
+  .avatar { width: 34px; height: 34px; border-radius: 50%; background: linear-gradient(135deg,#2c2a4a,#b05c2a); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:13px; }
+  .handle { font-weight: 600; font-size: 14px; }
+  .loc { font-size: 12px; color: var(--muted); }
+  .tag { margin-left: auto; font-size: 11px; font-weight: 700; color: #fff; background: var(--accent); border-radius: 12px; padding: 3px 10px; white-space: nowrap; }
+  .tag.reel { background: #2c2a4a; }
+  .media { width: 100%; display: block; background: #000; }
+  video.media { max-height: 560px; }
+  img.media { max-height: 560px; object-fit: cover; }
+  .carousel { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; background:#000; }
+  .carousel img { width: 100%; flex-shrink: 0; scroll-snap-align: start; max-height: 560px; object-fit: cover; }
+  .carousel-hint { text-align:center; font-size:11px; color:var(--muted); padding:4px 0; }
+  .caption { padding: 12px 14px 14px; font-size: 14px; line-height: 1.45; white-space: pre-line; }
+  .caption b { font-weight: 600; }
+  .hashtags { color: var(--link); }
+  .note { background: #fff8f2; border-top: 1px solid #f0e0d0; padding: 8px 14px; font-size: 12px; color: #7a5c3f; }
+  .missing { padding: 30px; text-align: center; color: var(--muted); font-size: 13px; background: #f4f4f4; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>T I Z I R I</h1>
+  <div class="sub">Instagram launch pack preview — 25 posts over 8 weeks.<br>
+  This is exactly what each post will look like: media on top, caption below.<br>
+  Nothing here is live. Open this file any time: it plays the real reel files from this folder.</div>
+  <div id="feed"></div>
+</div>
+
+<script>
+const posts = [
+  { phase: "Launch week" },
+  { type: "photo", label: "Day 1 · Feed photo", loc: "Boston, Massachusetts",
+    src: "feed_hafsa.jpg",
+    cap: `I started TIZIRI because I couldn't find a Moroccan rug in the US that was sourced the way I'd source one myself.
+
+So I did it myself. 27 rugs, each selected in person in Morocco, each one of a kind. All here in the US, ready to ship.
+
+#MoroccanRug #HandwovenRug #BerberRug #SmallBusiness #HomeDecor #OneOfAKind #RugsOfInstagram`,
+    note: "Photo: Hafsa — the rug featured on the tizirirugs.com homepage." },
+  { type: "reel", label: "Day 3 · Reel", loc: "Boston, Massachusetts",
+    src: "hafsa_reel.mp4",
+    cap: `Hafsa — a repeating diamond checkerboard in dusty pink, grey and purple. An unusual three-color take on the classic lattice.
+
+Beni Ourain · 300 × 220 cm (9'10" × 7'3") · one of one. Link in bio.
+
+#BeniOurain #MoroccanRug #HandwovenRug #InteriorDesign #PinkRug #WoolRug #RugsOfInstagram #HomeDecor` },
+  { type: "photo", label: "Day 5 · Feed photo", loc: "Atlas Mountains, Morocco",
+    src: "feed_atlas_mountains.jpg",
+    cap: `Where it comes from.
+
+Atlas mountains, Morocco. The wool, the weaver, the pattern — all from here. Every rug in the collection was selected in person, then shipped to the US.
+
+#Morocco #AtlasMountains #BerberRug #MoroccanRug #TravelAndHome #SlowDesign` },
+  { type: "reel", label: "Day 7 · Reel", loc: "Boston, Massachusetts",
+    src: "warda_reel.mp4",
+    cap: `Warda — an ivory ground crossed by loose black lines, with blocks of mustard, terracotta and dusty blue breaking the field. Handwoven in Morocco.
+
+Contemporary · 241 × 163 cm (7'11" × 5'4"). Link in bio.
+
+#MoroccanRug #ContemporaryRug #HandmadeRug #AbstractArt #InteriorStyling #LivingRoomDecor #WoolRug` },
+
+  { phase: "Week 2" },
+  { type: "reel", label: "Week 2 · Reel", loc: "Boston, Massachusetts",
+    src: "zahia_reel.mp4",
+    cap: `Zahia — a dense field of tribal symbols in muted burgundy, grey and orange, framed by a vivid striped border. Classic Boujaad energy.
+
+Boujaad · 298 × 211 cm (9'9" × 6'11") · one of one. Link in bio.
+
+#BoujaadRug #MoroccanRug #BerberRug #VintageStyle #BohoDecor #TribalRug #RugsOfInstagram` },
+  { type: "reel", label: "Week 2 · Reel", loc: "Boston, Massachusetts",
+    src: "ouafa_reel.mp4",
+    cap: `Ouafa — a teal and ivory concentric rectangle pattern, carved in relief from a single high pile. Graphic and hypnotic.
+
+Mrirt · 300 × 190 cm (9'10" × 6'3"). Link in bio.
+
+#MrirtRug #MoroccanRug #TealDecor #TextileArt #ModernRug #InteriorDesign #HandwovenRug` },
+  { type: "photo", label: "Week 2 · Feed photo", loc: "Boston, Massachusetts",
+    src: "feed_assia.jpg",
+    cap: `Every rug in this collection exists once.
+
+Selected in person in Morocco. No wholesalers. No duplicates. When a rug sells, it's gone — the next one will be beautiful in a completely different way.
+
+#OneOfAKind #MoroccanRug #HandwovenRug #SlowDesign #ConsciousHome #InteriorDesign`,
+    note: "Photo: Assia." },
+
+  { phase: "Week 3" },
+  { type: "reel", label: "Week 3 · Reel", loc: "Boston, Massachusetts",
+    src: "samia_reel.mp4",
+    cap: `Samia — whimsical multicolor arrow motifs and a chain of nested diamonds on ivory. Playful, folk-art Azilal weaving.
+
+Azilal · 242 × 159 cm (7'11" × 5'3"). Link in bio.
+
+#AzilalRug #MoroccanRug #FolkArt #ColorfulHome #KidsRoomDecor #HandmadeRug #BerberRug` },
+  { type: "reel", label: "Week 3 · Reel", loc: "Boston, Massachusetts",
+    src: "kawtar_reel.mp4",
+    cap: `Kawtar — an ivory ground crossed by a black grid, with a red block and a black block anchoring two corners. A quiet nod to Mondrian, woven flat.
+
+296 × 212 cm (9'8" × 6'11"). Link in bio.
+
+#MoroccanRug #Mondrian #MinimalistHome #ModernRug #FlatWeave #DesignLovers #InteriorDesign` },
+  { type: "photo", label: "Week 3 · Feed photo", loc: "Boston, Massachusetts",
+    src: "feed_tafat.jpg",
+    cap: `You know it when you stand on it.
+
+Hand-knotted wool pile, carved in relief. No machine could produce it — and no photo quite does it justice.
+
+#NaturalWool #TextileArt #SlowDesign #Craftsmanship #MoroccanRug #WoolRug`,
+    note: "Photo: Tafat — swap for a tighter close-up from the 290x199cm folder if you prefer." },
+
+  { phase: "Week 4" },
+  { type: "reel", label: "Week 4 · Reel", loc: "Boston, Massachusetts",
+    src: "majda_reel.mp4",
+    cap: `Majda — a dense abstract composition in ivory wool, turquoise, olive, blush and mustard. Every inch tells a different story. Handwoven in Morocco.
+
+Contemporary · 286 × 194 cm (9'5" × 6'4"). Link in bio.
+
+#MoroccanRug #AbstractRug #ContemporaryArt #EclecticDecor #HandwovenRug #StatementRug` },
+  { type: "photo", label: "Week 4 · Feed photo", loc: "Boston, Massachusetts",
+    src: "feed_fadwa.jpg",
+    cap: `Fadwa — an abstract cubist portrait, hand-knotted in cobalt blue, cerulean, mustard and charcoal on cream. Picasso's language, translated into wool.
+
+Contemporary · 287 × 207 cm (9'5" × 6'9") · one of one. Link in bio.
+
+#MoroccanRug #ArtRug #Cubism #ContemporaryRug #HandKnotted #StatementRug #GalleryWall`,
+    note: "Replaced the mislabeled 'Yamina' reel (that video actually showed Najat)." },
+  { type: "photo", label: "Week 4 · Feed photo", loc: "Boston, Massachusetts",
+    src: "feed_najat.jpg",
+    cap: `Can't find your size? Every design in the collection is also available made to order — any size, any colour, woven by the same hands in Morocco. 6–8 weeks from loom to your door.
+
+tizirirugs.com/made-to-order
+
+#MadeToOrder #CustomRug #MoroccanRug #InteriorDesign #BespokeHome #HandwovenRug`,
+    note: "Photo: Najat." },
+
+  { phase: "Week 5" },
+  { type: "reel", label: "Week 5 · Reel", loc: "Boston, Massachusetts",
+    src: "tafat_reel.mp4",
+    cap: `Tafat — carved plush pile in soft, weathered grey. The texture does the talking. Handwoven in Morocco.
+
+Mrirt · 290 × 199 cm (9'6" × 6'6"). Link in bio.
+
+#MrirtRug #GreyRug #NeutralHome #TexturedRug #MoroccanRug #QuietLuxury #WoolRug` },
+  { type: "reel", label: "Week 5 · Reel", loc: "Boston, Massachusetts",
+    src: "rihab_reel.mp4",
+    cap: `Rihab — a diagonal chain of diamonds in olive, mustard, pink and blue, scattered with small color accents. High pile, playful.
+
+Azilal · 297 × 203 cm (9'9" × 6'8"). Link in bio.
+
+#AzilalRug #MoroccanRug #ColorLovers #PlayfulDecor #HandmadeRug #BerberRug` },
+  { type: "reel", label: "Week 5 · Reel", loc: "Boston, Massachusetts",
+    src: "malak_reel.mp4",
+    cap: `Malak — a lime-green shag pile crossed by a bold orange diamond lattice. An unusual, high-energy colorway on the classic construction.
+
+Beni Ourain · 243 × 152 cm (7'12" × 5'0"). Link in bio.
+
+#BeniOurain #GreenRug #DopamineDecor #MoroccanRug #BoldInteriors #HandwovenRug` },
+
+  { phase: "Week 6" },
+  { type: "reel", label: "Week 6 · Reel", loc: "Boston, Massachusetts",
+    src: "nabila_reel.mp4",
+    cap: `Nabila — deep forest green, free-form black line art. Contemporary Moroccan weaving at its most expressive.
+
+Contemporary · 315 × 212 cm (10'4" × 6'11"). Link in bio.
+
+#MoroccanRug #GreenInterior #ContemporaryRug #LineArt #StatementRug #InteriorDesign` },
+  { type: "photo", label: "Week 6 · Feed photo", loc: "Boston, Massachusetts",
+    src: "feed_ikram.jpg",
+    cap: `Ikram — two worlds in one rug: a bold black-and-white checkerboard field on one side, hand-drawn line compositions on the other. Even the fringe alternates black and white.
+
+Contemporary · 300 × 211 cm (9'10" × 6'11") · for rooms that can hold a statement. Link in bio.
+
+#MoroccanRug #Checkerboard #BlackAndWhiteDecor #ContemporaryRug #GraphicDesign #StatementRug`,
+    note: "Replaced the mislabeled 'Fatiha' reel (that video actually showed Wahiba)." },
+  { type: "reel", label: "Week 6 · Reel", loc: "Boston, Massachusetts",
+    src: "zineb_reel.mp4",
+    cap: `Zineb — a grey field divided into irregular raised squares. The texture of old stone, translated into wool. No dye, no added pattern — just structure.
+
+Mrirt · 300 × 200 cm (9'10" × 6'7"). Link in bio.
+
+#MrirtRug #GreyRug #TexturedRug #MinimalHome #QuietLuxury #MoroccanRug #WoolRug`,
+    note: "Was mislabeled 'Aicha' — the video actually shows Zineb, now correctly named." },
+
+  { phase: "Week 7" },
+  { type: "reel", label: "Week 7 · Reel", loc: "Boston, Massachusetts",
+    src: "sanaa_reel.mp4",
+    cap: `Sanaa — a saturated chartreuse ground divided into a brick-like grid. Bold, graphic, flat-woven.
+
+253 × 148 cm (8'4" × 4'10"). Link in bio.
+
+#MoroccanRug #ChartreuseDecor #BoldColor #FlatWeave #GraphicDesign #ModernHome` },
+  { type: "reel", label: "Week 7 · Reel", loc: "Boston, Massachusetts",
+    src: "sabrine_reel.mp4",
+    cap: `Sabrine — an ivory ground scattered with confetti-like dots in neon pink, orange, blue, chartreuse and maroon. Minimal and playful.
+
+Contemporary · 306 × 199 cm (10'0" × 6'6"). Link in bio.
+
+#MoroccanRug #ConfettiDecor #PlayfulInterior #MinimalismWithColor #ContemporaryRug #HandmadeRug` },
+  { type: "reel", label: "Week 7 · Reel", loc: "Boston, Massachusetts",
+    src: "najat_reel.mp4",
+    cap: `Najat — an ivory ground crossed by a full diamond lattice in a spectrum of color: purple, blue, green, pink, orange. No two lozenges are the same. Handwoven in Morocco.
+
+Boujaad · 305 × 192 cm (10'0" × 6'4"). Link in bio.
+
+#BoujaadRug #RainbowDecor #MoroccanRug #DiamondPattern #BerberRug #InteriorInspo` },
+
+  { phase: "Week 8 — Finale" },
+  { type: "reel", label: "Week 8 · Reel", loc: "Boston, Massachusetts",
+    src: "wahiba_reel.mp4",
+    cap: `Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Flip it for a flat-woven kilim-stripe reverse. Handwoven in Morocco.
+
+Boujaad · 307 × 186 cm (10'1" × 6'1") · two rugs in one. Link in bio.
+
+#BoujaadRug #ReversibleRug #MoroccanRug #TribalArt #ColorfulHome #BerberRug` },
+  { type: "reel", label: "Week 8 · Reel", loc: "Boston, Massachusetts",
+    src: "bouchra_reel.mp4",
+    cap: `Bouchra — a grid of burgundy lines on ivory. Precise and architectural, warm at the same time. Handwoven in Morocco.
+
+Contemporary · 305 × 203 cm (10'0" × 6'8"). Link in bio.
+
+#MoroccanRug #GridPattern #ArchitecturalDesign #BurgundyDecor #ContemporaryRug #HandwovenRug` },
+  { type: "carousel", label: "Week 8 · Carousel", loc: "Boston, Massachusetts",
+    srcs: ["feed_hafsa.jpg","feed_samia.jpg","feed_malak.jpg","feed_sanaa.jpg","feed_najat.jpg"],
+    cap: `The first TIZIRI collection is live.
+
+27 rugs. No two alike. Selected in person in Morocco, shipped from the US.
+
+tizirirugs.com
+
+#MoroccanRug #NewCollection #InteriorDesign #HandwovenRug #BerberRug #OneOfAKind #HomeDecor`,
+    note: "Swipe/scroll the images sideways — that's how the carousel will behave on Instagram." }
+];
+
+const feed = document.getElementById("feed");
+for (const p of posts) {
+  if (p.phase) {
+    const h = document.createElement("div");
+    h.className = "phase"; h.textContent = p.phase;
+    feed.appendChild(h);
+    continue;
+  }
+  const card = document.createElement("div");
+  card.className = "post";
+  let media;
+  if (p.type === "reel") {
+    media = `<video class="media" src="${p.src}" controls preload="metadata"></video>`;
+  } else if (p.type === "carousel") {
+    media = `<div class="carousel">` + p.srcs.map(s => `<img src="${s}" loading="lazy" onerror="this.outerHTML='<div class=missing>Image not found:<br>${s}</div>'">`).join("") + `</div><div class="carousel-hint">‹ swipe ›</div>`;
+  } else {
+    media = `<img class="media" src="${p.src}" loading="lazy" onerror="this.outerHTML='<div class=missing>Image not found:<br>${p.src}</div>'">`;
+  }
+  const caption = p.cap
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;")
+    .replace(/(#[A-Za-z0-9]+)/g, '<span class="hashtags">$1</span>');
+  card.innerHTML = `
+    <div class="head">
+      <div class="avatar">T</div>
+      <div><div class="handle">tizirirugs</div><div class="loc">${p.loc}</div></div>
+      <div class="tag ${p.type === "reel" ? "reel" : ""}">${p.label}</div>
+    </div>
+    ${media}
+    <div class="caption">${caption}</div>
+    ${p.note ? `<div class="note">📝 ${p.note}</div>` : ""}`;
+  feed.appendChild(card);
+}
+</script>
+</body>
+</html>

@@ -31,17 +31,17 @@ All clips: original phone audio removed, replaced with a track from the `Music/`
 **hafsa_reel.mp4** — Hafsa (Beni Ourain)
 > Hafsa — a repeating diamond checkerboard in dusty pink, grey and purple. An unusual three-color take on the classic lattice.
 
-**yamina_reel.mp4** — Yamina (Boujaad)
-> Yamina — a dense diamond lattice in blue, pink, peach and rust on ivory, with solid triangle blocks along the edge. Rich, multicolor Boujaad.
+**najat_reel_alt.mp4** — ~~Yamina~~ **CORRECTED 2026-07-07: this is Najat** (same rug as najat_reel.mp4, different angle — use as Story/bonus only)
+> Najat — an ivory ground crossed by a full diamond lattice in a spectrum of color. Handwoven in Morocco.
 
 **sabrine_reel.mp4** — Sabrine (Contemporary)
 > Sabrine — an ivory ground scattered with confetti-like dots in neon pink, orange, blue, chartreuse and maroon. Minimal and playful.
 
-**fatiha_reel.mp4** — Fatiha (Boujaad)
-> Fatiha — nested diamond medallions in red, blue, green, yellow and pink over a mixed earthy ground. One of the most saturated pieces in the collection.
+**wahiba_reel_alt.mp4** — ~~Fatiha~~ **CORRECTED 2026-07-07: this is Wahiba** (same rug as wahiba_reel.mp4, different angle — use as Story/bonus only)
+> Wahiba — a vibrant tribal composition of diamond and eye motifs. Handwoven in Morocco.
 
-**aicha_reel.mp4** — Aicha (Mrirt)
-> Aicha — an all-grey carved-pile rug with a cobblestone-like block pattern. Texture-forward and quiet.
+**zineb_reel.mp4** — ~~Aicha~~ **CORRECTED 2026-07-07: this is Zineb** (Mrirt, 300 × 200 cm, $1,300 — on site and eBay)
+> Zineb — a grey field divided into irregular raised squares. The texture of old stone translated into wool. No dye, no added pattern — just structure.
 
 **majda_reel.mp4** — Majda (Contemporary)
 > Majda — a dense abstract composition in ivory wool, turquoise, olive, blush and mustard. Every inch tells a different story. Handwoven in Morocco.

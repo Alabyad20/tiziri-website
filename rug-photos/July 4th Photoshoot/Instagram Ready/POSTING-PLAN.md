@@ -125,12 +125,12 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 >
 > #MoroccanRug #AbstractRug #ContemporaryArt #EclecticDecor #HandwovenRug #StatementRug
 
-**R8 — Yamina** — `yamina_reel.mp4`
-> Yamina — a dense diamond lattice in blue, pink, peach and rust on ivory, with solid triangle blocks along the edge. Rich, multicolor Boujaad.
+**F-Fadwa — Feed photo: Fadwa** — `ig-upload/feed_fadwa.jpg`
+> Fadwa — an abstract cubist portrait, hand-knotted in cobalt blue, cerulean, mustard and charcoal on cream. Picasso's language, translated into wool.
 >
-> Boujaad · one of one. Link in bio.
+> Contemporary · 287 × 207 cm (9'5" × 6'9") · one of one. Link in bio.
 >
-> #BoujaadRug #MoroccanRug #ColorfulInterior #BohoChic #BerberRug #RugsOfInstagram #HomeDecor
+> #MoroccanRug #ArtRug #Cubism #ContemporaryRug #HandKnotted #StatementRug #GalleryWall
 
 **F5 — Feed photo: Made to order** — `July 4th Photoshoot/305x192cm/IMG_20260704_121506.jpg` (Najat)
 > Can't find your size? Every design in the collection is also available made to order — any size, any colour, woven by the same hands in Morocco. 6–8 weeks from loom to your door.
@@ -171,19 +171,19 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 >
 > #MoroccanRug #GreenInterior #ContemporaryRug #LineArt #StatementRug #InteriorDesign
 
-**R13 — Fatiha** — `fatiha_reel.mp4`
-> Fatiha — nested diamond medallions in red, blue, green, yellow and pink over a mixed earthy ground. One of the most saturated pieces in the collection.
+**F-Ikram — Feed photo: Ikram** — `ig-upload/feed_ikram.jpg`
+> Ikram — two worlds in one rug: a bold black-and-white checkerboard field on one side, hand-drawn line compositions on the other. Even the fringe alternates black and white.
 >
-> Boujaad · one of one. Link in bio.
+> Contemporary · 300 × 211 cm (9'10" × 6'11") · for rooms that can hold a statement. Link in bio.
 >
-> #BoujaadRug #MaximalistDecor #MoroccanRug #ColorfulHome #BerberRug #RugsOfInstagram
+> #MoroccanRug #Checkerboard #BlackAndWhiteDecor #ContemporaryRug #GraphicDesign #StatementRug
 
-**R14 — Aicha** — `aicha_reel.mp4`
-> Aicha — an all-grey carved-pile rug with a cobblestone-like block pattern. Texture-forward and quiet.
+**R14 — Zineb** — `zineb_reel.mp4`
+> Zineb — a grey field divided into irregular raised squares. The texture of old stone, translated into wool. No dye, no added pattern — just structure.
 >
-> Mrirt · one of one. Link in bio.
+> Mrirt · 300 × 200 cm (9'10" × 6'7"). Link in bio.
 >
-> #MrirtRug #GreyInterior #MinimalHome #TexturedRug #MoroccanRug #ScandiStyle
+> #MrirtRug #GreyRug #TexturedRug #MinimalHome #QuietLuxury #MoroccanRug #WoolRug
 
 ### Week 7
 
@@ -240,6 +240,14 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 - **"Meet the maker" clips** — Bouchra's shoot has 2 raw clips of Abdel presenting the rug to camera (in `July 4th Photoshoot/305x203cm/`). Post one as a Story or casual reel in week 2–3: people buy from people. Caption idea: *"The person behind TIZIRI. Every rug here, I chose in person."* (Strip audio first if you don't want the original sound, same as the other reels.)
 - **Stories between posts:** rug texture close-ups from any size folder, packing/shipping shots, "which one — A or B?" polls between two rugs. Stories don't need to be polished.
 - **Morocco archive photos** (`rug-photos/IMG-20260604-WA00xx.jpg`, the rooftop-terrace series) — good for occasional origin-story Stories.
+
+## Correction log (2026-07-07)
+Three reels from the July-5 edit were mislabeled — the names didn't exist in the catalog. Fixed:
+- `fatiha_reel.mp4` actually showed **Wahiba** → renamed `wahiba_reel_alt.mp4` (bonus angle; usable as a Story)
+- `yamina_reel.mp4` actually showed **Najat** → renamed `najat_reel_alt.mp4` (bonus angle; usable as a Story)
+- `aicha_reel.mp4` actually showed **Zineb** → renamed `zineb_reel.mp4` and kept in the calendar under her real name
+Their two vacated slots went to feed photos of **Fadwa** and **Ikram** (the two highest-priced rugs, which had no posts).
+**Habit going forward: always verify the video/photo against the rug's description before posting.**
 
 ## Rules
 - **Never post Nawal** (placeholder listing, rug not in hand — same rule as eBay).
