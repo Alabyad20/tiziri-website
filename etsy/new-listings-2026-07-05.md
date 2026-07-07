@@ -58,12 +58,12 @@ Questions? Message us — we're happy to help you find the perfect piece.
 
 ## 2. Wahiba — $1,800
 
-**Photos:** `rug-photos/Newly taken photos/wahiba/` (36 available, pick 10 — include at least one of the kilim-stripe reverse)
+**Photos:** `rug-photos/Newly taken photos/wahiba/` (36 available, pick 10 — include at least one showing the flat-woven back construction)
 
 **Title:**
-Moroccan Boujaad Rug 10.1x6.1ft | Multicolor Tribal Diamond Wool Rug, Reversible Kilim Back | Handwoven Berber Rug | Ready to Ship USA
+Moroccan Boujaad Rug 10.1x6.1ft | Multicolor Tribal Diamond Wool Rug, Handwoven Berber Rug | Ready to Ship USA
 
-**Tags (13):** moroccan rug · boujaad rug · tribal rug · multicolor rug · wool area rug · handwoven rug · berber rug · ready to ship · reversible rug · living room rug · one of a kind rug · diamond rug · colorful rug
+**Tags (13):** moroccan rug · boujaad rug · tribal rug · multicolor rug · wool area rug · handwoven rug · berber rug · ready to ship · living room rug · one of a kind rug · diamond rug · colorful rug · tribal decor
 
 **Description:**
 ```
@@ -71,17 +71,17 @@ Moroccan Boujaad Rug 10.1x6.1ft | Multicolor Tribal Diamond Wool Rug, Reversible
 
 ✦ ONE-OF-A-KIND HANDWOVEN MOROCCAN RUG ✦
 
-A large Boujaad with two faces. On one side: a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink — the language of the High Atlas rendered in colour. Flip it and a dense flat-woven kilim-stripe reverse appears, earthy and graphic. White knotted fringe at both ends. Two rugs in one.
+A large Boujaad with a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink — the language of the High Atlas rendered in colour. Hand-knotted pile, with the flat-woven foundation visible on the back. White knotted fringe at both ends.
 
 ▸ Style: Boujaad
 ▸ Colour: Multicolour — red, turquoise, cobalt, green, yellow, pink
 ▸ Size: 307 × 186 cm (10 ft 1 in × 6 ft 1 in)
 ▸ Material: 100% natural wool, hand-knotted
-▸ Pile: High pile, flat-woven reverse
+▸ Pile: High pile, flat-woven back
 ▸ Condition: New / unworn
 
 STYLING NOTES
-The statement piece of a room. Pair with neutral furniture and let the colour do the talking — or flip to the kilim side for a quieter, earthier look.
+The statement piece of a room. Pair with neutral furniture and let the colour do the talking.
 
 CARE
 Vacuum on low suction. Spot clean with cold water. Do not machine wash.

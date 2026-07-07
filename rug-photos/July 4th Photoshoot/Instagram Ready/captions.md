@@ -56,7 +56,7 @@ All clips: original phone audio removed, replaced with a track from the `Music/`
 > Najat — an ivory ground crossed by a full diamond lattice in a spectrum of color: purple, blue, green, pink, orange. No two lozenges are the same. Handwoven in Morocco.
 
 **wahiba_reel.mp4** — Wahiba (Boujaad)
-> Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Flip it for a flat-woven kilim-stripe reverse. Handwoven in Morocco.
+> Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Hand-knotted, with the flat-woven foundation visible on the back. Handwoven in Morocco.
 
 **bouchra_reel.mp4** — Bouchra (Contemporary)
 > Bouchra — a grid of burgundy lines on ivory. Precise and architectural, warm at the same time. Handwoven in Morocco.

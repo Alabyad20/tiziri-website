@@ -219,11 +219,11 @@ Post in this order. Two reels + interleaved feed posts per week keeps the grid v
 ### Week 8 — Finale
 
 **R18 — Wahiba** — `wahiba_reel.mp4`
-> Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Flip it for a flat-woven kilim-stripe reverse. Handwoven in Morocco.
+> Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Hand-knotted, with the flat-woven foundation visible on the back. Handwoven in Morocco.
 >
-> Boujaad · 307 × 186 cm (10'1" × 6'1") · two rugs in one. tizirirugs.com/rugs/wahiba
+> Boujaad · 307 × 186 cm (10'1" × 6'1"). tizirirugs.com/rugs/wahiba
 >
-> #BoujaadRug #ReversibleRug #MoroccanRug #TribalArt #ColorfulHome #BerberRug
+> #BoujaadRug #MoroccanRug #TribalArt #ColorfulHome #BerberRug
 
 **R19 — Bouchra** — `bouchra_reel.mp4`
 > Bouchra — a grid of burgundy lines on ivory. Precise and architectural, warm at the same time. Handwoven in Morocco.
