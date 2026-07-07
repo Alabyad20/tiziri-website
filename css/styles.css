@@ -190,7 +190,7 @@ a {
     background: var(--bone);
     padding: 44px var(--gutter) 48px;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 260px;
+    grid-template-columns: 1fr 1fr 1fr 1fr 240px;
     gap: 48px;
     opacity: 0;
     pointer-events: none;
