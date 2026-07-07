@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Reel frames — which two show the same rug?</title>
+<style>
+  body { font-family: -apple-system, "Segoe UI", sans-serif; background: #fafafa; margin: 20px; }
+  h1 { font-size: 18px; }
+  p { color: #666; font-size: 14px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+  .card { background: #fff; border: 1px solid #ddd; border-radius: 8px; overflow: hidden; text-align: center; }
+  .card img { width: 100%; display: block; cursor: pointer; }
+  .card .name { font-weight: 700; padding: 8px; font-size: 16px; text-transform: capitalize; }
+</style>
+</head>
+<body>
+<h1>One frame from each of the 19 reels</h1>
+<p>Click any image to open the actual video. Tell Claude which two names show the same rug.</p>
+<div class="grid" id="g"></div>
+<script>
+const names = ["aicha","bouchra","fatiha","hafsa","kawtar","majda","malak","nabila","najat","ouafa","rihab","sabrine","samia","sanaa","tafat","wahiba","warda","yamina","zahia"];
+const g = document.getElementById("g");
+for (const n of names) {
+  const d = document.createElement("div");
+  d.className = "card";
+  d.innerHTML = `<a href="../${n}_reel.mp4"><img src="${n}.jpg" alt="${n}"></a><div class="name">${n}</div>`;
+  g.appendChild(d);
+}
+</script>
+</body>
+</html>
