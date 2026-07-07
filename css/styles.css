@@ -427,6 +427,33 @@ a {
     border-color: var(--white);
 }
 
+.hero__links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 28px;
+    margin-bottom: 18px;
+}
+
+.hero__cta--secondary {
+    color: rgba(255, 255, 255, 0.55);
+    border-bottom-color: rgba(255, 255, 255, 0.22);
+}
+
+.hero__cta--secondary:hover {
+    color: var(--white);
+    border-color: var(--white);
+}
+
+.hero__trust {
+    font-family: var(--sans);
+    font-weight: 300;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.5);
+}
+
 /* Animated scroll line */
 .hero__scroll-line {
     position: absolute;
