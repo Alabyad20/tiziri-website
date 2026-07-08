@@ -36,6 +36,13 @@
     Cache-Control = "public, max-age=0, must-revalidate"
     Accept-Ranges = "none"
 
+# Internal working docs — never serve publicly
+[[redirects]]
+  from = "/marketing/*"
+  to   = "/404.html"
+  status = 404
+  force  = true
+
 # Redirect www to apex domain
 [[redirects]]
   from = "https://www.tizirirugs.com/*"
