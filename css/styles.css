@@ -3502,6 +3502,23 @@ textarea:focus-visible,
     opacity: 0.85;
 }
 
+.journey-text-beat {
+    padding: clamp(90px, 14vh, 160px) var(--gutter);
+    background: var(--warm-grey);
+    text-align: center;
+    border-top: 1px solid var(--sand);
+    border-bottom: 1px solid var(--sand);
+}
+
+.journey-text-beat .journey-collage__eyebrow {
+    margin-bottom: 20px;
+}
+
+.journey-text-beat .journey-intro__lead {
+    font-size: clamp(21px, 2.4vw, 28px);
+    opacity: 1;
+}
+
 .journey-collage {
     padding: clamp(70px, 11vh, 120px) var(--gutter);
     background: var(--bone);
