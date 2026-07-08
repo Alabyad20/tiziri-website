@@ -16,8 +16,8 @@
     { "id": "weaving-real-2",   "beat": "Weaving — rug mid-progress (reserve)",   "source": "supplier", "file": "weaving-real-2.mp4",   "original": "VID-20260630-WA0030.mp4", "status": "reserve, not currently placed" }
   ],
   "closing_collage": [
-    { "rug": "Assia", "page": "rugs/assia.html" },
-    { "rug": "Ouafa", "page": "rugs/ouafa.html" },
+    { "rug": "Malak", "page": "rugs/malak.html" },
+    { "rug": "Chaima", "page": "rugs/chaima.html" },
     { "rug": "Tafat", "page": "rugs/tafat.html" }
   ],
   "compression_recipe": "ffmpeg -ss {start} -i {source} -t {duration} -vf \"scale='min(1280,iw)':-2\" -c:v libx264 -preset medium -crf 27 -profile:v high -pix_fmt yuv420p -an -movflags +faststart {output}"
