@@ -3558,3 +3558,105 @@ textarea:focus-visible,
         gap: 32px;
     }
 }
+
+
+/* ============================================
+   OFFER POPUP — $50 off first rug (email capture)
+   ============================================ */
+.offer-popup {
+    position: fixed;
+    inset: 0;
+    z-index: 9000;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(44, 42, 37, 0.55);
+    -webkit-backdrop-filter: blur(2px);
+    backdrop-filter: blur(2px);
+}
+.offer-popup.open {
+    display: flex;
+}
+.offer-popup__card {
+    position: relative;
+    width: 100%;
+    max-width: 420px;
+    background: var(--bone, #F5F0E8);
+    padding: 48px 36px 40px;
+    text-align: center;
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.28);
+    animation: offerPopIn 0.35s ease;
+}
+@keyframes offerPopIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to   { opacity: 1; transform: none; }
+}
+.offer-popup__close {
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    border: 0;
+    background: none;
+    font-size: 26px;
+    line-height: 1;
+    color: var(--mid-grey, #9B9590);
+    cursor: pointer;
+    padding: 6px;
+}
+.offer-popup__close:hover { color: var(--stone, #2C2A25); }
+.offer-popup__eyebrow {
+    font-family: var(--sans, 'Jost', sans-serif);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta, #B84020);
+    margin: 0 0 14px;
+}
+.offer-popup__headline {
+    font-family: var(--serif, 'Cormorant Garamond', serif);
+    font-weight: 400;
+    font-size: 30px;
+    line-height: 1.15;
+    color: var(--stone, #2C2A25);
+    margin: 0 0 12px;
+}
+.offer-popup__text {
+    font-family: var(--sans, 'Jost', sans-serif);
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--stone, #2C2A25);
+    margin: 0 0 22px;
+}
+.offer-popup__form .ml-embedded { min-height: 90px; }
+.offer-popup__fallback {
+    display: inline-block;
+    font-family: var(--sans, 'Jost', sans-serif);
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--terracotta, #B84020);
+    padding: 14px 28px;
+    text-decoration: none;
+}
+.offer-popup__dismiss {
+    display: block;
+    margin: 18px auto 0;
+    border: 0;
+    background: none;
+    font-family: var(--sans, 'Jost', sans-serif);
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--mid-grey, #9B9590);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+.offer-popup__dismiss:hover { color: var(--stone, #2C2A25); }
+@media (max-width: 480px) {
+    .offer-popup__card { padding: 40px 22px 32px; }
+    .offer-popup__headline { font-size: 26px; }
+}

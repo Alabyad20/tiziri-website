@@ -168,6 +168,78 @@ try {
 }
 
 
+/* --- OFFER POPUP ($50 off first rug — email capture) --- */
+try {
+    const OFFER_KEY = 'tiziri_offer_dismissed_at';
+    const SNOOZE_DAYS = 30;
+    const dismissedAt = parseInt(localStorage.getItem(OFFER_KEY) || '0', 10);
+    const snoozed = dismissedAt && (Date.now() - dismissedAt) < SNOOZE_DAYS * 24 * 60 * 60 * 1000;
+
+    if (!snoozed) {
+        let shown = false;
+
+        const popup = document.createElement('div');
+        popup.className = 'offer-popup';
+        popup.setAttribute('role', 'dialog');
+        popup.setAttribute('aria-modal', 'true');
+        popup.setAttribute('aria-label', 'Get $50 off your first rug');
+        popup.innerHTML =
+            '<div class="offer-popup__card">' +
+                '<button class="offer-popup__close" aria-label="Close">&times;</button>' +
+                '<p class="offer-popup__eyebrow">A gift, from Morocco</p>' +
+                '<h2 class="offer-popup__headline">$50 off your first rug</h2>' +
+                '<p class="offer-popup__text">Join the TIZIRI list and we’ll send your private $50 code — plus first look at new one-of-one arrivals. No noise, unsubscribe any time.</p>' +
+                '<div class="offer-popup__form"><div class="ml-embedded" data-form="LDu1BC"></div></div>' +
+                '<button class="offer-popup__dismiss">No thanks, full price is fine</button>' +
+            '</div>';
+        document.body.appendChild(popup);
+
+        // Ensure the MailerLite universal script is present (most pages don't load it).
+        if (typeof window.ml === 'undefined') {
+            (function (w, d, e, u, f, l, n) {
+                w[f] = w[f] || function () { (w[f].q = w[f].q || []).push(arguments); };
+                l = d.createElement(e); l.async = 1; l.src = u;
+                n = d.getElementsByTagName(e)[0]; n.parentNode.insertBefore(l, n);
+            })(window, document, 'script', 'https://assets.mailerlite.com/js/universal.js', 'ml');
+            window.ml('account', '2460383');
+        }
+
+        function dismissOffer() {
+            popup.classList.remove('open');
+            document.body.style.overflow = '';
+            localStorage.setItem(OFFER_KEY, String(Date.now()));
+        }
+
+        function showOffer() {
+            if (shown) return;
+            shown = true;
+            // If MailerLite failed to render a form, fall back to the contact page.
+            const embed = popup.querySelector('.ml-embedded');
+            if (embed && !embed.children.length) {
+                embed.outerHTML = '<a class="offer-popup__fallback" href="/contact/">Claim your $50 code &rarr;</a>';
+            }
+            popup.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+
+        popup.querySelector('.offer-popup__close').addEventListener('click', dismissOffer);
+        popup.querySelector('.offer-popup__dismiss').addEventListener('click', dismissOffer);
+        popup.addEventListener('click', (e) => { if (e.target === popup) dismissOffer(); });
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && popup.classList.contains('open')) dismissOffer();
+        });
+
+        // Triggers: exit intent (desktop) or 30s dwell — whichever comes first.
+        document.addEventListener('mouseout', (e) => {
+            if (!e.relatedTarget && e.clientY <= 0) showOffer();
+        });
+        setTimeout(showOffer, 30000);
+    }
+} catch (err) {
+    console.error('Offer popup failed to initialize:', err);
+}
+
+
 /* --- NEWSLETTER FORM --- */
 try {
     const newsletterForm = document.getElementById('newsletterForm');
