@@ -3403,3 +3403,158 @@ textarea:focus-visible,
     margin: 10px 0 18px;
     line-height: 1.6;
 }
+
+
+/* ============================================
+   JOURNEY OF A RUG — full-bleed video story
+   ============================================ */
+
+.journey-beat {
+    position: relative;
+    height: 100vh;
+    min-height: 560px;
+    overflow: hidden;
+    background: var(--stone);
+}
+
+.journey-beat--compact {
+    height: 56vh;
+    min-height: 340px;
+}
+
+.journey-beat__media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.85;
+}
+
+.journey-beat__overlay {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding: clamp(32px, 7vh, 72px) var(--gutter);
+    background: linear-gradient(
+        to top,
+        rgba(28, 26, 23, 0.72) 0%,
+        rgba(28, 26, 23, 0.12) 55%,
+        transparent 80%
+    );
+}
+
+.journey-beat__eyebrow {
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--sand);
+    margin-bottom: 14px;
+}
+
+.journey-beat__text {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(22px, 3vw, 38px);
+    line-height: 1.3;
+    color: var(--white);
+    max-width: 46ch;
+}
+
+.journey-beat--compact .journey-beat__text {
+    font-size: clamp(18px, 2.2vw, 26px);
+    max-width: 38ch;
+}
+
+.journey-intro {
+    padding: clamp(64px, 10vh, 100px) var(--gutter) clamp(40px, 6vh, 64px);
+    background: var(--bone);
+    text-align: center;
+}
+
+.journey-intro__lead {
+    font-family: var(--serif);
+    font-style: italic;
+    font-size: clamp(19px, 2vw, 23px);
+    color: var(--stone);
+    max-width: 56ch;
+    margin: 0 auto;
+    opacity: 0.85;
+}
+
+.journey-collage {
+    padding: clamp(70px, 11vh, 120px) var(--gutter);
+    background: var(--bone);
+}
+
+.journey-collage__heading {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.journey-collage__eyebrow {
+    display: block;
+    font-family: var(--sans);
+    font-size: 11px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 14px;
+}
+
+.journey-collage__title {
+    font-family: var(--serif);
+    font-weight: 300;
+    font-size: clamp(28px, 3.4vw, 44px);
+    color: var(--stone);
+}
+
+.journey-collage__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    max-width: var(--max-w);
+    margin: 0 auto;
+}
+
+.journey-collage__item {
+    aspect-ratio: 3 / 4;
+    overflow: hidden;
+    background: var(--warm-grey);
+}
+
+.journey-collage__item img {
+    transition: transform var(--ease);
+}
+
+.journey-collage__item:hover img {
+    transform: scale(1.04);
+}
+
+.journey-collage__caption {
+    display: block;
+    margin-top: 12px;
+    font-family: var(--sans);
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mid-grey);
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .journey-beat {
+        height: 85vh;
+    }
+    .journey-beat--compact {
+        height: 42vh;
+    }
+    .journey-collage__grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+    }
+}

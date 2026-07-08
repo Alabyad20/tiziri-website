@@ -108,6 +108,35 @@ try {
 }
 
 
+/* --- LAZY VIDEOS (data-src swapped in near-viewport, then autoplay on scroll) --- */
+try {
+    const lazyVideos = document.querySelectorAll('video.lazy-video[data-src]');
+
+    if (lazyVideos.length) {
+        const lazyVideoObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                const el = entry.target;
+                if (entry.isIntersecting) {
+                    if (!el.src) {
+                        el.src = el.dataset.src;
+                        el.load();
+                    }
+                    el.play().catch(() => {
+                        // Autoplay blocked — poster image is shown as fallback
+                    });
+                } else if (el.src) {
+                    el.pause();
+                }
+            });
+        }, { threshold: 0.2, rootMargin: '200px 0px' });
+
+        lazyVideos.forEach(el => lazyVideoObserver.observe(el));
+    }
+} catch (err) {
+    console.error('Lazy video loading failed to initialize:', err);
+}
+
+
 /* --- MEGA MENU --- */
 try {
     const megaItem  = document.querySelector('.nav__item--has-mega');
