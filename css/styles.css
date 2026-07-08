@@ -3403,6 +3403,22 @@ textarea:focus-visible,
     margin: 10px 0 18px;
     line-height: 1.6;
 }
+.product__size-help {
+    font-size: 12px;
+    color: var(--mid-grey);
+    font-family: var(--sans);
+    margin: 12px 0 0;
+    line-height: 1.6;
+}
+.product__size-help a {
+    color: var(--stone);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--mid-grey);
+}
+.product__size-help a:hover {
+    text-decoration-color: var(--stone);
+}
 
 
 /* ============================================
