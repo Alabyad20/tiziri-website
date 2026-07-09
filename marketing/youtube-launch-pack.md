@@ -22,7 +22,7 @@ Hafsa — a repeating diamond checkerboard in dusty pink, grey and purple. An un
 
 Hafsa · 300 x 220 cm (9 ft 10 in x 7 ft 3 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/hafsa.html
-What makes a real Beni Ourain: https://tizirirugs.com/blog/beni-ourain-rug-guide/
+What makes a real Beni Ourain rug: https://tizirirugs.com/blog/beni-ourain-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, beni ourain rug, handmade rug, berber rug, wool rug, beni ourain, atlas mountains, handwoven
@@ -37,7 +37,7 @@ Warda — an ivory ground crossed by loose black lines, with blocks of mustard, 
 
 Warda · 241 x 163 cm (7 ft 11 in x 5 ft 4 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/warda.html
-What makes a real Contemporary: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
+Contemporary Moroccan rugs, explained: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, contemporary rug, handmade rug, berber rug, wool rug, contemporary, atlas mountains, handwoven
@@ -52,7 +52,7 @@ Zahia — a dense field of tribal symbols in muted burgundy, grey and orange, fr
 
 Zahia · 298 x 211 cm (9 ft 9 in x 6 ft 11 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/zahia.html
-What makes a real Boujaad: https://tizirirugs.com/blog/boujaad-rug-guide/
+What makes a real Boujaad rug: https://tizirirugs.com/blog/boujaad-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, boujaad rug, handmade rug, berber rug, wool rug, boujaad, atlas mountains, handwoven
@@ -67,7 +67,7 @@ Ouafa — a teal and ivory concentric rectangle pattern, carved in relief from a
 
 Ouafa · 300 x 190 cm (9 ft 10 in x 6 ft 3 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/ouafa.html
-What makes a real Mrirt: https://tizirirugs.com/blog/mrirt-rug-guide/
+What makes a real Mrirt rug: https://tizirirugs.com/blog/mrirt-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, mrirt rug, handmade rug, berber rug, wool rug, mrirt, atlas mountains, handwoven
@@ -82,7 +82,7 @@ Samia — whimsical multicolor arrow motifs and a chain of nested diamonds on iv
 
 Samia · 242 x 159 cm (7 ft 11 in x 5 ft 3 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/samia.html
-What makes a real Azilal: https://tizirirugs.com/blog/azilal-boucherouite-rug-guide/
+What makes a real Azilal rug: https://tizirirugs.com/blog/azilal-boucherouite-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, azilal rug, handmade rug, berber rug, wool rug, azilal, atlas mountains, handwoven
@@ -97,7 +97,7 @@ Kawtar — an ivory ground crossed by a black grid, with a red block and a black
 
 Kawtar · 296 x 212 cm (9 ft 8 in x 6 ft 11 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/kawtar.html
-What makes a real Beni Ourain: https://tizirirugs.com/blog/beni-ourain-rug-guide/
+What makes a real Beni Ourain rug: https://tizirirugs.com/blog/beni-ourain-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, beni ourain rug, handmade rug, berber rug, wool rug, beni ourain, atlas mountains, handwoven
@@ -112,7 +112,7 @@ Majda — a dense abstract composition in ivory wool, turquoise, olive, blush an
 
 Majda · 286 × 194 cm (9 ft 5 in × 6 ft 4 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/majda.html
-What makes a real Contemporary: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
+Contemporary Moroccan rugs, explained: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, contemporary rug, handmade rug, berber rug, wool rug, contemporary, atlas mountains, handwoven
@@ -127,7 +127,7 @@ Tafat — carved plush pile in soft, weathered grey. The texture does the talkin
 
 Tafat · 290 x 199 cm (9 ft 6 in x 6 ft 6 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/tafat.html
-What makes a real Mrirt: https://tizirirugs.com/blog/mrirt-rug-guide/
+What makes a real Mrirt rug: https://tizirirugs.com/blog/mrirt-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, mrirt rug, handmade rug, berber rug, wool rug, mrirt, atlas mountains, handwoven
@@ -142,7 +142,7 @@ Rihab — a diagonal chain of diamonds in olive, mustard, pink and blue, scatter
 
 Rihab · 297 x 203 cm (9 ft 9 in x 6 ft 8 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/rihab.html
-What makes a real Azilal: https://tizirirugs.com/blog/azilal-boucherouite-rug-guide/
+What makes a real Azilal rug: https://tizirirugs.com/blog/azilal-boucherouite-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, azilal rug, handmade rug, berber rug, wool rug, azilal, atlas mountains, handwoven
@@ -157,7 +157,7 @@ Malak — a lime-green shag pile crossed by a bold orange diamond lattice. An un
 
 Malak · 243 x 152 cm (7 ft 12 in x 5 ft 0 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/malak.html
-What makes a real Beni Ourain: https://tizirirugs.com/blog/beni-ourain-rug-guide/
+What makes a real Beni Ourain rug: https://tizirirugs.com/blog/beni-ourain-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, beni ourain rug, handmade rug, berber rug, wool rug, beni ourain, atlas mountains, handwoven
@@ -172,7 +172,7 @@ Nabila — deep forest green, free-form black line art. Contemporary Moroccan we
 
 Nabila · 315 × 212 cm (10 ft 4 in × 6 ft 11 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/nabila.html
-What makes a real Contemporary: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
+Contemporary Moroccan rugs, explained: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, contemporary rug, handmade rug, berber rug, wool rug, contemporary, atlas mountains, handwoven
@@ -187,7 +187,7 @@ Zineb — a grey field divided into irregular raised squares. The texture of old
 
 Zineb · 300 x 200 cm (9 ft 10 in x 6 ft 7 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/zineb.html
-What makes a real Mrirt: https://tizirirugs.com/blog/mrirt-rug-guide/
+What makes a real Mrirt rug: https://tizirirugs.com/blog/mrirt-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, mrirt rug, handmade rug, berber rug, wool rug, mrirt, atlas mountains, handwoven
@@ -202,7 +202,7 @@ Sanaa — a saturated chartreuse ground divided into a brick-like grid. Bold, gr
 
 Sanaa · 253 x 148 cm (8 ft 4 in x 4 ft 10 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/sanaa.html
-What makes a real Beni Ourain: https://tizirirugs.com/blog/beni-ourain-rug-guide/
+What makes a real Beni Ourain rug: https://tizirirugs.com/blog/beni-ourain-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, beni ourain rug, handmade rug, berber rug, wool rug, beni ourain, atlas mountains, handwoven
@@ -217,7 +217,7 @@ Sabrine — an ivory ground scattered with confetti-like dots in neon pink, oran
 
 Sabrine · 306 x 199 cm (10 ft 0 in x 6 ft 6 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/sabrine.html
-What makes a real Contemporary: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
+Contemporary Moroccan rugs, explained: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, contemporary rug, handmade rug, berber rug, wool rug, contemporary, atlas mountains, handwoven
@@ -232,7 +232,7 @@ Najat — an ivory ground crossed by a full diamond lattice in a spectrum of col
 
 Najat · 305 x 192 cm (10 ft 0 in x 6 ft 4 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/najat.html
-What makes a real Boujaad: https://tizirirugs.com/blog/boujaad-rug-guide/
+What makes a real Boujaad rug: https://tizirirugs.com/blog/boujaad-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, boujaad rug, handmade rug, berber rug, wool rug, boujaad, atlas mountains, handwoven
@@ -247,7 +247,7 @@ Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquo
 
 Wahiba · 307 × 186 cm (10 ft 1 in × 6 ft 1 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/wahiba.html
-What makes a real Boujaad: https://tizirirugs.com/blog/boujaad-rug-guide/
+What makes a real Boujaad rug: https://tizirirugs.com/blog/boujaad-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, boujaad rug, handmade rug, berber rug, wool rug, boujaad, atlas mountains, handwoven
@@ -262,7 +262,7 @@ Bouchra — a grid of burgundy lines on ivory. Precise and architectural, warm a
 
 Bouchra · 305 x 203 cm (10 ft 0 in x 6 ft 8 in) · hand-knotted wool, one of one.
 This rug: https://tizirirugs.com/rugs/bouchra.html
-What makes a real Contemporary: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
+Contemporary Moroccan rugs, explained: https://tizirirugs.com/blog/contemporary-moroccan-rug-guide/
 All rugs: https://tizirirugs.com/collections/
 ```
 - **Tags:** moroccan rug, contemporary rug, handmade rug, berber rug, wool rug, contemporary, atlas mountains, handwoven
