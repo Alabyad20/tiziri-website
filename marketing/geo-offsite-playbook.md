@@ -74,4 +74,11 @@ Claude can run this check in a session — just ask ("run the monthly GEO citati
 
 | Date | Queries where Tiziri cited | Top competitors cited | Notes / actions |
 |---|---|---|---|
-| 2026-07 (baseline) | _not yet run_ | | |
+| 2026-07-09 (baseline) | **0 / 10** | Benisouk (5×), moroccan-carpet.com (4×), Atlas Weavers (4×), The Wool Rugs (4×), Berberorugs (4×), Berber Handicraft (3×), The Boho Lab (3×), Coco Carpets (2×), King of Handmade, Kantara, Salam Hello, TazRugs | See baseline findings below. Method: web-search index proxy (Brave-class index that Claude/Perplexity draw from); Abdel should spot-check queries 1, 4, 8 in the ChatGPT app to confirm. |
+
+### Baseline findings — 2026-07-09
+
+1. **Zero citations, as expected.** The domain is 3 weeks old. This is the starting line, not a verdict. The winners (Benisouk, moroccan-carpet.com, Atlas Weavers) all run the same playbook we just built — commerce site + topical blog — but with years of domain age and backlinks. The content gap is closed; the authority gap is what the weekly Reddit/YouTube work closes.
+2. **⚠ tizirirugs.com does not appear in the Brave/Bing-class search index at all yet** (a site-restricted search returned nothing). Google Search Console is set up, but ChatGPT and Copilot pull from **Bing**, and Perplexity from its own+Bing-class index. → **ACTION: register the site in Bing Webmaster Tools (bing.com/webmasters — can import verified sites straight from GSC in 2 clicks) and submit sitemap.xml.** Until Bing indexes the site, ChatGPT literally cannot cite it no matter how good the content is. Highest-leverage 10 minutes available right now.
+3. **⚠ Brand-name collision:** searching "Tiziri rugs Morocco" returns *competitor products named Tiziri* — Berberorugs sells a "Tiziri Moroccan Rug", Rugs USA a "Tiziri" jute rug, plus Moussem (UK), illi rugs, The Roost. "Tiziri" is a common Amazigh word other shops use as a rug model name. Mitigation: always brand as **"Tiziri Rugs" / TiziriRugs** (matching the domain + handles) in every off-site profile, video title, and byline — never bare "Tiziri" — so the entity AI engines learn is unambiguous. The Organization schema + consistent handles already help; volume of correct-name mentions fixes this over time.
+4. **Query themes we already have pages for: all 10.** No new content needed for coverage; improvements should go into authority signals and the two actions above.
