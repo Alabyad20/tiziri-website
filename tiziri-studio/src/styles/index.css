@@ -89,7 +89,6 @@ body,
 body {
   @apply bg-canvas font-sans text-ink antialiased;
   font-feature-settings: "cv11", "ss01";
-  transition: background-color 200ms ease;
 }
 
 ::selection {
