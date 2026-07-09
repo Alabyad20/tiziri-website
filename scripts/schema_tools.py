@@ -325,6 +325,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260607-WA0056.webp",
         "datePublished": "2026-06-26",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/beni-ourain-rug-guide/",
     },
     "blog/how-to-authenticate-moroccan-rug/index.html": {
@@ -335,6 +336,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0227.webp",
         "datePublished": "2026-06-26",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/how-to-authenticate-moroccan-rug/",
     },
     "blog/how-to-clean-moroccan-wool-rug/index.html": {
@@ -345,6 +347,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0224.webp",
         "datePublished": "2026-06-26",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/how-to-clean-moroccan-wool-rug/",
     },
     "blog/boujaad-rug-guide/index.html": {
@@ -355,6 +358,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0420.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/boujaad-rug-guide/",
     },
     "blog/kilim-rug-guide/index.html": {
@@ -365,6 +369,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260621-WA0021.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/kilim-rug-guide/",
     },
     "blog/contemporary-moroccan-rug-guide/index.html": {
@@ -375,6 +380,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0259.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/contemporary-moroccan-rug-guide/",
     },
     "blog/mrirt-rug-guide/index.html": {
@@ -385,6 +391,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260607-WA0149.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/mrirt-rug-guide/",
     },
     "blog/azilal-boucherouite-rug-guide/index.html": {
@@ -396,6 +403,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0273.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/azilal-boucherouite-rug-guide/",
     },
     "blog/complete-moroccan-rug-guide/index.html": {
@@ -407,6 +415,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0261.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/complete-moroccan-rug-guide/",
     },
     "blog/moroccan-rug-styling-guide/index.html": {
@@ -417,6 +426,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260619-WA0007.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/moroccan-rug-styling-guide/",
     },
     "blog/how-much-does-a-moroccan-rug-cost/index.html": {
@@ -428,6 +438,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260621-WA0014.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/how-much-does-a-moroccan-rug-cost/",
     },
     "blog/moroccan-rug-sizing-guide/index.html": {
@@ -438,6 +449,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260621-WA0011.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/moroccan-rug-sizing-guide/",
     },
     "blog/living-room-rug-guide/index.html": {
@@ -449,6 +461,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260607-WA0123.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/living-room-rug-guide/",
     },
     "blog/bedroom-rug-guide/index.html": {
@@ -459,6 +472,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0277.webp",
         "datePublished": "2026-07-03",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/bedroom-rug-guide/",
     },
     "blog/dining-room-rug-guide/index.html": {
@@ -469,6 +483,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260621-WA0028.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/dining-room-rug-guide/",
     },
     "blog/beni-ourain-vs-mrirt/index.html": {
@@ -480,6 +495,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0272.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/beni-ourain-vs-mrirt/",
     },
     "blog/hand-knotted-vs-tufted-vs-machine-made/index.html": {
@@ -490,6 +506,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260608-WA0014.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/hand-knotted-vs-tufted-vs-machine-made/",
     },
     "blog/vintage-vs-new-moroccan-rugs/index.html": {
@@ -500,6 +517,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0417.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/vintage-vs-new-moroccan-rugs/",
     },
     "blog/rug-layering-guide/index.html": {
@@ -510,6 +528,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260531-WA0035.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/rug-layering-guide/",
     },
     "blog/moroccan-rug-gift-guide/index.html": {
@@ -521,6 +540,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0433.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/moroccan-rug-gift-guide/",
     },
     "blog/custom-made-to-order-rug-guide/index.html": {
@@ -531,6 +551,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260618-WA0044.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/custom-made-to-order-rug-guide/",
     },
     "blog/how-to-store-a-moroccan-rug/index.html": {
@@ -541,6 +562,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260608-WA0040.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/how-to-store-a-moroccan-rug/",
     },
     "blog/rug-stain-what-to-do-right-now/index.html": {
@@ -552,6 +574,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260621-WA0033.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/rug-stain-what-to-do-right-now/",
     },
     "blog/rug-pad-guide/index.html": {
@@ -563,6 +586,7 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260621-WA0038.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/rug-pad-guide/",
     },
     "blog/moroccan-rug-modern-minimalist-interior/index.html": {
@@ -574,8 +598,20 @@ BLOG_POSTS = {
         ),
         "image": f"{SITE}/rug-photos/IMG-20260530-WA0271.webp",
         "datePublished": "2026-07-04",
+        "dateModified": "2026-07-09",
         "url": f"{SITE}/blog/moroccan-rug-modern-minimalist-interior/",
     },
+}
+
+
+# E-E-A-T: guides are attributed to the founder (matching the visible byline
+# and the story page), not just the brand. First name only, as on /story/.
+BLOG_AUTHOR = {
+    "@type": "Person",
+    "name": "Abdel",
+    "jobTitle": "Founder",
+    "url": f"{SITE}/story/",
+    "worksFor": {"@type": "Organization", "@id": f"{SITE}/#organization"},
 }
 
 
@@ -597,7 +633,7 @@ def build_blog(store):
             "headline": meta["headline"],
             "description": meta["description"],
             "image": meta["image"],
-            "author": dict(store["organizationRef"]),
+            "author": dict(BLOG_AUTHOR),
             "publisher": dict(store["organizationRef"]),
             "datePublished": meta["datePublished"],
             "dateModified": meta.get("dateModified", meta["datePublished"]),

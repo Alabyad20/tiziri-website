@@ -1,5 +1,5 @@
 [build]
-  command = "python3 scripts/schema_tools.py build && python3 scripts/generate_merchant_feed.py"
+  command = "python3 scripts/schema_tools.py build && python3 scripts/generate_merchant_feed.py && python3 scripts/geo_tools.py build"
   publish = "."
 
 # Cache static assets aggressively; never cache HTML
