@@ -129,6 +129,31 @@ select {
   color: inherit;
 }
 
+/* Printing: only the tear sheet leaves the building */
+#print-root {
+  display: none;
+}
+@media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  html,
+  body,
+  #root {
+    height: auto;
+  }
+  #root {
+    display: none;
+  }
+  #print-root {
+    display: block;
+  }
+  body {
+    background: #ffffff;
+  }
+}
+
 @keyframes fade-up {
   from {
     opacity: 0;
