@@ -26,22 +26,6 @@ export function loadImage(src: string): Promise<HTMLImageElement> {
   });
 }
 
-export function downloadDataUrl(dataUrl: string, filename: string): void {
-  const a = document.createElement("a");
-  a.href = dataUrl;
-  a.download = filename;
-  a.click();
-}
-
-export async function copyText(text: string): Promise<boolean> {
-  try {
-    await navigator.clipboard.writeText(text);
-    return true;
-  } catch {
-    return false;
-  }
-}
-
 /** "&times;" and friends → real characters (catalog data is HTML-sourced). */
 export function decodeEntities(s: string): string {
   return s

@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
 import type { SocialCopy } from "@/lib/generators/social";
 
@@ -33,7 +34,7 @@ export const useSocial = create<SocialState>()(
         setCopy: (copy, source = null) => set({ copy, source }),
         patchCopy: (patch) => set((s) => (s.copy ? { copy: { ...s.copy, ...patch } } : s)),
       }),
-      { name: "tiziri-studio:social" },
+      { name: "tiziri-studio:social", storage: createJSONStorage(() => platformStorage) },
     ),
     {
       limit: 100,

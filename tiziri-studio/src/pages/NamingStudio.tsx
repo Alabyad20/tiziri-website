@@ -14,7 +14,8 @@ import { useUndoRedo } from "@/lib/useUndoRedo";
 import { useActivity } from "@/stores/activity";
 import { toast } from "@/stores/toast";
 import { AiError } from "@/lib/ai";
-import { copyText, loadImage, modKey } from "@/lib/utils";
+import { loadImage, modKey } from "@/lib/utils";
+import { copyText } from "@/platform";
 import { Kbd } from "@/components/ui/Kbd";
 import { IconNaming, IconPalette, IconRedo, IconUndo, IconWand } from "@/components/icons";
 

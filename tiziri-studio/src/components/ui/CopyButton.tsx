@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { copyText } from "@/lib/utils";
+import { copyText } from "@/platform";
 import { toast } from "@/stores/toast";
 import { IconCheck, IconCopy } from "@/components/icons";
 import { Button } from "./Button";

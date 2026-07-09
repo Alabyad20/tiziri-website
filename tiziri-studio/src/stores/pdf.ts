@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
 
 interface PdfState {
@@ -27,7 +28,7 @@ export const usePdf = create<PdfState>()(
         setDesignerNotes: (designerNotes) => set({ designerNotes }),
         setShowPrice: (showPrice) => set({ showPrice }),
       }),
-      { name: "tiziri-studio:pdf" },
+      { name: "tiziri-studio:pdf", storage: createJSONStorage(() => platformStorage) },
     ),
     { limit: 60 },
   ),

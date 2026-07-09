@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 
 export type StudioId = "mockup" | "listing" | "naming" | "pdf" | "social";
 
@@ -59,6 +60,6 @@ export const useActivity = create<ActivityState>()(
         })),
       clear: () => set({ projects: [], exports: [] }),
     }),
-    { name: "tiziri-studio:activity" },
+    { name: "tiziri-studio:activity", storage: createJSONStorage(() => platformStorage) },
   ),
 );

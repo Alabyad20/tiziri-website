@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
 import type { NamingResult } from "@/lib/generators/naming";
 import type { Swatch } from "@/lib/palette";
@@ -35,7 +36,7 @@ export const useNaming = create<NamingState>()(
         patchResult: (patch) =>
           set((s) => (s.result ? { result: { ...s.result, ...patch } } : s)),
       }),
-      { name: "tiziri-studio:naming" },
+      { name: "tiziri-studio:naming", storage: createJSONStorage(() => platformStorage) },
     ),
     { limit: 100 },
   ),

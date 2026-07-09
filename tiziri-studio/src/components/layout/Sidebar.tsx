@@ -27,33 +27,62 @@ export const navItems: Array<{
   { to: "/social", label: "Social Studio", icon: IconSocial, shortcut: "6" },
 ];
 
-export function Sidebar({ onOpenPalette }: { onOpenPalette: () => void }) {
+export function Wordmark({ compact = false }: { compact?: boolean }) {
   return (
-    <aside className="flex h-full w-60 shrink-0 flex-col border-r border-line bg-surface/60 print:hidden">
-      {/* Wordmark */}
-      <div className="flex items-center gap-2.5 px-5 pt-6 pb-7">
-        <div className="flex h-8 w-8 items-center justify-center rounded-xl bg-accent text-accent-ink">
-          <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
-            <path d="M16 4l3.6 8.4L28 16l-8.4 3.6L16 28l-3.6-8.4L4 16l8.4-3.6z" />
-          </svg>
-        </div>
-        <div className="leading-none">
-          <p className="font-display text-[17px] font-semibold tracking-tight text-ink">Tiziri</p>
-          <p className="mt-0.5 text-[10px] font-medium tracking-[0.18em] text-ink-3 uppercase">
+    <span className="flex items-center gap-2.5">
+      <span className="flex h-8 w-8 items-center justify-center rounded-xl bg-accent text-accent-ink">
+        <svg width="16" height="16" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+          <path d="M16 4l3.6 8.4L28 16l-8.4 3.6L16 28l-3.6-8.4L4 16l8.4-3.6z" />
+        </svg>
+      </span>
+      <span className="leading-none">
+        <span className="block font-display text-[17px] font-semibold tracking-tight text-ink">
+          Tiziri
+        </span>
+        {!compact && (
+          <span className="mt-0.5 block text-[10px] font-medium tracking-[0.18em] text-ink-3 uppercase">
             Studio
-          </p>
-        </div>
+          </span>
+        )}
+      </span>
+    </span>
+  );
+}
+
+export function Sidebar({
+  onOpenPalette,
+  onNavigate,
+  className,
+}: {
+  onOpenPalette: () => void;
+  /** Called after any nav choice — lets the mobile drawer close itself. */
+  onNavigate?: () => void;
+  className?: string;
+}) {
+  return (
+    <aside
+      className={cn(
+        "flex h-full w-60 shrink-0 flex-col border-r border-line bg-surface/60 print:hidden",
+        className,
+      )}
+    >
+      {/* Wordmark */}
+      <div className="px-5 pt-6 pb-7">
+        <Wordmark />
       </div>
 
       {/* Search / command palette trigger */}
       <div className="px-3 pb-4">
         <button
-          onClick={onOpenPalette}
+          onClick={() => {
+            onNavigate?.();
+            onOpenPalette();
+          }}
           className="flex h-9 w-full items-center gap-2.5 rounded-xl border border-line bg-surface px-3 text-[13px] text-ink-3 transition-colors hover:border-line-strong hover:text-ink-2"
         >
           <IconSearch size={14} />
           <span className="flex-1 text-left">Search…</span>
-          <span className="flex items-center gap-0.5">
+          <span className="hidden items-center gap-0.5 lg:flex">
             <Kbd>{modKey}</Kbd>
             <Kbd>K</Kbd>
           </span>
@@ -67,6 +96,7 @@ export function Sidebar({ onOpenPalette }: { onOpenPalette: () => void }) {
             key={to}
             to={to}
             end={to === "/"}
+            onClick={onNavigate}
             className={({ isActive }) =>
               cn(
                 "group flex h-9 items-center gap-3 rounded-xl px-3 text-[13.5px] font-medium transition-all",
@@ -86,7 +116,7 @@ export function Sidebar({ onOpenPalette }: { onOpenPalette: () => void }) {
                   )}
                 />
                 <span className="flex-1">{label}</span>
-                <span className="opacity-0 transition-opacity group-hover:opacity-100">
+                <span className="hidden opacity-0 transition-opacity group-hover:opacity-100 lg:inline">
                   <Kbd>
                     {modKey}
                     {shortcut}
@@ -102,6 +132,7 @@ export function Sidebar({ onOpenPalette }: { onOpenPalette: () => void }) {
       <div className="border-t border-line p-3">
         <NavLink
           to="/settings"
+          onClick={onNavigate}
           className={({ isActive }) =>
             cn(
               "group flex h-9 items-center gap-3 rounded-xl px-3 text-[13.5px] font-medium transition-all",

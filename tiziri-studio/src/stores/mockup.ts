@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
 
 export interface MockupHistoryEntry {
@@ -56,7 +57,7 @@ export const useMockup = create<MockupState>()(
         removeHistory: (id) =>
           set((s) => ({ history: s.history.filter((h) => h.id !== id) })),
       }),
-      { name: "tiziri-studio:mockup" },
+      { name: "tiziri-studio:mockup", storage: createJSONStorage(() => platformStorage) },
     ),
     {
       // Undo/redo covers design decisions only, not the export history rail.

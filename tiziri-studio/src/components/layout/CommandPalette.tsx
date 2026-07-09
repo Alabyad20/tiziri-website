@@ -89,7 +89,7 @@ export function CommandPalette({ open, onClose }: { open: boolean; onClose: () =
 
   return (
     <div
-      className="animate-overlay-in fixed inset-0 z-40 flex items-start justify-center bg-ink/20 pt-[18vh] backdrop-blur-[2px]"
+      className="animate-overlay-in fixed inset-0 z-40 flex items-start justify-center bg-ink/20 px-4 pt-[12vh] backdrop-blur-[2px] sm:pt-[18vh]"
       onMouseDown={(e) => {
         if (e.target === e.currentTarget) onClose();
       }}

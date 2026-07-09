@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 
 export type Theme = "light" | "dark" | "system";
 
@@ -33,7 +34,7 @@ export const useSettings = create<SettingsState>()(
       setWebsiteUrl: (websiteUrl) => set({ websiteUrl }),
       setBrandVoice: (brandVoice) => set({ brandVoice }),
     }),
-    { name: "tiziri-studio:settings" },
+    { name: "tiziri-studio:settings", storage: createJSONStorage(() => platformStorage) },
   ),
 );
 

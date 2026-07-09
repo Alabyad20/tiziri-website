@@ -12,6 +12,7 @@ import { usePdf } from "@/stores/pdf";
 import { useUndoRedo } from "@/lib/useUndoRedo";
 import { useActivity } from "@/stores/activity";
 import { cn } from "@/lib/utils";
+import { printDocument } from "@/platform";
 import { IconDownload, IconPdf, IconRedo, IconUndo } from "@/components/icons";
 
 function usePrintRoot(): HTMLElement {
@@ -26,19 +27,28 @@ function usePrintRoot(): HTMLElement {
   }, []);
 }
 
-/** Scale the fixed-mm sheet down to fit its on-screen container. */
-function useFitScale(sheetWidthPx: number) {
+/**
+ * Scale the fixed-mm sheet down to fit its on-screen container.
+ * `active` re-attaches the observer when the preview mounts — the container
+ * doesn't exist until a rug is selected, which can happen after first render.
+ */
+function useFitScale(sheetWidthPx: number, active: boolean) {
   const ref = useRef<HTMLDivElement>(null);
   const [scale, setScale] = useState(0.7);
   useEffect(() => {
     const el = ref.current;
     if (!el) return;
-    const observer = new ResizeObserver(() => {
-      setScale(Math.min(1, el.clientWidth / sheetWidthPx));
-    });
+    const measure = () => {
+      // Subtract horizontal padding so the sheet fits inside, not edge-to-edge.
+      const styles = getComputedStyle(el);
+      const inner = el.clientWidth - parseFloat(styles.paddingLeft) - parseFloat(styles.paddingRight);
+      setScale(Math.min(1, inner / sheetWidthPx));
+    };
+    measure();
+    const observer = new ResizeObserver(measure);
     observer.observe(el);
     return () => observer.disconnect();
-  }, [sheetWidthPx]);
+  }, [sheetWidthPx, active]);
   return { ref, scale };
 }
 
@@ -51,9 +61,8 @@ export function DesignerPdf() {
   const logExport = useActivity((a) => a.logExport);
   const { undo, redo, canUndo, canRedo } = useUndoRedo(usePdf);
   const printRoot = usePrintRoot();
-  const { ref, scale } = useFitScale(SHEET_W_PX);
-
   const rug = useMemo(() => (s.rugSlug ? (rugBySlug(s.rugSlug) ?? null) : null), [s.rugSlug]);
+  const { ref, scale } = useFitScale(SHEET_W_PX, rug !== null);
 
   function applyRug(r: Rug) {
     s.setRug(r.slug, r.description);
@@ -65,7 +74,7 @@ export function DesignerPdf() {
     logExport({ studio: "pdf", title: rug.name, kind: "PDF" });
     // The print stylesheet swaps #root for #print-root; "Save as PDF" in the
     // dialog produces the final A4 document.
-    window.print();
+    printDocument();
   }
 
   return (

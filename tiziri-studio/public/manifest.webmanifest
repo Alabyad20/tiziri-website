@@ -1,0 +1,18 @@
+{
+  "name": "Tiziri Studio",
+  "short_name": "Tiziri",
+  "description": "AI workspace for the Tiziri rug house — mockups, listings, naming, tear sheets and social copy.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f6f2ea",
+  "theme_color": "#a15a38",
+  "icons": [
+    {
+      "src": "favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

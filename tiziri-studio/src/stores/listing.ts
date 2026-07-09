@@ -1,5 +1,6 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware";
+import { persist, createJSONStorage } from "zustand/middleware";
+import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
 import type { ListingCopy, ListingInputs } from "@/lib/generators/listing";
 
@@ -41,7 +42,7 @@ export const useListing = create<ListingState>()(
         patchCopy: (patch) =>
           set((s) => (s.copy ? { copy: { ...s.copy, ...patch } } : s)),
       }),
-      { name: "tiziri-studio:listing" },
+      { name: "tiziri-studio:listing", storage: createJSONStorage(() => platformStorage) },
     ),
     { limit: 100 },
   ),

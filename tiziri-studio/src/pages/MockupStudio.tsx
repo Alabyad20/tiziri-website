@@ -11,7 +11,8 @@ import { useMockup } from "@/stores/mockup";
 import { useUndoRedo } from "@/lib/useUndoRedo";
 import { useActivity } from "@/stores/activity";
 import { toast } from "@/stores/toast";
-import { cn, downloadDataUrl, loadImage, uid } from "@/lib/utils";
+import { cn, loadImage, uid } from "@/lib/utils";
+import { downloadDataUrl } from "@/platform";
 import type { Rug } from "@/lib/rugs";
 import { heroImage } from "@/lib/rugs";
 import {
