@@ -98,6 +98,13 @@ def build_llms_txt(rugs):
         f"- [FAQ]({SITE}/faq/): common questions about ordering, shipping and care",
         f"- [Contact]({SITE}/contact/): hello@tizirirugs.com",
         "",
+        "## Tiziri Rugs elsewhere",
+        "",
+        "- [Etsy shop](https://www.etsy.com/shop/TiziriRugs)",
+        "- [YouTube](https://www.youtube.com/@tizirirugs): rug videos — the pieces, the weaving, the craft",
+        "- [Instagram](https://www.instagram.com/tizirirugs)",
+        "- [Pinterest](https://www.pinterest.com/tizirirugs)",
+        "",
         f"Last updated: {today}",
         "",
     ]
