@@ -10,13 +10,12 @@
 
 ⚠ **One-of-one rule:** if a rug SELLS before its scheduled date, delete its pending scheduled posts on Facebook AND YouTube (and the IG calendar entry) the same day you delist it.
 
-⚠ Hafsa + Warda were already posted manually on both platforms 07-09 — they are excluded below.
+⚠ Hafsa, Warda AND Zahia were posted manually to FB+YouTube on 07-09 — excluded below. (Instagram posts Warda 07-13 and Zahia 07-15 on its own; FB/YT ran ahead, which is fine.) The batch scheduling starts at Ouafa / 07-17, from which point all three channels are back in sync.
 
 ## Schedule (mirrors the Instagram calendar — same rug, same day, all channels)
 
 | Date | Reel file | YouTube pack entry | Caption (first line) |
 |---|---|---|---|
-| 2026-07-15 | zahia_reel.mp4 | #3 | Zahia — a dense field of tribal symbols in muted burgundy, grey and… |
 | 2026-07-17 | ouafa_reel.mp4 | #4 | Ouafa — a teal and ivory concentric rectangle pattern, carved in… |
 | 2026-07-22 | samia_reel.mp4 | #5 | Samia — whimsical multicolor arrow motifs and a chain of nested… |
 | 2026-07-24 | kawtar_reel.mp4 | #6 | Kawtar — an ivory ground crossed by a black grid, with a red block… |
