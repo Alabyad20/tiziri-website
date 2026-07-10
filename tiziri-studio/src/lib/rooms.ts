@@ -632,7 +632,7 @@ export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): vo
     ctx.restore();
 
     // 5 — Rug face, lifted by pile height.
-    drawImageInQuad(ctx, opts.rug.img, opts.rug.w, opts.rug.h, topQuad, 16);
+    drawImageInQuad(ctx, opts.rug.img, { x: 0, y: 0, w: opts.rug.w, h: opts.rug.h }, topQuad, 16);
 
     // 6 — Wool grain: perspective-neutral soft-light noise, stronger with pile.
     const grain = { flat: 0.09, low: 0.15, high: 0.21 }[opts.style.pile];

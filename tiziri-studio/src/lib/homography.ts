@@ -58,20 +58,29 @@ export function homographyToQuad([p0, p1, p2, p3]: Quad): Homography {
   };
 }
 
+/** Optional per-vertex displacement, applied in screen space after projection. */
+export type MeshDisplace = (u: number, v: number, p: Pt) => Pt;
+
 /**
- * Draw an image onto an arbitrary quad using an N×N mesh of affine triangles.
- * Canvas 2D has no projective transform, so we approximate it piecewise —
- * at 14×14 the seams are sub-pixel.
+ * Draw an image region onto an arbitrary quad using an N×N mesh of affine
+ * triangles. Canvas 2D has no projective transform, so we approximate it
+ * piecewise — at 14×14 the seams are sub-pixel. `src` selects the source
+ * rectangle (crop-not-stretch); `displace` warps mesh vertices for organic,
+ * non-rigid edges.
  */
 export function drawImageInQuad(
   ctx: CanvasRenderingContext2D,
   img: CanvasImageSource,
-  imgW: number,
-  imgH: number,
+  src: { x: number; y: number; w: number; h: number },
   quad: Quad,
   subdiv = 14,
+  displace?: MeshDisplace,
 ): void {
   const H = homographyToQuad(quad);
+  const vertex = (u: number, v: number): Pt => {
+    const p = H.map(u, v);
+    return displace ? displace(u, v, p) : p;
+  };
 
   for (let row = 0; row < subdiv; row++) {
     for (let col = 0; col < subdiv; col++) {
@@ -80,17 +89,37 @@ export function drawImageInQuad(
       const v0 = row / subdiv;
       const v1 = (row + 1) / subdiv;
 
-      const d00 = H.map(u0, v0);
-      const d10 = H.map(u1, v0);
-      const d11 = H.map(u1, v1);
-      const d01 = H.map(u0, v1);
+      const d00 = vertex(u0, v0);
+      const d10 = vertex(u1, v0);
+      const d11 = vertex(u1, v1);
+      const d01 = vertex(u0, v1);
 
-      const s = { x0: u0 * imgW, y0: v0 * imgH, x1: u1 * imgW, y1: v1 * imgH };
+      const s = {
+        x0: src.x + u0 * src.w,
+        y0: src.y + v0 * src.h,
+        x1: src.x + u1 * src.w,
+        y1: src.y + v1 * src.h,
+      };
 
       drawTriangle(ctx, img, [s.x0, s.y0], [s.x1, s.y0], [s.x0, s.y1], d00, d10, d01);
       drawTriangle(ctx, img, [s.x1, s.y0], [s.x1, s.y1], [s.x0, s.y1], d10, d11, d01);
     }
   }
+}
+
+/** The displaced outline of the mesh (for shadows and edge layers). */
+export function quadOutline(quad: Quad, subdiv: number, displace?: MeshDisplace): Pt[] {
+  const H = homographyToQuad(quad);
+  const vertex = (u: number, v: number): Pt => {
+    const p = H.map(u, v);
+    return displace ? displace(u, v, p) : p;
+  };
+  const pts: Pt[] = [];
+  for (let i = 0; i < subdiv; i++) pts.push(vertex(i / subdiv, 0));
+  for (let i = 0; i < subdiv; i++) pts.push(vertex(1, i / subdiv));
+  for (let i = subdiv; i > 0; i--) pts.push(vertex(i / subdiv, 1));
+  for (let i = subdiv; i > 0; i--) pts.push(vertex(0, i / subdiv));
+  return pts;
 }
 
 type XY = [number, number];
