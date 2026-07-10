@@ -7,7 +7,13 @@ import { Field, Input, Select } from "@/components/ui/Field";
 import { Slider } from "@/components/ui/Slider";
 import { Segmented } from "@/components/ui/Segmented";
 import { renderMockup } from "@/lib/rooms";
-import type { RoomTemplate } from "@/lib/roomTemplates";
+import {
+  DEFAULT_MASK_PROCESSING,
+  processMask,
+  templateMapper,
+  type MaskProcessing,
+  type RoomTemplate,
+} from "@/lib/roomTemplates";
 import { useTemplates } from "@/stores/templates";
 import { toast } from "@/stores/toast";
 import { loadImage, cn, uid } from "@/lib/utils";
@@ -90,6 +96,16 @@ export function Calibrate() {
   const [brush, setBrush] = useState(40);
   const [erase, setErase] = useState(false);
   const [maskVersion, setMaskVersion] = useState(0);
+  const [mp, setMp] = useState<Required<MaskProcessing>>({ ...DEFAULT_MASK_PROCESSING });
+  // Diagnostic overlays — every layer of the occlusion system, toggleable.
+  const [view, setView] = useState({
+    rawMask: true,
+    processedMask: false,
+    maskEdge: false,
+    feet: true,
+    compression: false,
+    contactShadows: false,
+  });
 
   // Preview placement
   const [pv, setPv] = useState({ x: 0, d: 1.5, w: 2.2, l: 1.5 });
@@ -134,7 +150,9 @@ export function Calibrate() {
   const draft = useMemo((): RoomTemplate | null => {
     if (!photo) return null;
     return {
-      id: `draft-${maskVersion}`,
+      // Processing values join the id so the template asset cache re-runs the
+      // mask pipeline whenever a slider moves.
+      id: `draft-${maskVersion}-${mp.threshold}-${mp.expandPx}-${mp.featherPx}`,
       kind: "photo",
       name: name || "Calibrated room",
       style: styleTag,
@@ -149,11 +167,12 @@ export function Calibrate() {
       legPoints: feet.map(([a, b]) => [a, b]),
       occlusionMask:
         maskVersion > 0 && maskRef.current ? maskRef.current.toDataURL("image/png") : undefined,
+      maskProcessing: { ...mp },
       orientation,
       rugSize,
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [photo, aspect, focusY, quad, planeW, planeD, bounds, dirX, warmth, strength, feet, maskVersion, name, styleTag, orientation, rugSize, author, sourceUrl, license]);
+  }, [photo, aspect, focusY, quad, planeW, planeD, bounds, dirX, warmth, strength, feet, maskVersion, mp, name, styleTag, orientation, rugSize, author, sourceUrl, license]);
 
   /* -------------- drawing -------------- */
 
@@ -184,20 +203,46 @@ export function Calibrate() {
       ctx.fillRect(0, 0, W, H);
       ctx.drawImage(photoEl, cp.dx, cp.dy, cp.iw * cp.scale, cp.ih * cp.scale);
 
-      // Mask overlay (red)
-      if (maskRef.current && maskVersion > 0) {
+      // Tint a mask layer and composite it over the photo.
+      const tintLayer = (src: HTMLCanvasElement | HTMLImageElement, color: string, alpha: number) => {
         ctx.save();
-        ctx.globalAlpha = 0.45;
+        ctx.globalAlpha = alpha;
         const off = document.createElement("canvas");
         off.width = W;
         off.height = H;
         const og = off.getContext("2d")!;
-        og.drawImage(maskRef.current, cp.dx, cp.dy, cp.iw * cp.scale, cp.ih * cp.scale);
+        og.drawImage(src, cp.dx, cp.dy, cp.iw * cp.scale, cp.ih * cp.scale);
         og.globalCompositeOperation = "source-in";
-        og.fillStyle = "#e23b2e";
+        og.fillStyle = color;
         og.fillRect(0, 0, W, H);
         ctx.drawImage(off, 0, 0);
         ctx.restore();
+      };
+
+      const hasMask = maskRef.current && maskVersion > 0;
+      let processed: HTMLCanvasElement | null = null;
+      if (hasMask && (view.processedMask || view.maskEdge)) {
+        processed = processMask(maskRef.current!, mp);
+      }
+
+      // Raw mask (red) vs pipeline output (green) — overlay both to compare.
+      if (hasMask && view.rawMask) tintLayer(maskRef.current!, "#e23b2e", 0.4);
+      if (processed && view.processedMask) tintLayer(processed, "#2ea35a", 0.4);
+
+      // Feathered edge band (cyan): pixels the pipeline left semi-transparent.
+      if (processed && view.maskEdge) {
+        const e = document.createElement("canvas");
+        e.width = processed.width;
+        e.height = processed.height;
+        const eg = e.getContext("2d", { willReadFrequently: true })!;
+        eg.drawImage(processed, 0, 0);
+        const img = eg.getImageData(0, 0, e.width, e.height);
+        const d = img.data;
+        for (let i = 3; i < d.length; i += 4) {
+          d[i] = d[i] > 8 && d[i] < 247 ? 255 : 0;
+        }
+        eg.putImageData(img, 0, 0);
+        tintLayer(e, "#28c7de", 0.9);
       }
 
       const toCanvas = ([fx, fy]: [number, number]) => ({
@@ -229,25 +274,56 @@ export function Calibrate() {
       }
       ctx.restore();
 
-      // Feet markers
-      ctx.save();
-      feet.forEach(([fx, fy]) => {
-        const p = toCanvas([fx, fy]);
-        ctx.fillStyle = "#3f9f57";
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
-        ctx.fill();
-        ctx.strokeStyle = "#fff";
-        ctx.lineWidth = 2.5;
-        ctx.stroke();
-      });
-      ctx.restore();
+      // Feet markers + the contact zones the renderer will paint at each foot.
+      if (view.feet || view.compression || view.contactShadows) {
+        const m = draft ? templateMapper(draft, W, H) : null;
+        ctx.save();
+        feet.forEach(([fx, fy]) => {
+          const p = toCanvas([fx, fy]);
+          let ppm = 120;
+          if (m) {
+            const pl = m.toPlane(p.x, p.y);
+            const here = m.toScreen(pl.x, pl.depth);
+            const nearer = m.toScreen(pl.x, Math.max(0.05, pl.depth - 0.25));
+            ppm = Math.abs(here.y - nearer.y) / 0.25;
+          }
+          if (view.compression) {
+            const rc = 0.065 * ppm;
+            ctx.strokeStyle = "#e2a53b";
+            ctx.lineWidth = 2;
+            ctx.setLineDash([6, 4]);
+            ctx.beginPath();
+            ctx.ellipse(p.x, p.y, rc, rc * 0.45, 0, 0, Math.PI * 2);
+            ctx.stroke();
+            ctx.setLineDash([]);
+          }
+          if (view.contactShadows) {
+            const r = 0.05 * ppm;
+            const ox = -dirX * r * 0.45;
+            ctx.strokeStyle = "#7b4fd8";
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.ellipse(p.x + ox, p.y + r * 0.14, r, r * 0.42, 0, 0, Math.PI * 2);
+            ctx.stroke();
+          }
+          if (view.feet) {
+            ctx.fillStyle = "#3f9f57";
+            ctx.beginPath();
+            ctx.arc(p.x, p.y, 10, 0, Math.PI * 2);
+            ctx.fill();
+            ctx.strokeStyle = "#fff";
+            ctx.lineWidth = 2.5;
+            ctx.stroke();
+          }
+        });
+        ctx.restore();
+      }
     })();
 
     return () => {
       cancelled = true;
     };
-  }, [photoEl, draft, mode, quad, feet, maskVersion, cp, pv]);
+  }, [photoEl, draft, mode, quad, feet, maskVersion, mp, view, dirX, cp, pv]);
 
   /* -------------- pointer handling -------------- */
 
@@ -467,6 +543,41 @@ export function Calibrate() {
                   </div>
                 </Card>
               )}
+
+              <Card className="space-y-3 p-5">
+                <p className="text-[13px] font-semibold text-ink">Mask pipeline</p>
+                <Slider label="Noise threshold" value={mp.threshold} min={0} max={60} step={1} format={(v) => `${v}`} onChange={(threshold) => setMp({ ...mp, threshold })} />
+                <Slider label="Expand / contract" value={mp.expandPx} min={-4} max={4} step={1} format={(v) => `${v > 0 ? "+" : ""}${v}px`} onChange={(expandPx) => setMp({ ...mp, expandPx })} />
+                <Slider label="Edge feather" value={mp.featherPx} min={0} max={2} step={0.25} format={(v) => `${v.toFixed(2)}px`} onChange={(featherPx) => setMp({ ...mp, featherPx })} />
+                <p className="text-[11px] leading-relaxed text-ink-3">
+                  Saved with the template. Preview and every export run this exact pipeline once,
+                  at the mask's own resolution.
+                </p>
+              </Card>
+
+              <Card className="space-y-2 p-5">
+                <p className="text-[13px] font-semibold text-ink">View layers</p>
+                {(
+                  [
+                    ["rawMask", "Raw mask (red)"],
+                    ["processedMask", "Processed mask (green)"],
+                    ["maskEdge", "Feathered edge (cyan)"],
+                    ["feet", "Furniture feet"],
+                    ["compression", "Compression zones (amber)"],
+                    ["contactShadows", "Contact shadows (violet)"],
+                  ] as Array<[keyof typeof view, string]>
+                ).map(([key, label]) => (
+                  <label key={key} className="flex cursor-pointer items-center gap-2 text-[13px] text-ink-2">
+                    <input
+                      type="checkbox"
+                      checked={view[key]}
+                      onChange={(e) => setView({ ...view, [key]: e.target.checked })}
+                      className="accent-[#b3552f]"
+                    />
+                    {label}
+                  </label>
+                ))}
+              </Card>
 
               <Card className="space-y-3 p-5">
                 <p className="text-[13px] font-semibold text-ink">Rug region (m)</p>
