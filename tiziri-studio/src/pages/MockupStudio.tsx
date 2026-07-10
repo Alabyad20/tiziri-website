@@ -16,6 +16,7 @@ import {
   resolveScene,
   sceneMapper,
   sceneBounds,
+  fitRange,
   preloadScene,
   type PileType,
 } from "@/lib/rooms";
@@ -138,6 +139,12 @@ export function MockupStudio() {
 
   const roomOptions = useMemo(() => listRooms(customs), [customs]);
   const bounds = useMemo(() => sceneBounds(s.sceneId, customs), [s.sceneId, customs]);
+  // Valid range for the rug's CENTER — the scene's rug region shrunk by the
+  // rug's own half-extents, so the whole rectangle stays in composition.
+  const centerRange = useMemo(
+    () => fitRange(bounds, s.widthM, s.lengthM, s.rotation),
+    [bounds, s.widthM, s.lengthM, s.rotation],
+  );
   const mapper = useMemo(
     () => sceneMapper(s.sceneId, customs, PREVIEW_W, PREVIEW_H),
     [s.sceneId, customs],
@@ -216,24 +223,49 @@ export function MockupStudio() {
     };
   }, [s.sceneId, rugEl, placement, style, customs]);
 
-  // Entering a scene: keep the rug inside its placement bounds and size range.
+  // Entering a scene: fit the rug size to the room, then start it where a
+  // designer would — centered in the room's rug region (coordinates from the
+  // previous scene mean nothing here). On first mount we only clamp, so a
+  // placement the user saved last session survives a reload.
+  const prevSceneRef = useRef<string | null>(null);
   useEffect(() => {
     const st = useMockup.getState();
     const t = useMockup.temporal.getState();
-    const b = sceneBounds(st.sceneId, customs);
     t.pause();
-    st.setPlacement({ offsetX: clamp(st.offsetX, b.x), depth: clamp(st.depth, b.d) });
+    let widthM = st.widthM;
+    let lengthM = st.lengthM;
     const ref = resolveScene(st.sceneId, customs);
     if (ref.kind === "photo") {
       const rs = ref.template.rugSize;
-      st.setPlacement({
-        widthM: clamp(st.widthM, [rs.minW, rs.maxW]),
-        lengthM: clamp(st.lengthM, [rs.minL, rs.maxL]),
-      });
+      widthM = clamp(st.widthM, [rs.minW, rs.maxW]);
+      lengthM = clamp(st.lengthM, [rs.minL, rs.maxL]);
     }
+    const b = sceneBounds(st.sceneId, customs);
+    const r = fitRange(b, widthM, lengthM, st.rotation);
+    const sceneChanged = prevSceneRef.current !== null && prevSceneRef.current !== st.sceneId;
+    prevSceneRef.current = st.sceneId;
+    st.setPlacement({
+      widthM,
+      lengthM,
+      offsetX: sceneChanged ? (r.x[0] + r.x[1]) / 2 : clamp(st.offsetX, r.x),
+      depth: sceneChanged ? (r.d[0] + r.d[1]) / 2 : clamp(st.depth, r.d),
+    });
     t.resume();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [s.sceneId, customs]);
+
+  // Resizing or rotating the rug: keep its center where the whole rug still
+  // fits (no-op while the placement is already valid).
+  useEffect(() => {
+    const st = useMockup.getState();
+    const offsetX = clamp(st.offsetX, centerRange.x);
+    const depth = clamp(st.depth, centerRange.d);
+    if (offsetX === st.offsetX && depth === st.depth) return;
+    const t = useMockup.temporal.getState();
+    t.pause();
+    st.setPlacement({ offsetX, depth });
+    t.resume();
+  }, [centerRange]);
 
   /* ---------------- AI analysis ---------------- */
 
@@ -378,8 +410,8 @@ export function MockupStudio() {
     }
     const pt = mapper.toPlane(x, y);
     useMockup.getState().setPlacement({
-      offsetX: clamp(pt.x - drag.grabX, bounds.x),
-      depth: clamp(pt.depth - drag.grabD, bounds.d),
+      offsetX: clamp(pt.x - drag.grabX, centerRange.x),
+      depth: clamp(pt.depth - drag.grabD, centerRange.d),
     });
   }
 
@@ -547,11 +579,11 @@ export function MockupStudio() {
                 <Slider
                   label="Distance into the room"
                   value={s.depth}
-                  min={bounds.d[0]}
-                  max={bounds.d[1]}
+                  min={centerRange.d[0]}
+                  max={Math.max(centerRange.d[1], centerRange.d[0] + 0.01)}
                   step={0.05}
                   format={(v) => `${v.toFixed(2)} m`}
-                  onChange={(depth) => s.setPlacement({ depth })}
+                  onChange={(depth) => s.setPlacement({ depth: clamp(depth, centerRange.d) })}
                 />
               </div>
               <div className="flex items-center justify-between border-t border-line px-6 py-3">
@@ -560,13 +592,14 @@ export function MockupStudio() {
                   size="sm"
                   variant="ghost"
                   icon={<IconRefresh size={14} />}
-                  onClick={() =>
+                  onClick={() => {
+                    const r = fitRange(bounds, s.widthM, s.lengthM, 0);
                     s.setPlacement({
-                      offsetX: (bounds.x[0] + bounds.x[1]) / 2,
-                      depth: (bounds.d[0] + bounds.d[1]) / 2,
+                      offsetX: (r.x[0] + r.x[1]) / 2,
+                      depth: (r.d[0] + r.d[1]) / 2,
                       rotation: 0,
-                    })
-                  }
+                    });
+                  }}
                 >
                   Reset placement
                 </Button>

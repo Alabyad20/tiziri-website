@@ -469,7 +469,12 @@ export function Calibrate() {
               )}
 
               <Card className="space-y-3 p-5">
-                <p className="text-[13px] font-semibold text-ink">Rug placement bounds (m)</p>
+                <p className="text-[13px] font-semibold text-ink">Rug region (m)</p>
+                <p className="text-xs leading-relaxed text-ink-3">
+                  The whole rug stays inside this region. Extend it past a furniture
+                  line only where your occlusion mask covers (the tuck-under zone);
+                  end it at the bottom of the frame.
+                </p>
                 <div className="grid grid-cols-2 gap-3">
                   <Field label="X min">{num(bounds.xMin, (v) => setBounds({ ...bounds, xMin: v }))}</Field>
                   <Field label="X max">{num(bounds.xMax, (v) => setBounds({ ...bounds, xMax: v }))}</Field>

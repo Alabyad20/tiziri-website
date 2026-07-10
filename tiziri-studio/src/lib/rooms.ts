@@ -586,28 +586,30 @@ function sampleRugColors(img: HTMLImageElement | HTMLCanvasElement): RugColors {
   return colors;
 }
 
-/** Rug-local (dx across, dd along length) → plane meters, honoring rotation. */
-function rugToPlane(
-  p: RugPlacement,
-  dx: number,
-  dd: number,
-  planeD: number,
-): { x: number; d: number } {
+/**
+ * Rug-local (dx across, dd along length) → plane meters, honoring rotation.
+ * A rigid mapping on purpose: the rug is a rectangle lying on the floor plane,
+ * and the homography extends past the calibrated quad exactly as the real
+ * floor does. Clamping corners here (as an earlier version did) crushes the
+ * rectangle into a trapezoid whenever it nears the quad edge — keeping the
+ * whole rug inside the scene is the placement bounds' job (see fitRange).
+ */
+function rugToPlane(p: RugPlacement, dx: number, dd: number): { x: number; d: number } {
   const rad = (p.rotation * Math.PI) / 180;
   const cos = Math.cos(rad);
   const sin = Math.sin(rad);
   return {
     x: p.offsetX + dx * cos - dd * sin,
-    d: Math.max(0.05, Math.min(planeD - 0.05, p.depth + dx * sin + dd * cos)),
+    d: p.depth + dx * sin + dd * cos,
   };
 }
 
 /** Rug corner points on the floor plane, mapped to screen space. */
-export function rugQuad(plane: PlaneFn, p: RugPlacement, planeD: number): Quad {
+export function rugQuad(plane: PlaneFn, p: RugPlacement): Quad {
   const hw = p.widthM / 2;
   const hl = p.lengthM / 2;
   const corner = (dx: number, dd: number): Pt => {
-    const { x, d } = rugToPlane(p, dx, dd, planeD);
+    const { x, d } = rugToPlane(p, dx, dd);
     return plane(x, d);
   };
   return [corner(-hw, -hl), corner(hw, -hl), corner(hw, hl), corner(-hw, hl)];
@@ -760,11 +762,33 @@ export function listRooms(customs?: RoomTemplate[]): RoomOption[] {
   ];
 }
 
-/** Placement limits for a scene, in plane meters. */
+/** Region the whole rug rectangle may occupy in a scene, in plane meters. */
 export function sceneBounds(id: string, customs?: RoomTemplate[]) {
   const ref = resolveScene(id, customs);
   if (ref.kind === "photo") return ref.template.bounds;
   return { x: [-2.4, 2.4] as [number, number], d: [0.7, 4.35] as [number, number] };
+}
+
+/**
+ * Valid range for the rug's CENTER: the scene's rug region shrunk by the
+ * rug's rotated half-extents, so every corner stays inside the region. When
+ * the rug is larger than the region in one axis, the range collapses to the
+ * region's midline — an oversized rug centers itself instead of overflowing.
+ */
+export function fitRange(
+  bounds: { x: [number, number]; d: [number, number] },
+  widthM: number,
+  lengthM: number,
+  rotation: number,
+): { x: [number, number]; d: [number, number] } {
+  const rad = (rotation * Math.PI) / 180;
+  const cos = Math.abs(Math.cos(rad));
+  const sin = Math.abs(Math.sin(rad));
+  const ex = (widthM / 2) * cos + (lengthM / 2) * sin;
+  const ed = (widthM / 2) * sin + (lengthM / 2) * cos;
+  const shrink = ([lo, hi]: [number, number], e: number): [number, number] =>
+    lo + e <= hi - e ? [lo + e, hi - e] : [(lo + hi) / 2, (lo + hi) / 2];
+  return { x: shrink(bounds.x, ex), d: shrink(bounds.d, ed) };
 }
 
 /** Screen ↔ floor-plane mapping for a scene (drag, calibration preview). */
@@ -793,13 +817,12 @@ function paintRug(
   W: number,
   H: number,
   plane: PlaneFn,
-  planeD: number,
   rug: { img: HTMLImageElement | HTMLCanvasElement; w: number; h: number },
   p: RugPlacement,
   style: RugStyleOpts,
   light: SceneLight,
 ): void {
-  const quad = rugQuad(plane, p, planeD);
+  const quad = rugQuad(plane, p);
   const pileH = PILE_HEIGHT[style.pile];
   const diag = Math.hypot(quad[2].x - quad[0].x, quad[2].y - quad[0].y);
   const hw = p.widthM / 2;
@@ -807,7 +830,7 @@ function paintRug(
   const ppm = makePpm(plane);
 
   const cornerLift = (dx: number, dd: number) => {
-    const a = rugToPlane(p, dx, dd, planeD);
+    const a = rugToPlane(p, dx, dd);
     return pileH * ppm(a.x, a.d);
   };
   const lifts = [cornerLift(-hw, -hl), cornerLift(hw, -hl), cornerLift(hw, hl), cornerLift(-hw, hl)];
@@ -874,7 +897,7 @@ function paintRug(
 
   // Fringe sits UNDER the rug ends, like real knotted warp threads.
   if (style.fringe) {
-    drawFringe(ctx, plane, planeD, p, colors.fringe, W);
+    drawFringe(ctx, plane, p, colors.fringe, W);
   }
 
   // Pile side (the rug's thickness) + a thin AO seam where it meets the floor.
@@ -931,8 +954,8 @@ function paintRug(
     ctx.lineWidth = Math.max(0.6, W * 0.0005);
     const step = 0.016;
     for (let dd = -hl + step; dd < hl; dd += step) {
-      const a = rugToPlane(p, -hw, dd, planeD);
-      const b = rugToPlane(p, hw, dd, planeD);
+      const a = rugToPlane(p, -hw, dd);
+      const b = rugToPlane(p, hw, dd);
       const sa = plane(a.x, a.d);
       const sb = plane(b.x, b.d);
       ctx.beginPath();
@@ -1005,7 +1028,7 @@ export async function renderMockup(canvas: HTMLCanvasElement, opts: RenderOption
     ctx.drawImage(assets.img, cp.dx, cp.dy, destW, destH);
 
     if (opts.rug) {
-      paintRug(ctx, W, H, plane, tpl.planeSize.d, opts.rug, opts.placement, opts.style, tpl.light);
+      paintRug(ctx, W, H, plane, opts.rug, opts.placement, opts.style, tpl.light);
     }
 
     // Foreground occlusion: re-draw the photo, restricted to the mask, ON TOP
@@ -1048,7 +1071,7 @@ export async function renderMockup(canvas: HTMLCanvasElement, opts: RenderOption
   scene.paintBack(ctx, W, H, plane);
 
   if (opts.rug) {
-    paintRug(ctx, W, H, plane, PLANE_D, opts.rug, opts.placement, opts.style, scene.light);
+    paintRug(ctx, W, H, plane, opts.rug, opts.placement, opts.style, scene.light);
   }
 
   // Window light falls across floor AND rug — it no longer stops at the edge.
@@ -1125,7 +1148,6 @@ function gradePass(ctx: CanvasRenderingContext2D, W: number, H: number, light: S
 function drawFringe(
   ctx: CanvasRenderingContext2D,
   plane: PlaneFn,
-  planeD: number,
   p: RugPlacement,
   color: string,
   W: number,
@@ -1165,9 +1187,9 @@ function drawFringe(
         len *= 1.5;
         drift *= 2.2;
       }
-      const base = rugToPlane(p, baseX, end * (hl - 0.01), planeD);
-      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55), planeD);
-      const tip = rugToPlane(p, baseX + drift, end * (hl + len), planeD);
+      const base = rugToPlane(p, baseX, end * (hl - 0.01));
+      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55));
+      const tip = rugToPlane(p, baseX + drift, end * (hl + len));
       const sBase = plane(base.x, base.d);
       const sMid = plane(mid.x, mid.d);
       const sTip = plane(tip.x, tip.d);
