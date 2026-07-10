@@ -1,4 +1,11 @@
-import { homographyToQuad, drawImageInQuad, type Pt, type Quad } from "./homography";
+import {
+  homographyToQuad,
+  drawImageInQuad,
+  quadOutline,
+  type MeshDisplace,
+  type Pt,
+  type Quad,
+} from "./homography";
 
 /**
  * Procedural room scenes. Each scene paints a minimal, flat-illustration
@@ -20,10 +27,23 @@ export interface RugPlacement {
   rotation: number;
 }
 
+export interface SceneLight {
+  /** Where the light comes from: -1 hard left … 1 hard right, 0 ambient. */
+  dirX: number;
+  /** Whole-frame photographic grade tint (applied soft-light at the end). */
+  tint: [number, number, number];
+  tintAlpha: number;
+}
+
 export interface RoomScene {
   id: string;
   name: string;
   blurb: string;
+  light: SceneLight;
+  /** Window light pools in floor-plane meters — painted over floor AND rug. */
+  lightPools?: Array<{ pts: Array<[number, number]>; color: string; alpha: number }>;
+  /** Furniture feet as screen fractions — the rug compresses where these land. */
+  legPoints?: Array<[number, number]>;
   paintBack: (ctx: CanvasRenderingContext2D, W: number, H: number, plane: PlaneFn) => void;
   paintFront?: (ctx: CanvasRenderingContext2D, W: number, H: number, plane: PlaneFn) => void;
 }
@@ -220,6 +240,11 @@ export const rooms: RoomScene[] = [
     id: "living",
     name: "Living Room",
     blurb: "Linen sofa, oak floor, afternoon light",
+    light: { dirX: -0.35, tint: [255, 196, 150], tintAlpha: 0.05 },
+    legPoints: [
+      [0.318, 0.505],
+      [0.684, 0.505],
+    ],
     paintBack(ctx, W, H, plane) {
       wallAndFloor(ctx, W, H, "#e9e1d2", "#c9a87d", "#d8cdb8");
       planks(ctx, plane, "#8a6a45");
@@ -250,6 +275,11 @@ export const rooms: RoomScene[] = [
     id: "bedroom",
     name: "Bedroom",
     blurb: "Low bed, undyed linen, quiet morning",
+    light: { dirX: 0.25, tint: [255, 205, 165], tintAlpha: 0.045 },
+    legPoints: [
+      [0.255, 0.47],
+      [0.745, 0.47],
+    ],
     paintBack(ctx, W, H, plane) {
       wallAndFloor(ctx, W, H, "#ded4c3", "#b98f68", "#cfc2ac");
       planks(ctx, plane, "#7d5f3f");
@@ -280,19 +310,21 @@ export const rooms: RoomScene[] = [
     id: "reading",
     name: "Reading Corner",
     blurb: "Leather armchair, tall window, floor lamp",
+    light: { dirX: 0.6, tint: [255, 214, 170], tintAlpha: 0.055 },
+    lightPools: [
+      { pts: [[1.1, 0.1], [3.2, 0.1], [3.4, 2.6], [0.6, 2.6]], color: "#fffbe9", alpha: 0.13 },
+    ],
+    legPoints: [
+      [0.18, 0.48],
+      [0.315, 0.48],
+      [0.382, 0.47],
+    ],
     paintBack(ctx, W, H, plane) {
       wallAndFloor(ctx, W, H, "#e4dbc8", "#c19d72", "#d3c7ae");
       planks(ctx, plane, "#83643f");
 
       const fl = FLOOR_LINE * H;
       windowFrame(ctx, 0.66 * W, 0.06 * H, 0.2 * W, 0.31 * H, "#8a7a5f", "#e9e9df", 1);
-      // Light pooling on floor from the window
-      poly(
-        ctx,
-        [plane(1.1, 0.1), plane(3.2, 0.1), plane(3.4, 2.6), plane(0.6, 2.6)],
-        "#fffbe9",
-        0.13,
-      );
 
       // Armchair, back-left
       const cw = 0.17 * W;
@@ -325,6 +357,11 @@ export const rooms: RoomScene[] = [
     id: "hallway",
     name: "Entry Hall",
     blurb: "Stone tiles, console table, runner territory",
+    light: { dirX: 0, tint: [255, 210, 175], tintAlpha: 0.04 },
+    legPoints: [
+      [0.4, 0.46],
+      [0.597, 0.46],
+    ],
     paintBack(ctx, W, H, plane) {
       wallAndFloor(ctx, W, H, "#e6ddcd", "#cbb695", "#d6cab3");
       tiles(ctx, plane, "#8f7a58");
@@ -370,18 +407,20 @@ export const rooms: RoomScene[] = [
     id: "loft",
     name: "Minimal Loft",
     blurb: "Big window, pale floor, one bench",
+    light: { dirX: -0.6, tint: [206, 214, 232], tintAlpha: 0.05 },
+    lightPools: [
+      { pts: [[-3.2, 0.1], [-0.4, 0.1], [0.2, 2.8], [-3.5, 2.8]], color: "#fffdf0", alpha: 0.12 },
+    ],
+    legPoints: [
+      [0.701, 0.475],
+      [0.853, 0.475],
+    ],
     paintBack(ctx, W, H, plane) {
       wallAndFloor(ctx, W, H, "#d8d1c5", "#d3c3a6", "#c6bca9");
       planks(ctx, plane, "#96825f");
 
       const fl = FLOOR_LINE * H;
       windowFrame(ctx, 0.12 * W, 0.055 * H, 0.34 * W, 0.32 * H, "#3d3a34", "#e7e6df", 3);
-      poly(
-        ctx,
-        [plane(-3.2, 0.1), plane(-0.4, 0.1), plane(0.2, 2.8), plane(-3.5, 2.8)],
-        "#fffdf0",
-        0.12,
-      );
       // Oak bench, back-right
       const bw = 0.2 * W;
       const bx = 0.68 * W;
@@ -399,6 +438,11 @@ export const rooms: RoomScene[] = [
     id: "atelier",
     name: "Atelier",
     blurb: "Clay walls, walnut floor, hung textile",
+    light: { dirX: -0.2, tint: [255, 180, 120], tintAlpha: 0.075 },
+    legPoints: [
+      [0.736, 0.455],
+      [0.784, 0.455],
+    ],
     paintBack(ctx, W, H, plane) {
       wallAndFloor(ctx, W, H, "#c49a79", "#8d6c4c", "#ab8362");
       planks(ctx, plane, "#4f3a26");
@@ -555,17 +599,91 @@ export function rugQuad(plane: PlaneFn, p: RugPlacement): Quad {
   return [corner(-hw, -hl), corner(hw, -hl), corner(hw, hl), corner(-hw, hl)];
 }
 
-function quadPath(ctx: CanvasRenderingContext2D, quad: Quad, dy = 0) {
+/* ------------------------------------------------------------------ */
+/* Small geometry + texture helpers for the photographic pipeline      */
+/* ------------------------------------------------------------------ */
+
+function pathPts(ctx: CanvasRenderingContext2D, pts: Pt[]) {
   ctx.beginPath();
-  quad.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y + dy) : ctx.lineTo(p.x, p.y + dy)));
+  pts.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y)));
   ctx.closePath();
 }
 
-function expandQuad(quad: Quad, factor: number): Quad {
-  const cx = (quad[0].x + quad[1].x + quad[2].x + quad[3].x) / 4;
-  const cy = (quad[0].y + quad[1].y + quad[2].y + quad[3].y) / 4;
-  return quad.map((p) => ({ x: cx + (p.x - cx) * factor, y: cy + (p.y - cy) * factor })) as Quad;
+function fillPts(ctx: CanvasRenderingContext2D, pts: Pt[]) {
+  pathPts(ctx, pts);
+  ctx.fill();
 }
+
+function expandPts(pts: Pt[], factor: number): Pt[] {
+  const cx = pts.reduce((a, p) => a + p.x, 0) / pts.length;
+  const cy = pts.reduce((a, p) => a + p.y, 0) / pts.length;
+  return pts.map((p) => ({ x: cx + (p.x - cx) * factor, y: cy + (p.y - cy) * factor }));
+}
+
+function ptsBounds(pts: Pt[]) {
+  let minX = Infinity;
+  let minY = Infinity;
+  let maxX = -Infinity;
+  let maxY = -Infinity;
+  for (const p of pts) {
+    if (p.x < minX) minX = p.x;
+    if (p.y < minY) minY = p.y;
+    if (p.x > maxX) maxX = p.x;
+    if (p.y > maxY) maxY = p.y;
+  }
+  return { x: minX, y: minY, w: maxX - minX, h: maxY - minY };
+}
+
+/** Deterministic smooth value noise in [0,1]. */
+function valueNoise(x: number, y: number, seed: number): number {
+  const h = (ix: number, iy: number) => {
+    let n = (Math.imul(ix, 374761393) + Math.imul(iy, 668265263) + Math.imul(seed, 1442695041)) >>> 0;
+    n = Math.imul(n ^ (n >>> 13), 1274126177) >>> 0;
+    return ((n ^ (n >>> 16)) >>> 0) / 4294967296;
+  };
+  const ix = Math.floor(x);
+  const iy = Math.floor(y);
+  const fx = x - ix;
+  const fy = y - iy;
+  const sx = fx * fx * (3 - 2 * fx);
+  const sy = fy * fy * (3 - 2 * fy);
+  const a = h(ix, iy);
+  const b = h(ix + 1, iy);
+  const c = h(ix, iy + 1);
+  const d = h(ix + 1, iy + 1);
+  return a + (b - a) * sx + (c - a) * sy + (a - b - c + d) * sx * sy;
+}
+
+/** Soft cloudy tile for pile sheen — high pile catches light in patches. */
+let sheenTile: HTMLCanvasElement | null = null;
+function getSheenTile(): HTMLCanvasElement {
+  if (sheenTile) return sheenTile;
+  const small = document.createElement("canvas");
+  small.width = 16;
+  small.height = 16;
+  const sg = small.getContext("2d")!;
+  const img = sg.createImageData(16, 16);
+  const rnd = mulberry32(90210);
+  for (let i = 0; i < img.data.length; i += 4) {
+    const v = 92 + Math.floor(rnd() * 72);
+    img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
+    img.data[i + 3] = 255;
+  }
+  sg.putImageData(img, 0, 0);
+  const big = document.createElement("canvas");
+  big.width = 256;
+  big.height = 256;
+  const bg = big.getContext("2d")!;
+  bg.imageSmoothingEnabled = true;
+  bg.imageSmoothingQuality = "high";
+  bg.drawImage(small, 0, 0, 256, 256); // 16x upscale = soft blobs
+  sheenTile = big;
+  return big;
+}
+
+/* ------------------------------------------------------------------ */
+/* The photographic render                                              */
+/* ------------------------------------------------------------------ */
 
 export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): void {
   const ctx = canvas.getContext("2d");
@@ -574,94 +692,259 @@ export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): vo
   const H = canvas.height;
   const scene = roomById(opts.sceneId);
   const plane = floorPlane(W, H);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
 
   ctx.clearRect(0, 0, W, H);
   scene.paintBack(ctx, W, H, plane);
+
+  /** Depth-direction pixels-per-meter at a plane point (for physical sizes). */
+  const ppmPlane = (x: number, d: number) => {
+    const here = plane(x, d);
+    const nearer = plane(x, Math.max(0.05, d - 0.25));
+    return Math.abs(here.y - nearer.y) / 0.25;
+  };
 
   if (opts.rug) {
     const p = opts.placement;
     const quad = rugQuad(plane, p);
     const pileH = PILE_HEIGHT[opts.style.pile];
-
-    // Vertical pixels-per-meter at a corner, from the local depth gradient —
-    // lifts the rug top surface by its pile height so the edge reads as wool.
-    const pxPerM = (dx: number, dd: number) => {
-      const a = rugToPlane(p, dx, dd);
-      const near = plane(a.x, Math.max(0.05, a.d - 0.25));
-      const here = plane(a.x, a.d);
-      return Math.abs(here.y - near.y) / 0.25;
-    };
+    const diag = Math.hypot(quad[2].x - quad[0].x, quad[2].y - quad[0].y);
     const hw = p.widthM / 2;
     const hl = p.lengthM / 2;
-    const lifts = [
-      pileH * pxPerM(-hw, -hl),
-      pileH * pxPerM(hw, -hl),
-      pileH * pxPerM(hw, hl),
-      pileH * pxPerM(-hw, hl),
+
+    const cornerLift = (dx: number, dd: number) => {
+      const a = rugToPlane(p, dx, dd);
+      return pileH * ppmPlane(a.x, a.d);
+    };
+    const lifts = [cornerLift(-hw, -hl), cornerLift(hw, -hl), cornerLift(hw, hl), cornerLift(-hw, hl)];
+
+    // Organic border wobble — heavy wool never lies in a perfect rectangle.
+    // Shared by shadows, side, and face so every layer keeps one silhouette.
+    const amp = diag * 0.0085;
+    const baseDisp: MeshDisplace = (u, v, pt) => {
+      const edge = Math.min(u, 1 - u, v, 1 - v);
+      const border = 1 - Math.min(1, edge / 0.1);
+      if (border <= 0) return pt;
+      const b2 = border * border;
+      return {
+        x: pt.x + b2 * (valueNoise(u * 4.3, v * 3.7, 11) - 0.5) * amp,
+        y: pt.y + b2 * (valueNoise(u * 3.9 + 7, v * 4.1, 23) - 0.5) * amp * 1.6,
+      };
+    };
+    // The face additionally rises by the pile height, settling at the corners.
+    const liftAt = (u: number, v: number) => {
+      const top = lifts[0] + (lifts[1] - lifts[0]) * u;
+      const bot = lifts[3] + (lifts[2] - lifts[3]) * u;
+      const lift = top + (bot - top) * v;
+      const dc = Math.min(
+        Math.hypot(u, v),
+        Math.hypot(1 - u, v),
+        Math.hypot(1 - u, 1 - v),
+        Math.hypot(u, 1 - v),
+      );
+      const settle = 1 - 0.35 * (1 - Math.min(1, dc / 0.22));
+      return lift * settle;
+    };
+    const faceDisp: MeshDisplace = (u, v, pt) => {
+      const b = baseDisp(u, v, pt);
+      return { x: b.x, y: b.y - liftAt(u, v) };
+    };
+
+    const basePts = quadOutline(quad, 12, baseDisp);
+    const facePts = quadOutline(quad, 12, faceDisp);
+
+    // Shadows: three stacked passes from tight ambient occlusion to a wide
+    // penumbra, each offset away from the room's window — no uniform blur.
+    const dir = scene.light.dirX;
+    const shadowPasses = [
+      {
+        grow: 1.006,
+        blur: Math.max(2, W * 0.0026),
+        a: opts.style.pile === "high" ? 0.33 : 0.27,
+        ox: -dir * W * 0.003,
+        oy: H * 0.002,
+      },
+      { grow: 1.022, blur: W * 0.006, a: 0.13, ox: -dir * W * 0.009, oy: H * 0.006 },
+      { grow: 1.05, blur: W * 0.012, a: 0.08, ox: -dir * W * 0.018, oy: H * 0.011 },
     ];
-    const topQuad = quad.map((pt, i) => ({ x: pt.x, y: pt.y - lifts[i] })) as Quad;
-
-    // 1 — Ambient shadow: wide, soft, slightly down-offset.
-    ctx.save();
-    ctx.fillStyle = "rgba(28, 19, 12, 0.16)";
-    ctx.filter = `blur(${Math.max(6, W * 0.011)}px)`;
-    quadPath(ctx, expandQuad(quad, 1.035), H * 0.006);
-    ctx.fill();
-    ctx.restore();
-
-    // 2 — Contact shadow: tight and dark, hugging the edge so nothing floats.
-    ctx.save();
-    ctx.fillStyle = `rgba(24, 16, 10, ${opts.style.pile === "high" ? 0.34 : 0.27})`;
-    ctx.filter = `blur(${Math.max(2.5, W * 0.0035)}px)`;
-    quadPath(ctx, expandQuad(quad, 1.008), H * 0.0018);
-    ctx.fill();
-    ctx.restore();
+    for (const s of shadowPasses) {
+      ctx.save();
+      ctx.fillStyle = `rgba(26, 17, 10, ${s.a})`;
+      ctx.filter = `blur(${s.blur}px)`;
+      ctx.translate(s.ox, s.oy);
+      fillPts(ctx, expandPts(basePts, s.grow));
+      ctx.restore();
+    }
 
     const colors = sampleRugColors(opts.rug.img);
 
-    // 3 — Fringe sits UNDER the rug ends, like real knotted warp threads.
+    // Fringe sits UNDER the rug ends, like real knotted warp threads.
     if (opts.style.fringe) {
       drawFringe(ctx, plane, p, colors.fringe, W);
     }
 
-    // 4 — Pile side: the rug's thickness, visible along the near edges.
+    // Pile side (the rug's thickness) + a thin AO seam where it meets the floor.
     ctx.save();
     ctx.fillStyle = colors.edge;
-    quadPath(ctx, quad);
-    ctx.fill();
+    fillPts(ctx, basePts);
     ctx.restore();
-
-    // 5 — Rug face, lifted by pile height.
-    drawImageInQuad(ctx, opts.rug.img, { x: 0, y: 0, w: opts.rug.w, h: opts.rug.h }, topQuad, 16);
-
-    // 6 — Wool grain: perspective-neutral soft-light noise, stronger with pile.
-    const grain = { flat: 0.09, low: 0.15, high: 0.21 }[opts.style.pile];
     ctx.save();
-    quadPath(ctx, topQuad);
-    ctx.clip();
-    ctx.globalAlpha = grain;
-    ctx.globalCompositeOperation = "soft-light";
-    const pattern = ctx.createPattern(getNoiseTile(), "repeat")!;
-    ctx.fillStyle = pattern;
-    const bounds = topQuad.reduce(
-      (acc, pt) => ({
-        minX: Math.min(acc.minX, pt.x),
-        minY: Math.min(acc.minY, pt.y),
-        maxX: Math.max(acc.maxX, pt.x),
-        maxY: Math.max(acc.maxY, pt.y),
-      }),
-      { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity },
-    );
-    ctx.fillRect(bounds.minX, bounds.minY, bounds.maxX - bounds.minX, bounds.maxY - bounds.minY);
+    ctx.strokeStyle = "rgba(20, 13, 8, 0.28)";
+    ctx.lineWidth = Math.max(1, W * 0.0011);
+    ctx.filter = `blur(${Math.max(1, W * 0.001)}px)`;
+    pathPts(ctx, basePts);
+    ctx.stroke();
     ctx.restore();
+
+    // Face — crop, never stretch, when the entered size disagrees with the
+    // photo's shape: the weave must keep its true proportions.
+    const imgAspect = opts.rug.h / opts.rug.w;
+    const targetAspect = p.lengthM / Math.max(0.01, p.widthM);
+    let src = { x: 0, y: 0, w: opts.rug.w, h: opts.rug.h };
+    const ratio = targetAspect / imgAspect;
+    if (ratio < 0.92) {
+      const h = opts.rug.h * ratio;
+      src = { x: 0, y: (opts.rug.h - h) / 2, w: opts.rug.w, h };
+    } else if (ratio > 1.08) {
+      const w = opts.rug.w / ratio;
+      src = { x: (opts.rug.w - w) / 2, y: 0, w, h: opts.rug.h };
+    }
+    drawImageInQuad(ctx, opts.rug.img, src, quad, 16, faceDisp);
+
+    // Texture — fine wool grain plus pile-dependent light scatter.
+    ctx.save();
+    pathPts(ctx, facePts);
+    ctx.clip();
+    const bounds = ptsBounds(facePts);
+    ctx.globalCompositeOperation = "soft-light";
+    ctx.globalAlpha = { flat: 0.07, low: 0.1, high: 0.12 }[opts.style.pile];
+    ctx.fillStyle = ctx.createPattern(getNoiseTile(), "repeat")!;
+    ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
+    if (opts.style.pile !== "flat") {
+      ctx.globalAlpha = opts.style.pile === "high" ? 0.2 : 0.11;
+      ctx.fillStyle = ctx.createPattern(getSheenTile(), "repeat")!;
+      ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
+    }
+    ctx.restore();
+
+    if (opts.style.pile === "flat") {
+      // Weft ridges along the weave, drawn in plane space so they converge.
+      ctx.save();
+      pathPts(ctx, facePts);
+      ctx.clip();
+      ctx.globalAlpha = 0.045;
+      ctx.strokeStyle = "#241a10";
+      ctx.lineWidth = Math.max(0.6, W * 0.0005);
+      const step = 0.016;
+      for (let dd = -hl + step; dd < hl; dd += step) {
+        const a = rugToPlane(p, -hw, dd);
+        const b = rugToPlane(p, hw, dd);
+        const sa = plane(a.x, a.d);
+        const sb = plane(b.x, b.d);
+        ctx.beginPath();
+        ctx.moveTo(sa.x, sa.y);
+        ctx.lineTo(sb.x, sb.y);
+        ctx.stroke();
+      }
+      ctx.restore();
+    }
+  }
+
+  // Window light falls across floor AND rug — it no longer stops at the edge.
+  for (const pool of scene.lightPools ?? []) {
+    poly(
+      ctx,
+      pool.pts.map(([x, d]) => plane(x, d)),
+      pool.color,
+      pool.alpha,
+    );
   }
 
   scene.paintFront?.(ctx, W, H, plane);
+
+  // Furniture feet compress the pile where they land on the rug.
+  if (opts.rug && opts.style.pile !== "flat") {
+    const mapper = planeMapper(W, H);
+    const p = opts.placement;
+    const hw = p.widthM / 2;
+    const hl = p.lengthM / 2;
+    for (const [fx, fy] of scene.legPoints ?? []) {
+      const sx = fx * W;
+      const sy = fy * H;
+      const pt = mapper.toPlane(sx, sy);
+      const rad = (-p.rotation * Math.PI) / 180;
+      const dx = pt.x - p.offsetX;
+      const dd = pt.depth - p.depth;
+      const lx = dx * Math.cos(rad) - dd * Math.sin(rad);
+      const ld = dx * Math.sin(rad) + dd * Math.cos(rad);
+      if (Math.abs(lx) > hw - 0.05 || Math.abs(ld) > hl - 0.05) continue;
+      const r = 0.07 * ppmPlane(pt.x, pt.depth);
+      const a = opts.style.pile === "high" ? 0.3 : 0.18;
+      const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
+      g.addColorStop(0, `rgba(24, 15, 9, ${a})`);
+      g.addColorStop(1, "rgba(24, 15, 9, 0)");
+      ctx.save();
+      ctx.fillStyle = g;
+      ctx.beginPath();
+      ctx.ellipse(sx, sy, r, r * 0.45, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+  }
+
+  gradePass(ctx, W, H, scene.light);
 }
 
 /**
- * Hand-drawn warp fringe at both rug ends: short strands with jittered
- * length, drift, spacing and alpha (seeded — identical every render).
+ * Whole-frame photographic grade: directional daylight from the window side,
+ * the room's color temperature over every layer (this is what makes the rug
+ * live IN the light instead of on top of it), a gentle vignette, and film
+ * grain to unify the composite.
+ */
+function gradePass(ctx: CanvasRenderingContext2D, W: number, H: number, light: SceneLight): void {
+  ctx.save();
+  if (Math.abs(light.dirX) > 0.05) {
+    const g = ctx.createLinearGradient(light.dirX > 0 ? W : 0, 0, light.dirX > 0 ? 0 : W, 0);
+    const s = 0.14 * Math.abs(light.dirX);
+    g.addColorStop(0, `rgba(255, 252, 244, ${s})`);
+    g.addColorStop(0.6, "rgba(255, 252, 244, 0)");
+    ctx.globalCompositeOperation = "soft-light";
+    ctx.fillStyle = g;
+    ctx.fillRect(0, 0, W, H);
+  }
+  // Multiply, not soft-light: a translucent soft-light wash is numerically
+  // near-invisible, while multiply genuinely pulls the frame toward the
+  // room's color temperature (warm rooms warm the rug).
+  ctx.globalCompositeOperation = "multiply";
+  ctx.fillStyle = `rgba(${light.tint[0]}, ${light.tint[1]}, ${light.tint[2]}, ${Math.min(1, light.tintAlpha * 2)})`;
+  ctx.fillRect(0, 0, W, H);
+
+  const v = ctx.createRadialGradient(
+    W / 2,
+    H * 0.42,
+    Math.min(W, H) * 0.45,
+    W / 2,
+    H * 0.5,
+    Math.hypot(W, H) * 0.62,
+  );
+  v.addColorStop(0, "rgba(18, 12, 7, 0)");
+  v.addColorStop(1, "rgba(18, 12, 7, 0.14)");
+  ctx.globalCompositeOperation = "multiply";
+  ctx.fillStyle = v;
+  ctx.fillRect(0, 0, W, H);
+
+  ctx.globalCompositeOperation = "overlay";
+  ctx.globalAlpha = 0.03;
+  ctx.fillStyle = ctx.createPattern(getNoiseTile(), "repeat")!;
+  ctx.fillRect(0, 0, W, H);
+  ctx.restore();
+}
+
+/**
+ * Hand-drawn warp fringe at both rug ends: strands clump the way washed
+ * cotton does, with jittered length, drift, tone and the odd stray thread.
+ * Seeded — identical every render.
  */
 function drawFringe(
   ctx: CanvasRenderingContext2D,
@@ -675,23 +958,44 @@ function drawFringe(
   const hl = p.lengthM / 2;
   const strandCount = Math.max(36, Math.round(p.widthM * 34));
 
+  // Undyed cotton varies thread to thread — three tones around the sampled base.
+  const m = /rgb\((\d+), (\d+), (\d+)\)/.exec(color);
+  const [br, bg, bb] = m ? [Number(m[1]), Number(m[2]), Number(m[3])] : [225, 218, 202];
+  const tones = [
+    color,
+    `rgb(${Math.min(255, br + 14)}, ${Math.min(255, bg + 13)}, ${Math.min(255, bb + 11)})`,
+    `rgb(${Math.max(0, br - 16)}, ${Math.max(0, bg - 15)}, ${Math.max(0, bb - 13)})`,
+  ];
+
   ctx.save();
-  ctx.strokeStyle = color;
   ctx.lineCap = "round";
 
   for (const end of [-1, 1] as const) {
+    let clumpDrift = 0;
+    let clumpLeft = 0;
     for (let i = 0; i <= strandCount; i++) {
+      if (clumpLeft <= 0) {
+        clumpLeft = 4 + Math.floor(rnd() * 6);
+        clumpDrift = (rnd() - 0.5) * 0.055;
+      }
+      clumpLeft--;
       const t = i / strandCount;
       const baseX = -hw + t * p.widthM + (rnd() - 0.5) * 0.012;
-      const len = 0.055 + rnd() * 0.045; // 5.5–10cm strands
-      const drift = (rnd() - 0.5) * 0.05;
-      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55));
+      const stray = rnd() < 0.08;
+      let len = 0.05 + rnd() * 0.04;
+      let drift = clumpDrift + (rnd() - 0.5) * 0.02;
+      if (stray) {
+        len *= 1.5;
+        drift *= 2.2;
+      }
       const base = rugToPlane(p, baseX, end * (hl - 0.01));
+      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55));
       const tip = rugToPlane(p, baseX + drift, end * (hl + len));
       const sBase = plane(base.x, base.d);
       const sMid = plane(mid.x, mid.d);
       const sTip = plane(tip.x, tip.d);
-      ctx.globalAlpha = 0.45 + rnd() * 0.45;
+      ctx.strokeStyle = tones[Math.floor(rnd() * 3)];
+      ctx.globalAlpha = (stray ? 0.35 : 0.45) + rnd() * 0.45;
       ctx.lineWidth = Math.max(0.7, W * 0.0009 * (0.7 + rnd() * 0.6));
       ctx.beginPath();
       ctx.moveTo(sBase.x, sBase.y);
