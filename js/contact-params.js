@@ -1,0 +1,75 @@
+/* ============================================
+   TIZIRI — Contact form query-parameter handling
+   Single source of truth for every param passed into contact/index.html
+   from the Made-to-Order page, the Custom Design Wizard, and the
+   Designer & Trade page. Whitelists field names, trims and length-caps
+   values, and never treats a value as HTML.
+   ============================================ */
+
+'use strict';
+
+window.TiziriContactParams = (function () {
+    const MAX_URL_LENGTH = 2000;
+
+    const FIELDS = {
+        topic:  60,
+        design: 80,
+        style:  60,
+        size:   60,
+        price:  30,
+        color:  60,
+        notes:  300
+    };
+
+    function clean(value, maxLength) {
+        if (typeof value !== 'string') return '';
+        let out = value.replace(/[\x00-\x1f\x7f]/g, ' ').trim();
+        if (out.length > maxLength) out = out.slice(0, maxLength).trim();
+        return out;
+    }
+
+    // values: plain object keyed by field name (unknown keys are ignored).
+    // Returns a full "path?query" string, safe to assign directly to an <a href>.
+    function build(baseUrl, values) {
+        const params = new URLSearchParams();
+        Object.keys(FIELDS).forEach((key) => {
+            if (!(key in values)) return;
+            const value = clean(values[key], FIELDS[key]);
+            if (value) params.set(key, value);
+        });
+
+        let query = params.toString();
+        let url = query ? `${baseUrl}?${query}` : baseUrl;
+
+        if (url.length > MAX_URL_LENGTH && params.has('notes')) {
+            params.delete('notes');
+            query = params.toString();
+            url = query ? `${baseUrl}?${query}` : baseUrl;
+        }
+
+        return url;
+    }
+
+    // Reads only whitelisted fields from the current page's URL. Malformed
+    // percent-encoding decodes leniently (URLSearchParams never throws on it);
+    // the try/catch is extra insurance against an unexpected runtime error.
+    // Returns {} if no recognized params are present.
+    function read() {
+        const result = {};
+        let params;
+        try {
+            params = new URLSearchParams(window.location.search);
+        } catch (e) {
+            return result;
+        }
+        Object.keys(FIELDS).forEach((key) => {
+            const raw = params.get(key);
+            if (raw === null) return;
+            const value = clean(raw, FIELDS[key]);
+            if (value) result[key] = value;
+        });
+        return result;
+    }
+
+    return { build, read };
+})();
