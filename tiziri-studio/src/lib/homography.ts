@@ -8,11 +8,13 @@ export type Quad = [Pt, Pt, Pt, Pt];
 
 export interface Homography {
   map: (u: number, v: number) => Pt;
+  /** Inverse: screen point → (u,v) in the unit square. */
+  invMap: (x: number, y: number) => Pt;
 }
 
 /**
- * Projective map from the unit square (u,v ∈ [0,1]) onto an arbitrary quad.
- * Closed-form 4-point homography — no linear solver needed.
+ * Projective map from the unit square (u,v ∈ [0,1]) onto an arbitrary quad,
+ * plus its inverse. Closed-form 4-point homography — no linear solver needed.
  */
 export function homographyToQuad([p0, p1, p2, p3]: Quad): Homography {
   const dx1 = p1.x - p2.x;
@@ -33,10 +35,25 @@ export function homographyToQuad([p0, p1, p2, p3]: Quad): Homography {
   const e = p3.y - p0.y + h * p3.y;
   const f = p0.y;
 
+  // Inverse of [[a,b,c],[d,e,f],[g,h,1]] via adjugate.
+  const ia = e - f * h;
+  const ib = c * h - b;
+  const ic = b * f - c * e;
+  const id = f * g - d;
+  const ie = a - c * g;
+  const iff = c * d - a * f;
+  const ig = d * h - e * g;
+  const ih = b * g - a * h;
+  const ii = a * e - b * d;
+
   return {
     map(u, v) {
       const w = g * u + h * v + 1;
       return { x: (a * u + b * v + c) / w, y: (d * u + e * v + f) / w };
+    },
+    invMap(x, y) {
+      const w = ig * x + ih * y + ii;
+      return { x: (ia * x + ib * y + ic) / w, y: (id * x + ie * y + iff) / w };
     },
   };
 }

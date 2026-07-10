@@ -34,15 +34,36 @@ export const PLANE_W = 7; // meters across
 export const PLANE_D = 5; // meters deep
 const FLOOR_LINE = 0.44; // wall/floor split as a fraction of height
 
-function floorPlane(W: number, H: number): PlaneFn {
+function floorHomography(W: number, H: number) {
   const quad: Quad = [
     { x: 0.16 * W, y: FLOOR_LINE * H }, // far left
     { x: 0.84 * W, y: FLOOR_LINE * H }, // far right
     { x: 1.32 * W, y: H }, // near right
     { x: -0.32 * W, y: H }, // near left
   ];
-  const h = homographyToQuad(quad);
+  return homographyToQuad(quad);
+}
+
+function floorPlane(W: number, H: number): PlaneFn {
+  const h = floorHomography(W, H);
   return (xM, depthM) => h.map((xM + PLANE_W / 2) / PLANE_W, depthM / PLANE_D);
+}
+
+/**
+ * Bidirectional floor mapper for interaction: screen point ↔ plane meters.
+ * Used by the canvas drag handler to hit-test and move the rug.
+ */
+export function planeMapper(W: number, H: number) {
+  const h = floorHomography(W, H);
+  return {
+    toScreen(xM: number, depthM: number): Pt {
+      return h.map((xM + PLANE_W / 2) / PLANE_W, depthM / PLANE_D);
+    },
+    toPlane(x: number, y: number): { x: number; depth: number } {
+      const uv = h.invMap(x, y);
+      return { x: uv.x * PLANE_W - PLANE_W / 2, depth: uv.y * PLANE_D };
+    },
+  };
 }
 
 /* ------------------------------------------------------------------ */
@@ -417,25 +438,133 @@ export function roomById(id: string): RoomScene {
 /* Renderer                                                            */
 /* ------------------------------------------------------------------ */
 
-export interface RenderOptions {
-  sceneId: string;
-  rug: { img: CanvasImageSource; w: number; h: number } | null;
-  placement: RugPlacement;
+export type PileType = "flat" | "low" | "high";
+
+export interface RugStyleOpts {
+  pile: PileType;
+  fringe: boolean;
 }
 
-/** Rug corner points on the floor plane, mapped to screen space. */
-function rugQuad(plane: PlaneFn, p: RugPlacement): Quad {
+export interface RenderOptions {
+  sceneId: string;
+  rug: { img: HTMLImageElement | HTMLCanvasElement; w: number; h: number } | null;
+  placement: RugPlacement;
+  style: RugStyleOpts;
+}
+
+/** Physical pile height in meters — drives the visible edge and shadows. */
+const PILE_HEIGHT: Record<PileType, number> = { flat: 0.004, low: 0.013, high: 0.026 };
+
+function mulberry32(seed: number) {
+  let a = seed >>> 0;
+  return () => {
+    a |= 0;
+    a = (a + 0x6d2b79f5) | 0;
+    let t = Math.imul(a ^ (a >>> 15), 1 | a);
+    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  };
+}
+
+/** Deterministic wool-grain tile, generated once. */
+let noiseTile: HTMLCanvasElement | null = null;
+function getNoiseTile(): HTMLCanvasElement {
+  if (noiseTile) return noiseTile;
+  const c = document.createElement("canvas");
+  c.width = 128;
+  c.height = 128;
+  const g = c.getContext("2d")!;
+  const img = g.createImageData(128, 128);
+  const rnd = mulberry32(20260709);
+  for (let i = 0; i < img.data.length; i += 4) {
+    const v = 96 + Math.floor(rnd() * 64);
+    img.data[i] = img.data[i + 1] = img.data[i + 2] = v;
+    img.data[i + 3] = 255;
+  }
+  g.putImageData(img, 0, 0);
+  noiseTile = c;
+  return c;
+}
+
+interface RugColors {
+  /** Darkened tone for the visible pile edge. */
+  edge: string;
+  /** Warm ivory-leaning tone for fringe strands. */
+  fringe: string;
+}
+
+const rugColorCache = new WeakMap<object, RugColors>();
+
+/** Sample the rug photo's end rows to derive edge + fringe colors. */
+function sampleRugColors(img: HTMLImageElement | HTMLCanvasElement): RugColors {
+  const cached = rugColorCache.get(img);
+  if (cached) return cached;
+  const c = document.createElement("canvas");
+  c.width = 24;
+  c.height = 24;
+  const g = c.getContext("2d", { willReadFrequently: true })!;
+  g.drawImage(img, 0, 0, 24, 24);
+  const data = g.getImageData(0, 0, 24, 24).data;
+  let r = 0;
+  let gr = 0;
+  let b = 0;
+  let n = 0;
+  // Bottom three rows — closest to what the viewer sees as the rug's edge.
+  for (let y = 21; y < 24; y++) {
+    for (let x = 0; x < 24; x++) {
+      const i = (y * 24 + x) * 4;
+      r += data[i];
+      gr += data[i + 1];
+      b += data[i + 2];
+      n++;
+    }
+  }
+  r /= n;
+  gr /= n;
+  b /= n;
+  const colors: RugColors = {
+    edge: `rgb(${Math.round(r * 0.5)}, ${Math.round(gr * 0.5)}, ${Math.round(b * 0.5)})`,
+    // Fringe reads as undyed cotton/wool: pull the sampled tone toward ivory.
+    fringe: `rgb(${Math.round(r * 0.35 + 233 * 0.65)}, ${Math.round(gr * 0.35 + 226 * 0.65)}, ${Math.round(
+      b * 0.35 + 210 * 0.65,
+    )})`,
+  };
+  rugColorCache.set(img, colors);
+  return colors;
+}
+
+/** Rug-local (dx across, dd along length) → plane meters, honoring rotation. */
+function rugToPlane(p: RugPlacement, dx: number, dd: number): { x: number; d: number } {
   const rad = (p.rotation * Math.PI) / 180;
   const cos = Math.cos(rad);
   const sin = Math.sin(rad);
+  return {
+    x: p.offsetX + dx * cos - dd * sin,
+    d: Math.max(0.05, Math.min(PLANE_D - 0.05, p.depth + dx * sin + dd * cos)),
+  };
+}
+
+/** Rug corner points on the floor plane, mapped to screen space. */
+export function rugQuad(plane: PlaneFn, p: RugPlacement): Quad {
   const hw = p.widthM / 2;
   const hl = p.lengthM / 2;
   const corner = (dx: number, dd: number): Pt => {
-    const x = p.offsetX + dx * cos - dd * sin;
-    const d = p.depth + dx * sin + dd * cos;
-    return plane(x, Math.max(0.05, Math.min(PLANE_D - 0.05, d)));
+    const { x, d } = rugToPlane(p, dx, dd);
+    return plane(x, d);
   };
   return [corner(-hw, -hl), corner(hw, -hl), corner(hw, hl), corner(-hw, hl)];
+}
+
+function quadPath(ctx: CanvasRenderingContext2D, quad: Quad, dy = 0) {
+  ctx.beginPath();
+  quad.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y + dy) : ctx.lineTo(p.x, p.y + dy)));
+  ctx.closePath();
+}
+
+function expandQuad(quad: Quad, factor: number): Quad {
+  const cx = (quad[0].x + quad[1].x + quad[2].x + quad[3].x) / 4;
+  const cy = (quad[0].y + quad[1].y + quad[2].y + quad[3].y) / 4;
+  return quad.map((p) => ({ x: cx + (p.x - cx) * factor, y: cy + (p.y - cy) * factor })) as Quad;
 }
 
 export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): void {
@@ -450,20 +579,125 @@ export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): vo
   scene.paintBack(ctx, W, H, plane);
 
   if (opts.rug) {
-    const quad = rugQuad(plane, opts.placement);
+    const p = opts.placement;
+    const quad = rugQuad(plane, p);
+    const pileH = PILE_HEIGHT[opts.style.pile];
 
-    // Soft drop shadow under the rug
+    // Vertical pixels-per-meter at a corner, from the local depth gradient —
+    // lifts the rug top surface by its pile height so the edge reads as wool.
+    const pxPerM = (dx: number, dd: number) => {
+      const a = rugToPlane(p, dx, dd);
+      const near = plane(a.x, Math.max(0.05, a.d - 0.25));
+      const here = plane(a.x, a.d);
+      return Math.abs(here.y - near.y) / 0.25;
+    };
+    const hw = p.widthM / 2;
+    const hl = p.lengthM / 2;
+    const lifts = [
+      pileH * pxPerM(-hw, -hl),
+      pileH * pxPerM(hw, -hl),
+      pileH * pxPerM(hw, hl),
+      pileH * pxPerM(-hw, hl),
+    ];
+    const topQuad = quad.map((pt, i) => ({ x: pt.x, y: pt.y - lifts[i] })) as Quad;
+
+    // 1 — Ambient shadow: wide, soft, slightly down-offset.
     ctx.save();
-    ctx.fillStyle = "rgba(30, 20, 12, 0.22)";
-    ctx.filter = `blur(${Math.max(4, W * 0.006)}px)`;
-    ctx.beginPath();
-    quad.forEach((p, i) => (i === 0 ? ctx.moveTo(p.x, p.y + H * 0.006) : ctx.lineTo(p.x, p.y + H * 0.006)));
-    ctx.closePath();
+    ctx.fillStyle = "rgba(28, 19, 12, 0.16)";
+    ctx.filter = `blur(${Math.max(6, W * 0.011)}px)`;
+    quadPath(ctx, expandQuad(quad, 1.035), H * 0.006);
     ctx.fill();
     ctx.restore();
 
-    drawImageInQuad(ctx, opts.rug.img, opts.rug.w, opts.rug.h, quad, 16);
+    // 2 — Contact shadow: tight and dark, hugging the edge so nothing floats.
+    ctx.save();
+    ctx.fillStyle = `rgba(24, 16, 10, ${opts.style.pile === "high" ? 0.34 : 0.27})`;
+    ctx.filter = `blur(${Math.max(2.5, W * 0.0035)}px)`;
+    quadPath(ctx, expandQuad(quad, 1.008), H * 0.0018);
+    ctx.fill();
+    ctx.restore();
+
+    const colors = sampleRugColors(opts.rug.img);
+
+    // 3 — Fringe sits UNDER the rug ends, like real knotted warp threads.
+    if (opts.style.fringe) {
+      drawFringe(ctx, plane, p, colors.fringe, W);
+    }
+
+    // 4 — Pile side: the rug's thickness, visible along the near edges.
+    ctx.save();
+    ctx.fillStyle = colors.edge;
+    quadPath(ctx, quad);
+    ctx.fill();
+    ctx.restore();
+
+    // 5 — Rug face, lifted by pile height.
+    drawImageInQuad(ctx, opts.rug.img, opts.rug.w, opts.rug.h, topQuad, 16);
+
+    // 6 — Wool grain: perspective-neutral soft-light noise, stronger with pile.
+    const grain = { flat: 0.09, low: 0.15, high: 0.21 }[opts.style.pile];
+    ctx.save();
+    quadPath(ctx, topQuad);
+    ctx.clip();
+    ctx.globalAlpha = grain;
+    ctx.globalCompositeOperation = "soft-light";
+    const pattern = ctx.createPattern(getNoiseTile(), "repeat")!;
+    ctx.fillStyle = pattern;
+    const bounds = topQuad.reduce(
+      (acc, pt) => ({
+        minX: Math.min(acc.minX, pt.x),
+        minY: Math.min(acc.minY, pt.y),
+        maxX: Math.max(acc.maxX, pt.x),
+        maxY: Math.max(acc.maxY, pt.y),
+      }),
+      { minX: Infinity, minY: Infinity, maxX: -Infinity, maxY: -Infinity },
+    );
+    ctx.fillRect(bounds.minX, bounds.minY, bounds.maxX - bounds.minX, bounds.maxY - bounds.minY);
+    ctx.restore();
   }
 
   scene.paintFront?.(ctx, W, H, plane);
+}
+
+/**
+ * Hand-drawn warp fringe at both rug ends: short strands with jittered
+ * length, drift, spacing and alpha (seeded — identical every render).
+ */
+function drawFringe(
+  ctx: CanvasRenderingContext2D,
+  plane: PlaneFn,
+  p: RugPlacement,
+  color: string,
+  W: number,
+) {
+  const rnd = mulberry32(7 + Math.round(p.widthM * 100) * 31 + Math.round(p.rotation) * 7);
+  const hw = p.widthM / 2;
+  const hl = p.lengthM / 2;
+  const strandCount = Math.max(36, Math.round(p.widthM * 34));
+
+  ctx.save();
+  ctx.strokeStyle = color;
+  ctx.lineCap = "round";
+
+  for (const end of [-1, 1] as const) {
+    for (let i = 0; i <= strandCount; i++) {
+      const t = i / strandCount;
+      const baseX = -hw + t * p.widthM + (rnd() - 0.5) * 0.012;
+      const len = 0.055 + rnd() * 0.045; // 5.5–10cm strands
+      const drift = (rnd() - 0.5) * 0.05;
+      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55));
+      const base = rugToPlane(p, baseX, end * (hl - 0.01));
+      const tip = rugToPlane(p, baseX + drift, end * (hl + len));
+      const sBase = plane(base.x, base.d);
+      const sMid = plane(mid.x, mid.d);
+      const sTip = plane(tip.x, tip.d);
+      ctx.globalAlpha = 0.45 + rnd() * 0.45;
+      ctx.lineWidth = Math.max(0.7, W * 0.0009 * (0.7 + rnd() * 0.6));
+      ctx.beginPath();
+      ctx.moveTo(sBase.x, sBase.y);
+      ctx.quadraticCurveTo(sMid.x, sMid.y, sTip.x, sTip.y);
+      ctx.stroke();
+    }
+  }
+  ctx.restore();
 }

@@ -2,6 +2,7 @@ import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
+import type { PileType } from "@/lib/rooms";
 
 export interface MockupHistoryEntry {
   id: string;
@@ -13,28 +14,36 @@ export interface MockupHistoryEntry {
 }
 
 export interface MockupState {
-  /** Downscaled data URL of the uploaded rug photo. */
+  /** Downscaled data URL of the prepared (isolated) rug photo. */
   rugImage: string | null;
-  rugAspect: number; // height / width of the source photo
+  rugAspect: number; // height / width of the prepared photo
   rugLabel: string;
   sceneId: string;
+  /** Real rug size in meters — width across the room, length into it. */
   widthM: number;
+  lengthM: number;
   offsetX: number;
   depth: number;
   rotation: number;
+  pile: PileType;
+  fringe: boolean;
   history: MockupHistoryEntry[];
 
   setRug: (image: string, aspect: number, label: string) => void;
   clearRug: () => void;
   setRugLabel: (label: string) => void;
   setScene: (id: string) => void;
-  setPlacement: (p: Partial<Pick<MockupState, "widthM" | "offsetX" | "depth" | "rotation">>) => void;
+  setPlacement: (
+    p: Partial<Pick<MockupState, "widthM" | "lengthM" | "offsetX" | "depth" | "rotation">>,
+  ) => void;
+  setPile: (pile: PileType) => void;
+  setFringe: (fringe: boolean) => void;
   resetPlacement: () => void;
   addHistory: (e: MockupHistoryEntry) => void;
   removeHistory: (id: string) => void;
 }
 
-const defaultPlacement = { widthM: 2.4, offsetX: 0, depth: 2.6, rotation: 0 };
+const defaultPlacement = { offsetX: 0, depth: 2.6, rotation: 0 };
 
 export const useMockup = create<MockupState>()(
   temporal(
@@ -44,14 +53,27 @@ export const useMockup = create<MockupState>()(
         rugAspect: 1.5,
         rugLabel: "",
         sceneId: "living",
+        widthM: 2.4,
+        lengthM: 1.6,
+        pile: "low",
+        fringe: false,
         ...defaultPlacement,
         history: [],
 
-        setRug: (rugImage, rugAspect, rugLabel) => set({ rugImage, rugAspect, rugLabel }),
+        setRug: (rugImage, rugAspect, rugLabel) =>
+          set((s) => ({
+            rugImage,
+            rugAspect,
+            rugLabel,
+            // Keep the chosen width; derive length from the photo's true shape.
+            lengthM: Math.round(s.widthM * rugAspect * 100) / 100,
+          })),
         clearRug: () => set({ rugImage: null, rugLabel: "" }),
         setRugLabel: (rugLabel) => set({ rugLabel }),
         setScene: (sceneId) => set({ sceneId }),
         setPlacement: (p) => set(p),
+        setPile: (pile) => set({ pile }),
+        setFringe: (fringe) => set({ fringe }),
         resetPlacement: () => set(defaultPlacement),
         addHistory: (e) => set((s) => ({ history: [e, ...s.history].slice(0, 12) })),
         removeHistory: (id) =>
@@ -67,11 +89,20 @@ export const useMockup = create<MockupState>()(
         rugLabel: s.rugLabel,
         sceneId: s.sceneId,
         widthM: s.widthM,
+        lengthM: s.lengthM,
         offsetX: s.offsetX,
         depth: s.depth,
         rotation: s.rotation,
+        pile: s.pile,
+        fringe: s.fringe,
       }),
       limit: 80,
     },
   ),
 );
+
+// Dev-only introspection handle — dynamic import() in the console creates a
+// second module instance under Vite HMR, which silently probes a shadow store.
+if (import.meta.env.DEV) {
+  (window as unknown as Record<string, unknown>).__mockupStore = useMockup;
+}
