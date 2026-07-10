@@ -7,6 +7,9 @@ import { Slider } from "@/components/ui/Slider";
 import { Input, Field, Select } from "@/components/ui/Field";
 import { RugPicker } from "@/components/RugPicker";
 import { RugPrep } from "@/components/RugPrep";
+import { MockupAiPanel } from "@/components/MockupAiPanel";
+import { analyzeRug, type KnownFacts, type MoroccanStyle } from "@/lib/rugAnalysis";
+import { AiError } from "@/lib/ai";
 import { rooms, renderMockup, planeMapper, type PileType } from "@/lib/rooms";
 import { useMockup } from "@/stores/mockup";
 import { useUndoRedo } from "@/lib/useUndoRedo";
@@ -121,7 +124,8 @@ export function MockupStudio() {
   const [rawImage, setRawImage] = useState<string | null>(null); // session-only, for re-cropping
   const [prepOpen, setPrepOpen] = useState(false);
   const [prepLabel, setPrepLabel] = useState("");
-  const [selectedPresets, setSelectedPresets] = useState<string[]>(["etsy", "instagram"]);
+  const [analyzing, setAnalyzing] = useState(false);
+  const selectedPresets = s.exportPresets;
   const sceneThumbs = useSceneThumbs();
   const dragRef = useRef<{ grabX: number; grabD: number; preX: number; preD: number } | null>(null);
   const [hovering, setHovering] = useState(false);
@@ -167,6 +171,49 @@ export function MockupStudio() {
     });
   }, [s.sceneId, rugEl, placement, style]);
 
+  /* ---------------- AI analysis ---------------- */
+
+  /**
+   * Analyze the prepared rug and apply the recommendations as the default
+   * setup. The application happens with undo tracking paused — AI defaults
+   * aren't "edits", so the user's undo history starts clean from them.
+   */
+  async function runAnalysis(imageDataUrl: string, aspect: number, known?: KnownFacts, forceLocal = false) {
+    setAnalyzing(true);
+    try {
+      let analysis;
+      try {
+        analysis = await analyzeRug(imageDataUrl, aspect, known, forceLocal);
+      } catch (e) {
+        if (e instanceof AiError) {
+          toast(`${e.message} — analyzed on-device instead`, "error");
+          analysis = await analyzeRug(imageDataUrl, aspect, known, true);
+        } else {
+          throw e;
+        }
+      }
+      const st = useMockup.getState();
+      const t = useMockup.temporal.getState();
+      t.pause();
+      st.setAnalysis(analysis);
+      st.setPlacement({
+        widthM: analysis.profile.widthCm / 100,
+        lengthM: analysis.profile.lengthCm / 100,
+      });
+      st.setPile(analysis.profile.pile);
+      st.setFringe(analysis.profile.fringe);
+      st.setScene(analysis.rooms[0].id);
+      st.setExportPresets(analysis.exports.map((e) => e.id));
+      t.resume();
+      const styleName = analysis.profile.style === "Unknown" ? "your rug" : `the ${analysis.profile.style}`;
+      toast(`Set up for ${styleName} — room, size and exports are ready`);
+    } catch {
+      toast("Couldn't analyze the photo — the manual controls are all yours", "error");
+    } finally {
+      setAnalyzing(false);
+    }
+  }
+
   /* ---------------- rug intake ---------------- */
 
   function openPrep(raw: string, label: string) {
@@ -186,7 +233,9 @@ export function MockupStudio() {
         title: prepLabel || "Untitled mockup",
         subtitle: rooms.find((r) => r.id === useMockup.getState().sceneId)?.name,
       });
+      void runAnalysis(dataUrl, aspect);
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [logProject, prepLabel],
   );
 
@@ -212,6 +261,13 @@ export function MockupStudio() {
       setRawImage(dataUrl);
       setPrepLabel(rug.name);
       logProject({ id: "mockup-current", studio: "mockup", title: rug.name, subtitle: "Catalog" });
+      void runAnalysis(normalized, aspect, {
+        style: rug.style as MoroccanStyle,
+        pile: guessPile(rug.pile, rug.style),
+        fringe: FRINGED_STYLES.has(rug.style),
+        widthCm: dims ? Math.round(dims.widthM * 100) : undefined,
+        lengthCm: dims ? Math.round(dims.lengthM * 100) : undefined,
+      });
     } catch {
       toast("Catalog photos aren't cross-origin enabled yet — drop the photo file instead", "error");
     }
@@ -447,6 +503,24 @@ export function MockupStudio() {
 
         {/* Workflow rail */}
         <div className="space-y-4">
+          <MockupAiPanel
+            analysis={s.analysis}
+            analyzing={analyzing}
+            activeSceneId={s.sceneId}
+            activePresets={selectedPresets}
+            onPickRoom={s.setScene}
+            onTogglePreset={(id) =>
+              s.setExportPresets(
+                selectedPresets.includes(id)
+                  ? selectedPresets.filter((p) => p !== id)
+                  : [...selectedPresets, id],
+              )
+            }
+            onReanalyze={() => {
+              if (s.rugImage) void runAnalysis(s.rugImage, s.rugAspect);
+            }}
+          />
+
           <Card className="pb-5">
             <SectionTitle n={1} title="Your rug" />
             <div className="space-y-3 px-5">
@@ -577,8 +651,10 @@ export function MockupStudio() {
                     <button
                       key={preset.id}
                       onClick={() =>
-                        setSelectedPresets((cur) =>
-                          active ? cur.filter((id) => id !== preset.id) : [...cur, preset.id],
+                        s.setExportPresets(
+                          active
+                            ? selectedPresets.filter((id) => id !== preset.id)
+                            : [...selectedPresets, preset.id],
                         )
                       }
                       className={cn(

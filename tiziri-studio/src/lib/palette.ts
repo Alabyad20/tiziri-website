@@ -14,7 +14,9 @@ type RGB = [number, number, number];
  */
 export async function extractPalette(src: string, count = 5): Promise<Swatch[]> {
   const img = await loadImage(src);
-  const size = 48;
+  // Large enough that thin motif lines survive the downsample instead of
+  // antialiasing into grey — critical for high-contrast Beni geometry.
+  const size = 140;
   const canvas = document.createElement("canvas");
   canvas.width = size;
   canvas.height = size;
@@ -116,7 +118,9 @@ function describeColor(rgb: RGB): string {
     h = (h * 60 + 360) % 360;
   }
 
-  if (s < 0.12) {
+  // Gate on chroma too — HSL saturation inflates near white/black, which
+  // would name a warm ivory "saffron".
+  if (s < 0.12 || d < 0.13) {
     if (l > 0.85) return "unbleached ivory";
     if (l > 0.65) return "undyed fleece";
     if (l > 0.45) return "stone grey";

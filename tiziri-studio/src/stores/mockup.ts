@@ -3,6 +3,7 @@ import { persist, createJSONStorage } from "zustand/middleware";
 import { storage as platformStorage } from "@/platform";
 import { temporal } from "zundo";
 import type { PileType } from "@/lib/rooms";
+import type { RugAnalysis } from "@/lib/rugAnalysis";
 
 export interface MockupHistoryEntry {
   id: string;
@@ -27,6 +28,10 @@ export interface MockupState {
   rotation: number;
   pile: PileType;
   fringe: boolean;
+  /** Export presets selected in the rail — AI recommendations preselect these. */
+  exportPresets: string[];
+  /** Last analysis of the current rug. Not part of undo history. */
+  analysis: RugAnalysis | null;
   history: MockupHistoryEntry[];
 
   setRug: (image: string, aspect: number, label: string) => void;
@@ -38,6 +43,8 @@ export interface MockupState {
   ) => void;
   setPile: (pile: PileType) => void;
   setFringe: (fringe: boolean) => void;
+  setExportPresets: (exportPresets: string[]) => void;
+  setAnalysis: (analysis: RugAnalysis | null) => void;
   resetPlacement: () => void;
   addHistory: (e: MockupHistoryEntry) => void;
   removeHistory: (id: string) => void;
@@ -57,6 +64,8 @@ export const useMockup = create<MockupState>()(
         lengthM: 1.6,
         pile: "low",
         fringe: false,
+        exportPresets: ["etsy", "instagram"],
+        analysis: null,
         ...defaultPlacement,
         history: [],
 
@@ -65,15 +74,18 @@ export const useMockup = create<MockupState>()(
             rugImage,
             rugAspect,
             rugLabel,
+            analysis: null, // stale for the previous rug
             // Keep the chosen width; derive length from the photo's true shape.
             lengthM: Math.round(s.widthM * rugAspect * 100) / 100,
           })),
-        clearRug: () => set({ rugImage: null, rugLabel: "" }),
+        clearRug: () => set({ rugImage: null, rugLabel: "", analysis: null }),
         setRugLabel: (rugLabel) => set({ rugLabel }),
         setScene: (sceneId) => set({ sceneId }),
         setPlacement: (p) => set(p),
         setPile: (pile) => set({ pile }),
         setFringe: (fringe) => set({ fringe }),
+        setExportPresets: (exportPresets) => set({ exportPresets }),
+        setAnalysis: (analysis) => set({ analysis }),
         resetPlacement: () => set(defaultPlacement),
         addHistory: (e) => set((s) => ({ history: [e, ...s.history].slice(0, 12) })),
         removeHistory: (id) =>
