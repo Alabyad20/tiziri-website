@@ -66,15 +66,13 @@ function showSummary() {
     document.getElementById('sumPrice').textContent = wizard.price || '—';
     document.getElementById('sumColour').textContent = wizard.colour || '—';
 
-    const params = new URLSearchParams();
-    if (wizard.style) params.set('style', wizard.style);
-    if (wizard.size) params.set('size', wizard.size);
-    if (wizard.price) params.set('price', wizard.price);
-    if (wizard.colour) params.set('color', wizard.colour);
-    const notes = notesEl.value.trim();
-    if (notes) params.set('notes', notes);
-
-    sendBtn.href = `../contact/index.html?${params.toString()}`;
+    sendBtn.href = window.TiziriContactParams.build('../contact/index.html', {
+        style: wizard.style,
+        size: wizard.size,
+        price: wizard.price,
+        color: wizard.colour,
+        notes: notesEl.value
+    });
 
     summaryEl.hidden = false;
     resetWrap.hidden = false;

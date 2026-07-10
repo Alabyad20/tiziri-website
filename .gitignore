@@ -20,6 +20,7 @@ npm-debug.log*
 # Temp files
 *.tmp
 *.log
+__pycache__/
 
 # Local admin tool — not part of the website
 admin.js

@@ -8,18 +8,18 @@ const success = document.getElementById('contactSuccess');
    Made-to-Order page's "Enquire about this design" links and the Custom Rug Design Wizard.
    ?topic=trade is used by the Designer & Trade page's application CTA. */
 (function prefillFromQuery() {
-    const params = new URLSearchParams(window.location.search);
+    const params = window.TiziriContactParams.read();
     const topicEl   = document.getElementById('contactTopic');
     const messageEl = document.getElementById('contactMessage');
     if (!topicEl || !messageEl) return;
 
-    const topic  = params.get('topic');
-    const design = params.get('design');
-    const style  = params.get('style');
-    const size   = params.get('size');
-    const price  = params.get('price');
-    const color  = params.get('color');
-    const notes  = params.get('notes');
+    const topic  = params.topic;
+    const design = params.design;
+    const style  = params.style;
+    const size   = params.size;
+    const price  = params.price;
+    const color  = params.color;
+    const notes  = params.notes;
 
     if (topic === 'trade') {
         topicEl.value = 'Designer & trade enquiry';
