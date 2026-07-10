@@ -17,6 +17,7 @@ export default defineConfig({
       // Allow importing ../data/rugs.json from outside the app root.
       allow: [".."],
     },
-    port: 5174,
+    // PORT lets a launcher assign a free port when 5174 is already taken.
+    port: Number(process.env.PORT) || 5174,
   },
 });

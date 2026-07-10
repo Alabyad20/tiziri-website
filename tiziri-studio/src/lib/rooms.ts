@@ -897,7 +897,7 @@ function paintRug(
 
   // Fringe sits UNDER the rug ends, like real knotted warp threads.
   if (style.fringe) {
-    drawFringe(ctx, plane, p, colors.fringe, W);
+    drawFringe(ctx, plane, p, colors.fringe, W, light);
   }
 
   // Pile side (the rug's thickness) + a thin AO seam where it meets the floor.
@@ -965,21 +965,72 @@ function paintRug(
     }
     ctx.restore();
   }
+
+  // Depth falloff — a photograph never exposes a rug evenly front-to-back:
+  // the far half sits further from lens and window and reads a touch dimmer.
+  ctx.save();
+  pathPts(ctx, facePts);
+  ctx.clip();
+  const depthG = ctx.createLinearGradient(0, bounds.y, 0, bounds.y + bounds.h);
+  depthG.addColorStop(0, "rgba(28, 20, 13, 0.11)");
+  depthG.addColorStop(0.62, "rgba(28, 20, 13, 0)");
+  ctx.globalCompositeOperation = "multiply";
+  ctx.fillStyle = depthG;
+  ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
+  ctx.restore();
+
+  // Distance softness — pattern detail melts slightly with depth, the way a
+  // lens renders it: lay a blurred copy of the face back in, faded in from
+  // the far edge. Strength follows the quad's own perspective, so a frontal
+  // rug stays crisp while a deep one softens at the back.
+  const farW = Math.hypot(quad[1].x - quad[0].x, quad[1].y - quad[0].y);
+  const nearW = Math.hypot(quad[2].x - quad[3].x, quad[2].y - quad[3].y);
+  const farA = Math.min(0.85, Math.max(0, 1 - farW / Math.max(1, nearW)) * 2.2);
+  if (farA > 0.05 && bounds.w >= 2 && bounds.h >= 2) {
+    const off = document.createElement("canvas");
+    off.width = Math.ceil(bounds.w);
+    off.height = Math.ceil(bounds.h);
+    const og = off.getContext("2d")!;
+    og.filter = `blur(${Math.max(0.8, W * 0.0013)}px)`;
+    og.drawImage(ctx.canvas, bounds.x, bounds.y, off.width, off.height, 0, 0, off.width, off.height);
+    og.filter = "none";
+    og.globalCompositeOperation = "destination-in";
+    const fade = og.createLinearGradient(0, 0, 0, off.height);
+    fade.addColorStop(0, `rgba(0, 0, 0, ${farA})`);
+    fade.addColorStop(0.55, "rgba(0, 0, 0, 0)");
+    og.fillStyle = fade;
+    og.fillRect(0, 0, off.width, off.height);
+    ctx.save();
+    pathPts(ctx, facePts);
+    ctx.clip();
+    ctx.drawImage(off, bounds.x, bounds.y);
+    ctx.restore();
+  }
 }
 
-/** Furniture feet compress the pile where they land on the rug. */
-function paintLegCompression(
+/**
+ * Contact realism at furniture feet standing on the rug. For every leg point
+ * that lands inside the rug rectangle:
+ *  - a tight, dark contact shadow hugging the foot, offset away from the
+ *    room's light — darker and smaller than the rug's own cast shadow;
+ *  - a pile-compression dimple (low/high pile) — the foot presses in;
+ *  - a faint pushed-up rim below the dimple for high pile.
+ * Runs BEFORE the occlusion stamp in photo rooms, so any spill onto the
+ * furniture itself is covered by clean photo pixels.
+ */
+function paintContactPoints(
   ctx: CanvasRenderingContext2D,
   plane: PlaneFn,
   toPlane: (x: number, y: number) => { x: number; depth: number },
   legPts: Pt[],
   p: RugPlacement,
   style: RugStyleOpts,
+  light: SceneLight,
 ): void {
-  if (style.pile === "flat") return;
   const ppm = makePpm(plane);
   const hw = p.widthM / 2;
   const hl = p.lengthM / 2;
+  const quad = rugQuad(plane, p);
   for (const { x: sx, y: sy } of legPts) {
     const pt = toPlane(sx, sy);
     const rad = (-p.rotation * Math.PI) / 180;
@@ -988,17 +1039,76 @@ function paintLegCompression(
     const lx = dx * Math.cos(rad) - dd * Math.sin(rad);
     const ld = dx * Math.sin(rad) + dd * Math.cos(rad);
     if (Math.abs(lx) > hw - 0.05 || Math.abs(ld) > hl - 0.05) continue;
-    const r = 0.07 * ppm(pt.x, pt.depth);
-    const a = style.pile === "high" ? 0.3 : 0.18;
-    const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
-    g.addColorStop(0, `rgba(24, 15, 9, ${a})`);
-    g.addColorStop(1, "rgba(24, 15, 9, 0)");
+    const scale = ppm(pt.x, pt.depth);
+
+    // Contact shadow — dark core at the foot, tight penumbra, nudged away
+    // from the window.
+    const r = 0.05 * scale;
+    const ox = -light.dirX * r * 0.45;
+    const oy = r * 0.14;
+    const coreA = style.pile === "high" ? 0.42 : style.pile === "low" ? 0.36 : 0.32;
+    const g = ctx.createRadialGradient(sx + ox * 0.5, sy + oy * 0.5, 0, sx + ox, sy + oy, r);
+    g.addColorStop(0, `rgba(16, 10, 6, ${coreA})`);
+    g.addColorStop(0.45, `rgba(18, 12, 7, ${coreA * 0.55})`);
+    g.addColorStop(1, "rgba(20, 13, 8, 0)");
     ctx.save();
     ctx.fillStyle = g;
     ctx.beginPath();
-    ctx.ellipse(sx, sy, r, r * 0.45, 0, 0, Math.PI * 2);
+    ctx.ellipse(sx + ox, sy + oy, r, r * 0.42, 0, 0, Math.PI * 2);
     ctx.fill();
     ctx.restore();
+
+    // Cast shadow ON the rug: the furniture above the foot throws a soft
+    // streak across the pile, away from the window — without it every leg
+    // reads as a floating dot. Clipped to the rug so it never doubles the
+    // photo's own floor shadows.
+    if (Math.abs(light.dirX) > 0.08) {
+      const len = r * (3.0 + 1.6 * Math.abs(light.dirX));
+      const dxn = -light.dirX;
+      const dyn = 0.3 * Math.abs(light.dirX) + 0.08;
+      ctx.save();
+      pathPts(ctx, quad);
+      ctx.clip();
+      ctx.translate(sx + ox, sy + oy);
+      ctx.rotate(Math.atan2(dyn, dxn));
+      const sg = ctx.createLinearGradient(0, 0, len, 0);
+      sg.addColorStop(0, "rgba(20, 13, 8, 0.16)");
+      sg.addColorStop(0.55, "rgba(20, 13, 8, 0.09)");
+      sg.addColorStop(1, "rgba(20, 13, 8, 0)");
+      ctx.fillStyle = sg;
+      ctx.filter = `blur(${Math.max(1.5, r * 0.3)}px)`;
+      ctx.beginPath();
+      ctx.ellipse(len * 0.5, 0, len * 0.5, r * 0.5, 0, 0, Math.PI * 2);
+      ctx.fill();
+      ctx.restore();
+    }
+
+    if (style.pile === "flat") continue;
+
+    // Compression dimple — wider, softer darkening around the foot.
+    const rc = 0.065 * scale;
+    const a = style.pile === "high" ? 0.28 : 0.16;
+    const gc = ctx.createRadialGradient(sx, sy, 0, sx, sy, rc);
+    gc.addColorStop(0, `rgba(24, 15, 9, ${a})`);
+    gc.addColorStop(1, "rgba(24, 15, 9, 0)");
+    ctx.save();
+    ctx.fillStyle = gc;
+    ctx.beginPath();
+    ctx.ellipse(sx, sy, rc, rc * 0.45, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+
+    // High pile bulges slightly where it's pushed aside — a whisper of a
+    // highlight just below the dimple.
+    if (style.pile === "high") {
+      ctx.save();
+      ctx.strokeStyle = "rgba(255, 250, 240, 0.10)";
+      ctx.lineWidth = Math.max(1, rc * 0.14);
+      ctx.beginPath();
+      ctx.ellipse(sx - ox * 0.6, sy + rc * 0.30, rc * 0.72, rc * 0.30, 0, 0.15 * Math.PI, 0.85 * Math.PI);
+      ctx.stroke();
+      ctx.restore();
+    }
   }
 }
 
@@ -1029,18 +1139,25 @@ export async function renderMockup(canvas: HTMLCanvasElement, opts: RenderOption
 
     if (opts.rug) {
       paintRug(ctx, W, H, plane, opts.rug, opts.placement, opts.style, tpl.light);
+      // Contact shadows + pile compression go under the occlusion stamp so
+      // any spill onto furniture pixels is covered by clean photo.
+      const legPts = tpl.legPoints.map(([fx, fy]) => mapper.fracToCanvas([fx, fy]));
+      paintContactPoints(ctx, plane, mapper.toPlane, legPts, opts.placement, opts.style, tpl.light);
     }
 
-    // Foreground occlusion: re-draw the photo, restricted to the mask, ON TOP
-    // of the rug — sofas, beds and tables come forward; the rug tucks under.
-    if (assets.mask) {
+    // Foreground occlusion: re-draw the photo, restricted to the PROCESSED
+    // mask, ON TOP of the rug — sofas, beds and tables come forward; the rug
+    // tucks under. The processed mask is built once at native resolution
+    // (threshold → morphology → feather), so preview and every export see
+    // the exact same mask.
+    if (assets.processedMask) {
       const off = document.createElement("canvas");
       off.width = W;
       off.height = H;
       const og = off.getContext("2d")!;
       og.imageSmoothingEnabled = true;
       og.imageSmoothingQuality = "high";
-      og.drawImage(assets.mask, cp.dx, cp.dy, destW, destH);
+      og.drawImage(assets.processedMask, cp.dx, cp.dy, destW, destH);
       og.globalCompositeOperation = "source-in";
       og.drawImage(assets.img, cp.dx, cp.dy, destW, destH);
       ctx.drawImage(off, 0, 0);
@@ -1052,11 +1169,6 @@ export async function renderMockup(canvas: HTMLCanvasElement, opts: RenderOption
       ctx.globalAlpha = 0.85;
       ctx.drawImage(assets.lightMask, cp.dx, cp.dy, destW, destH);
       ctx.restore();
-    }
-
-    if (opts.rug) {
-      const legPts = tpl.legPoints.map(([fx, fy]) => mapper.fracToCanvas([fx, fy]));
-      paintLegCompression(ctx, plane, mapper.toPlane, legPts, opts.placement, opts.style);
     }
 
     gradePass(ctx, W, H, tpl.light);
@@ -1089,7 +1201,7 @@ export async function renderMockup(canvas: HTMLCanvasElement, opts: RenderOption
   if (opts.rug) {
     const mapper = planeMapper(W, H);
     const legPts = (scene.legPoints ?? []).map(([fx, fy]) => ({ x: fx * W, y: fy * H }));
-    paintLegCompression(ctx, plane, mapper.toPlane, legPts, opts.placement, opts.style);
+    paintContactPoints(ctx, plane, mapper.toPlane, legPts, opts.placement, opts.style, scene.light);
   }
 
   gradePass(ctx, W, H, scene.light);
@@ -1151,6 +1263,7 @@ function drawFringe(
   p: RugPlacement,
   color: string,
   W: number,
+  light: SceneLight,
 ) {
   const rnd = mulberry32(7 + Math.round(p.widthM * 100) * 31 + Math.round(p.rotation) * 7);
   const hw = p.widthM / 2;
@@ -1193,9 +1306,23 @@ function drawFringe(
       const sBase = plane(base.x, base.d);
       const sMid = plane(mid.x, mid.d);
       const sTip = plane(tip.x, tip.d);
-      ctx.strokeStyle = tones[Math.floor(rnd() * 3)];
-      ctx.globalAlpha = (stray ? 0.35 : 0.45) + rnd() * 0.45;
-      ctx.lineWidth = Math.max(0.7, W * 0.0009 * (0.7 + rnd() * 0.6));
+      const tone = tones[Math.floor(rnd() * 3)];
+      const alpha = (stray ? 0.35 : 0.45) + rnd() * 0.45;
+      const lw = Math.max(0.7, W * 0.0009 * (0.7 + rnd() * 0.6));
+      // Self-shadow — each strand drops a hair-thin dark line onto the floor,
+      // nudged away from the window; without it the fringe floats.
+      const shX = -light.dirX * Math.max(0.7, W * 0.0008);
+      const shY = Math.max(0.8, W * 0.0009);
+      ctx.strokeStyle = "rgb(22, 14, 8)";
+      ctx.globalAlpha = (stray ? 0.09 : 0.13) * (alpha / 0.7);
+      ctx.lineWidth = lw * 1.25;
+      ctx.beginPath();
+      ctx.moveTo(sBase.x + shX, sBase.y + shY);
+      ctx.quadraticCurveTo(sMid.x + shX, sMid.y + shY, sTip.x + shX, sTip.y + shY);
+      ctx.stroke();
+      ctx.strokeStyle = tone;
+      ctx.globalAlpha = alpha;
+      ctx.lineWidth = lw;
       ctx.beginPath();
       ctx.moveTo(sBase.x, sBase.y);
       ctx.quadraticCurveTo(sMid.x, sMid.y, sTip.x, sTip.y);
