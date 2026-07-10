@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import { PageHeader } from "@/components/ui/PageHeader";
 import { Card, CardHeader } from "@/components/ui/Card";
 import { Field, Input, Textarea } from "@/components/ui/Field";
@@ -134,6 +135,21 @@ export function Settings() {
               </li>
             ))}
           </ul>
+        </Card>
+
+        <Card>
+          <CardHeader
+            title="Internal tools"
+            description="For setting up the studio itself — not part of the daily workflow."
+          />
+          <div className="px-6 pb-6">
+            <Link
+              to="/calibrate"
+              className="text-sm font-medium text-accent underline-offset-2 hover:underline"
+            >
+              Room calibration — turn a photo into a mockup room →
+            </Link>
+          </div>
         </Card>
 
         <Card>

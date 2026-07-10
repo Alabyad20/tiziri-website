@@ -7,6 +7,7 @@ import { NamingStudio } from "@/pages/NamingStudio";
 import { DesignerPdf } from "@/pages/DesignerPdf";
 import { SocialStudio } from "@/pages/SocialStudio";
 import { Settings } from "@/pages/Settings";
+import { Calibrate } from "@/pages/Calibrate";
 
 export default function App() {
   return (
@@ -19,6 +20,7 @@ export default function App() {
         <Route path="pdf" element={<DesignerPdf />} />
         <Route path="social" element={<SocialStudio />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="calibrate" element={<Calibrate />} />
       </Route>
     </Routes>
   );

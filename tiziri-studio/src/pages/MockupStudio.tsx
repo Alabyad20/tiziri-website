@@ -10,8 +10,17 @@ import { RugPrep } from "@/components/RugPrep";
 import { MockupAiPanel } from "@/components/MockupAiPanel";
 import { analyzeRug, type KnownFacts, type MoroccanStyle } from "@/lib/rugAnalysis";
 import { AiError } from "@/lib/ai";
-import { rooms, renderMockup, planeMapper, type PileType } from "@/lib/rooms";
+import {
+  renderMockup,
+  listRooms,
+  resolveScene,
+  sceneMapper,
+  sceneBounds,
+  preloadScene,
+  type PileType,
+} from "@/lib/rooms";
 import { useMockup } from "@/stores/mockup";
+import { useTemplates } from "@/stores/templates";
 import { useUndoRedo } from "@/lib/useUndoRedo";
 import { useActivity } from "@/stores/activity";
 import { toast } from "@/stores/toast";
@@ -56,25 +65,20 @@ function guessPile(pileText: string, style: string): PileType {
 
 const FRINGED_STYLES = new Set(["Beni Ourain", "Boujaad", "Azilal", "Mrirt"]);
 
-/** Render every room once at thumbnail size for the scene picker. */
-function useSceneThumbs(): Record<string, string> {
-  return useMemo(() => {
-    const out: Record<string, string> = {};
-    for (const room of rooms) {
-      const c = document.createElement("canvas");
-      c.width = 300;
-      c.height = 200;
-      renderMockup(c, {
-        sceneId: room.id,
-        rug: null,
-        placement: { widthM: 0, lengthM: 0, offsetX: 0, depth: 0, rotation: 0 },
-        style: { pile: "low", fringe: false },
-      });
-      out[room.id] = c.toDataURL("image/jpeg", 0.85);
-    }
-    return out;
-  }, []);
-}
+/** AI recommendations name illustrated rooms; prefer their photo equivalents. */
+const PHOTO_FOR: Record<string, string> = {
+  living: "lux-neutral",
+  bedroom: "calm-bedroom",
+  loft: "organic-modern",
+  atelier: "warm-minimal",
+  reading: "warm-minimal",
+};
+const ILLUSTRATED_FOR: Record<string, string> = {
+  "lux-neutral": "living",
+  "calm-bedroom": "bedroom",
+  "organic-modern": "loft",
+  "warm-minimal": "atelier",
+};
 
 const PREVIEW_W = 1440;
 const PREVIEW_H = 960;
@@ -111,8 +115,11 @@ function SectionTitle({ n, title }: { n: number; title: string }) {
   );
 }
 
+const clamp = (v: number, [lo, hi]: [number, number]) => Math.min(hi, Math.max(lo, v));
+
 export function MockupStudio() {
   const s = useMockup();
+  const customs = useTemplates((t) => t.custom);
   const logProject = useActivity((a) => a.logProject);
   const logExport = useActivity((a) => a.logExport);
   const { undo, redo, canUndo, canRedo } = useUndoRedo(useMockup);
@@ -126,11 +133,40 @@ export function MockupStudio() {
   const [prepLabel, setPrepLabel] = useState("");
   const [analyzing, setAnalyzing] = useState(false);
   const selectedPresets = s.exportPresets;
-  const sceneThumbs = useSceneThumbs();
   const dragRef = useRef<{ grabX: number; grabD: number; preX: number; preD: number } | null>(null);
   const [hovering, setHovering] = useState(false);
 
-  const mapper = useMemo(() => planeMapper(PREVIEW_W, PREVIEW_H), []);
+  const roomOptions = useMemo(() => listRooms(customs), [customs]);
+  const bounds = useMemo(() => sceneBounds(s.sceneId, customs), [s.sceneId, customs]);
+  const mapper = useMemo(
+    () => sceneMapper(s.sceneId, customs, PREVIEW_W, PREVIEW_H),
+    [s.sceneId, customs],
+  );
+
+  // Illustrated demo thumbnails render once (photo rooms use the photo itself).
+  const [illusThumbs, setIllusThumbs] = useState<Record<string, string>>({});
+  useEffect(() => {
+    let cancelled = false;
+    void (async () => {
+      const out: Record<string, string> = {};
+      for (const room of listRooms().filter((r) => r.kind === "illustrated")) {
+        const c = document.createElement("canvas");
+        c.width = 300;
+        c.height = 200;
+        await renderMockup(c, {
+          sceneId: room.id,
+          rug: null,
+          placement: { widthM: 0, lengthM: 0, offsetX: 0, depth: 0, rotation: 0 },
+          style: { pile: "low", fringe: false },
+        });
+        out[room.id] = c.toDataURL("image/jpeg", 0.85);
+      }
+      if (!cancelled) setIllusThumbs(out);
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, []);
 
   // Decode the persisted rug image into a drawable element.
   useEffect(() => {
@@ -159,25 +195,48 @@ export function MockupStudio() {
   );
   const style = useMemo(() => ({ pile: s.pile, fringe: s.fringe }), [s.pile, s.fringe]);
 
-  // Live preview render.
+  // Live preview render (async: photo scenes decode their assets once).
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    renderMockup(canvas, {
-      sceneId: s.sceneId,
-      rug: rugEl ? { img: rugEl, w: rugEl.width, h: rugEl.height } : null,
-      placement,
-      style,
-    });
-  }, [s.sceneId, rugEl, placement, style]);
+    let cancelled = false;
+    void (async () => {
+      await preloadScene(s.sceneId, customs);
+      if (cancelled) return;
+      await renderMockup(canvas, {
+        sceneId: s.sceneId,
+        rug: rugEl ? { img: rugEl, w: rugEl.width, h: rugEl.height } : null,
+        placement,
+        style,
+        customTemplates: customs,
+      });
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [s.sceneId, rugEl, placement, style, customs]);
+
+  // Entering a scene: keep the rug inside its placement bounds and size range.
+  useEffect(() => {
+    const st = useMockup.getState();
+    const t = useMockup.temporal.getState();
+    const b = sceneBounds(st.sceneId, customs);
+    t.pause();
+    st.setPlacement({ offsetX: clamp(st.offsetX, b.x), depth: clamp(st.depth, b.d) });
+    const ref = resolveScene(st.sceneId, customs);
+    if (ref.kind === "photo") {
+      const rs = ref.template.rugSize;
+      st.setPlacement({
+        widthM: clamp(st.widthM, [rs.minW, rs.maxW]),
+        lengthM: clamp(st.lengthM, [rs.minL, rs.maxL]),
+      });
+    }
+    t.resume();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [s.sceneId, customs]);
 
   /* ---------------- AI analysis ---------------- */
 
-  /**
-   * Analyze the prepared rug and apply the recommendations as the default
-   * setup. The application happens with undo tracking paused — AI defaults
-   * aren't "edits", so the user's undo history starts clean from them.
-   */
   async function runAnalysis(imageDataUrl: string, aspect: number, known?: KnownFacts, forceLocal = false) {
     setAnalyzing(true);
     try {
@@ -202,7 +261,7 @@ export function MockupStudio() {
       });
       st.setPile(analysis.profile.pile);
       st.setFringe(analysis.profile.fringe);
-      st.setScene(analysis.rooms[0].id);
+      st.setScene(PHOTO_FOR[analysis.rooms[0].id] ?? analysis.rooms[0].id);
       st.setExportPresets(analysis.exports.map((e) => e.id));
       t.resume();
       const styleName = analysis.profile.style === "Unknown" ? "your rug" : `the ${analysis.profile.style}`;
@@ -231,7 +290,7 @@ export function MockupStudio() {
         id: "mockup-current",
         studio: "mockup",
         title: prepLabel || "Untitled mockup",
-        subtitle: rooms.find((r) => r.id === useMockup.getState().sceneId)?.name,
+        subtitle: roomOptions.find((r) => r.id === useMockup.getState().sceneId)?.name,
       });
       void runAnalysis(dataUrl, aspect);
     },
@@ -319,8 +378,8 @@ export function MockupStudio() {
     }
     const pt = mapper.toPlane(x, y);
     useMockup.getState().setPlacement({
-      offsetX: Math.min(2.4, Math.max(-2.4, pt.x - drag.grabX)),
-      depth: Math.min(4.35, Math.max(0.7, pt.depth - drag.grabD)),
+      offsetX: clamp(pt.x - drag.grabX, bounds.x),
+      depth: clamp(pt.depth - drag.grabD, bounds.d),
     });
   }
 
@@ -349,15 +408,16 @@ export function MockupStudio() {
       const master = document.createElement("canvas");
       master.width = MASTER_W;
       master.height = MASTER_H;
-      renderMockup(master, {
+      await renderMockup(master, {
         sceneId: s.sceneId,
         rug: { img: rugEl, w: rugEl.width, h: rugEl.height },
         placement,
         style,
+        customTemplates: customs,
       });
 
       const slug = (s.rugLabel || "rug").toLowerCase().replace(/[^a-z0-9]+/g, "-");
-      const sceneName = rooms.find((r) => r.id === s.sceneId)?.name ?? "Room";
+      const sceneName = roomOptions.find((r) => r.id === s.sceneId)?.name ?? "Room";
 
       for (const preset of EXPORT_PRESETS.filter((pr) => selectedPresets.includes(pr.id))) {
         const c = document.createElement("canvas");
@@ -412,6 +472,9 @@ export function MockupStudio() {
       className="h-8.5 text-[13px]"
     />
   );
+
+  const photoRooms = roomOptions.filter((r) => r.kind === "photo");
+  const illustratedRooms = roomOptions.filter((r) => r.kind === "illustrated");
 
   return (
     <div className="animate-fade-up">
@@ -484,8 +547,8 @@ export function MockupStudio() {
                 <Slider
                   label="Distance into the room"
                   value={s.depth}
-                  min={0.7}
-                  max={4.35}
+                  min={bounds.d[0]}
+                  max={bounds.d[1]}
                   step={0.05}
                   format={(v) => `${v.toFixed(2)} m`}
                   onChange={(depth) => s.setPlacement({ depth })}
@@ -493,7 +556,18 @@ export function MockupStudio() {
               </div>
               <div className="flex items-center justify-between border-t border-line px-6 py-3">
                 <span className="text-xs text-ink-3">Position also drags directly on the preview.</span>
-                <Button size="sm" variant="ghost" icon={<IconRefresh size={14} />} onClick={s.resetPlacement}>
+                <Button
+                  size="sm"
+                  variant="ghost"
+                  icon={<IconRefresh size={14} />}
+                  onClick={() =>
+                    s.setPlacement({
+                      offsetX: (bounds.x[0] + bounds.x[1]) / 2,
+                      depth: (bounds.d[0] + bounds.d[1]) / 2,
+                      rotation: 0,
+                    })
+                  }
+                >
                   Reset placement
                 </Button>
               </div>
@@ -506,9 +580,9 @@ export function MockupStudio() {
           <MockupAiPanel
             analysis={s.analysis}
             analyzing={analyzing}
-            activeSceneId={s.sceneId}
+            activeSceneId={ILLUSTRATED_FOR[s.sceneId] ?? s.sceneId}
             activePresets={selectedPresets}
-            onPickRoom={s.setScene}
+            onPickRoom={(id) => s.setScene(PHOTO_FOR[id] ?? id)}
             onTogglePreset={(id) =>
               s.setExportPresets(
                 selectedPresets.includes(id)
@@ -619,8 +693,11 @@ export function MockupStudio() {
 
           <Card className="pb-5">
             <SectionTitle n={2} title="Room" />
+            <p className="px-5 pb-2 text-[11px] font-semibold tracking-wide text-ink-3 uppercase">
+              Photo rooms
+            </p>
             <div className="grid grid-cols-2 gap-2 px-5">
-              {rooms.map((room) => (
+              {photoRooms.map((room) => (
                 <button
                   key={room.id}
                   onClick={() => s.setScene(room.id)}
@@ -632,8 +709,35 @@ export function MockupStudio() {
                   )}
                   title={room.blurb}
                 >
-                  <img src={sceneThumbs[room.id]} alt={room.name} className="aspect-3/2 w-full object-cover" />
+                  <img src={room.photo} alt={room.name} loading="lazy" className="aspect-3/2 w-full object-cover" />
                   <span className="block px-2.5 py-1.5 text-[11.5px] font-medium text-ink-2 group-hover:text-ink">
+                    {room.name}
+                  </span>
+                </button>
+              ))}
+            </div>
+            <p className="px-5 pt-3 pb-2 text-[11px] font-semibold tracking-wide text-ink-3 uppercase">
+              Illustrated demos
+            </p>
+            <div className="grid grid-cols-3 gap-2 px-5">
+              {illustratedRooms.map((room) => (
+                <button
+                  key={room.id}
+                  onClick={() => s.setScene(room.id)}
+                  className={cn(
+                    "group overflow-hidden rounded-xl border text-left transition-all",
+                    s.sceneId === room.id
+                      ? "border-accent shadow-soft ring-2 ring-accent/25"
+                      : "border-line hover:border-line-strong",
+                  )}
+                  title={room.blurb}
+                >
+                  {illusThumbs[room.id] ? (
+                    <img src={illusThumbs[room.id]} alt={room.name} className="aspect-3/2 w-full object-cover" />
+                  ) : (
+                    <span className="block aspect-3/2 w-full bg-surface-2" />
+                  )}
+                  <span className="block truncate px-2 py-1 text-[10.5px] font-medium text-ink-3 group-hover:text-ink">
                     {room.name}
                   </span>
                 </button>

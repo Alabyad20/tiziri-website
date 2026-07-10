@@ -6,6 +6,13 @@ import {
   type Pt,
   type Quad,
 } from "./homography";
+import {
+  bundledRoomTemplates,
+  coverPlacement,
+  ensureTemplateAssets,
+  templateMapper,
+  type RoomTemplate,
+} from "./roomTemplates";
 
 /**
  * Procedural room scenes. Each scene paints a minimal, flat-illustration
@@ -494,6 +501,8 @@ export interface RenderOptions {
   rug: { img: HTMLImageElement | HTMLCanvasElement; w: number; h: number } | null;
   placement: RugPlacement;
   style: RugStyleOpts;
+  /** User-calibrated photo templates, checked before bundled + illustrated. */
+  customTemplates?: RoomTemplate[];
 }
 
 /** Physical pile height in meters — drives the visible edge and shadows. */
@@ -578,26 +587,35 @@ function sampleRugColors(img: HTMLImageElement | HTMLCanvasElement): RugColors {
 }
 
 /** Rug-local (dx across, dd along length) → plane meters, honoring rotation. */
-function rugToPlane(p: RugPlacement, dx: number, dd: number): { x: number; d: number } {
+function rugToPlane(
+  p: RugPlacement,
+  dx: number,
+  dd: number,
+  planeD: number,
+): { x: number; d: number } {
   const rad = (p.rotation * Math.PI) / 180;
   const cos = Math.cos(rad);
   const sin = Math.sin(rad);
   return {
     x: p.offsetX + dx * cos - dd * sin,
-    d: Math.max(0.05, Math.min(PLANE_D - 0.05, p.depth + dx * sin + dd * cos)),
+    d: Math.max(0.05, Math.min(planeD - 0.05, p.depth + dx * sin + dd * cos)),
   };
 }
 
 /** Rug corner points on the floor plane, mapped to screen space. */
-export function rugQuad(plane: PlaneFn, p: RugPlacement): Quad {
+export function rugQuad(plane: PlaneFn, p: RugPlacement, planeD: number): Quad {
   const hw = p.widthM / 2;
   const hl = p.lengthM / 2;
   const corner = (dx: number, dd: number): Pt => {
-    const { x, d } = rugToPlane(p, dx, dd);
+    const { x, d } = rugToPlane(p, dx, dd, planeD);
     return plane(x, d);
   };
   return [corner(-hw, -hl), corner(hw, -hl), corner(hw, hl), corner(-hw, hl)];
 }
+
+/* ------------------------------------------------------------------ */
+/* Small geometry + texture helpers for the photographic pipeline      */
+/* ------------------------------------------------------------------ */
 
 /* ------------------------------------------------------------------ */
 /* Small geometry + texture helpers for the photographic pipeline      */
@@ -681,174 +699,356 @@ function getSheenTile(): HTMLCanvasElement {
   return big;
 }
 
-/* ------------------------------------------------------------------ */
-/* The photographic render                                              */
-/* ------------------------------------------------------------------ */
-
-export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): void {
-  const ctx = canvas.getContext("2d");
-  if (!ctx) return;
-  const W = canvas.width;
-  const H = canvas.height;
-  const scene = roomById(opts.sceneId);
-  const plane = floorPlane(W, H);
-  ctx.imageSmoothingEnabled = true;
-  ctx.imageSmoothingQuality = "high";
-
-  ctx.clearRect(0, 0, W, H);
-  scene.paintBack(ctx, W, H, plane);
-
-  /** Depth-direction pixels-per-meter at a plane point (for physical sizes). */
-  const ppmPlane = (x: number, d: number) => {
+/** Depth-direction pixels-per-meter at a plane point (for physical sizes). */
+function makePpm(plane: PlaneFn) {
+  return (x: number, d: number) => {
     const here = plane(x, d);
     const nearer = plane(x, Math.max(0.05, d - 0.25));
     return Math.abs(here.y - nearer.y) / 0.25;
   };
+}
 
-  if (opts.rug) {
-    const p = opts.placement;
-    const quad = rugQuad(plane, p);
-    const pileH = PILE_HEIGHT[opts.style.pile];
-    const diag = Math.hypot(quad[2].x - quad[0].x, quad[2].y - quad[0].y);
-    const hw = p.widthM / 2;
-    const hl = p.lengthM / 2;
+/* ------------------------------------------------------------------ */
+/* Scene registry: photo templates (custom → bundled) + illustrated    */
+/* ------------------------------------------------------------------ */
 
-    const cornerLift = (dx: number, dd: number) => {
-      const a = rugToPlane(p, dx, dd);
-      return pileH * ppmPlane(a.x, a.d);
+export type SceneRef =
+  | { kind: "photo"; template: RoomTemplate }
+  | { kind: "illustrated"; scene: RoomScene };
+
+export function resolveScene(id: string, customs?: RoomTemplate[]): SceneRef {
+  const custom = customs?.find((t) => t.id === id);
+  if (custom) return { kind: "photo", template: custom };
+  const bundled = bundledRoomTemplates.find((t) => t.id === id);
+  if (bundled) return { kind: "photo", template: bundled };
+  const scene = rooms.find((r) => r.id === id);
+  if (scene) return { kind: "illustrated", scene };
+  return { kind: "photo", template: bundledRoomTemplates[0] };
+}
+
+export interface RoomOption {
+  id: string;
+  name: string;
+  kind: "photo" | "illustrated";
+  /** For photo rooms: the photograph itself is the thumbnail. */
+  photo?: string;
+  blurb: string;
+}
+
+export function listRooms(customs?: RoomTemplate[]): RoomOption[] {
+  return [
+    ...(customs ?? []).map((t) => ({
+      id: t.id,
+      name: t.name,
+      kind: "photo" as const,
+      photo: t.photo,
+      blurb: `${t.style} · calibrated by you`,
+    })),
+    ...bundledRoomTemplates.map((t) => ({
+      id: t.id,
+      name: t.name,
+      kind: "photo" as const,
+      photo: t.photo,
+      blurb: `${t.style} · photo: ${t.attribution.author}, ${t.attribution.source}`,
+    })),
+    ...rooms.map((r) => ({
+      id: r.id,
+      name: r.name,
+      kind: "illustrated" as const,
+      blurb: `${r.blurb} · illustrated demo`,
+    })),
+  ];
+}
+
+/** Placement limits for a scene, in plane meters. */
+export function sceneBounds(id: string, customs?: RoomTemplate[]) {
+  const ref = resolveScene(id, customs);
+  if (ref.kind === "photo") return ref.template.bounds;
+  return { x: [-2.4, 2.4] as [number, number], d: [0.7, 4.35] as [number, number] };
+}
+
+/** Screen ↔ floor-plane mapping for a scene (drag, calibration preview). */
+export function sceneMapper(id: string, customs: RoomTemplate[] | undefined, W: number, H: number) {
+  const ref = resolveScene(id, customs);
+  if (ref.kind === "photo") {
+    const m = templateMapper(ref.template, W, H);
+    return { toScreen: m.toScreen, toPlane: m.toPlane };
+  }
+  const m = planeMapper(W, H);
+  return { toScreen: m.toScreen, toPlane: m.toPlane };
+}
+
+/** Awaits a photo scene's assets so the first render doesn't flash. */
+export async function preloadScene(id: string, customs?: RoomTemplate[]): Promise<void> {
+  const ref = resolveScene(id, customs);
+  if (ref.kind === "photo") await ensureTemplateAssets(ref.template);
+}
+
+/* ------------------------------------------------------------------ */
+/* The rug itself — scene-agnostic painting                             */
+/* ------------------------------------------------------------------ */
+
+function paintRug(
+  ctx: CanvasRenderingContext2D,
+  W: number,
+  H: number,
+  plane: PlaneFn,
+  planeD: number,
+  rug: { img: HTMLImageElement | HTMLCanvasElement; w: number; h: number },
+  p: RugPlacement,
+  style: RugStyleOpts,
+  light: SceneLight,
+): void {
+  const quad = rugQuad(plane, p, planeD);
+  const pileH = PILE_HEIGHT[style.pile];
+  const diag = Math.hypot(quad[2].x - quad[0].x, quad[2].y - quad[0].y);
+  const hw = p.widthM / 2;
+  const hl = p.lengthM / 2;
+  const ppm = makePpm(plane);
+
+  const cornerLift = (dx: number, dd: number) => {
+    const a = rugToPlane(p, dx, dd, planeD);
+    return pileH * ppm(a.x, a.d);
+  };
+  const lifts = [cornerLift(-hw, -hl), cornerLift(hw, -hl), cornerLift(hw, hl), cornerLift(-hw, hl)];
+
+  // Organic border wobble — heavy wool never lies in a perfect rectangle.
+  // Shared by shadows, side, and face so every layer keeps one silhouette.
+  const amp = diag * 0.0085;
+  const baseDisp: MeshDisplace = (u, v, pt) => {
+    const edge = Math.min(u, 1 - u, v, 1 - v);
+    const border = 1 - Math.min(1, edge / 0.1);
+    if (border <= 0) return pt;
+    const b2 = border * border;
+    return {
+      x: pt.x + b2 * (valueNoise(u * 4.3, v * 3.7, 11) - 0.5) * amp,
+      y: pt.y + b2 * (valueNoise(u * 3.9 + 7, v * 4.1, 23) - 0.5) * amp * 1.6,
     };
-    const lifts = [cornerLift(-hw, -hl), cornerLift(hw, -hl), cornerLift(hw, hl), cornerLift(-hw, hl)];
+  };
+  // The face additionally rises by the pile height, settling at the corners.
+  const liftAt = (u: number, v: number) => {
+    const top = lifts[0] + (lifts[1] - lifts[0]) * u;
+    const bot = lifts[3] + (lifts[2] - lifts[3]) * u;
+    const lift = top + (bot - top) * v;
+    const dc = Math.min(
+      Math.hypot(u, v),
+      Math.hypot(1 - u, v),
+      Math.hypot(1 - u, 1 - v),
+      Math.hypot(u, 1 - v),
+    );
+    const settle = 1 - 0.35 * (1 - Math.min(1, dc / 0.22));
+    return lift * settle;
+  };
+  const faceDisp: MeshDisplace = (u, v, pt) => {
+    const b = baseDisp(u, v, pt);
+    return { x: b.x, y: b.y - liftAt(u, v) };
+  };
 
-    // Organic border wobble — heavy wool never lies in a perfect rectangle.
-    // Shared by shadows, side, and face so every layer keeps one silhouette.
-    const amp = diag * 0.0085;
-    const baseDisp: MeshDisplace = (u, v, pt) => {
-      const edge = Math.min(u, 1 - u, v, 1 - v);
-      const border = 1 - Math.min(1, edge / 0.1);
-      if (border <= 0) return pt;
-      const b2 = border * border;
-      return {
-        x: pt.x + b2 * (valueNoise(u * 4.3, v * 3.7, 11) - 0.5) * amp,
-        y: pt.y + b2 * (valueNoise(u * 3.9 + 7, v * 4.1, 23) - 0.5) * amp * 1.6,
-      };
-    };
-    // The face additionally rises by the pile height, settling at the corners.
-    const liftAt = (u: number, v: number) => {
-      const top = lifts[0] + (lifts[1] - lifts[0]) * u;
-      const bot = lifts[3] + (lifts[2] - lifts[3]) * u;
-      const lift = top + (bot - top) * v;
-      const dc = Math.min(
-        Math.hypot(u, v),
-        Math.hypot(1 - u, v),
-        Math.hypot(1 - u, 1 - v),
-        Math.hypot(u, 1 - v),
-      );
-      const settle = 1 - 0.35 * (1 - Math.min(1, dc / 0.22));
-      return lift * settle;
-    };
-    const faceDisp: MeshDisplace = (u, v, pt) => {
-      const b = baseDisp(u, v, pt);
-      return { x: b.x, y: b.y - liftAt(u, v) };
-    };
+  const basePts = quadOutline(quad, 12, baseDisp);
+  const facePts = quadOutline(quad, 12, faceDisp);
 
-    const basePts = quadOutline(quad, 12, baseDisp);
-    const facePts = quadOutline(quad, 12, faceDisp);
-
-    // Shadows: three stacked passes from tight ambient occlusion to a wide
-    // penumbra, each offset away from the room's window — no uniform blur.
-    const dir = scene.light.dirX;
-    const shadowPasses = [
-      {
-        grow: 1.006,
-        blur: Math.max(2, W * 0.0026),
-        a: opts.style.pile === "high" ? 0.33 : 0.27,
-        ox: -dir * W * 0.003,
-        oy: H * 0.002,
-      },
-      { grow: 1.022, blur: W * 0.006, a: 0.13, ox: -dir * W * 0.009, oy: H * 0.006 },
-      { grow: 1.05, blur: W * 0.012, a: 0.08, ox: -dir * W * 0.018, oy: H * 0.011 },
-    ];
-    for (const s of shadowPasses) {
-      ctx.save();
-      ctx.fillStyle = `rgba(26, 17, 10, ${s.a})`;
-      ctx.filter = `blur(${s.blur}px)`;
-      ctx.translate(s.ox, s.oy);
-      fillPts(ctx, expandPts(basePts, s.grow));
-      ctx.restore();
-    }
-
-    const colors = sampleRugColors(opts.rug.img);
-
-    // Fringe sits UNDER the rug ends, like real knotted warp threads.
-    if (opts.style.fringe) {
-      drawFringe(ctx, plane, p, colors.fringe, W);
-    }
-
-    // Pile side (the rug's thickness) + a thin AO seam where it meets the floor.
+  // Shadows: three stacked passes from tight ambient occlusion to a wide
+  // penumbra, each offset away from the room's window — no uniform blur.
+  const dir = light.dirX;
+  const shadowPasses = [
+    {
+      grow: 1.006,
+      blur: Math.max(2, W * 0.0026),
+      a: style.pile === "high" ? 0.33 : 0.27,
+      ox: -dir * W * 0.003,
+      oy: H * 0.002,
+    },
+    { grow: 1.022, blur: W * 0.006, a: 0.13, ox: -dir * W * 0.009, oy: H * 0.006 },
+    { grow: 1.05, blur: W * 0.012, a: 0.08, ox: -dir * W * 0.018, oy: H * 0.011 },
+  ];
+  for (const s of shadowPasses) {
     ctx.save();
-    ctx.fillStyle = colors.edge;
-    fillPts(ctx, basePts);
+    ctx.fillStyle = `rgba(26, 17, 10, ${s.a})`;
+    ctx.filter = `blur(${s.blur}px)`;
+    ctx.translate(s.ox, s.oy);
+    fillPts(ctx, expandPts(basePts, s.grow));
     ctx.restore();
-    ctx.save();
-    ctx.strokeStyle = "rgba(20, 13, 8, 0.28)";
-    ctx.lineWidth = Math.max(1, W * 0.0011);
-    ctx.filter = `blur(${Math.max(1, W * 0.001)}px)`;
-    pathPts(ctx, basePts);
-    ctx.stroke();
-    ctx.restore();
+  }
 
-    // Face — crop, never stretch, when the entered size disagrees with the
-    // photo's shape: the weave must keep its true proportions.
-    const imgAspect = opts.rug.h / opts.rug.w;
-    const targetAspect = p.lengthM / Math.max(0.01, p.widthM);
-    let src = { x: 0, y: 0, w: opts.rug.w, h: opts.rug.h };
-    const ratio = targetAspect / imgAspect;
-    if (ratio < 0.92) {
-      const h = opts.rug.h * ratio;
-      src = { x: 0, y: (opts.rug.h - h) / 2, w: opts.rug.w, h };
-    } else if (ratio > 1.08) {
-      const w = opts.rug.w / ratio;
-      src = { x: (opts.rug.w - w) / 2, y: 0, w, h: opts.rug.h };
-    }
-    drawImageInQuad(ctx, opts.rug.img, src, quad, 16, faceDisp);
+  const colors = sampleRugColors(rug.img);
 
-    // Texture — fine wool grain plus pile-dependent light scatter.
+  // Fringe sits UNDER the rug ends, like real knotted warp threads.
+  if (style.fringe) {
+    drawFringe(ctx, plane, planeD, p, colors.fringe, W);
+  }
+
+  // Pile side (the rug's thickness) + a thin AO seam where it meets the floor.
+  ctx.save();
+  ctx.fillStyle = colors.edge;
+  fillPts(ctx, basePts);
+  ctx.restore();
+  ctx.save();
+  ctx.strokeStyle = "rgba(20, 13, 8, 0.28)";
+  ctx.lineWidth = Math.max(1, W * 0.0011);
+  ctx.filter = `blur(${Math.max(1, W * 0.001)}px)`;
+  pathPts(ctx, basePts);
+  ctx.stroke();
+  ctx.restore();
+
+  // Face — crop, never stretch, when the entered size disagrees with the
+  // photo's shape: the weave must keep its true proportions.
+  const imgAspect = rug.h / rug.w;
+  const targetAspect = p.lengthM / Math.max(0.01, p.widthM);
+  let src = { x: 0, y: 0, w: rug.w, h: rug.h };
+  const ratio = targetAspect / imgAspect;
+  if (ratio < 0.92) {
+    const h = rug.h * ratio;
+    src = { x: 0, y: (rug.h - h) / 2, w: rug.w, h };
+  } else if (ratio > 1.08) {
+    const w = rug.w / ratio;
+    src = { x: (rug.w - w) / 2, y: 0, w, h: rug.h };
+  }
+  drawImageInQuad(ctx, rug.img, src, quad, 16, faceDisp);
+
+  // Texture — fine wool grain plus pile-dependent light scatter.
+  ctx.save();
+  pathPts(ctx, facePts);
+  ctx.clip();
+  const bounds = ptsBounds(facePts);
+  ctx.globalCompositeOperation = "soft-light";
+  ctx.globalAlpha = { flat: 0.07, low: 0.1, high: 0.12 }[style.pile];
+  ctx.fillStyle = ctx.createPattern(getNoiseTile(), "repeat")!;
+  ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
+  if (style.pile !== "flat") {
+    ctx.globalAlpha = style.pile === "high" ? 0.2 : 0.11;
+    ctx.fillStyle = ctx.createPattern(getSheenTile(), "repeat")!;
+    ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
+  }
+  ctx.restore();
+
+  if (style.pile === "flat") {
+    // Weft ridges along the weave, drawn in plane space so they converge.
     ctx.save();
     pathPts(ctx, facePts);
     ctx.clip();
-    const bounds = ptsBounds(facePts);
-    ctx.globalCompositeOperation = "soft-light";
-    ctx.globalAlpha = { flat: 0.07, low: 0.1, high: 0.12 }[opts.style.pile];
-    ctx.fillStyle = ctx.createPattern(getNoiseTile(), "repeat")!;
-    ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
-    if (opts.style.pile !== "flat") {
-      ctx.globalAlpha = opts.style.pile === "high" ? 0.2 : 0.11;
-      ctx.fillStyle = ctx.createPattern(getSheenTile(), "repeat")!;
-      ctx.fillRect(bounds.x, bounds.y, bounds.w, bounds.h);
+    ctx.globalAlpha = 0.045;
+    ctx.strokeStyle = "#241a10";
+    ctx.lineWidth = Math.max(0.6, W * 0.0005);
+    const step = 0.016;
+    for (let dd = -hl + step; dd < hl; dd += step) {
+      const a = rugToPlane(p, -hw, dd, planeD);
+      const b = rugToPlane(p, hw, dd, planeD);
+      const sa = plane(a.x, a.d);
+      const sb = plane(b.x, b.d);
+      ctx.beginPath();
+      ctx.moveTo(sa.x, sa.y);
+      ctx.lineTo(sb.x, sb.y);
+      ctx.stroke();
     }
     ctx.restore();
+  }
+}
 
-    if (opts.style.pile === "flat") {
-      // Weft ridges along the weave, drawn in plane space so they converge.
+/** Furniture feet compress the pile where they land on the rug. */
+function paintLegCompression(
+  ctx: CanvasRenderingContext2D,
+  plane: PlaneFn,
+  toPlane: (x: number, y: number) => { x: number; depth: number },
+  legPts: Pt[],
+  p: RugPlacement,
+  style: RugStyleOpts,
+): void {
+  if (style.pile === "flat") return;
+  const ppm = makePpm(plane);
+  const hw = p.widthM / 2;
+  const hl = p.lengthM / 2;
+  for (const { x: sx, y: sy } of legPts) {
+    const pt = toPlane(sx, sy);
+    const rad = (-p.rotation * Math.PI) / 180;
+    const dx = pt.x - p.offsetX;
+    const dd = pt.depth - p.depth;
+    const lx = dx * Math.cos(rad) - dd * Math.sin(rad);
+    const ld = dx * Math.sin(rad) + dd * Math.cos(rad);
+    if (Math.abs(lx) > hw - 0.05 || Math.abs(ld) > hl - 0.05) continue;
+    const r = 0.07 * ppm(pt.x, pt.depth);
+    const a = style.pile === "high" ? 0.3 : 0.18;
+    const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
+    g.addColorStop(0, `rgba(24, 15, 9, ${a})`);
+    g.addColorStop(1, "rgba(24, 15, 9, 0)");
+    ctx.save();
+    ctx.fillStyle = g;
+    ctx.beginPath();
+    ctx.ellipse(sx, sy, r, r * 0.45, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+  }
+}
+
+/* ------------------------------------------------------------------ */
+/* The photographic render                                              */
+/* ------------------------------------------------------------------ */
+
+export async function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): Promise<void> {
+  const ctx = canvas.getContext("2d");
+  if (!ctx) return;
+  const W = canvas.width;
+  const H = canvas.height;
+  const ref = resolveScene(opts.sceneId, opts.customTemplates);
+  ctx.imageSmoothingEnabled = true;
+  ctx.imageSmoothingQuality = "high";
+
+  if (ref.kind === "photo") {
+    const tpl = ref.template;
+    const assets = await ensureTemplateAssets(tpl);
+    const cp = coverPlacement(tpl, W, H);
+    const destW = cp.iw * cp.scale;
+    const destH = cp.ih * cp.scale;
+    const mapper = templateMapper(tpl, W, H);
+    const plane: PlaneFn = (x, d) => mapper.toScreen(x, d);
+
+    ctx.clearRect(0, 0, W, H);
+    ctx.drawImage(assets.img, cp.dx, cp.dy, destW, destH);
+
+    if (opts.rug) {
+      paintRug(ctx, W, H, plane, tpl.planeSize.d, opts.rug, opts.placement, opts.style, tpl.light);
+    }
+
+    // Foreground occlusion: re-draw the photo, restricted to the mask, ON TOP
+    // of the rug — sofas, beds and tables come forward; the rug tucks under.
+    if (assets.mask) {
+      const off = document.createElement("canvas");
+      off.width = W;
+      off.height = H;
+      const og = off.getContext("2d")!;
+      og.imageSmoothingEnabled = true;
+      og.imageSmoothingQuality = "high";
+      og.drawImage(assets.mask, cp.dx, cp.dy, destW, destH);
+      og.globalCompositeOperation = "source-in";
+      og.drawImage(assets.img, cp.dx, cp.dy, destW, destH);
+      ctx.drawImage(off, 0, 0);
+    }
+
+    if (assets.lightMask) {
       ctx.save();
-      pathPts(ctx, facePts);
-      ctx.clip();
-      ctx.globalAlpha = 0.045;
-      ctx.strokeStyle = "#241a10";
-      ctx.lineWidth = Math.max(0.6, W * 0.0005);
-      const step = 0.016;
-      for (let dd = -hl + step; dd < hl; dd += step) {
-        const a = rugToPlane(p, -hw, dd);
-        const b = rugToPlane(p, hw, dd);
-        const sa = plane(a.x, a.d);
-        const sb = plane(b.x, b.d);
-        ctx.beginPath();
-        ctx.moveTo(sa.x, sa.y);
-        ctx.lineTo(sb.x, sb.y);
-        ctx.stroke();
-      }
+      ctx.globalCompositeOperation = "screen";
+      ctx.globalAlpha = 0.85;
+      ctx.drawImage(assets.lightMask, cp.dx, cp.dy, destW, destH);
       ctx.restore();
     }
+
+    if (opts.rug) {
+      const legPts = tpl.legPoints.map(([fx, fy]) => mapper.fracToCanvas([fx, fy]));
+      paintLegCompression(ctx, plane, mapper.toPlane, legPts, opts.placement, opts.style);
+    }
+
+    gradePass(ctx, W, H, tpl.light);
+    return;
+  }
+
+  // Illustrated fallback / demo scenes.
+  const scene = ref.scene;
+  const plane = floorPlane(W, H);
+
+  ctx.clearRect(0, 0, W, H);
+  scene.paintBack(ctx, W, H, plane);
+
+  if (opts.rug) {
+    paintRug(ctx, W, H, plane, PLANE_D, opts.rug, opts.placement, opts.style, scene.light);
   }
 
   // Window light falls across floor AND rug — it no longer stops at the edge.
@@ -863,34 +1063,10 @@ export function renderMockup(canvas: HTMLCanvasElement, opts: RenderOptions): vo
 
   scene.paintFront?.(ctx, W, H, plane);
 
-  // Furniture feet compress the pile where they land on the rug.
-  if (opts.rug && opts.style.pile !== "flat") {
+  if (opts.rug) {
     const mapper = planeMapper(W, H);
-    const p = opts.placement;
-    const hw = p.widthM / 2;
-    const hl = p.lengthM / 2;
-    for (const [fx, fy] of scene.legPoints ?? []) {
-      const sx = fx * W;
-      const sy = fy * H;
-      const pt = mapper.toPlane(sx, sy);
-      const rad = (-p.rotation * Math.PI) / 180;
-      const dx = pt.x - p.offsetX;
-      const dd = pt.depth - p.depth;
-      const lx = dx * Math.cos(rad) - dd * Math.sin(rad);
-      const ld = dx * Math.sin(rad) + dd * Math.cos(rad);
-      if (Math.abs(lx) > hw - 0.05 || Math.abs(ld) > hl - 0.05) continue;
-      const r = 0.07 * ppmPlane(pt.x, pt.depth);
-      const a = opts.style.pile === "high" ? 0.3 : 0.18;
-      const g = ctx.createRadialGradient(sx, sy, 0, sx, sy, r);
-      g.addColorStop(0, `rgba(24, 15, 9, ${a})`);
-      g.addColorStop(1, "rgba(24, 15, 9, 0)");
-      ctx.save();
-      ctx.fillStyle = g;
-      ctx.beginPath();
-      ctx.ellipse(sx, sy, r, r * 0.45, 0, 0, Math.PI * 2);
-      ctx.fill();
-      ctx.restore();
-    }
+    const legPts = (scene.legPoints ?? []).map(([fx, fy]) => ({ x: fx * W, y: fy * H }));
+    paintLegCompression(ctx, plane, mapper.toPlane, legPts, opts.placement, opts.style);
   }
 
   gradePass(ctx, W, H, scene.light);
@@ -949,6 +1125,7 @@ function gradePass(ctx: CanvasRenderingContext2D, W: number, H: number, light: S
 function drawFringe(
   ctx: CanvasRenderingContext2D,
   plane: PlaneFn,
+  planeD: number,
   p: RugPlacement,
   color: string,
   W: number,
@@ -988,9 +1165,9 @@ function drawFringe(
         len *= 1.5;
         drift *= 2.2;
       }
-      const base = rugToPlane(p, baseX, end * (hl - 0.01));
-      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55));
-      const tip = rugToPlane(p, baseX + drift, end * (hl + len));
+      const base = rugToPlane(p, baseX, end * (hl - 0.01), planeD);
+      const mid = rugToPlane(p, baseX + drift * 0.4, end * (hl + len * 0.55), planeD);
+      const tip = rugToPlane(p, baseX + drift, end * (hl + len), planeD);
       const sBase = plane(base.x, base.d);
       const sMid = plane(mid.x, mid.d);
       const sTip = plane(tip.x, tip.d);
