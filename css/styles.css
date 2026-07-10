@@ -3447,6 +3447,14 @@ textarea:focus-visible,
     opacity: 0.85;
 }
 
+.journey-beat__media--top {
+    object-position: center 20%;
+}
+
+.journey-beat__media--contain {
+    object-fit: contain;
+}
+
 .journey-beat__overlay {
     position: absolute;
     inset: 0;
