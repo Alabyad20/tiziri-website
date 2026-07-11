@@ -49,7 +49,8 @@ a {
     --sage:        #6B7F5E;
     --white:       #FFFFFF;
     --warm-grey:   #EDE9E2;
-    --mid-grey:    #9B9590;
+    --mid-grey:    #6B655C; /* darkened for WCAG AA (4.5:1) against --bone/--white; use --mid-grey-on-dark on --stone backgrounds */
+    --mid-grey-on-dark: #9B9590;
 
     --serif:  'Cormorant Garamond', Georgia, serif;
     --sans:   'Jost', system-ui, sans-serif;
@@ -1155,7 +1156,7 @@ a {
 }
 
 .newsletter .ml-form-embedContainer input[type="email"]::placeholder {
-    color: #9B9590 !important;
+    color: #6B655C !important;
 }
 
 .newsletter .ml-form-embedContainer button[type="submit"],
@@ -1198,7 +1199,7 @@ a {
     font-family: 'Jost', sans-serif !important;
     font-weight: 300 !important;
     font-size: 14px !important;
-    color: #9B9590 !important;
+    color: #6B655C !important;
 }
 
 
@@ -1266,7 +1267,7 @@ a {
     font-size: 10px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
-    color: var(--mid-grey);
+    color: var(--mid-grey-on-dark);
     margin-bottom: 4px;
 }
 
@@ -2834,6 +2835,27 @@ a.trust-bar__item:hover {
     appearance: none;
 }
 
+.contact-form__input[aria-invalid="true"],
+.contact-form__select[aria-invalid="true"],
+.contact-form__textarea[aria-invalid="true"] {
+    border-bottom-color: var(--terracotta);
+}
+
+.contact-form__error {
+    display: block;
+    min-height: 0;
+    font-family: var(--sans);
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.6;
+    color: var(--terracotta);
+    margin-top: 6px;
+}
+
+.contact-form__error:empty {
+    display: none;
+}
+
 .contact-form__input:focus,
 .contact-form__select:focus,
 .contact-form__textarea:focus {
@@ -3351,6 +3373,18 @@ a.trust-bar__item:hover {
 }
 
 /* Accessibility: skip link + global keyboard focus visibility (WCAG 2.4.1, 2.4.7) */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
 .skip-link {
     position: absolute;
     top: -100px;
@@ -3641,7 +3675,7 @@ textarea:focus-visible,
     background: none;
     font-size: 26px;
     line-height: 1;
-    color: var(--mid-grey, #9B9590);
+    color: var(--mid-grey, #6B655C);
     cursor: pointer;
     padding: 6px;
 }
@@ -3691,7 +3725,7 @@ textarea:focus-visible,
     font-size: 11px;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--mid-grey, #9B9590);
+    color: var(--mid-grey, #6B655C);
     cursor: pointer;
     text-decoration: underline;
     text-underline-offset: 3px;

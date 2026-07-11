@@ -210,10 +210,12 @@
                 <span class="finder-progress__dot" data-step="3"></span>
             </div>
 
+            <p class="sr-only" id="wizardStatus" role="status" aria-live="polite"></p>
+
             <!-- STEP 1: Style -->
             <div class="calc-step" id="step1">
                 <span class="calc-step__label">Step 1 of 3</span>
-                <h2 class="calc-step__heading">Which style?</h2>
+                <h2 class="calc-step__heading" tabindex="-1">Which style?</h2>
                 <div class="calc-options">
                     <button class="calc-option" data-step="1" data-value="Beni Ourain">
                         <span class="calc-option__title">Beni Ourain</span>
@@ -249,7 +251,7 @@
             <!-- STEP 2: Size -->
             <div class="calc-step" id="step2" hidden>
                 <span class="calc-step__label">Step 2 of 3</span>
-                <h2 class="calc-step__heading">What size?</h2>
+                <h2 class="calc-step__heading" tabindex="-1">What size?</h2>
                 <div class="calc-options">
                     <button class="calc-option" data-step="2" data-value="Small (100 x 150cm)" data-price="$350">
                         <span class="calc-option__title">Small</span>
@@ -287,7 +289,7 @@
             <!-- STEP 3: Color -->
             <div class="calc-step" id="step3" hidden>
                 <span class="calc-step__label">Step 3 of 3</span>
-                <h2 class="calc-step__heading">Which color direction?</h2>
+                <h2 class="calc-step__heading" tabindex="-1">Which color direction?</h2>
                 <div class="calc-options">
                     <button class="calc-option" data-step="3" data-value="Ivory &amp; natural tones">
                         <span class="calc-option__title">Ivory &amp; Natural</span>
@@ -320,7 +322,8 @@
 
             <!-- SUMMARY -->
             <div class="wizard-summary" id="summary" hidden>
-                <span class="wizard-summary__label">Your custom rug</span>
+                <h2 class="sr-only" id="summaryHeading" tabindex="-1">Your custom rug — review and send</h2>
+                <span class="wizard-summary__label" aria-hidden="true">Your custom rug</span>
                 <div class="wizard-summary__rows">
                     <div class="wizard-summary__row"><span class="wizard-summary__row-label">Style</span><span class="wizard-summary__row-value" id="sumStyle"></span></div>
                     <div class="wizard-summary__row"><span class="wizard-summary__row-label">Size</span><span class="wizard-summary__row-value" id="sumSize"></span></div>

@@ -51,16 +51,67 @@ const success = document.getElementById('contactSuccess');
     messageEl.value = lines.join('\n');
 })();
 
+const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+const FIELDS = [
+    { id: 'contactName', errorId: 'contactName-error', validate: (v) => v.trim() ? '' : 'Please enter your name.' },
+    { id: 'contactEmail', errorId: 'contactEmail-error', validate: (v) => {
+        const trimmed = v.trim();
+        if (!trimmed) return 'Please enter your email address.';
+        if (!EMAIL_RE.test(trimmed)) return 'Please enter a valid email address.';
+        return '';
+    } },
+    { id: 'contactTopic', errorId: 'contactTopic-error', validate: (v) => v ? '' : 'Please select a topic.' },
+    { id: 'contactMessage', errorId: 'contactMessage-error', validate: (v) => v.trim() ? '' : 'Please enter a message.' }
+];
+
+function validateField(field) {
+    const el = document.getElementById(field.id);
+    const errorEl = document.getElementById(field.errorId);
+    const message = field.validate(el.value);
+
+    if (message) {
+        el.setAttribute('aria-invalid', 'true');
+        errorEl.textContent = message;
+    } else {
+        el.removeAttribute('aria-invalid');
+        errorEl.textContent = '';
+    }
+    return message;
+}
+
+if (form) {
+    FIELDS.forEach((field) => {
+        const el = document.getElementById(field.id);
+        el.addEventListener('blur', () => validateField(field));
+        el.addEventListener('input', () => {
+            if (el.getAttribute('aria-invalid') === 'true') validateField(field);
+        });
+        el.addEventListener('change', () => {
+            if (el.getAttribute('aria-invalid') === 'true') validateField(field);
+        });
+    });
+}
+
 if (form && success) {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
+
+        let firstInvalidEl = null;
+        FIELDS.forEach((field) => {
+            const message = validateField(field);
+            if (message && !firstInvalidEl) firstInvalidEl = document.getElementById(field.id);
+        });
+
+        if (firstInvalidEl) {
+            firstInvalidEl.focus();
+            return;
+        }
 
         const name    = document.getElementById('contactName').value.trim();
         const email   = document.getElementById('contactEmail').value.trim();
         const topic   = document.getElementById('contactTopic').value;
         const message = document.getElementById('contactMessage').value.trim();
-
-        if (!name || !email || !topic || !message) return;
 
         const payload = {
             access_key: '88348fe5-bfcc-4067-850c-5840672658b6',

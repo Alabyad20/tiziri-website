@@ -185,7 +185,9 @@
                                 class="contact-form__input"
                                 placeholder="Full name"
                                 required
-                                autocomplete="name">
+                                autocomplete="name"
+                                aria-describedby="contactName-error">
+                            <span class="contact-form__error" id="contactName-error" role="alert"></span>
                         </div>
                         <div class="contact-form__group">
                             <label class="contact-form__label" for="contactEmail">Email address</label>
@@ -196,13 +198,15 @@
                                 class="contact-form__input"
                                 placeholder="you@example.com"
                                 required
-                                autocomplete="email">
+                                autocomplete="email"
+                                aria-describedby="contactEmail-error">
+                            <span class="contact-form__error" id="contactEmail-error" role="alert"></span>
                         </div>
                     </div>
 
                     <div class="contact-form__group">
                         <label class="contact-form__label" for="contactTopic">Topic</label>
-                        <select id="contactTopic" name="topic" class="contact-form__select" required>
+                        <select id="contactTopic" name="topic" class="contact-form__select" required aria-describedby="contactTopic-error">
                             <option value="" disabled selected>Select a topic</option>
                             <option value="General enquiry">General enquiry</option>
                             <option value="Specific rug enquiry">Specific rug enquiry</option>
@@ -210,6 +214,7 @@
                             <option value="Returns &amp; aftercare">Returns &amp; aftercare</option>
                             <option value="Other">Other</option>
                         </select>
+                        <span class="contact-form__error" id="contactTopic-error" role="alert"></span>
                     </div>
 
                     <div class="contact-form__group">
@@ -219,7 +224,9 @@
                             name="message"
                             class="contact-form__textarea"
                             placeholder="Tell us what you have in mind…"
-                            required></textarea>
+                            required
+                            aria-describedby="contactMessage-error"></textarea>
+                        <span class="contact-form__error" id="contactMessage-error" role="alert"></span>
                     </div>
 
                     <div class="contact-form__footer">

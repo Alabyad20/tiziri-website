@@ -21,6 +21,35 @@ try {
 }
 
 
+/* --- SHARED: block background interaction while an overlay (mobile menu, offer popup) is open --- */
+function setSiblingsInert(exceptEl, isInert) {
+    Array.from(document.body.children).forEach((el) => {
+        if (el === exceptEl || el.tagName === 'SCRIPT') return;
+        el.inert = isInert;
+    });
+}
+
+// Traps Tab/Shift+Tab within `container`'s focusable elements. Re-queries on every
+// keypress so it stays correct even if the container's contents change while open
+// (e.g. the offer popup's MailerLite embed loading in asynchronously).
+function trapFocusWithin(container, e) {
+    if (e.key !== 'Tab') return;
+    const focusables = Array.from(
+        container.querySelectorAll('a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled])')
+    );
+    if (!focusables.length) return;
+    const first = focusables[0];
+    const last  = focusables[focusables.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+    }
+}
+
+
 /* --- MOBILE MENU --- */
 try {
     const hamburger   = document.getElementById('hamburger');
@@ -28,16 +57,33 @@ try {
     const closeMenu   = document.getElementById('closeMenu');
 
     if (hamburger && mobileMenu && closeMenu) {
+        mobileMenu.setAttribute('role', 'dialog');
+        mobileMenu.setAttribute('aria-modal', 'true');
+        mobileMenu.setAttribute('aria-label', 'Menu');
+        hamburger.setAttribute('aria-expanded', 'false');
+
+        let lastFocused = null;
+        const trapMenuFocus = (e) => trapFocusWithin(mobileMenu, e);
+
         function openMobileMenu() {
+            lastFocused = document.activeElement;
             mobileMenu.classList.add('open');
             mobileMenu.setAttribute('aria-hidden', 'false');
+            hamburger.setAttribute('aria-expanded', 'true');
             document.body.style.overflow = 'hidden';
+            setSiblingsInert(mobileMenu, true);
+            mobileMenu.addEventListener('keydown', trapMenuFocus);
+            closeMenu.focus();
         }
 
         function closeMobileMenu() {
             mobileMenu.classList.remove('open');
             mobileMenu.setAttribute('aria-hidden', 'true');
+            hamburger.setAttribute('aria-expanded', 'false');
             document.body.style.overflow = '';
+            setSiblingsInert(mobileMenu, false);
+            mobileMenu.removeEventListener('keydown', trapMenuFocus);
+            if (lastFocused) lastFocused.focus();
         }
 
         hamburger.addEventListener('click', openMobileMenu);
@@ -50,7 +96,7 @@ try {
 
         // Close on Escape
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeMobileMenu();
+            if (e.key === 'Escape' && mobileMenu.classList.contains('open')) closeMobileMenu();
         });
     }
 } catch (err) {
@@ -177,6 +223,7 @@ try {
 
     if (!snoozed) {
         let shown = false;
+        let lastFocused = null;
 
         const popup = document.createElement('div');
         popup.className = 'offer-popup';
@@ -204,15 +251,21 @@ try {
             window.ml('account', '2460383');
         }
 
+        const trapPopupFocus = (e) => trapFocusWithin(popup, e);
+
         function dismissOffer() {
             popup.classList.remove('open');
             document.body.style.overflow = '';
+            setSiblingsInert(popup, false);
+            popup.removeEventListener('keydown', trapPopupFocus);
             localStorage.setItem(OFFER_KEY, String(Date.now()));
+            if (lastFocused) lastFocused.focus();
         }
 
         function showOffer() {
             if (shown) return;
             shown = true;
+            lastFocused = document.activeElement;
             // If MailerLite failed to render a form, fall back to the contact page.
             const embed = popup.querySelector('.ml-embedded');
             if (embed && !embed.children.length) {
@@ -220,6 +273,9 @@ try {
             }
             popup.classList.add('open');
             document.body.style.overflow = 'hidden';
+            setSiblingsInert(popup, true);
+            popup.addEventListener('keydown', trapPopupFocus);
+            popup.querySelector('.offer-popup__close').focus();
         }
 
         popup.querySelector('.offer-popup__close').addEventListener('click', dismissOffer);

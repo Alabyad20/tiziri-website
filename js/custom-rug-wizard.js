@@ -16,11 +16,16 @@ const resetWrap = document.getElementById('resetWrap');
 const resetBtn = document.getElementById('resetBtn');
 const notesEl = document.getElementById('wizardNotes');
 const sendBtn = document.getElementById('sendBtn');
+const statusEl = document.getElementById('wizardStatus');
 
 function updateProgress() {
     progressDots.forEach((dot, i) => {
         dot.classList.toggle('done', i < currentStep - 1);
     });
+}
+
+function announce(text) {
+    statusEl.textContent = text;
 }
 
 function showStep(n) {
@@ -33,13 +38,24 @@ function showStep(n) {
     currentStep = n;
     updateProgress();
     const el = document.getElementById(steps[n - 1]);
-    if (el) el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    if (el) {
+        el.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        const heading = el.querySelector('.calc-step__heading');
+        if (heading) {
+            heading.focus();
+            announce(`Step ${n} of 3: ${heading.textContent}`);
+        }
+    }
 }
 
 function selectOption(stepNum, btn) {
     const stepEl = document.getElementById(`step${stepNum}`);
-    stepEl.querySelectorAll('.calc-option').forEach(b => b.classList.remove('active'));
+    stepEl.querySelectorAll('.calc-option').forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-pressed', 'false');
+    });
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
 
     if (stepNum === 1) wizard.style = btn.dataset.value;
     if (stepNum === 2) { wizard.size = btn.dataset.value; wizard.price = btn.dataset.price; }
@@ -77,12 +93,15 @@ function showSummary() {
     summaryEl.hidden = false;
     resetWrap.hidden = false;
     summaryEl.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    document.getElementById('summaryHeading').focus();
+    announce(`Your rug: ${wizard.style}, ${wizard.size}, ${wizard.price}, ${wizard.colour}. Review and send your enquiry.`);
 }
 
 steps.forEach((stepId, i) => {
     const stepEl = document.getElementById(stepId);
     if (!stepEl) return;
     stepEl.querySelectorAll('.calc-option').forEach(btn => {
+        btn.setAttribute('aria-pressed', 'false');
         btn.addEventListener('click', () => selectOption(i + 1, btn));
     });
 });
@@ -99,7 +118,10 @@ resetBtn.addEventListener('click', () => {
     notesEl.value = '';
     steps.forEach(id => {
         const el = document.getElementById(id);
-        if (el) el.querySelectorAll('.calc-option').forEach(b => b.classList.remove('active'));
+        if (el) el.querySelectorAll('.calc-option').forEach(b => {
+            b.classList.remove('active');
+            b.setAttribute('aria-pressed', 'false');
+        });
     });
     summaryEl.hidden = true;
     resetWrap.hidden = true;
