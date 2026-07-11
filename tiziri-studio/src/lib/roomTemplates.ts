@@ -117,9 +117,11 @@ export const bundledRoomTemplates: RoomTemplate[] = [
     },
     floorQuad: [[0.06, 0.715], [1.02, 0.715], [1.16, 1.03], [-0.1, 1.03]],
     planeSize: { w: 4.2, d: 3.0 },
-    // Chair front = d 0 (masked, 0.3 m tuck); frame bottom d 2.49; the
-    // photo's own gray rug starts right of x ≈ 1.1 — stay left of it.
-    bounds: { x: [-1.8, 1.0], d: [-0.3, 2.45] },
+    // Far bound = where the FLOOR starts (skirting bottom, screen y≈0.705,
+    // d≈0.35): the old -0.3 "chair tuck" bound let rugs wider than the chair
+    // paint over the skirting/wall beside it (found with a real 2×3 m rug).
+    // Frame bottom d 2.49; the photo's own gray rug starts right of x ≈ 1.1.
+    bounds: { x: [-1.8, 1.0], d: [0.4, 2.45] },
     light: { dirX: 0.3, tint: [255, 208, 172], tintAlpha: 0.05 },
     // Lamp base, chair front/back feet, marble cube, console front foot —
     // true tips measured from the photo (mask tips sat lower: reflections).

@@ -235,15 +235,18 @@ export function MockupStudio() {
     let widthM = st.widthM;
     let lengthM = st.lengthM;
     const ref = resolveScene(st.sceneId, customs);
-    if (ref.kind === "photo") {
+    const sceneChanged = prevSceneRef.current !== null && prevSceneRef.current !== st.sceneId;
+    prevSceneRef.current = st.sceneId;
+    // Size snaps to the room's sensible range only when ENTERING a scene —
+    // on first mount the size the user saved must come back exactly as typed
+    // (the inputs never enforce rugSize, so mount must not either).
+    if (sceneChanged && ref.kind === "photo") {
       const rs = ref.template.rugSize;
       widthM = clamp(st.widthM, [rs.minW, rs.maxW]);
       lengthM = clamp(st.lengthM, [rs.minL, rs.maxL]);
     }
     const b = sceneBounds(st.sceneId, customs);
     const r = fitRange(b, widthM, lengthM, st.rotation);
-    const sceneChanged = prevSceneRef.current !== null && prevSceneRef.current !== st.sceneId;
-    prevSceneRef.current = st.sceneId;
     st.setPlacement({
       widthM,
       lengthM,

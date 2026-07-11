@@ -31,8 +31,10 @@ ROOMS = {
             (0.748, 0.7765, 0.792, 0.92),
             (0.805, 0.831, 0.856, 0.92),
             # Bright under-sofa floor reflection left of the inner-right leg —
-            # isnet kept it as "sofa"; the true sofa bottom edge is y 0.742.
-            (0.730, 0.7395, 0.770, 0.7765),
+            # isnet kept it as "sofa". The fabric bottom edge here is y≈0.752
+            # (found by a real ivory rug punching a hole through the sofa when
+            # the cut started at 0.7395 — never cut above the fabric line).
+            (0.730, 0.7545, 0.770, 0.7765),
         ],
         "legs": [[0.178, 0.812], [0.235, 0.772], [0.767, 0.770], [0.830, 0.825]],
     },

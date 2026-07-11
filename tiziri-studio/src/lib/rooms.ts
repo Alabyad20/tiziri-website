@@ -788,7 +788,14 @@ export function fitRange(
   const ed = (widthM / 2) * sin + (lengthM / 2) * cos;
   const shrink = ([lo, hi]: [number, number], e: number): [number, number] =>
     lo + e <= hi - e ? [lo + e, hi - e] : [(lo + hi) / 2, (lo + hi) / 2];
-  return { x: shrink(bounds.x, ex), d: shrink(bounds.d, ed) };
+  // Depth overflow must never split toward the room's far side: past the far
+  // bound there is no floor (wall, stairs) and the rug would paint over it.
+  // Every template's min-d is the far/up-screen end, so a too-deep rug pins
+  // its far edge at that bound and spills toward the camera instead — the
+  // frame crop absorbs that direction safely.
+  const shrinkD = ([lo, hi]: [number, number], e: number): [number, number] =>
+    lo + e <= hi - e ? [lo + e, hi - e] : [lo + e, lo + e];
+  return { x: shrink(bounds.x, ex), d: shrinkD(bounds.d, ed) };
 }
 
 /** Screen ↔ floor-plane mapping for a scene (drag, calibration preview). */

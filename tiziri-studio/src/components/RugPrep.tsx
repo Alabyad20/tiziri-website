@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { homographyToQuad, type Quad, type Pt } from "@/lib/homography";
 import { loadImage } from "@/lib/utils";
+import { toast } from "@/stores/toast";
 import { Button } from "@/components/ui/Button";
 import { Kbd } from "@/components/ui/Kbd";
 import { IconCheck, IconX } from "@/components/icons";
@@ -28,17 +29,23 @@ export function RugPrep({
 
   useEffect(() => {
     let cancelled = false;
-    void loadImage(src).then((i) => {
-      if (cancelled) return;
-      setImg(i);
-      // Start the handles at a modest inset so they're obviously grabbable.
-      setCorners([
-        { x: 0.08, y: 0.08 },
-        { x: 0.92, y: 0.08 },
-        { x: 0.92, y: 0.92 },
-        { x: 0.08, y: 0.92 },
-      ]);
-    });
+    void loadImage(src)
+      .then((i) => {
+        if (cancelled) return;
+        setImg(i);
+        // Start the handles at a modest inset so they're obviously grabbable.
+        setCorners([
+          { x: 0.08, y: 0.08 },
+          { x: 0.92, y: 0.08 },
+          { x: 0.92, y: 0.92 },
+          { x: 0.08, y: 0.92 },
+        ]);
+      })
+      .catch(() => {
+        if (cancelled) return;
+        toast("That file isn't a readable image — try a JPG, PNG, or WebP photo", "error");
+        onCancel();
+      });
     return () => {
       cancelled = true;
     };
