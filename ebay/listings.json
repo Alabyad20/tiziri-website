@@ -214,5 +214,37 @@
   "price": 1050,
   "video": true,
   "state": "live"
+ },
+ "itto": {
+  "sku": "ITTO",
+  "offerId": "205539738011",
+  "listingId": "307058685723",
+  "price": 1350,
+  "video": false,
+  "state": "live"
+ },
+ "tilila": {
+  "sku": "TILILA",
+  "offerId": "205539751011",
+  "listingId": "307058685827",
+  "price": 1450,
+  "video": false,
+  "state": "live"
+ },
+ "touda": {
+  "sku": "TOUDA",
+  "offerId": "205539764011",
+  "listingId": "307058685956",
+  "price": 1400,
+  "video": false,
+  "state": "live"
+ },
+ "yenna": {
+  "sku": "YENNA",
+  "offerId": "205539770011",
+  "listingId": "307058686062",
+  "price": 1400,
+  "video": false,
+  "state": "live"
  }
 }
