@@ -40,12 +40,12 @@ a {
 
 /* --- DESIGN TOKENS --- */
 :root {
-    --bone:        #F5F0E8;
-    --stone:       #2C2A25;
+    --bone:        #F5EFDE;
+    --stone:       #0F0D0A;
     --terracotta:  #B84020;
     --sky:         #8BA7B8;
     --sand:        #C8A97A;
-    --indigo:      #1E2D4A;
+    --indigo:      #2E4157;
     --sage:        #6B7F5E;
     --white:       #FFFFFF;
     --warm-grey:   #EDE9E2;
