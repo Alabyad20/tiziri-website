@@ -12,7 +12,7 @@
   "offerId": "200593690011",
   "listingId": "307044729207",
   "price": 1950,
-  "video": false,
+  "video": true,
   "state": "live"
  },
  "ikram": {
@@ -100,7 +100,7 @@
   "offerId": "200596243011",
   "listingId": "307044729473",
   "price": 1200,
-  "video": false,
+  "video": true,
   "state": "live"
  },
  "wahiba": {
@@ -220,7 +220,7 @@
   "offerId": "205539738011",
   "listingId": "307058685723",
   "price": 1350,
-  "video": false,
+  "video": true,
   "state": "live"
  },
  "tilila": {
@@ -228,7 +228,7 @@
   "offerId": "205539751011",
   "listingId": "307058685827",
   "price": 1450,
-  "video": false,
+  "video": true,
   "state": "live"
  },
  "touda": {
@@ -236,7 +236,7 @@
   "offerId": "205539764011",
   "listingId": "307058685956",
   "price": 1400,
-  "video": false,
+  "video": true,
   "state": "live"
  },
  "yenna": {
@@ -244,7 +244,7 @@
   "offerId": "205539770011",
   "listingId": "307058686062",
   "price": 1400,
-  "video": false,
+  "video": true,
   "state": "live"
  }
 }
