@@ -3,7 +3,7 @@
 Authentic handwoven Moroccan rugs, sourced directly from Amazigh (Berber) artisans in the Atlas Mountains. Ready-to-ship rugs are physical, one-of-a-kind pieces: when one sells, it is delisted everywhere. Made-to-order designs are woven on commission in the size you choose.
 
 Store: https://tizirirugs.com · Contact: hello@tizirirugs.com
-Catalog generated: 2026-07-09 — prices and availability current as of this date.
+Catalog generated: 2026-07-12 — prices and availability current as of this date.
 
 ## Policies
 
@@ -14,7 +14,7 @@ Catalog generated: 2026-07-09 — prices and availability current as of this dat
 
 ## One-of-a-kind rugs, ready to ship
 
-58 physical, one-of-a-kind pieces in stock right now.
+62 physical, one-of-a-kind pieces in stock right now.
 
 | Rug | Style | Size | Material | Price (USD) | URL |
 |---|---|---|---|---|---|
@@ -34,6 +34,7 @@ Catalog generated: 2026-07-09 — prices and availability current as of this dat
 | Hind | Kilim | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, flat-woven | $650 | https://tizirirugs.com/rugs/hind.html |
 | Ikram | Contemporary | 300 x 211 cm (9 ft 10 in x 6 ft 11 in) | Wool, hand-knotted | $1,750 | https://tizirirugs.com/rugs/ikram.html |
 | Inas | Kilim | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, flat-woven | $650 | https://tizirirugs.com/rugs/inas.html |
+| Itto | Beni Ourain | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, hand-knotted | $1,350 | https://tizirirugs.com/rugs/itto.html |
 | Jihane | Kilim | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, flat-woven | $650 | https://tizirirugs.com/rugs/jihane.html |
 | Karima | Contemporary | 244 x 157 cm (8 ft 0 in x 5 ft 2 in) | Wool, hand-knotted | $1,050 | https://tizirirugs.com/rugs/karima2.html |
 | Kawtar | Beni Ourain | 296 x 212 cm (9 ft 8 in x 6 ft 11 in) | Wool on cotton warp | $1,450 | https://tizirirugs.com/rugs/kawtar.html |
@@ -70,8 +71,11 @@ Catalog generated: 2026-07-09 — prices and availability current as of this dat
 | Sanaa | Beni Ourain | 253 x 148 cm (8 ft 4 in x 4 ft 10 in) | Wool on cotton warp | $1,050 | https://tizirirugs.com/rugs/sanaa.html |
 | Sirine | Contemporary | 248 x 160 cm (8 ft 2 in x 5 ft 3 in) | Wool, hand-knotted | $1,200 | https://tizirirugs.com/rugs/sirine.html |
 | Tafat | Mrirt | 290 x 199 cm (9 ft 6 in x 6 ft 6 in) | Wool on cotton warp | $1,100 | https://tizirirugs.com/rugs/tafat.html |
+| Tilila | Beni Ourain | 314 x 216 cm (10 ft 4 in x 7 ft 1 in) | Wool, hand-knotted | $1,450 | https://tizirirugs.com/rugs/tilila.html |
+| Touda | Beni Ourain | 315 x 196 cm (10 ft 4 in x 6 ft 5 in) | Wool, hand-knotted | $1,400 | https://tizirirugs.com/rugs/touda.html |
 | Wahiba | Boujaad | 307 x 186 cm (10 ft 1 in x 6 ft 1 in) | Wool, hand-knotted | $1,800 | https://tizirirugs.com/rugs/wahiba.html |
 | Warda | Contemporary | 241 x 163 cm (7 ft 11 in x 5 ft 4 in) | Wool, hand-knotted | $1,100 | https://tizirirugs.com/rugs/warda.html |
+| Yenna | Beni Ourain | 311 x 200 cm (10 ft 2 in x 6 ft 7 in) | Wool, hand-knotted | $1,400 | https://tizirirugs.com/rugs/yenna.html |
 | Zahia | Boujaad | 298 x 211 cm (9 ft 9 in x 6 ft 11 in) | Virgin wool, natural and plant-dyed yarns, cotton warp | $1,450 | https://tizirirugs.com/rugs/zahia.html |
 | Zara | Mrirt | 195 x 285 cm | Virgin wool, natural dyes, wool warp | $650 | https://tizirirugs.com/rugs/zara.html |
 | Zeinab | Boujaad | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, hand-knotted | $650 | https://tizirirugs.com/rugs/zeinab.html |

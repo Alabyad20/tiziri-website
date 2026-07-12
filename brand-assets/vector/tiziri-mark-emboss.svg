@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Line-only construction for blind deboss / foil stamp / laser engrave dies.
+       No filled plateau in the ink field: only the outer ring, inner bezel ring,
+       and seam register as tooled lines, since a single-color physical process
+       reads edges, not flat fills. -->
+  <defs>
+    <clipPath id="tiziri-mark-emboss-clip"><circle cx="100" cy="100" r="94"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#0F0D0A" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#0F0D0A" stroke-width="1.1"/>
+  <rect y="75.6" width="200" height="1.6" fill="#0F0D0A" clip-path="url(#tiziri-mark-emboss-clip)"/>
+</svg>

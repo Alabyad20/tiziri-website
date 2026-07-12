@@ -1586,10 +1586,9 @@ a {
    ============================================ */
 
 .trust-bar {
-    position: sticky;
-    top: var(--nav-h);
-    z-index: 51;
-    background: var(--indigo);
+    background: var(--bone);
+    border-top: 1px solid rgba(44, 42, 37, 0.1);
+    border-bottom: 1px solid rgba(44, 42, 37, 0.1);
 }
 
 .trust-bar__inner {
@@ -1616,23 +1615,23 @@ a {
     font-size: 10px;
     letter-spacing: 0.16em;
     text-transform: uppercase;
-    color: var(--bone);
+    color: var(--mid-grey);
     white-space: nowrap;
 }
 
 a.trust-bar__item {
     text-decoration: none;
-    border-bottom: 1px solid rgba(245, 240, 232, 0.4);
+    border-bottom: 1px solid rgba(44, 42, 37, 0.25);
     padding-bottom: 1px;
     transition: border-color 300ms ease;
 }
 
 a.trust-bar__item:hover {
-    border-color: var(--bone);
+    border-color: var(--stone);
 }
 
 .trust-bar__sep {
-    color: rgba(245, 240, 232, 0.4);
+    color: rgba(44, 42, 37, 0.25);
     font-size: 10px;
 }
 
@@ -1643,7 +1642,7 @@ a.trust-bar__item:hover {
 
 .filter-bar {
     position: sticky;
-    top: calc(var(--nav-h) + var(--trust-h));
+    top: var(--nav-h);
     z-index: 50;
     background: var(--white);
     border-bottom: 1px solid rgba(44, 42, 37, 0.08);
@@ -3118,20 +3117,7 @@ a.trust-bar__item:hover {
    ============================================ */
 
 .whatsapp-btn {
-    position: fixed;
-    bottom: 28px;
-    right: 28px;
-    width: 54px;
-    height: 54px;
-    background: #25D366;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
-    z-index: 999;
-    transition: transform 250ms ease, box-shadow 250ms ease;
-    text-decoration: none;
+    display: none;
 }
 
 .whatsapp-btn:hover {

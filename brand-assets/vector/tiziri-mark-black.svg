@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200">
+  <!-- Single-color mark, no background. For placement on light/white grounds. -->
+  <defs>
+    <clipPath id="tiziri-mark-black-clip"><circle cx="100" cy="100" r="94"/></clipPath>
+  </defs>
+  <g clip-path="url(#tiziri-mark-black-clip)">
+    <rect width="200" height="75.4" fill="#0F0D0A"/>
+    <rect y="75.6" width="200" height="1.6" fill="#0F0D0A"/>
+  </g>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#0F0D0A" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#0F0D0A" stroke-width="1.1"/>
+</svg>

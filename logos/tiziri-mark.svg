@@ -1,30 +1,14 @@
-<svg width="220" height="220" viewBox="0 0 220 220" xmlns="http://www.w3.org/2000/svg">
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
   <defs>
-    <clipPath id="c">
-      <circle cx="110" cy="110" r="107"/>
+    <clipPath id="tiziri-threshold">
+      <circle cx="100" cy="100" r="94"/>
     </clipPath>
-    <mask id="m">
-      <circle cx="110" cy="72" r="22" fill="white"/>
-      <circle cx="121" cy="66" r="18" fill="black"/>
-    </mask>
   </defs>
-
-  <g clip-path="url(#c)">
-    <!-- Sky -->
-    <circle cx="110" cy="110" r="107" fill="#C8A060"/>
-
-    <!-- Back mountain — straight angular lines, lighter terracotta -->
-    <path d="M 0,162 L 68,118 L 110,136 L 160,108 L 220,128 L 220,220 L 0,220 Z"
-          fill="#C87840"/>
-
-    <!-- Front mountain — straight angular lines, deep terracotta -->
-    <path d="M 0,178 L 62,152 L 100,164 L 148,144 L 220,160 L 220,220 L 0,220 Z"
-          fill="#B84020"/>
-
-    <!-- Crescent moon -->
-    <circle cx="110" cy="72" r="22" fill="#FFF8E8" mask="url(#m)"/>
+  <g clip-path="url(#tiziri-threshold)">
+    <rect width="200" height="200" fill="#F5EFDE"/>
+    <rect width="200" height="75.4" fill="#0F0D0A"/>
+    <rect y="75.6" width="200" height="1.6" fill="#0F0D0A"/>
   </g>
-
-  <!-- Circle border -->
-  <circle cx="110" cy="110" r="107" fill="none" stroke="#1A1410" stroke-width="2"/>
+  <circle cx="100" cy="100" r="94" fill="none" stroke="#0F0D0A" stroke-width="2.5"/>
+  <circle cx="100" cy="100" r="84" fill="none" stroke="#0F0D0A" stroke-width="1.1"/>
 </svg>
