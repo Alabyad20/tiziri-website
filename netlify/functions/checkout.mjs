@@ -19,6 +19,21 @@ function redirect(location) {
 
 export default async (req) => {
   const url = new URL(req.url);
+
+  // Safe diagnostic (reveals NO secret): confirms whether the env var reached
+  // the function and is the right type. Remove after setup is verified.
+  if (url.searchParams.get("diag") === "1") {
+    const k = process.env.STRIPE_SECRET_KEY || "";
+    return Response.json({
+      keyPresent: !!k,
+      keyLength: k.length,
+      isLiveSecret: k.trim().startsWith("sk_live_"),
+      isTestSecret: k.trim().startsWith("sk_test_"),
+      isPublishable: k.trim().startsWith("pk_"),
+      hasStrayWhitespace: k !== k.trim(),
+    });
+  }
+
   const productsRaw = url.searchParams.get("products") || "";
 
   // Parse "slug:qty,slug:qty" -> unique slugs (quantity is ignored; one-of-a-kind).
@@ -39,7 +54,7 @@ export default async (req) => {
   const bySlug = {};
   for (const r of rugs) if (r.slug) bySlug[r.slug.toLowerCase()] = r;
 
-  const key = process.env.STRIPE_SECRET_KEY;
+  const key = (process.env.STRIPE_SECRET_KEY || "").trim();
 
   // Fallback (no key yet): first rug's Payment Link — same as pre-function behaviour.
   if (!key) {
