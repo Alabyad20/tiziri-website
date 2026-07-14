@@ -1,4 +1,4 @@
-﻿// Meta Shop off-site checkout endpoint. (rev2)
+// Meta Shop off-site checkout endpoint.
 //
 // Meta sends buyers to /checkout?products=<slug>:<qty>,...&coupon=...
 // This builds a Stripe Checkout Session containing EVERY rug in the cart
@@ -7,7 +7,7 @@
 // Rugs are one-of-a-kind, so each unique rug is capped at quantity 1.
 //
 // Requires STRIPE_SECRET_KEY (Netlify env var). Until that is set, it falls
-// back to the first rug's single Stripe Payment Link â€” so this is safe to
+// back to the first rug's single Stripe Payment Link - so this is safe to
 // deploy before the key is added (behaviour is unchanged until then).
 
 const RUGS_URL = "https://tizirirugs.com/data/rugs.json";
@@ -56,7 +56,7 @@ export default async (req) => {
 
   const key = (process.env.STRIPE_SECRET_KEY || "").trim();
 
-  // Fallback (no key yet): first rug's Payment Link â€” same as pre-function behaviour.
+  // Fallback (no key yet): first rug's Payment Link - same as pre-function behaviour.
   if (!key) {
     const first = bySlug[slugs[0]];
     if (first && first.stripeLink) return redirect(first.stripeLink);
@@ -82,7 +82,7 @@ export default async (req) => {
     form.append(`line_items[${i}][price_data][unit_amount]`, String(Math.round(rug.price * 100)));
     form.append(
       `line_items[${i}][price_data][product_data][name]`,
-      `${rug.name} â€” Handwoven Moroccan ${rug.style || "Berber"} Rug`
+      `${rug.name} - Handwoven Moroccan ${rug.style || "Berber"} Rug`
     );
     if (rug.images && rug.images[0]) {
       form.append(`line_items[${i}][price_data][product_data][images][0]`, rug.images[0]);
