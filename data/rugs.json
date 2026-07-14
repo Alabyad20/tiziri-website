@@ -1199,28 +1199,6 @@
     "color": "multicolor"
   },
   {
-    "slug": "rania",
-    "name": "Rania",
-    "style": "Contemporary",
-    "category": "Contemporary Moroccan Rug",
-    "description": "Two abstract forms — terracotta and olive — settle against an ivory ground. Neither geometric nor figurative, the composition reads differently depending on where you stand. A piece that holds attention without demanding it.",
-    "origin": "Atlas Region, Morocco",
-    "dimensions": "303 x 205 cm ( 9 ft 11 in × 6 ft 9 in)",
-    "material": "Wool on cotton warp, natural and synthetic dyes",
-    "pile": "Medium",
-    "age": "Contemporary",
-    "price": 1450,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260615-WA0039.webp"
-    ],
-    "stripeLink": "https://buy.stripe.com/6oU4gt15H0Um4FO6Le2cg08",
-    "rating": null,
-    "reviews": [],
-    "color": "multicolor"
-  },
-  {
     "slug": "rim",
     "name": "Rim",
     "style": "Boujaad",
@@ -1310,28 +1288,6 @@
     "availability": "InStock",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0272.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
-  },
-  {
-    "slug": "siham",
-    "name": "Siham",
-    "style": "Beni Ourain",
-    "category": "Beni Ourain Moroccan Rug",
-    "description": "A small Beni Ourain from the High Atlas. Diamond lattice in fine undyed pile. This piece has found its home.",
-    "origin": "High Atlas, Morocco",
-    "dimensions": "120 × 185 cm",
-    "material": "Undyed wool on cotton warp",
-    "pile": "Medium, approx. 1.2 cm",
-    "age": "Contemporary (woven 2022–2024)",
-    "price": null,
-    "currency": "USD",
-    "availability": "SoldOut",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260608-WA0027.webp"
     ],
     "stripeLink": null,
     "rating": null,
@@ -1800,28 +1756,6 @@
     "rating": null,
     "reviews": [],
     "color": "ivory"
-  },
-  {
-    "slug": "rihab",
-    "name": "Rihab",
-    "style": "Azilal",
-    "category": "Azilal Moroccan Rug",
-    "description": "An ivory ground with a diagonal chain of diamonds in olive, mustard, pink and blue, scattered with small colorful accent marks. Playful, high pile.",
-    "origin": "Azilal Region, Morocco",
-    "dimensions": "297 x 203 cm (9 ft 9 in &times; 6 ft 8 in)",
-    "material": "Wool, hand-knotted",
-    "pile": "High pile",
-    "age": "New",
-    "price": 1400,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/297x203cm/IMG_20260704_134604.webp"
-    ],
-    "stripeLink": "https://buy.stripe.com/5kQdR35lX46ygowedG2cg0n",
-    "rating": null,
-    "reviews": [],
-    "color": "multicolor"
   },
   {
     "slug": "zahia",

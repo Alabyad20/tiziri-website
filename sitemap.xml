@@ -1046,15 +1046,6 @@
         </image:image>
     </url>
     <url>
-        <loc>https://tizirirugs.com/rugs/rania.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://tizirirugs.com/rug-photos/IMG-20260615-WA0039.webp</image:loc>
-        </image:image>
-    </url>
-    <url>
         <loc>https://tizirirugs.com/rugs/rim.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>monthly</changefreq>
@@ -1616,15 +1607,6 @@
         </image:image>
     </url>
     <url>
-        <loc>https://tizirirugs.com/rugs/rihab.html</loc>
-        <lastmod>2026-07-09</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://tizirirugs.com/rug-photos/July%204th%20Photoshoot/297x203cm/IMG_20260704_134604.webp</image:loc>
-        </image:image>
-    </url>
-    <url>
         <loc>https://tizirirugs.com/rugs/zahia.html</loc>
         <lastmod>2026-07-09</lastmod>
         <changefreq>monthly</changefreq>
@@ -1890,12 +1872,6 @@
     </url>
 
 <!-- Sold rugs — kept for SEO continuity -->
-    <url>
-        <loc>https://tizirirugs.com/rugs/siham.html</loc>
-        <lastmod>2026-06-19</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
 
     <url>
         <loc>https://tizirirugs.com/rugs/itto.html</loc>

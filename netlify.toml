@@ -61,6 +61,20 @@
   status = 404
   force  = true
 
+# Removed listings (2026-07-13): rihab = duplicate of samia; siham sold; rania awaiting reshoot
+[[redirects]]
+  from = "/rugs/rihab.html"
+  to   = "/rugs/samia.html"
+  status = 301
+[[redirects]]
+  from = "/rugs/siham.html"
+  to   = "/collections/"
+  status = 301
+[[redirects]]
+  from = "/rugs/rania.html"
+  to   = "/collections/"
+  status = 301
+
 # Internal desktop tool (Tiziri Studio) — never serve publicly
 [[redirects]]
   from = "/tiziri-studio/*"
