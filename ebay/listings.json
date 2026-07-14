@@ -216,10 +216,10 @@
   "state": "live"
  },
  "itto": {
-  "sku": "ITTO",
-  "offerId": "205539738011",
-  "listingId": "307058685723",
-  "price": 1350,
+  "sku": "YENNA",
+  "offerId": "205539770011",
+  "listingId": "307058686062",
+  "price": 1400,
   "video": true,
   "state": "live"
  },
@@ -240,10 +240,10 @@
   "state": "live"
  },
  "yenna": {
-  "sku": "YENNA",
-  "offerId": "205539770011",
-  "listingId": "307058686062",
-  "price": 1400,
+  "sku": "ITTO",
+  "offerId": "205539738011",
+  "listingId": "307058685723",
+  "price": 1350,
   "video": true,
   "state": "live"
  }
