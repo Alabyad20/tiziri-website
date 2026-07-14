@@ -20,19 +20,42 @@ function redirect(location) {
 export default async (req) => {
   const url = new URL(req.url);
 
-  // Safe diagnostic (reveals NO secret): confirms whether the env var reached
-  // the function and is the right type. Remove after setup is verified.
+  // Safe diagnostic (reveals NO secret). Also live-tests the key against Stripe
+  // by creating a throwaway session, and reports Stripe's verdict. Remove after setup.
   if (url.searchParams.get("diag") === "1") {
-    const k = process.env.STRIPE_SECRET_KEY || "";
-    return Response.json({
+    const k = (process.env.STRIPE_SECRET_KEY || "").trim();
+    const out = {
       keyPresent: !!k,
       keyLength: k.length,
-      isLiveSecret: k.trim().startsWith("sk_live_"),
-      isTestSecret: k.trim().startsWith("sk_test_"),
-      isPublishable: k.trim().startsWith("pk_"),
-      hasStrayWhitespace: k !== k.trim(),
-      prefix: k.trim().slice(0, 8),
-    });
+      prefix: k.slice(0, 8),
+      isSecret: k.startsWith("sk_"),
+      isRestricted: k.startsWith("rk_"),
+      isPublishable: k.startsWith("pk_"),
+    };
+    if (k) {
+      try {
+        const f = new URLSearchParams();
+        f.append("mode", "payment");
+        f.append("success_url", SITE + "/?order=success");
+        f.append("cancel_url", SITE + "/collections/");
+        f.append("line_items[0][price_data][currency]", "usd");
+        f.append("line_items[0][price_data][unit_amount]", "1400");
+        f.append("line_items[0][price_data][product_data][name]", "diag test");
+        f.append("line_items[0][quantity]", "1");
+        const resp = await fetch("https://api.stripe.com/v1/checkout/sessions", {
+          method: "POST",
+          headers: { Authorization: "Bearer " + k, "Content-Type": "application/x-www-form-urlencoded" },
+          body: f.toString(),
+        });
+        const j = await resp.json();
+        out.stripeStatus = resp.status;
+        out.stripeCreatesSession = !!j.url;
+        out.stripeError = j.error ? (j.error.code || j.error.type || j.error.message || "error") : null;
+      } catch (e) {
+        out.stripeException = String(e).slice(0, 120);
+      }
+    }
+    return Response.json(out);
   }
 
   const productsRaw = url.searchParams.get("products") || "";
