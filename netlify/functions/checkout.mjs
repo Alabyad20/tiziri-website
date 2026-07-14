@@ -31,6 +31,7 @@ export default async (req) => {
       isTestSecret: k.trim().startsWith("sk_test_"),
       isPublishable: k.trim().startsWith("pk_"),
       hasStrayWhitespace: k !== k.trim(),
+      prefix: k.trim().slice(0, 8),
     });
   }
 
