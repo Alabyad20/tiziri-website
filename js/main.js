@@ -325,3 +325,77 @@ try {
 } catch (err) {
     console.error('Newsletter form failed to initialize:', err);
 }
+
+
+/* ============================================
+   META PIXEL — Facebook/Instagram ads tracking
+   Fires: PageView (all pages), ViewContent + InitiateCheckout (rug pages).
+   Purchase is tracked server-side (Stripe → Meta CAPI); see netlify/functions.
+   ============================================ */
+(function () {
+    // 1) Paste your Meta Pixel ID here (Events Manager → Data Sources → your dataset).
+    //    Until this is set to a real ID, the whole block is a no-op — nothing loads.
+    var META_PIXEL_ID = '1677465513542864';
+
+    if (!META_PIXEL_ID || META_PIXEL_ID === 'REPLACE_WITH_PIXEL_ID') return;
+
+    try {
+        // Standard Meta Pixel bootstrap
+        !function (f, b, e, v, n, t, s) {
+            if (f.fbq) return;
+            n = f.fbq = function () {
+                n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+            };
+            if (!f._fbq) f._fbq = n;
+            n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
+            t = b.createElement(e); t.async = !0;
+            t.src = v; s = b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t, s);
+        }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+
+        fbq('init', META_PIXEL_ID);
+        fbq('track', 'PageView');
+
+        // On a rug page, read the product: id/slug from the canonical URL, price from meta tags.
+        function currentProduct() {
+            var priceEl = document.querySelector('meta[property="product:price:amount"]');
+            if (!priceEl) return null; // not a product page
+            var canonical = document.querySelector('link[rel="canonical"]');
+            var url = canonical ? canonical.href : location.href;
+            var m = url.match(/\/rugs\/([^\/.]+)\.html/);
+            if (!m) return null;
+            var curEl = document.querySelector('meta[property="product:price:currency"]');
+            return {
+                id: m[1],
+                price: parseFloat(priceEl.content) || 0,
+                currency: (curEl && curEl.content) || 'USD'
+            };
+        }
+
+        var product = currentProduct();
+        if (product) {
+            fbq('track', 'ViewContent', {
+                content_type: 'product',
+                content_ids: [product.id],
+                content_name: (document.title || product.id),
+                value: product.price,
+                currency: product.currency
+            });
+
+            // Buyer clicks a "Buy Now" button (main CTA or sticky bar) → InitiateCheckout,
+            // right before the redirect to Stripe. Matches by href so WhatsApp/Enquire are ignored.
+            document.addEventListener('click', function (e) {
+                var buyBtn = e.target.closest('a[href*="buy.stripe.com"]');
+                if (!buyBtn) return;
+                fbq('track', 'InitiateCheckout', {
+                    content_type: 'product',
+                    content_ids: [product.id],
+                    value: product.price,
+                    currency: product.currency
+                });
+            }, true);
+        }
+    } catch (err) {
+        console.error('Meta Pixel failed to initialize:', err);
+    }
+})();
