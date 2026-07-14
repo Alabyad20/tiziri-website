@@ -367,8 +367,7 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141616.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141709.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141819.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141929.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_142148.webp"
+      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/ikram/IMG_20260627_141929.webp"
     ],
     "stripeLink": "https://buy.stripe.com/6oUcMZ9CdgTk4FO3z22cg0a",
     "rating": null,
@@ -1364,8 +1363,7 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/sirine-08.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/sirine-09.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/sirine-10.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/sirine-11.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/sirine-12.webp"
+      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/sirine/sirine-11.webp"
     ],
     "stripeLink": "https://buy.stripe.com/3cIdR3g0B7iKb4cfhK2cg05",
     "rating": null,
@@ -1528,9 +1526,9 @@
   {
     "slug": "zeinab",
     "name": "Zeinab",
-    "style": "Boujaad",
-    "category": "Boujaad Moroccan Rug",
-    "description": "A full-field Boujaad in rich, energetic multicolor. Geometric motifs cover every inch — diamonds, crosses, lozenges — with no single color dominant. Four photographs show the rug from every angle so nothing is hidden.",
+    "style": "Contemporary",
+    "category": "Contemporary Moroccan Rug",
+    "description": "A full-field Moroccan rug in rich, energetic multicolor. Geometric motifs cover every inch — diamonds, crosses, lozenges — with no single color dominant. Four photographs show the rug from every angle so nothing is hidden.",
     "origin": "Boujaad, Morocco",
     "dimensions": "300 x 200 cm (9 ft 10 in &times; 6 ft 7 in)",
     "material": "Wool, hand-knotted",
@@ -1724,8 +1722,8 @@
   {
     "slug": "assia",
     "name": "Assia",
-    "style": "Mrirt",
-    "category": "Mrirt Moroccan Rug",
+    "style": "Beni Ourain",
+    "category": "Beni Ourain Moroccan Rug",
     "description": "An all-ivory carved-pile rug with a concentric medallion radiating outward in relief. Structure and shadow do the work of color here.",
     "origin": "Morocco",
     "dimensions": "284 x 212 cm (9 ft 4 in &times; 6 ft 11 in)",
@@ -1851,7 +1849,8 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zahia/zahia-09.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zahia/zahia-10.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zahia/zahia-11.webp",
-      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zahia/zahia-12.webp"
+      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zahia/zahia-12.webp",
+      "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/zahia/zahia-13.webp"
     ],
     "stripeLink": "https://buy.stripe.com/eVq6oB9Cd46yc8g2uY2cg0o",
     "rating": null,
@@ -1861,8 +1860,8 @@
   {
     "slug": "ouafa",
     "name": "Ouafa",
-    "style": "Mrirt",
-    "category": "Mrirt Moroccan Rug",
+    "style": "Beni Ourain",
+    "category": "Beni Ourain Moroccan Rug",
     "description": "A teal and ivory concentric rectangle pattern, carved in relief from a single high pile. Graphic and hypnotic.",
     "origin": "Morocco",
     "dimensions": "300 x 190 cm (9 ft 10 in &times; 6 ft 3 in)",
