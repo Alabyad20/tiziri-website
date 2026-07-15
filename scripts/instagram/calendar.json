@@ -33,8 +33,15 @@
       "id": "w2_zahia_reel",
       "date": "2026-07-15",
       "type": "reel",
-      "media": "zahia_reel.mp4",
+      "media": "zahia_music.mp4",
       "caption": "Zahia — a dense field of tribal symbols in muted burgundy, grey and orange, framed by a vivid striped border. Classic Boujaad energy.\n\nBoujaad · 298 × 211 cm (9'9\" × 6'11\") · one of one. tizirirugs.com/rugs/zahia\n\n#BoujaadRug #MoroccanRug #BerberRug #VintageStyle #BohoDecor #TribalRug #RugsOfInstagram"
+    },
+    {
+      "id": "mus_fadwa_reel",
+      "date": "2026-07-16",
+      "type": "reel",
+      "media": "fadwa_music.mp4",
+      "caption": "Fadwa — an abstract cubist portrait hand-knotted in cobalt, cerulean, mustard and charcoal on cream. Picasso's language, translated into wool.\n\nContemporary · 287 × 207 cm (9'5\" × 6'9\") · one of one. tizirirugs.com/rugs/fadwa\n\n#MoroccanRug #ArtRug #Cubism #ContemporaryRug #HandKnotted #StatementRug #GalleryWall"
     },
     {
       "id": "w2_ouafa_reel",
@@ -44,6 +51,20 @@
       "caption": "Ouafa — a teal and ivory concentric rectangle pattern, carved in relief from a single high pile. Graphic and hypnotic.\n\nMrirt · 300 × 190 cm (9'10\" × 6'3\"). tizirirugs.com/rugs/ouafa\n\n#MrirtRug #MoroccanRug #TealDecor #TextileArt #ModernRug #InteriorDesign #HandwovenRug"
     },
     {
+      "id": "mus_hafsa_reel",
+      "date": "2026-07-18",
+      "type": "reel",
+      "media": "hafsa_music.mp4",
+      "caption": "Hafsa — a repeating diamond checkerboard in dusty pink, grey and purple. An unusual three-color take on the classic lattice.\n\nBeni Ourain · 300 × 220 cm (9'10\" × 7'3\") · one of one. tizirirugs.com/rugs/hafsa\n\n#BeniOurain #MoroccanRug #HandwovenRug #InteriorDesign #PinkRug #WoolRug #RugsOfInstagram #HomeDecor"
+    },
+    {
+      "id": "mus_sirine_reel",
+      "date": "2026-07-19",
+      "type": "reel",
+      "media": "sirine_music.mp4",
+      "caption": "Sirine — four color fields with no hierarchy: a navy stripe, a diagonal sweep of electric lime, a warm taupe triangle and a hot pink rectangle, each meeting at a clean geometric edge. The rug that sets the mood for the whole room.\n\nContemporary · 248 × 160 cm (8'2\" × 5'3\") · one of one. tizirirugs.com/rugs/sirine\n\n#MoroccanRug #ContemporaryRug #ColorBlock #BoldInteriors #HandwovenRug #StatementRug #ModernHome"
+    },
+    {
       "id": "w2_no_duplicates",
       "date": "2026-07-20",
       "type": "image",
@@ -51,11 +72,25 @@
       "caption": "Every rug in this collection exists once.\n\nSelected in person in Morocco. No wholesalers. No duplicates. When a rug sells, it's gone — the next one will be beautiful in a completely different way.\n\nThe rug pictured: tizirirugs.com/rugs/assia\n\n#OneOfAKind #MoroccanRug #HandwovenRug #SlowDesign #ConsciousHome #InteriorDesign"
     },
     {
+      "id": "mus_tilila_reel",
+      "date": "2026-07-21",
+      "type": "reel",
+      "media": "tilila_music.mp4",
+      "caption": "Tilila — a warm grey field flecked with natural undyed tones, marked by groups of black tally stripes that march down the rug like a woven score. Graphic and quiet at once.\n\nBeni Ourain · 314 × 216 cm (10'4\" × 7'1\") · one of one. tizirirugs.com/rugs/tilila\n\n#BeniOurain #MoroccanRug #GreyRug #NeutralDecor #WoolRug #HandwovenRug #MinimalHome"
+    },
+    {
       "id": "w3_samia_reel",
       "date": "2026-07-22",
       "type": "reel",
-      "media": "samia_reel.mp4",
+      "media": "samia_music.mp4",
       "caption": "Samia — whimsical multicolor arrow motifs and a chain of nested diamonds on ivory. Playful, folk-art Azilal weaving.\n\nAzilal · 242 × 159 cm (7'11\" × 5'3\"). tizirirugs.com/rugs/samia\n\n#AzilalRug #MoroccanRug #FolkArt #ColorfulHome #KidsRoomDecor #HandmadeRug #BerberRug"
+    },
+    {
+      "id": "mus_warda_reel",
+      "date": "2026-07-23",
+      "type": "reel",
+      "media": "warda_music.mp4",
+      "caption": "Warda — an ivory ground crossed by loose black lines, with blocks of mustard, terracotta and dusty blue breaking the field. Handwoven in Morocco.\n\nContemporary · 241 × 163 cm (7'11\" × 5'4\"). tizirirugs.com/rugs/warda\n\n#MoroccanRug #ContemporaryRug #HandmadeRug #AbstractArt #InteriorStyling #LivingRoomDecor #WoolRug"
     },
     {
       "id": "w3_kawtar_reel",
@@ -75,7 +110,7 @@
       "id": "w4_majda_reel",
       "date": "2026-07-29",
       "type": "reel",
-      "media": "majda_reel.mp4",
+      "media": "majda_music.mp4",
       "caption": "Majda — a dense abstract composition in ivory wool, turquoise, olive, blush and mustard. Every inch tells a different story. Handwoven in Morocco.\n\nContemporary · 286 × 194 cm (9'5\" × 6'4\"). tizirirugs.com/rugs/majda\n\n#MoroccanRug #AbstractRug #ContemporaryArt #EclecticDecor #HandwovenRug #StatementRug"
     },
     {
@@ -110,14 +145,14 @@
       "id": "w5_malak_reel",
       "date": "2026-08-10",
       "type": "reel",
-      "media": "malak_reel.mp4",
+      "media": "malak_music.mp4",
       "caption": "Malak — a lime-green shag pile crossed by a bold orange diamond lattice. An unusual, high-energy colorway on the classic construction.\n\nBeni Ourain · 243 × 152 cm (7'12\" × 5'0\"). tizirirugs.com/rugs/malak\n\n#BeniOurain #GreenRug #DopamineDecor #MoroccanRug #BoldInteriors #HandwovenRug"
     },
     {
       "id": "w6_nabila_reel",
       "date": "2026-08-12",
       "type": "reel",
-      "media": "nabila_reel.mp4",
+      "media": "nabila_music.mp4",
       "caption": "Nabila — deep forest green, free-form black line art. Contemporary Moroccan weaving at its most expressive.\n\nContemporary · 315 × 212 cm (10'4\" × 6'11\"). tizirirugs.com/rugs/nabila\n\n#MoroccanRug #GreenInterior #ContemporaryRug #LineArt #StatementRug #InteriorDesign"
     },
     {
@@ -138,7 +173,7 @@
       "id": "w7_sanaa_reel",
       "date": "2026-08-19",
       "type": "reel",
-      "media": "sanaa_reel.mp4",
+      "media": "sanaa_music.mp4",
       "caption": "Sanaa — a saturated chartreuse ground divided into a brick-like grid. Bold, graphic, flat-woven.\n\n253 × 148 cm (8'4\" × 4'10\"). tizirirugs.com/rugs/sanaa\n\n#MoroccanRug #ChartreuseDecor #BoldColor #FlatWeave #GraphicDesign #ModernHome"
     },
     {
@@ -152,14 +187,14 @@
       "id": "w7_najat_reel",
       "date": "2026-08-24",
       "type": "reel",
-      "media": "najat_reel.mp4",
+      "media": "najat_music.mp4",
       "caption": "Najat — an ivory ground crossed by a full diamond lattice in a spectrum of color: purple, blue, green, pink, orange. No two lozenges are the same. Handwoven in Morocco.\n\nBoujaad · 305 × 192 cm (10'0\" × 6'4\"). tizirirugs.com/rugs/najat\n\n#BoujaadRug #RainbowDecor #MoroccanRug #DiamondPattern #BerberRug #InteriorInspo"
     },
     {
       "id": "w8_wahiba_reel",
       "date": "2026-08-26",
       "type": "reel",
-      "media": "wahiba_reel.mp4",
+      "media": "wahiba_music.mp4",
       "caption": "Wahiba — a vibrant tribal composition of diamond and eye motifs in red, turquoise, cobalt blue, green, yellow and pink. Hand-knotted, with the flat-woven foundation visible on the back. Handwoven in Morocco.\n\nBoujaad · 307 × 186 cm (10'1\" × 6'1\"). tizirirugs.com/rugs/wahiba\n\n#BoujaadRug #MoroccanRug #TribalArt #ColorfulHome #BerberRug"
     },
     {
