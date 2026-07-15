@@ -1,0 +1,108 @@
+# Etsy listings DEACTIVATED 2026-07-14 (single-photo / made-to-order placeholders)
+
+Deactivated (state=inactive, REVERSIBLE) because they showed only one photo. These are the made-to-order placeholder listings (identified by "Made to Order" description text; Etsy API does not expose photo counts). Reactivate via update_listing state=active once real photos exist.
+
+## DEACTIVATED (70)
+- 4531009148  $650  Ivory Diamond Quilted Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Living Room Decor
+- 4531008696  $650  Ivory Tonal Channel Stripe Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor, Home Decor
+- 4530996305  $650  Ivory Tonal Bobble Checkerboard Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug
+- 4530994149  $650  Camel Tan Brick Pattern Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530768136  $650  Tan Black Nested Labyrinth Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530768122  $600  Emerald Green Honeycomb Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet, Tribal Rug
+- 4530768108  $620  Ivory Cobblestone Blocks Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Living Room Decor
+- 4530756987  $650  Charcoal Honeycomb Stripe Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor, Morrocan Rug
+- 4530767822  $650  Magenta Pink Grid Lines Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530767812  $650  Terracotta Ombre Triangle Lines Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Tribal Rug
+- 4530756709  $600  Teal Turquoise Solid Shag Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530767778  $700  Mint Multicolor Abstract Shapes Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet
+- 4530767766  $650  Burgundy Tan Arrow Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Bedroom Decor
+- 4530767750  $680  Ivory Black Rust Circles Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor
+- 4530756643  $650  Ivory Nested Tunnel Charcoal Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor
+- 4530767716  $680  Rust Black Tribal Bands Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530767700  $680  Charcoal Orange Nested Squares Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Tribal Rug
+- 4530767680  $600  Deep Indigo Solid Shag Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530767662  $650  Rust Brown Abstract Flame Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet, Tribal Rug
+- 4530756569  $650  Blush Diamond Lattice Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Living Room Decor
+- 4530756547  $650  Charcoal Grey Diamond Trellis Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor
+- 4530767610  $650  Rust Checkerboard Ombre Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor, Home Decor
+- 4530756497  $680  Taupe Black Tribal Dash Beni Ourain Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug
+- 4530767552  $650  Ivory Orange Cracked Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530767540  $620  Ivory Grey Chevron Zigzag Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530767520  $680  Ivory Multicolor Abstract Shapes Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet
+- 4530756437  $650  Ivory Blue Vase Maroon Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Home Decor
+- 4530767478  $600  Solid Burnt Orange Textured Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor, Home Decor
+- 4530756411  $650  Ivory Yellow Orange Pink Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor
+- 4530756389  $680  Black Ivory Zebra Stripe Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530767422  $650  Grey Rust Striped Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530756363  $650  Olive Tan Curved Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530767392  $650  Ivory Yellow Blue Blush Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet
+- 4530750515  $630  Rust Cobblestone Bobble Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Living Room Decor
+- 4530750381  $700  Deep Red Black Hexagon Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor, Bedroom Decor
+- 4530761476  $620  Ivory Chevron Zigzag Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor, Morrocan Rug
+- 4530750365  $700  Red Orange Abstract Rock Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530750351  $650  Ivory Nested Arch Orange Accent Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Tribal Rug
+- 4530761430  $680  Blush Pink Tribal Diamond Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530761424  $650  Mustard Black Diamond Zigzag Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet, Tribal Rug
+- 4530761414  $700  Cream Blue Pixel Landscape Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Bedroom Decor
+- 4530761398  $600  Tan Ombre Triangle Lines Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor, Bedroom Decor
+- 4530750285  $620  Ivory Brown Channel Blocks Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor
+- 4530750277  $650  Ivory Yellow Blue Abstract Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530750261  $650  Blush Pink Chevron Diamond Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530750245  $650  Orange Grey Ombre Stripes Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530750229  $650  Ivory Maroon Abstract Shapes Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet, Tribal Rug
+- 4530750221  $700  Black Orange Grey Geometric Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Bedroom Decor
+- 4530750217  $680  Green Tan Abstract Mrirt Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor, Morrocan Rug
+- 4530750205  $720  Blue Seascape Abstract Mrir Rug, Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor, Moroccan Rug
+- 4530761290  $340  Terracotta Diagonal Stripe Runner Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug
+- 4530761282  $340  Tan Black Panel Runner Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530761256  $340  Tan Black Crossing Lines Runner II Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug
+- 4530761244  $340  Tan Black Crossing Lines Runner Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet
+- 4530750161  $420  Navy Diamond Mosaic Runner Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Bedroom Decor
+- 4530750153  $620  Ivory Bobble Checkerboard II Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor
+- 4530750135  $650  Ivory Burgundy Wave Lines Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor
+- 4530750125  $650  Ivory Burgundy Olive Blocks Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530761184  $620  Ivory Channel Ladder Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530761174  $680  Ivory Black Mountain Triangles Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Tribal Rug
+- 4530761166  $650  Ivory Burgundy Wave Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet, Tribal Rug
+- 4530750075  $350  Ivory Bobble Runner Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Berber Carpet, Tribal Rug, Living Room Decor
+- 4530761146  $350  Ivory Tan Diamond Trellis Runner Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Tribal Rug, Living Room Decor
+- 4530761128  $650  Ivory Black Diamond Trellis Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Living Room Decor, Bedroom Decor
+- 4530761124  $590  Ivory Minimal Channel Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530750033  $630  Ivory Bobble Checkerboard Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530750025  $620  Burnt Orange Brick Shag Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Home Decor, Boho Area Rug, Berber Carpet
+- 4530761068  $650  Ivory Block Panel Rug, Moroccan Berber Wool Rug, Custom Size Made to Order, Handwoven, Boho Area Rug, Berber Carpet, Tribal Rug
+- 4530756090  $390  Beni Ourain Runner Rug, Ivory Diamond Trellis with Terracotta Accent, Custom Size Made to Order, Handwoven Moroccan Wool Rug, Tribal Rug
+- 4530737177  $590  Beni Mrirt Rug, Ivory & Cobalt Blue Geometric Moroccan Wool Rug, Custom Size Made to Order, Handwoven Berber Carpet, Living Room Decor
+
+## KEPT ACTIVE - ready to ship (31)
+- 4537449235  $1400  Azilal Moroccan Rug 9.9x6.8ft | Ivory Diamond Chain Multicolor Wool Rug | Handwoven Berber Rug | Ready to Ship USA
+- 4536685718  $1400  Beni Ourain Moroccan Rug 9.10x6.7ft | Carved Ivory Wool Rug | Handwoven Berber Rug | Ready to Ship USA
+- 4536685624  $1400  Beni Ourain Moroccan Rug 10.4x6.5ft | Classic Ivory Diamond Lattice Wool Rug | Handwoven Berber Rug | Ready to Ship USA
+- 4536685550  $1450  Beni Ourain Moroccan Rug 10.4x7.1ft | Grey Black Tally Stripe Wool Rug | Handwoven Berber Rug | Ready to Ship USA
+- 4536669249  $1350  Beni Ourain Moroccan Rug 10.2x6.7ft | Sculpted Ivory Panel Wool Rug | Handwoven Berber Rug | Ready to Ship USA
+- 4533535689  $1800  Moroccan Boujaad Rug 10.1x6.1ft | Multicolor Tribal Diamond Wool Rug, Reversible Kilim Back | Handwoven Berber Rug | Ready to Ship USA
+- 4533548622  $1750  Moroccan Contemporary Rug 9.10x6.11ft | Black White Checkerboard Abstract Wool Rug | Handwoven Berber Statement Rug | Ready to Ship USA
+- 4533118193  $1450  Moroccan Boujaad Rug 9.9x6.11ft | Zahia — A dense field of tribal symbols — crosses, flags, small figures — in muted burgundy, grey and oran
+- 4533117793  $1400  Moroccan Contemporary Rug 10.0x6.6ft | Sabrine — An ivory ground scattered with small confetti-like dots in neon pink, orange, blue, chartre
+- 4533130500  $1500  Moroccan Beni Ourain Rug 9.10x7.3ft | Hafsa — A repeating diamond checkerboard in dusty pink, grey and purple across the full field | Handwo
+- 4533130352  $1300  Moroccan Mrirt Rug 9.10x6.3ft | Ouafa — A teal and ivory concentric rectangle pattern, carved in relief from a single high pile | Handwoven
+- 4533130080  $1450  Moroccan Kilim Rug 9.8x6.11ft | Kawtar — An ivory ground crossed by a black grid, with a solid red block and a black block anchoring two cor
+- 4533130026  $1400  Moroccan Mrirt Rug 9.4x6.11ft | Assia — An all-ivory carved-pile rug with a concentric medallion radiating outward in relief | Handwoven Ber
+- 4533116999  $1050  Moroccan Kilim Rug 8.4x4.10ft | Sanaa — A saturated chartreuse ground divided into a brick-like grid by black and white striped lines | Hand
+- 4533129692  $1050  Moroccan Beni Ourain Rug 7.12x5.0ft | Malak — A vivid lime-green shag pile crossed by a bold orange diamond lattice | Handwoven Berber Atlas
+- 4533116651  $1050  Moroccan Azilal Rug 7.11x5.3ft | Samia — An ivory ground scattered with whimsical multicolor arrow motifs in green, blue, yellow, brown and
+- 4533129444  $1100  Moroccan Contemporary Rug 7.11x5.4ft | Warda — An ivory ground crossed by loose vertical black lines, with solid blocks of mustard yellow, t
+- 4533116473  $1300  Moroccan Boujaad Rug 10.0x6.4ft | Najat — An ivory ground crossed by a full diamond lattice in a spectrum of color — purple, blue, green, pi
+- 4533129210  $1050  Moroccan Contemporary Rug 10.0x6.8ft | Bouchra — A grid of burgundy lines on ivory | Handwoven Berber Atlas Rug
+- 4531777907  $1100  Moroccan Mrirt Rug | Grey Geometric Wool Rug | Handwoven Berber Carpet | Ready to Ship USA
+- 4531774511  $1300  Moroccan Mrirt Rug | Stone Grey Textured Wool Rug | Handwoven Berber Carpet | Ready to Ship USA
+- 4530691693  $1950  Moroccan Contemporary Rug 9.5x6.9ft | Picasso-Inspired Abstract Art Wool Rug | Handwoven Cubist Berber Rug | Ready to Ship USA, Home Decor
+- 4530604880  $1350  Handwoven Beni Ourain Wool Rug | Ivory Diamond Lattice Berber Carpet, Home Decor, Boho Area Rug, Tribal Rug, Living Room Decor
+- 4530604976  $1450  Moroccan Mrirt Rug, Terracotta Olive Wool, Handwoven Fine Pile Atlas Home Decor, Boho Area Rug, Berber Carpet, Tribal Rug, Bedroom Decor
+- 4530593829  $1050  Handwoven Wool Berber Rug | Contemporary Moroccan Atlas Area Rug 8x5.2ft, Berber Carpet, Tribal Rug, Living Room Decor, Bedroom Decor
+- 4530604958  $1100  Handwoven Beni Ourain Rug | Cobalt Blue Wool Tribal Berber Carpet (8x5.3ft), Tribal Rug, Living Room Decor, Bedroom Decor, Morrocan Rug
+- 4530593799  $1200  Moroccan Geometric Wool Rug | Handwoven Bold Berber Colour-Block 8.2x5.3ft, Living Room Decor, Bedroom Decor, Morrocan Rug, Home Decor
+- 4530604934  $1200  Handwoven Wool Berber Area Rug | Contemporary Moroccan Design 8.9x6.6ft, Bedroom Decor, Morrocan Rug, Home Decor, Boho Area Rug
+- 4530604914  $1400  Handwoven Wool Abstract Moroccan Rug | Contemporary Berber Art (9.4x6.4ft), Morrocan Rug, Home Decor, Boho Area Rug, Berber Carpet
+- 4530593775  $1400  Beni Ourain Moroccan Rug | Ivory Wool Berber, Handwoven Atlas Mountain Home Decor, Boho Area Rug, Berber Carpet, Tribal Rug, Bedroom Decor
+- 4530593853  $1850  Forest Green Abstract Beni Ourain Rug

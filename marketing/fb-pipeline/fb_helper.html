@@ -1,0 +1,29 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>FB photo helper</title>
+<body>
+<pre id="log">loading…</pre>
+<script>
+// Opened (once, via injected trusted click) from the FB tab so window.opener is the FB tab.
+// For each rug: FB tab arms a message listener, then this tab is NAVIGATED to
+//   /fb_helper.html?rug=<slug>&n=<count>
+// It fetches the rug's jpgs from the local server and postMessages File objects to opener.
+const log = m => document.getElementById('log').textContent += '\n' + m;
+const p = new URLSearchParams(location.search);
+const rug = p.get('rug'), n = parseInt(p.get('n') || '10', 10);
+(async () => {
+  if (!rug) { log('no ?rug='); return; }
+  if (!window.opener) { log('NO OPENER - reopen helper from FB tab'); return; }
+  const files = [];
+  for (let i = 1; i <= n; i++) {
+    const name = rug + '-' + String(i).padStart(2, '0') + '.jpg';
+    const r = await fetch('/photos/' + rug + '/' + name);
+    if (!r.ok) { log('miss ' + name + ' (' + r.status + ')'); continue; }
+    const blob = await r.blob();
+    files.push(new File([blob], name, {type: 'image/jpeg'}));
+    log('fetched ' + name);
+  }
+  window.opener.postMessage({fbPipeline: true, rug, files}, '*');
+  log('POSTED ' + files.length + ' files to opener for "' + rug + '"');
+})();
+</script>

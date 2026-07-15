@@ -22,8 +22,38 @@ All have title/price/category Household/condition New/description + photos.
 samia — photo swap deferred; its gallery is being rebuilt from Abdel's raws
 (embedded-camera-preview method). Swap FB photos after that lands.
 
+### ✅ DONE 07-13 night: no-yellow photo refresh executed via the rebuilt pipeline
+Updated live: **yenna** (was the WRONG RUG — now 10 real-yenna photos + new title
+"Carved Stepped Channels" + new description; wrong-rug VIDEO removed — Abdel drags the
+correct one by hand), **warda** (card-patched set), **nabila**, **hafsa**, **samia/rihab**
+(listing 2114132449485259, was deferred), **majda**. Draft updated: **wahiba** (10 new
+photos, still a draft for Abdel to publish). Already current, untouched: touda/itto
+drafts, tilila active. No FB listings exist for zahia/sirine/fadwa/najat.
+Listing ids: yenna 1503744301079185, warda 1382276323999339, nabila 2330159944405658,
+hafsa 27245594408417074, samia/rihab 2114132449485259, majda 2145641316011245,
+wahiba draft 827747943624986, touda draft 1054887010231639, itto draft 963346200054630.
+
+### (superseded) queued 07-13 night: photo refresh for the no-yellow rebuilds
+Site + Etsy + eBay all updated 07-13; FB still shows previous-generation photos for:
+**warda, zahia, sirine, samia, nabila (live listings) + the malak/wahiba/itto/tilila/touda/yenna
+drafts** — and the yenna draft has the WRONG RUG's photos (touda dupes), fix before Abdel publishes.
+najat/fadwa/hafsa: check whether FB listings exist; refresh if so.
+Pipeline files now PERMANENT in `marketing/fb-pipeline/` (fb_server.py + fb_helper.html,
+smoke-tested 07-13: helper 200, photos 200). FB-tab listener to arm before navigating the
+helper tab (run in FB tab console/JS):
+```js
+window.addEventListener('message', e => {
+  if (!e.data || !e.data.fbPipeline) return;
+  const inp = document.querySelector('input[type="file"][accept*="image"]');
+  const dt = new DataTransfer();
+  e.data.files.forEach(f => dt.items.add(f));
+  inp.files = dt.files;
+  inp.dispatchEvent(new Event('change', {bubbles: true}));
+}, {once: true});
+```
+
 ### Pipeline notes (2026-07-13 refinements)
-- Photo upload: local server `scratchpad/fb_server.py` (port 8765) + fb_helper.html.
+- Photo upload: local server `marketing/fb-pipeline/fb_server.py` (port 8765) + fb_helper.html.
   A helper tab opened ONCE from the FB tab (injected button + trusted click) keeps its
   window.opener across BOTH tabs' navigations — so for each subsequent rug: arm a
   message listener in the FB tab, then just NAVIGATE the helper tab to
