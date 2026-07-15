@@ -4,13 +4,15 @@
 
 # Security headers — applied site-wide. Allowlists cover exactly what's
 # actually loaded: self-hosted assets, Google Fonts, Plausible analytics,
-# and the MailerLite newsletter embed (universal.js + its form/jsonp CDNs).
+# the MailerLite newsletter embed (universal.js + its form/jsonp CDNs),
+# and the Meta Pixel (connect.facebook.net loads the lib; www.facebook.com
+# receives the /tr event beacons).
 # If a new third-party script/embed is ever added, its origin must be added
 # here too or it will be silently blocked.
 [[headers]]
   for = "/*"
   [headers.values]
-    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://assets.mailerlite.com https://groot.mailerlite.com https://assets.mlcdn.com https://static.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://plausible.io https://assets.mailerlite.com https://groot.mailerlite.com https://assets.mlcdn.com https://static.mailerlite.com https://api.web3forms.com; form-action 'self' https://assets.mailerlite.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://assets.mailerlite.com https://groot.mailerlite.com https://assets.mlcdn.com https://static.mailerlite.com https://connect.facebook.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://www.facebook.com; connect-src 'self' https://plausible.io https://assets.mailerlite.com https://groot.mailerlite.com https://assets.mlcdn.com https://static.mailerlite.com https://api.web3forms.com https://www.facebook.com https://connect.facebook.net; form-action 'self' https://assets.mailerlite.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
     X-Frame-Options = "DENY"
     X-Content-Type-Options = "nosniff"
     Referrer-Policy = "strict-origin-when-cross-origin"
