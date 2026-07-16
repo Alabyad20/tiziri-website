@@ -30,3 +30,12 @@ export function resolveLibraryDir(userData: string): string {
   const override = process.env["TIZIRI_LIBRARY_DIR"];
   return override && override.length > 0 ? override : join(userData, "library");
 }
+
+/** The Python analysis package. Dev layout: out/main -> packages/analysis. */
+export function resolveAnalysisDir(mainDir: string): string {
+  return process.env["TIZIRI_ANALYSIS_DIR"] || join(mainDir, "..", "..", "..", "analysis");
+}
+
+export function resolveModelsDir(mainDir: string): string {
+  return process.env["TIZIRI_MODELS_DIR"] || join(resolveAnalysisDir(mainDir), "models");
+}

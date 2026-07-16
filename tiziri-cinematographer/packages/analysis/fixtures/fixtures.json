@@ -1,0 +1,11 @@
+{
+  "note": "Real Tiziri product photos. NB: these July-4th shots are ANGLED on a busy wood floor with colour-similar edges — a deliberately hard set for the CLASSICAL (GrabCut) path. They cover several of the required stress categories; ideal top-down Flat Heroes (clean/dark-on-dark/pale-on-pale controlled) and the SAM 2 tier are the path to consistently clean masks (see KNOWN-LIMITATIONS.md).",
+  "repo_root": "C:/Users/nigel/Moroccan-Rug-Website/rug-photos/July 4th Photoshoot",
+  "fixtures": [
+    { "name": "teal-ivory-highpile",   "dir": "300x190cm",   "w_cm": 300, "h_cm": 190, "category": "high-pile, busy bg, colour-similar edges" },
+    { "name": "rug-284x212",           "dir": "284x212 Cm",  "w_cm": 284, "h_cm": 212, "category": "busy bg, irregular handmade edges" },
+    { "name": "rug-241x163",           "dir": "241x163 cm",  "w_cm": 241, "h_cm": 163, "category": "smaller rug, fringe" },
+    { "name": "rug-305x192",           "dir": "305x192cm",   "w_cm": 305, "h_cm": 192, "category": "large rug, shadows crossing" },
+    { "name": "rug-243x152",           "dir": "243x152 cm",  "w_cm": 243, "h_cm": 152, "category": "flatweave/low pile" }
+  ]
+}

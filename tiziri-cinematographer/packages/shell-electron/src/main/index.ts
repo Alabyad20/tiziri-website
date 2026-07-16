@@ -60,7 +60,7 @@ void app.whenReady().then(() => {
   const libraryDir = resolveLibraryDir(app.getPath("userData"));
   mkdirSync(libraryDir, { recursive: true });
   lib = openLibrary(libraryDir);
-  registerIpc(lib);
+  registerIpc(lib, { mainDir: here, userData: app.getPath("userData") });
 
   const win = createWindow();
 

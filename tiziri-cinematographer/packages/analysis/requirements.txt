@@ -1,0 +1,10 @@
+# Pinned runtime dependencies (P1 constraint #7). All permissive licences.
+numpy==2.2.6                      # BSD-3-Clause
+opencv-python-headless==4.13.0.92 # Apache-2.0 (headless: no GUI/system deps)
+pymatting==1.1.15                 # MIT
+scipy==1.15.3                     # BSD-3-Clause (pymatting dependency)
+pillow==12.0.0                    # HPND (permissive)
+onnxruntime==1.23.2               # MIT (neural tier + CPU fallback)
+
+# Optional: better memory reporting for the fail-safe check.
+psutil==7.1.2                     # BSD-3-Clause

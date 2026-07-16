@@ -9,6 +9,7 @@
  */
 import type { Reel } from "@tiziri/core";
 import type { RugRecord, RugInput } from "@tiziri/library";
+import type { AnalysisRequestLite, AnalysisEvent } from "./analysis-contract.ts";
 
 export interface AppInfo {
   readonly milestone: string;
@@ -44,6 +45,8 @@ export interface IpcContract {
     res: ChildResult;
   };
   "spike:cancelChild": { req: { token: string }; res: { cancelled: boolean } };
+  "analysis:run": { req: AnalysisRequestLite; res: AnalysisEvent };
+  "analysis:cancel": { req: undefined; res: { cancelled: boolean } };
 }
 
 export type Channel = keyof IpcContract;
@@ -57,7 +60,12 @@ export const CHANNELS = [
   "library:loadReel",
   "spike:runChild",
   "spike:cancelChild",
+  "analysis:run",
+  "analysis:cancel",
 ] as const satisfies readonly Channel[];
+
+/** Main -> renderer push channel for streamed analysis progress/log events. */
+export const ANALYSIS_EVENT_CHANNEL = "analysis:event";
 
 /** The typed surface exposed on `window.tiziri` by the preload. */
 export interface TiziriApi {
@@ -68,4 +76,8 @@ export interface TiziriApi {
   loadReel(id: string): Promise<LoadReelResult>;
   runChild(req: IpcContract["spike:runChild"]["req"]): Promise<ChildResult>;
   cancelChild(token: string): Promise<{ cancelled: boolean }>;
+  runAnalysis(req: AnalysisRequestLite): Promise<AnalysisEvent>;
+  cancelAnalysis(): Promise<{ cancelled: boolean }>;
+  /** Subscribe to streamed analysis events; returns an unsubscribe fn. */
+  onAnalysisEvent(cb: (e: AnalysisEvent) => void): () => void;
 }

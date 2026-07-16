@@ -74,7 +74,8 @@ export async function runSelfTest(
 
   /* preload exposes ONLY the minimal typed api */
   const apiKeys = await evalJs<string[]>(win, `Object.keys(window.tiziri).sort()`);
-  const expected = ["addRug", "appInfo", "cancelChild", "listRugs", "loadReel", "runChild", "saveReel"];
+  const expected = ["addRug", "appInfo", "cancelAnalysis", "cancelChild", "listRugs", "loadReel",
+    "onAnalysisEvent", "runAnalysis", "runChild", "saveReel"];
   check(ctx, "preload-api-exact", JSON.stringify(apiKeys) === JSON.stringify(expected), apiKeys.join(","));
   const noIpcRenderer = await evalJs<boolean>(
     win,

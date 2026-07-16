@@ -19,3 +19,9 @@ Thumbs.db
 # Models are downloaded on first run, never committed (Master Plan §1.4)
 /models/*
 !/models/manifest.json
+
+# Python analysis package
+__pycache__/
+*.pyc
+packages/analysis/models/
+packages/analysis/.pytest_cache/

@@ -35,3 +35,23 @@ jobs:
       # Electron needs a display on Linux; xvfb provides a virtual one.
       - run: xvfb-run --auto-servernum node ./scripts/self-test-run.mjs
         working-directory: packages/shell-electron
+
+  analysis:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.10"
+      - run: pip install -r requirements.txt
+        working-directory: packages/analysis
+      - name: unit tests
+        run: PYTHONPATH=. python -m unittest discover -s tests -p "test_*.py"
+        working-directory: packages/analysis
+      # Electron<->sidecar integration (run/progress/cancel/timeout/errors).
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci
+      - run: node ./scripts/analysis-integration.mjs
+        working-directory: packages/shell-electron
