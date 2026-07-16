@@ -48,38 +48,72 @@ class Sam2Segmenter:
             self._predictor = SAM2ImagePredictor(model)
         except Exception as e:
             raise AnalysisError("sam2_build", f"could not build SAM 2: {e}", recoverable=True)
+        # Optional on-disk image-embedding cache path (set by the pipeline for fast
+        # interactive refine); None = always embed fresh.
+        self._embed_cache: Optional[str] = None
 
-    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]]) -> np.ndarray:
+    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]],
+                points: Optional[list[list[float]]] = None) -> np.ndarray:
         try:
-            return self._run(image_rgb, rug_box)
+            return self._run(image_rgb, rug_box, points, self._embed_cache)
         except AnalysisError:
             raise
         except Exception as e:
             raise AnalysisError("sam2_runtime", f"SAM 2 inference failed: {e}", recoverable=True)
 
-    def _run(self, image_rgb: np.ndarray, rug_box: Optional[list[float]]) -> np.ndarray:
-        import cv2
-
-        h, w = image_rgb.shape[:2]
+    def set_image_cached(self, image_rgb: np.ndarray, cache_path: Optional[str]) -> None:
+        """set_image is the expensive step (~5s CPU). For interactive refine, cache
+        the image embedding on disk keyed by the caller so subsequent clicks only
+        run the cheap decoder. Falls back to a normal set_image on any mismatch."""
+        import torch
+        if cache_path and Path(cache_path).exists():
+            try:
+                blob = torch.load(cache_path, map_location="cpu", weights_only=False)
+                self._predictor._features = blob["features"]
+                self._predictor._orig_hw = blob["orig_hw"]
+                self._predictor._is_image_set = True
+                self._predictor._is_batch = False
+                return
+            except Exception:
+                pass  # fall through to a fresh embed
         self._predictor.set_image(image_rgb)
+        if cache_path:
+            try:
+                Path(cache_path).parent.mkdir(parents=True, exist_ok=True)
+                torch.save(
+                    {"features": self._predictor._features, "orig_hw": self._predictor._orig_hw},
+                    cache_path,
+                )
+            except Exception:
+                pass
 
-        if rug_box is not None:
+    def _run(self, image_rgb: np.ndarray, rug_box: Optional[list[float]],
+             points: Optional[list[list[float]]], embed_cache: Optional[str] = None) -> np.ndarray:
+        h, w = image_rgb.shape[:2]
+        self.set_image_cached(image_rgb, embed_cache)
+
+        if points:
+            coords = np.array([[p[0], p[1]] for p in points], dtype=np.float32)
+            labels = np.array([1 if p[2] >= 0.5 else 0 for p in points], dtype=np.int32)
+            kw = {"point_coords": coords, "point_labels": labels, "multimask_output": False}
+            if rug_box is not None:
+                kw["box"] = np.array(rug_box, dtype=np.float32)
+            masks, scores, _ = self._predictor.predict(**kw)
+        elif rug_box is not None:
             masks, scores, _ = self._predictor.predict(
                 box=np.array(rug_box, dtype=np.float32), multimask_output=False
             )
         else:
-            # Positive points spread across the lower-centre, where the ONE rug on
-            # the floor reliably sits; SAM 2 grows the single connected object under
-            # them (top-of-frame backdrop/stacked rugs are excluded). This gave the
-            # cleanest results across the fixtures; strongly-patterned rugs may still
-            # ragged-edge, for which an interactive click / rug_box is the fix.
+            # Auto: positive points across the lower-centre isolate the ONE floor rug
+            # (top-of-frame backdrop/stacked rugs excluded). Strongly-patterned rugs
+            # may still ragged-edge → the interactive click path is the fix.
             pts = np.array([
                 [w * 0.50, h * 0.62], [w * 0.32, h * 0.58], [w * 0.68, h * 0.58],
                 [w * 0.50, h * 0.82], [w * 0.40, h * 0.72], [w * 0.60, h * 0.72],
             ], dtype=np.float32)
-            labels = np.ones(len(pts), dtype=np.int32)
             masks, scores, _ = self._predictor.predict(
-                point_coords=pts, point_labels=labels, multimask_output=True
+                point_coords=pts, point_labels=np.ones(len(pts), dtype=np.int32),
+                multimask_output=True,
             )
 
         best = int(np.argmax(scores))

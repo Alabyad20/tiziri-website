@@ -4,6 +4,7 @@
  * reaches them solely through the preload's fixed api.
  */
 import { join } from "node:path";
+import { readFileSync } from "node:fs";
 import { app, ipcMain, type WebContents } from "electron";
 import { validateReel } from "@tiziri/core";
 import type { LibraryIndex, RugInput } from "@tiziri/library";
@@ -60,11 +61,37 @@ function parseAnalysisReq(v: unknown): AnalysisRequestLite {
   if (typeof w !== "number" || !Number.isFinite(w) || w <= 0) throw new Error("analysis: rug_width_cm must be positive");
   if (typeof h !== "number" || !Number.isFinite(h) || h <= 0) throw new Error("analysis: rug_height_cm must be positive");
   const seg = v["segmenter"];
+  const pts = v["points"];
+  let points: number[][] | undefined;
+  if (Array.isArray(pts)) {
+    points = [];
+    for (const p of pts) {
+      if (!Array.isArray(p) || p.length !== 3 || !p.every((n) => typeof n === "number" && Number.isFinite(n)))
+        throw new Error("analysis: each point must be [x, y, label]");
+      points.push(p as number[]);
+    }
+  }
   return {
     image_path, rug_width_cm: w, rug_height_cm: h,
     ...(seg === "auto" || seg === "sam2" || seg === "grabcut" ? { segmenter: seg } : {}),
     ...(typeof v["with_depth"] === "boolean" ? { with_depth: v["with_depth"] } : {}),
+    ...(points ? { points } : {}),
+    ...(typeof v["preview_only"] === "boolean" ? { preview_only: v["preview_only"] } : {}),
   };
+}
+
+/** Read a small preview PNG back as a data URL so the sandboxed renderer can show
+ * it (file:// is blocked; data: is allowed by the CSP's img-src). */
+function attachPreviewDataUrl(result: Record<string, unknown>): Record<string, unknown> {
+  const arts = result["artifacts"] as { preview?: string } | undefined;
+  if (result["type"] === "result" && arts?.preview) {
+    try {
+      result["previewDataUrl"] = "data:image/png;base64," + readFileSync(arts.preview).toString("base64");
+    } catch {
+      /* ignore */
+    }
+  }
+  return result;
 }
 
 export function registerIpc(lib: LibraryIndex, ctx: { mainDir: string; userData: string }): void {
@@ -79,7 +106,7 @@ export function registerIpc(lib: LibraryIndex, ctx: { mainDir: string; userData:
     const handle = runAnalysis(
       {
         ...lite,
-        out_dir: join(analysisRoot, "out"),
+        out_dir: join(analysisRoot, lite.preview_only ? "preview" : "out"),
         cache_dir: join(analysisRoot, "cache"),
       },
       {
@@ -89,7 +116,8 @@ export function registerIpc(lib: LibraryIndex, ctx: { mainDir: string; userData:
     );
     currentRun = handle;
     try {
-      return await handle.promise;
+      const res = await handle.promise;
+      return attachPreviewDataUrl(res as unknown as Record<string, unknown>);
     } finally {
       currentRun = null;
     }

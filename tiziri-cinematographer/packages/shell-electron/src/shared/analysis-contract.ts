@@ -7,6 +7,10 @@ export interface AnalysisRequestLite {
   rug_height_cm: number;
   segmenter?: "auto" | "sam2" | "grabcut";
   with_depth?: boolean;
+  /** Interactive prompts: each [x_px, y_px, label], label 1=positive / 0=negative. */
+  points?: number[][];
+  /** Segmentation-only fast path (live preview between clicks). */
+  preview_only?: boolean;
 }
 
 export type AnalysisEvent =

@@ -25,8 +25,41 @@ from .runtime import AnalysisError, Device, Emitter
 class Segmenter(Protocol):
     name: str
 
-    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]]) -> np.ndarray:
+    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]],
+                points: Optional[list[list[float]]] = None) -> np.ndarray:
         ...
+
+
+def _fill_holes(mask: np.ndarray) -> np.ndarray:
+    ff = mask.copy()
+    h, w = mask.shape
+    cv2.floodFill(ff, np.zeros((h + 2, w + 2), np.uint8), (0, 0), 255)
+    return mask | cv2.bitwise_not(ff)
+
+
+def _select_by_points(mask: np.ndarray, pos: list, neg: list) -> np.ndarray:
+    """Interactive component selection: keep the connected component(s) under
+    POSITIVE clicks, drop those under NEGATIVE clicks. Falls back to the largest
+    component when there is no positive click."""
+    m = (mask > 0).astype(np.uint8)
+    n, labels, stats, _ = cv2.connectedComponentsWithStats(m, connectivity=8)
+    if n <= 1:
+        return (m * 255).astype(np.uint8)
+
+    def label_at(pt):
+        x, y = int(pt[0]), int(pt[1])
+        if 0 <= y < labels.shape[0] and 0 <= x < labels.shape[1]:
+            return int(labels[y, x])
+        return 0
+
+    keep = {label_at(p) for p in pos}
+    keep.discard(0)
+    if not keep:  # no positive click landed on foreground -> largest component
+        keep = {1 + int(np.argmax(stats[1:, cv2.CC_STAT_AREA]))}
+    drop = {label_at(p) for p in neg}
+    keep -= drop
+    out = np.isin(labels, list(keep)).astype(np.uint8) * 255
+    return _fill_holes(out)
 
 
 def _clean_mask(mask: np.ndarray) -> np.ndarray:
@@ -54,7 +87,8 @@ SEG_MAX_SIDE = 1024
 class GrabCutSegmenter:
     name = "grabcut"
 
-    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]]) -> np.ndarray:
+    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]],
+                points: Optional[list[list[float]]] = None) -> np.ndarray:
         H, W = image_rgb.shape[:2]
         scale = min(1.0, SEG_MAX_SIDE / max(H, W))
         sw, sh = max(1, int(round(W * scale))), max(1, int(round(H * scale)))
@@ -74,15 +108,30 @@ class GrabCutSegmenter:
         gc = np.full((sh, sw), cv2.GC_PR_BGD, np.uint8)
         rx, ry, rw, rh = rect
         gc[ry:ry + rh, rx:rx + rw] = cv2.GC_PR_FGD
-        cx0, cy0 = int(rx + rw * 0.18), int(ry + rh * 0.18)
-        cx1, cy1 = int(rx + rw * 0.82), int(ry + rh * 0.82)
-        gc[cy0:cy1, cx0:cx1] = cv2.GC_FGD
+        if not points:
+            # Auto mode only: a central sure-FG block helps when the rug fills the
+            # frame. With explicit clicks we DON'T add it (it can bridge separate
+            # objects) — the user's clicks are the seeds.
+            cx0, cy0 = int(rx + rw * 0.18), int(ry + rh * 0.18)
+            cx1, cy1 = int(rx + rw * 0.82), int(ry + rh * 0.82)
+            gc[cy0:cy1, cx0:cx1] = cv2.GC_FGD
         bm = max(2, int(0.02 * min(sw, sh)))
         gc[:bm, :] = gc[-bm:, :] = gc[:, :bm] = gc[:, -bm:] = cv2.GC_BGD
+        # Interactive seeds: positive clicks -> sure FG, negative -> sure BG.
+        if points:
+            r = max(4, int(0.02 * min(sw, sh)))
+            for px, py, lab in points:
+                c = (int(px * scale), int(py * scale))
+                cv2.circle(gc, c, r, cv2.GC_FGD if lab >= 0.5 else cv2.GC_BGD, -1)
         bgd, fgd = np.zeros((1, 65), np.float64), np.zeros((1, 65), np.float64)
         cv2.grabCut(bgr, gc, None, bgd, fgd, 5, cv2.GC_INIT_WITH_MASK)
         mask_s = np.where((gc == cv2.GC_FGD) | (gc == cv2.GC_PR_FGD), 255, 0).astype(np.uint8)
-        mask_s = _clean_mask(mask_s)
+        if points:
+            pos = [(px * scale, py * scale) for px, py, lab in points if lab >= 0.5]
+            neg = [(px * scale, py * scale) for px, py, lab in points if lab < 0.5]
+            mask_s = _select_by_points(mask_s, pos, neg)
+        else:
+            mask_s = _clean_mask(mask_s)
         return cv2.resize(mask_s, (W, H), interpolation=cv2.INTER_NEAREST) if scale < 1.0 else mask_s
 
 
@@ -108,9 +157,10 @@ class Sam2OnnxSegmenter:
         self._enc = ort.InferenceSession(str(self._encoder_path), providers=providers)
         self._dec = ort.InferenceSession(str(self._decoder_path), providers=providers)
 
-    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]]) -> np.ndarray:
+    def segment(self, image_rgb: np.ndarray, rug_box: Optional[list[float]],
+                points: Optional[list[list[float]]] = None) -> np.ndarray:
         try:
-            return self._run(image_rgb, rug_box)
+            return self._run(image_rgb, rug_box)  # ONNX path: box/auto only
         except AnalysisError:
             raise
         except Exception as e:  # any ONNX/shape mismatch is recoverable -> fallback

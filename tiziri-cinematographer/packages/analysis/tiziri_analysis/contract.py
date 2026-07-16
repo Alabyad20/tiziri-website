@@ -30,6 +30,13 @@ class AnalyzeRequest:
     with_depth: bool = False
     # A rough box hint (x0,y0,x1,y1 in px) for where the rug is; optional.
     rug_box: Optional[list[float]] = None
+    # Interactive prompts: each point is [x_px, y_px, label] with label 1=positive
+    # (inside the rug) / 0=negative (background object to exclude). Part of the
+    # cache key, so changing a click invalidates the cache.
+    points: Optional[list[list[float]]] = None
+    # preview_only: run segmentation only (mask + a quick overlay), skip matte and
+    # geometry — for the interactive live preview between clicks.
+    preview_only: bool = False
     contract_version: int = CONTRACT_VERSION
 
     @staticmethod
@@ -43,6 +50,8 @@ class AnalyzeRequest:
             segmenter=obj.get("segmenter", "auto"),
             with_depth=bool(obj.get("with_depth", False)),
             rug_box=obj.get("rug_box"),
+            points=obj.get("points"),
+            preview_only=bool(obj.get("preview_only", False)),
             contract_version=int(obj.get("contract_version", CONTRACT_VERSION)),
         )
 
@@ -73,6 +82,9 @@ class AnalysisResult:
     reprojection_rms_px: float
     reprojection_target_px: float
     reprojection_pass: bool
+    # Fail-closed gate: production_ready is the ONLY flag downstream should trust.
+    production_ready: bool
+    readiness: dict[str, Any]
     timings_ms: dict[str, float]
     artifacts: Artifacts
     warnings: list[str] = field(default_factory=list)

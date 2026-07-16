@@ -36,6 +36,11 @@ def run_analysis(req: AnalyzeRequest, emitter: Emitter,
     _ck(cancel)
     if not os.path.exists(req.image_path):
         raise AnalysisError("missing_input", f"image not found: {req.image_path}")
+    if req.points is not None:
+        for p in req.points:
+            if not (isinstance(p, (list, tuple)) and len(p) == 3
+                    and all(isinstance(v, (int, float)) and not isinstance(v, bool) for v in p)):
+                raise AnalysisError("bad_prompt", "each point must be [x, y, label]")
     sw = Stopwatch()
     os.makedirs(req.out_dir, exist_ok=True)
     device = detect_device()
@@ -44,10 +49,15 @@ def run_analysis(req: AnalyzeRequest, emitter: Emitter,
     image_sha = sha256_file(req.image_path)
     params = {
         "segmenter": req.segmenter, "with_depth": req.with_depth, "rug_box": req.rug_box,
+        "points": req.points,  # prompts are part of the key -> a new click invalidates cache
         "w_cm": req.rug_width_cm, "h_cm": req.rug_height_cm,
         "pipeline": PIPELINE_VERSION, "contract": req.contract_version,
     }
     key = cache_mod.cache_key(image_sha, params)
+
+    # Interactive live preview: segmentation only, never cached (ephemeral).
+    if req.preview_only:
+        return _preview_only(req, emitter, image_sha, cancel)
 
     emitter.progress("cache", 0.03)
     restored = cache_mod.try_restore(req.cache_dir, key, req.out_dir)
@@ -66,8 +76,10 @@ def run_analysis(req: AnalyzeRequest, emitter: Emitter,
     emitter.progress("segment", 0.15)
     _ck(cancel)
     segmenter, warnings = get_segmenter(req.segmenter, _models_dir(), device, emitter)
+    if hasattr(segmenter, "_embed_cache"):
+        segmenter._embed_cache = os.path.join(req.cache_dir, "embeddings", image_sha + ".pt")
     with sw.time("segment"):
-        mask = segmenter.segment(image, req.rug_box)
+        mask = segmenter.segment(image, req.rug_box, req.points)
     if int((mask > 127).sum()) < 0.02 * h * w:
         raise AnalysisError("no_rug", "rug region too small; check the photo or provide rug_box")
 
@@ -100,6 +112,13 @@ def run_analysis(req: AnalyzeRequest, emitter: Emitter,
             warnings.append("depth requested but weights missing; skipped")
             emitter.log(warnings[-1], "warn")
 
+    # Fail-closed readiness gate (measurable diagnostics).
+    from .readiness import assess
+    corners = np.asarray(geo["corners_tl_tr_br_bl"], dtype=np.float64)
+    user_approved = bool(req.points) and any(p[2] >= 0.5 for p in (req.points or []))
+    readiness = assess(mask, alpha, corners, geo["reprojection_rms_px"], REPROJECTION_TARGET_PX,
+                       (h, w), user_approved=user_approved)
+
     emitter.progress("write", 0.9)
     arts = _write_sidecars(req.out_dir, image, mask, alpha, cutout, shadow, geo, depth_img)
 
@@ -108,8 +127,9 @@ def run_analysis(req: AnalyzeRequest, emitter: Emitter,
         "alpha_coverage": round(float((alpha > 0.01).mean()), 4),
         "band_px": band, "segmenter": segmenter.name, "device": device.name,
         "reprojection_rms_px": geo["reprojection_rms_px"],
+        "reprojection_raw_rms_px": geo.get("reprojection_raw_rms_px"),
         "n_edge_correspondences": geo["n_edge_correspondences"],
-        "warnings": warnings, "timings_ms": sw.timings,
+        "readiness": readiness, "warnings": warnings, "timings_ms": sw.timings,
     }
     write_json(arts.diagnostics, diagnostics)
 
@@ -118,12 +138,51 @@ def run_analysis(req: AnalyzeRequest, emitter: Emitter,
         pipeline_version=PIPELINE_VERSION, segmenter_used=segmenter.name, device=device.name,
         reprojection_rms_px=geo["reprojection_rms_px"], reprojection_target_px=REPROJECTION_TARGET_PX,
         reprojection_pass=geo["reprojection_rms_px"] <= REPROJECTION_TARGET_PX,
+        production_ready=readiness["production_ready"], readiness=readiness,
         timings_ms=sw.timings, artifacts=arts, warnings=warnings,
     ).to_json()
 
     cache_mod.save(req.cache_dir, key, result)
     emitter.progress("done", 1.0)
     return result
+
+
+def _preview_only(req: AnalyzeRequest, emitter: Emitter, image_sha: str,
+                  cancel: Optional[CancelCheck]) -> dict:
+    """Segmentation-only fast path for interactive live preview between clicks."""
+    _ck(cancel)
+    os.makedirs(req.out_dir, exist_ok=True)
+    device = detect_device()
+    image = load_image_rgb(req.image_path)
+    emitter.progress("segment", 0.4)
+    _ck(cancel)
+    segmenter, warnings = get_segmenter(req.segmenter, _models_dir(), device, emitter)
+    if hasattr(segmenter, "_embed_cache"):
+        segmenter._embed_cache = os.path.join(req.cache_dir, "embeddings", image_sha + ".pt")
+    mask = segmenter.segment(image, req.rug_box, req.points)
+    mask_path = os.path.join(req.out_dir, "preview_mask.png")
+    overlay_path = os.path.join(req.out_dir, "preview_overlay.png")
+    save_png(mask_path, mask)
+    save_png(overlay_path, _mask_overlay(image, mask))
+    emitter.progress("done", 1.0)
+    return {
+        "type": "result", "ok": True, "preview_only": True, "segmenter_used": segmenter.name,
+        "image_size": [image.shape[1], image.shape[0]],  # w, h — for click→px mapping
+        "mask_area_frac": round(float((mask > 127).mean()), 4),
+        "artifacts": {"mask": mask_path, "preview": overlay_path}, "warnings": warnings,
+    }
+
+
+def _mask_overlay(image: np.ndarray, mask: np.ndarray) -> np.ndarray:
+    scale = min(1.0, 900 / max(image.shape[:2]))
+    sz = (int(image.shape[1] * scale), int(image.shape[0] * scale))
+    base = cv2.resize(image, sz)
+    m = cv2.resize(mask, sz, interpolation=cv2.INTER_NEAREST)
+    out = base.copy()
+    out[m > 127] = (0.6 * out[m > 127] + 0.4 * np.array([90, 150, 230])).astype(np.uint8)
+    edges = cv2.dilate(cv2.Canny(m, 50, 150), np.ones((3, 3), np.uint8))
+    out[edges > 0] = (255, 60, 60)
+    return out
 
 
 def _models_dir() -> str:

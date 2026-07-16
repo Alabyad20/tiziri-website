@@ -22,6 +22,8 @@ export interface AnalysisRequest {
   segmenter?: "auto" | "sam2" | "grabcut";
   with_depth?: boolean;
   rug_box?: number[];
+  points?: number[][];
+  preview_only?: boolean;
 }
 
 export interface RunHandle {
