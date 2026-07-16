@@ -157,7 +157,9 @@ def get_segmenter(name: str, models_dir: str, device: Device, emitter: Emitter):
         return GrabCutSegmenter(), warnings
     if name in ("auto", "sam2"):
         try:
-            seg = Sam2OnnxSegmenter(models_dir, device)
+            from .sam2_backend import Sam2Segmenter  # lazy: keeps torch optional
+            seg = Sam2Segmenter(models_dir, device)
+            emitter.log("segmenter=SAM 2 (primary)")
             return seg, warnings
         except AnalysisError as e:
             if name == "sam2" and not e.recoverable:

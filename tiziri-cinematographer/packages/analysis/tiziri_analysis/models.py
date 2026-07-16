@@ -33,6 +33,18 @@ class ModelEntry:
 
 
 REGISTRY: dict[str, ModelEntry] = {
+    # Pinned, verified Apache-2.0 SAM 2.1 checkpoint (used by the official `sam2`
+    # package / torch path — the validated primary segmenter).
+    "sam2_hiera_tiny": ModelEntry(
+        id="sam2_hiera_tiny",
+        filename="sam2.1_hiera_tiny.pt",
+        url="https://dl.fbaipublicfiles.com/segment_anything_2/092824/sam2.1_hiera_tiny.pt",
+        sha256="7402e0d864fa82708a20fbd15bc84245c2f26dff0eb43a4b5b93452deb34be69",
+        size_bytes=156008466,
+        license="Apache-2.0",
+        source="facebookresearch/sam2 — sam2.1_hiera_tiny (092824 release)",
+        pinned=True,
+    ),
     "sam2_encoder": ModelEntry(
         id="sam2_encoder", filename="sam2_encoder.onnx", url="", sha256="", size_bytes=0,
         license="Apache-2.0", source="facebookresearch/sam2 (ONNX export)", pinned=False,

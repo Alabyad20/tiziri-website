@@ -37,7 +37,7 @@ function scratch() {
   const s = scratch();
   const stages = [];
   const h = runAnalysis(
-    { image_path: image, rug_width_cm: 300, rug_height_cm: 190, out_dir: s.out, cache_dir: s.cache, segmenter: "auto" },
+    { image_path: image, rug_width_cm: 300, rug_height_cm: 190, out_dir: s.out, cache_dir: s.cache, segmenter: "grabcut" },
     { analysisDir, timeoutMs: 180000, onEvent: (e) => e.type === "progress" && stages.push(e.stage) },
   );
   const res = await h.promise;
@@ -56,7 +56,7 @@ function scratch() {
 {
   const s = scratch();
   const h = runAnalysis(
-    { image_path: image, rug_width_cm: 300, rug_height_cm: 190, out_dir: s.out, cache_dir: s.cache, segmenter: "auto" },
+    { image_path: image, rug_width_cm: 300, rug_height_cm: 190, out_dir: s.out, cache_dir: s.cache, segmenter: "grabcut" },
     { analysisDir, timeoutMs: 180000 },
   );
   setTimeout(() => h.cancel(), 400);
@@ -71,7 +71,7 @@ function scratch() {
 {
   const s = scratch();
   const res = await runAnalysis(
-    { image_path: image, rug_width_cm: 300, rug_height_cm: 190, out_dir: s.out, cache_dir: s.cache, segmenter: "auto" },
+    { image_path: image, rug_width_cm: 300, rug_height_cm: 190, out_dir: s.out, cache_dir: s.cache, segmenter: "grabcut" },
     { analysisDir, timeoutMs: 60 },
   ).promise;
   check("timeout-returns-error", res.type === "error" && res.code === "timeout", `code=${res.type === "error" ? res.code : res.type}`);

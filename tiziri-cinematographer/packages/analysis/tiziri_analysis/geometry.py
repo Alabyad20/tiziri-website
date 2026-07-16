@@ -76,8 +76,16 @@ def _edge_residual(mask: np.ndarray, corners: np.ndarray):
         dists[:, i] = np.abs((cnt - a) @ n)  # distance to the (infinite) edge line
     best = dists.min(axis=1)  # each border point -> its nearest edge line
     if len(best) < 8:
-        return 0.0, int(len(best))
-    return float(np.sqrt(np.mean(best ** 2))), int(len(best))
+        return 0.0, 0.0, int(len(best))
+    raw = float(np.sqrt(np.mean(best ** 2)))
+    # Robust (inlier) RMS: fringe = loose threads BEYOND the woven edge, so those
+    # border points are outliers on their edge. A median+MAD gate excludes them so
+    # the metric reflects the WOVEN-edge (i.e. the rug's true geometry) fidelity.
+    med = float(np.median(best))
+    mad = float(np.median(np.abs(best - med))) or 1e-6
+    inliers = best[best <= med + 2.5 * 1.4826 * mad]
+    robust = float(np.sqrt(np.mean(inliers ** 2))) if len(inliers) >= 8 else raw
+    return robust, raw, int(len(best))
 
 
 def solve_homography(mask: np.ndarray, gray: np.ndarray, w_cm: float, h_cm: float,
@@ -87,7 +95,7 @@ def solve_homography(mask: np.ndarray, gray: np.ndarray, w_cm: float, h_cm: floa
     corners = refine_corners_subpixel(gray, detect_corners(mask))
     world_corners = np.array([[0, 0], [w_cm, 0], [w_cm, h_cm], [0, h_cm]], dtype=np.float64)
     H, _ = cv2.findHomography(world_corners, corners, method=0)
-    rms, n_pts = _edge_residual(mask, corners)
+    rms, raw_rms, n_pts = _edge_residual(mask, corners)
 
     # px-per-cm from the solved corner spacing (diagnostic, not used to alter pixels)
     top = np.linalg.norm(corners[1] - corners[0]) / max(w_cm, 1e-6)
@@ -99,7 +107,8 @@ def solve_homography(mask: np.ndarray, gray: np.ndarray, w_cm: float, h_cm: floa
         "world_rect_cm": world_corners.tolist(),
         "homography_world_cm_to_image_px": H.tolist(),
         "px_per_cm": round(px_per_cm, 4),
-        "reprojection_rms_px": round(rms, 4),
+        "reprojection_rms_px": round(rms, 4),          # robust (woven-edge) fidelity
+        "reprojection_raw_rms_px": round(raw_rms, 4),  # incl. fringe wobble (diagnostic)
         "n_edge_correspondences": n_pts,
     }
     return result, rms
