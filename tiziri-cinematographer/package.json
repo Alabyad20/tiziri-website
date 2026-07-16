@@ -1,0 +1,25 @@
+{
+  "name": "tiziri-cinematographer",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Provenance-grade product cinematography for handcrafted objects. Milestone P0 — Foundations.",
+  "engines": {
+    "node": ">=22.6.0"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit -p tsconfig.json --pretty",
+    "test": "node --test --experimental-strip-types tests/**/*.test.ts",
+    "boundaries": "depcruise packages tests --config .dependency-cruiser.cjs",
+    "bench": "node --experimental-strip-types tests/bench/startup.bench.ts",
+    "check": "npm run typecheck && npm run boundaries && npm run test"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "dependency-cruiser": "^16.0.0",
+    "typescript": "^5.9.0"
+  }
+}

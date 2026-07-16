@@ -1,0 +1,8 @@
+{
+  "extends": "./tsconfig.base.json",
+  "include": ["packages/*/src/**/*.ts", "tests/**/*.ts"],
+  // The Electron shell is a leaf app with JSX + its own Electron/Vite build and
+  // tsconfigs; it is type-checked by `npm run typecheck -w @tiziri/shell-electron`,
+  // not by the pure-package pass.
+  "exclude": ["**/node_modules", "**/dist", "packages/shell-electron"]
+}

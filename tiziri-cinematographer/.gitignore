@@ -1,0 +1,21 @@
+node_modules/
+dist/
+coverage/
+*.tsbuildinfo
+
+# Electron shell build + packaging output
+out/
+dist-app/
+
+# Local library artifacts / test scratch
+*.db
+*.db-wal
+*.db-shm
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Models are downloaded on first run, never committed (Master Plan §1.4)
+/models/*
+!/models/manifest.json

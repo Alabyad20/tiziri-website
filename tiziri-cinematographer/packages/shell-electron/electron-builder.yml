@@ -1,0 +1,15 @@
+appId: com.tiziri.cinematographer
+productName: Tiziri
+# electron-builder needs an exact version (it fetches per-release binaries); our
+# package.json uses a caret range, so state it explicitly here.
+electronVersion: 43.1.1
+directories:
+  output: dist-app
+# All @tiziri/* and @electron-toolkit/utils are bundled into out/ by electron-vite,
+# so the packaged app only needs the built output + the Electron runtime.
+files:
+  - out/**/*
+  - package.json
+npmRebuild: false
+win:
+  target: dir

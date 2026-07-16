@@ -1,0 +1,37 @@
+name: ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci
+      # Boundaries (dependency direction) — a violation FAILS the build (Master Plan §2).
+      - run: npm run boundaries
+      # Types across the whole monorepo.
+      - run: npm run typecheck
+      # Golden tests: colour round-trip, Reel disk+SQLite round-trip, migrations, library index.
+      - run: npm test
+      # Performance micro-budgets (harness stub; grows into the real budget suite).
+      - run: npm run bench
+
+  shell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - run: npm ci
+      - run: npm run typecheck -w @tiziri/shell-electron
+      - run: npm run build -w @tiziri/shell-electron
+      # Electron needs a display on Linux; xvfb provides a virtual one.
+      - run: xvfb-run --auto-servernum node ./scripts/self-test-run.mjs
+        working-directory: packages/shell-electron
