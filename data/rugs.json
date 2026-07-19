@@ -2148,8 +2148,8 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/yakout/yakout-14.webp"
     ],
     "stripeLink": "",
-    "rating": 5,
-    "reviews": 0,
+    "rating": null,
+    "reviews": [],
     "color": "Ivory"
   },
   {
@@ -2183,8 +2183,8 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/dassine/dassine-14.webp"
     ],
     "stripeLink": "",
-    "rating": 5,
-    "reviews": 0,
+    "rating": null,
+    "reviews": [],
     "color": "Ivory"
   },
   {
@@ -2218,8 +2218,8 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/chama/chama-14.webp"
     ],
     "stripeLink": "",
-    "rating": 5,
-    "reviews": 0,
+    "rating": null,
+    "reviews": [],
     "color": "Orange"
   },
   {
@@ -2253,8 +2253,8 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/dihya/dihya-14.webp"
     ],
     "stripeLink": "",
-    "rating": 5,
-    "reviews": 0,
+    "rating": null,
+    "reviews": [],
     "color": "Orange"
   },
   {
@@ -2288,8 +2288,8 @@
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/tanirt/tanirt-14.webp"
     ],
     "stripeLink": "",
-    "rating": 5,
-    "reviews": 0,
+    "rating": null,
+    "reviews": [],
     "color": "Ivory"
   }
 ]
