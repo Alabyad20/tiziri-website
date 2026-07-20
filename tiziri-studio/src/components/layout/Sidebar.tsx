@@ -2,6 +2,7 @@ import { NavLink } from "react-router-dom";
 import { cn, modKey } from "@/lib/utils";
 import { Kbd } from "@/components/ui/Kbd";
 import {
+  IconCinema,
   IconDashboard,
   IconListing,
   IconMockup,
@@ -21,10 +22,11 @@ export const navItems: Array<{
 }> = [
   { to: "/", label: "Dashboard", icon: IconDashboard, shortcut: "1" },
   { to: "/mockup", label: "Mockup Studio", icon: IconMockup, shortcut: "2" },
-  { to: "/listing", label: "Listing Studio", icon: IconListing, shortcut: "3" },
-  { to: "/naming", label: "Naming Studio", icon: IconNaming, shortcut: "4" },
-  { to: "/pdf", label: "Designer PDF", icon: IconPdf, shortcut: "5" },
-  { to: "/social", label: "Social Studio", icon: IconSocial, shortcut: "6" },
+  { to: "/cinema", label: "Cinematographer", icon: IconCinema, shortcut: "3" },
+  { to: "/listing", label: "Listing Studio", icon: IconListing, shortcut: "4" },
+  { to: "/naming", label: "Naming Studio", icon: IconNaming, shortcut: "5" },
+  { to: "/pdf", label: "Designer PDF", icon: IconPdf, shortcut: "6" },
+  { to: "/social", label: "Social Studio", icon: IconSocial, shortcut: "7" },
 ];
 
 export function Wordmark({ compact = false }: { compact?: boolean }) {

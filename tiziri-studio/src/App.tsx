@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { AppShell } from "@/components/layout/AppShell";
 import { Dashboard } from "@/pages/Dashboard";
 import { MockupStudio } from "@/pages/MockupStudio";
+import { CinemaStudio } from "@/pages/CinemaStudio";
 import { ListingStudio } from "@/pages/ListingStudio";
 import { NamingStudio } from "@/pages/NamingStudio";
 import { DesignerPdf } from "@/pages/DesignerPdf";
@@ -15,6 +16,7 @@ export default function App() {
       <Route element={<AppShell />}>
         <Route index element={<Dashboard />} />
         <Route path="mockup" element={<MockupStudio />} />
+        <Route path="cinema" element={<CinemaStudio />} />
         <Route path="listing" element={<ListingStudio />} />
         <Route path="naming" element={<NamingStudio />} />
         <Route path="pdf" element={<DesignerPdf />} />

@@ -25,7 +25,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Jost:wght@300;400&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../css/styles.css?v=15">
+    <link rel="stylesheet" href="../css/styles.css?v=16">
     <script defer data-domain="tizirirugs.com" src="https://plausible.io/js/script.js"></script>
     <script type="application/ld+json">
     {
@@ -622,7 +622,6 @@
         </nav>
     </div>
 
-
     <!-- ============================================
          PAGE HEADER
          ============================================ -->
@@ -638,12 +637,29 @@
         </div>
     </div>
 
-
     <!-- ============================================
          FILTER BAR
          ============================================ -->
     <div class="filter-bar" id="filterBar">
-        <div class="filter-bar__inner">
+
+        <!-- mobile only: opens the filter panel (the bar is a 3,000px side-scroll otherwise) -->
+        <button class="filter-bar__toggle" id="filterToggle" type="button"
+                aria-expanded="false" aria-controls="filterPanel">
+            <svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true" focusable="false">
+                <path d="M1 3h14M4 8h8M6.5 13h3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <span>Filters</span>
+            <span class="filter-bar__toggle-count" id="filterActiveCount" hidden></span>
+        </button>
+
+        <div class="filter-bar__backdrop" id="filterBackdrop" hidden></div>
+
+        <div class="filter-bar__inner" id="filterPanel">
+
+            <div class="filter-panel__head">
+                <span class="filter-panel__title">Filters</span>
+                <button class="filter-panel__close" id="filterClose" type="button" aria-label="Close filters">&times;</button>
+            </div>
 
             <div class="filter-bar__group">
                 <label for="rugSearch" class="filter-bar__label">Name</label>
@@ -665,6 +681,7 @@
                     <button class="filter-btn" data-filter="style" data-value="mrirt">Mrirt</button>
                     <button class="filter-btn" data-filter="style" data-value="contemporary">Contemporary</button>
                     <button class="filter-btn" data-filter="style" data-value="kilim">Kilim</button>
+
                 </div>
             </div>
 
@@ -728,9 +745,14 @@
                 <span id="visibleCount">73</span> rugs
             </span>
 
-        </div>
-    </div>
+        
+            <div class="filter-panel__foot">
+                <button class="filter-panel__reset" id="filterPanelReset" type="button">Clear all</button>
+                <button class="filter-panel__apply" id="filterApply" type="button">Show results</button>
+            </div>
 
+</div>
+    </div>
 
     <!-- ============================================
          TRUST BAR
@@ -744,7 +766,6 @@
             <span class="trust-bar__item">One-of-a-Kind &mdash; Each Rug Woven Once</span>
         </div>
     </div>
-
 
     <!-- ============================================
          CATALOGUE
@@ -802,7 +823,6 @@
                     <span class="product-card__price">$1,350</span>
                 </div>
             </a>
-
 
             <!-- 4. Fatima — Boujaad — Medium -->
             <a href="../rugs/fatima.html" class="product-card fade-up"
@@ -872,8 +892,6 @@
                 </div>
             </a>
 
-
-
             <!-- 10. Kenza — Beni Ourain — Large -->
             <a href="../rugs/kenza.html" class="product-card fade-up"
                data-style="beni-ourain" data-size="large" data-room="living-room" data-color="multicolor">
@@ -907,7 +925,6 @@
                     <span class="product-card__price">From $650</span>
                 </div>
             </a>
-
 
             <!-- 12. Tafat — Mrirt — Large -->
             <a href="../rugs/tafat.html" class="product-card fade-up"
@@ -1214,7 +1231,6 @@
                     <span class="product-card__price">$1,250</span>
                 </div>
             </a>
-
 
             <!-- 30. Maha — Boujaad — Medium -->
             <a href="../rugs/maha.html" class="product-card fade-up"
@@ -1640,10 +1656,6 @@
 
             <!-- 51. Sara — Beni Ourain — Medium -->
 
-
-
-
-
             <!-- 52. Halima — Contemporary — Medium -->
             <a href="../rugs/halima.html" class="product-card fade-up"
                data-style="contemporary" data-size="medium" data-room="bedroom" data-color="multicolor">
@@ -1915,7 +1927,6 @@
                 </div>
             </a>
 
-
             <!-- 62. Wahiba — Boujaad — Large -->
             <a href="../rugs/wahiba.html" class="product-card fade-up"
                data-style="boujaad" data-size="large" data-room="living-room" data-color="multicolor">
@@ -1949,7 +1960,6 @@
                     <span class="product-card__price">$1,400</span>
                 </div>
             </a>
-
 
             <!-- Zeinab — Boujaad — Large (restored to grid, was missing entirely) -->
             <a href="../rugs/zeinab.html" class="product-card fade-up" data-price-num="650"
@@ -2144,7 +2154,6 @@
 
     </main>
 
-
     <!-- ============================================
          FOOTER
          ============================================ -->
@@ -2204,7 +2213,7 @@
     </footer>
 
     <script src="../js/main.js?v=3"></script>
-    <script src="../js/collections.js?v=4"></script>
+    <script src="../js/collections.js?v=5"></script>
     <a class="whatsapp-btn" href="https://wa.me/16175105376?text=Hi%2C%20I%E2%80%99m%20interested%20in%20one%20of%20your%20Moroccan%20rugs." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="26" height="26" aria-hidden="true">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>

@@ -25,3 +25,7 @@ __pycache__/
 *.pyc
 packages/analysis/models/
 packages/analysis/.pytest_cache/
+
+# Temporary third-party smoke-test assets (A16555 etc.) — never commit (copyright);
+# archived once the official Tiziri benchmark set exists.
+packages/analysis/.smoke-artifacts/

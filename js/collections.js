@@ -174,3 +174,83 @@ if (initialQuery && searchEl) {
     activeSearch = initialQuery.trim();
     applyFilters();
 }
+
+/* ============================================
+   Mobile filter panel
+   Reuses the existing .filter-btn handlers — this only opens/closes the
+   sheet and reflects state, so filtering logic stays in one place.
+   ============================================ */
+(function () {
+    const bar      = document.getElementById('filterBar');
+    const toggle   = document.getElementById('filterToggle');
+    const panel    = document.getElementById('filterPanel');
+    const backdrop = document.getElementById('filterBackdrop');
+    const closeBtn = document.getElementById('filterClose');
+    const applyBtn = document.getElementById('filterApply');
+    const resetBtn = document.getElementById('filterPanelReset');
+    const countEl  = document.getElementById('filterActiveCount');
+    if (!bar || !toggle || !panel) return;
+
+    function activeCount() {
+        return ['style', 'size', 'room', 'color'].reduce((n, k) => {
+            const on = document.querySelector(`[data-filter="${k}"].active`);
+            return n + (on && on.dataset.value !== 'all' ? 1 : 0);
+        }, 0) + (document.getElementById('rugSearch')?.value.trim() ? 1 : 0);
+    }
+
+    function visibleRugs() {
+        return document.getElementById('visibleCount')?.textContent.trim() || '';
+    }
+
+    function sync() {
+        const n = activeCount();
+        countEl.textContent = n;
+        countEl.hidden = n === 0;
+        if (applyBtn) {
+            const v = visibleRugs();
+            applyBtn.textContent = v
+                ? (v === '0' ? 'No matches' : `Show ${v} rug${v === '1' ? '' : 's'}`)
+                : 'Show results';
+        }
+    }
+
+    function open() {
+        bar.classList.add('is-open');
+        document.body.classList.add('filters-open');
+        toggle.setAttribute('aria-expanded', 'true');
+        sync();
+        closeBtn?.focus();
+    }
+
+    function close() {
+        bar.classList.remove('is-open');
+        document.body.classList.remove('filters-open');
+        toggle.setAttribute('aria-expanded', 'false');
+        toggle.focus();
+    }
+
+    toggle.addEventListener('click', () =>
+        bar.classList.contains('is-open') ? close() : open());
+    closeBtn?.addEventListener('click', close);
+    backdrop?.addEventListener('click', close);
+    applyBtn?.addEventListener('click', close);
+    resetBtn?.addEventListener('click', () => {
+        document.getElementById('resetFilters')?.click();
+        const s = document.getElementById('rugSearch');
+        if (s) { s.value = ''; s.dispatchEvent(new Event('input', { bubbles: true })); }
+        sync();
+    });
+
+    document.addEventListener('keydown', e => {
+        if (e.key === 'Escape' && bar.classList.contains('is-open')) close();
+    });
+
+    /* keep the badge and the Show-N button honest as filters change */
+    panel.addEventListener('click', e => {
+        if (e.target.closest('.filter-btn')) setTimeout(sync, 0);
+    });
+    document.getElementById('rugSearch')?.addEventListener('input', () => setTimeout(sync, 0));
+    window.addEventListener('hashchange', () => setTimeout(sync, 0));
+
+    sync();
+})();

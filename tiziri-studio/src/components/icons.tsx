@@ -228,3 +228,12 @@ export const IconRuler = make(
     <path d="M8 12.8l.8 2.2M12 11.3l.8 2.2M16 9.9l.8 2.2" transform="rotate(-20 12 12)" />
   </>,
 );
+
+export const IconCinema = make(
+  <>
+    <rect x="3" y="6" width="18" height="13" rx="2" />
+    <path d="M3 9h18" />
+    <path d="M6.5 6l-1.2 3M11 6L9.8 9M15.5 6l-1.2 3M20 6l-1.2 3" />
+    <path d="M11 12.2v3.6l3-1.8z" fill="currentColor" stroke="none" />
+  </>,
+);

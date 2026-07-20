@@ -3747,3 +3747,201 @@ textarea:focus-visible,
     margin: 10px 0 0;
     letter-spacing: 0.02em;
 }
+
+
+/* ============================================
+   MOBILE FILTER PANEL
+   Desktop keeps the single-row bar. On phones that row is a ~3,000px
+   side-scroll (Colour sat 1,834px off-screen), so below 768px the same
+   markup becomes a bottom-sheet panel behind a Filters button.
+   ============================================ */
+.filter-bar__toggle,
+.filter-bar__backdrop,
+.filter-panel__head,
+.filter-panel__foot {
+    display: none;                 /* desktop: bar behaves exactly as before */
+}
+
+@media (max-width: 768px) {
+
+    .filter-bar {
+        position: sticky;
+        top: var(--nav-h);
+        z-index: 60;
+    }
+
+    .filter-bar__toggle {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        width: 100%;
+        padding: 13px var(--gutter);
+        background: var(--white);
+        border: none;
+        border-bottom: 1px solid rgba(44, 42, 37, 0.08);
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: var(--stone);
+        cursor: pointer;
+    }
+
+    .filter-bar__toggle-count {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 18px;
+        height: 18px;
+        padding: 0 5px;
+        border-radius: 9px;
+        background: var(--terracotta);
+        color: var(--white);
+        font-size: 10px;
+        letter-spacing: 0;
+    }
+    .filter-bar__toggle-count[hidden] { display: none; }
+
+    .filter-bar__backdrop {
+        display: block;
+        position: fixed;
+        inset: 0;
+        background: rgba(15, 13, 10, 0.45);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease;
+        z-index: 70;
+    }
+    .filter-bar__backdrop[hidden] { display: block; }        /* animate, don't pop */
+    .filter-bar.is-open .filter-bar__backdrop {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    /* the existing bar row becomes the sheet */
+    .filter-bar__inner {
+        position: fixed;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        max-width: none;
+        height: auto;
+        max-height: 82vh;
+        margin: 0;
+        padding: 0 var(--gutter) 0;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
+        background: var(--white);
+        border-radius: 14px 14px 0 0;
+        box-shadow: 0 -8px 40px rgba(15, 13, 10, 0.18);
+        transform: translateY(101%);
+        transition: transform 0.28s cubic-bezier(0.32, 0.72, 0, 1);
+        z-index: 80;
+    }
+    .filter-bar.is-open .filter-bar__inner { transform: translateY(0); }
+
+    .filter-panel__head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: sticky;
+        top: 0;
+        z-index: 2;
+        padding: 16px 0 12px;
+        background: var(--white);
+        border-bottom: 1px solid rgba(44, 42, 37, 0.08);
+    }
+
+    .filter-panel__title {
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+        color: var(--mid-grey);
+    }
+
+    .filter-panel__close {
+        border: none;
+        background: none;
+        font-size: 26px;
+        line-height: 1;
+        color: var(--stone);
+        cursor: pointer;
+        padding: 0 4px;
+        min-width: 44px;
+        min-height: 44px;
+    }
+
+    /* each filter category on its own row, buttons wrap instead of scrolling */
+    .filter-bar__group {
+        flex-shrink: 1;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        padding: 16px 0;
+        border-bottom: 1px solid rgba(44, 42, 37, 0.06);
+    }
+
+    .filter-bar__buttons {
+        flex-wrap: wrap;
+        gap: 8px;
+        width: 100%;
+    }
+
+    .filter-bar__group .filter-btn {
+        padding: 9px 13px;
+        border: 1px solid rgba(44, 42, 37, 0.16);
+        border-radius: 2px;
+        min-height: 38px;             /* comfortable tap target */
+    }
+    .filter-bar__group .filter-btn.active {
+        background: var(--stone);
+        color: var(--white);
+        border-color: var(--stone);
+    }
+
+    .filter-bar__search { width: 100%; }
+    .filter-bar__divider { display: none; }
+
+    .filter-panel__foot {
+        display: flex;
+        gap: 10px;
+        position: sticky;
+        bottom: 0;
+        padding: 12px 0 calc(12px + env(safe-area-inset-bottom));
+        background: var(--white);
+        border-top: 1px solid rgba(44, 42, 37, 0.08);
+    }
+
+    .filter-panel__reset,
+    .filter-panel__apply {
+        font-family: var(--sans);
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        min-height: 48px;
+        border-radius: 2px;
+        cursor: pointer;
+    }
+
+    .filter-panel__reset {
+        flex: 0 0 38%;
+        background: none;
+        border: 1px solid rgba(44, 42, 37, 0.2);
+        color: var(--stone);
+    }
+
+    .filter-panel__apply {
+        flex: 1;
+        background: var(--stone);
+        border: 1px solid var(--stone);
+        color: var(--white);
+    }
+
+    body.filters-open { overflow: hidden; }
+}
