@@ -70,7 +70,7 @@
 
 ## POST 5 — Mon 27 Jul · IG Reel + Facebook
 **Rug:** Latifa · **Title:** Carved Ivory Maze Beni Ourain Rug | Moroccan Wool
-**Video:** `C:\Users\nigel\July 18th Photoshoot JPG\BUFFER-READY\05_Latifa.mp4`
+**Video:** `C:\Users\nigel\July 18th Photoshoot JPG\BUFFER-READY-JULY19\08_Latifa.mp4`
 
 **Caption:**
 > All ivory, no colour — the pattern is pure depth. Latifa's labyrinth is carved into the pile and reveals itself slowly as the light moves.
