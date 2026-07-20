@@ -85,7 +85,8 @@
     "listingId": "307046040208",
     "price": 1450,
     "video": false,
-    "state": "live"
+    "state": "ended-duplicate-of-dihya",
+    "note": "Phantom SKU: not in rugs.json. Listing showed Dihya's rug with 1 photo. Offer withdrawn 2026-07-20; Dihya is listed properly as 307075284506."
   },
   "saadia": {
     "sku": "SAADIA",
