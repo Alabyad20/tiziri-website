@@ -61,6 +61,14 @@ def main():
         before = len(item.get("product", {}).get("imageUrls", []))
         item.setdefault("product", {})["imageUrls"] = urls
 
+        # eBay rejects a stored packageWeightAndSize whose weight.value is 0
+        # (error 25709) even though it round-trips from the GET. Drop it.
+        pw = item.get("packageWeightAndSize")
+        if pw:
+            wv = (pw.get("weight") or {}).get("value")
+            if wv in (None, 0, 0.0):
+                item.pop("packageWeightAndSize", None)
+
         if not APPLY:
             print(f"{slug:8s} {before:2d} -> {n:2d} images (dry run)")
             continue

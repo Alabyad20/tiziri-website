@@ -63,11 +63,11 @@ def desc(intro, size, style, colour, pile):
 
 ITEMS = [
     {
-        "slug": "lalla", "sku": "LALLA", "price": "1600.00",
-        "title": "Handmade Moroccan Beni Ourain Rug 7'7\" x 10'8\" Carved Ivory Wool Area Rug",
+        "slug": "lalla", "sku": "LALLA", "price": "1350.00",
+        "title": "Handmade Moroccan Beni Ourain Rug 9'10\" x 6'7\" Carved Ivory Wool Area Rug",
         "aspects": {
-            "Shape": ["Rectangle"], "Size": ["7'7\" x 10'8\" (230 x 325 cm)"],
-            "Item Length": ["10 ft 8 in"], "Item Width": ["7 ft 7 in"],
+            "Shape": ["Rectangle"], "Size": ["9'10\" x 6'7\" (300 x 200 cm)"],
+            "Item Length": ["9 ft 10 in"], "Item Width": ["6 ft 7 in"],
             "Regional Design": ["Moroccan"], "Style": ["Beni Ourain"],
             "Culture": ["Berber"], "Color": ["Ivory"], "Material": ["Wool"],
             "Pattern": ["Geometric"], "Theme": ["Geometric"],
@@ -83,8 +83,8 @@ ITEMS = [
         "desc": desc(
             "All ivory, no colour — the pattern is pure carved depth. Sweeping chevrons and arcs are "
             "sculpted into the plush undyed pile, revealing themselves only as the light crosses the "
-            "room. A large, generous piece with hand-braided fringe.",
-            "230 × 325 cm (7 ft 7 in × 10 ft 8 in)", "Beni Ourain / Carved",
+            "room. Finished with hand-braided fringe.",
+            "300 × 200 cm (9 ft 10 in × 6 ft 7 in)", "Beni Ourain / Carved",
             "Natural undyed ivory", "High"),
     },
     {
