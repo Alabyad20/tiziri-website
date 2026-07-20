@@ -42,7 +42,7 @@ Catalog generated: 2026-07-20 — prices and availability current as of this dat
 | Karima | Contemporary | 244 x 157 cm (8 ft 0 in x 5 ft 2 in) | Wool, hand-knotted | $1,050 | https://tizirirugs.com/rugs/karima2.html |
 | Kawtar | Beni Ourain | 296 x 212 cm (9 ft 8 in x 6 ft 11 in) | Wool on cotton warp | $1,450 | https://tizirirugs.com/rugs/kawtar.html |
 | Khadija | Kilim | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, flat-woven | $650 | https://tizirirugs.com/rugs/khadija.html |
-| Lalla | Beni Ourain | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Undyed wool on cotton warp | $1,350 | https://tizirirugs.com/rugs/lalla.html |
+| Lalla | Beni Ourain | 230 x 325 cm | Undyed wool on cotton warp | $650 | https://tizirirugs.com/rugs/lalla.html |
 | Lamia | Beni Ourain | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool on wool warp | $650 | https://tizirirugs.com/rugs/lamia.html |
 | Latifa | Contemporary | 271 x 200 cm (8 ft 11 in x 6 ft 7 in) | Wool, hand-knotted | $1,200 | https://tizirirugs.com/rugs/latifa.html |
 | Layla | Kilim | 300 x 200 cm (9 ft 10 in x 6 ft 7 in) | Wool, flat-woven | $650 | https://tizirirugs.com/rugs/layla.html |
