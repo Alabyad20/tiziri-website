@@ -302,5 +302,13 @@
     "price": 950.0,
     "video": false,
     "state": "live"
+  },
+  "dihya": {
+    "sku": "DIHYA",
+    "offerId": "211625312011",
+    "listingId": "307075284506",
+    "price": 1350.0,
+    "video": false,
+    "state": "live"
   }
 }

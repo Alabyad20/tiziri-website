@@ -66,6 +66,12 @@ def aspects(size_disp, length, width, style, colour, pattern, pile):
 
 
 ITEMS = [
+ {"slug":"dihya","sku":"DIHYA","price":"1350.00",
+  "title":"Handmade Moroccan Rug 10'0\" x 7'1\" Rust Olive Colour Block Wool Area Rug",
+  "aspects":aspects("10'0\" x 7'1\" (305 x 215 cm)","10 ft 0 in","7 ft 1 in","Mrirt","Orange","Abstract","High"),
+  "desc":desc("Colour, blocked. Clean fields of rust-orange and olive-green float on a natural cream ground "
+              "- a bold, modern colour-block composition with real hand-knotted depth and a deep, soft surface.",
+              "Beni Mrirt / Contemporary","Rust orange, olive green and cream","305 x 215 cm (10 ft 0 in x 7 ft 1 in)","High")},
  {"slug":"chama","sku":"CHAMA","price":"1400.00",
   "title":"Handmade Moroccan Beni Mrirt Rug 9'11\" x 6'11\" Terracotta Carved Wool Area Rug",
   "aspects":aspects("9'11\" x 6'11\" (303 x 210 cm)","9 ft 11 in","6 ft 11 in","Mrirt","Orange","Abstract","High"),
