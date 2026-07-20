@@ -231,13 +231,13 @@
 ---
 
 ## POST 16 — Sun 16 Aug · IG Reel + Facebook
-**Rug:** Lalla · **Title:** Carved Ivory Chevron Beni Ourain Rug | Moroccan Wool
-**Video:** `BUFFER-READY-JULY19\06_Lalla.mp4`
+**Rug:** Assia · **Title:** Carved Ivory Chevron Beni Ourain Rug | Moroccan Wool
+**Video:** `BUFFER-READY-JULY19\06_Lalla.mp4  (file name only - this is ASSIA's footage)`
 
 **Caption:**
-> All texture, no colour. Lalla's arcs and chevrons are carved straight into the pile, so the pattern only shows itself as the light moves across the room.
+> All texture, no colour. Assia's arcs and chevrons are carved straight into the pile, so the pattern only shows itself as the light moves across the room.
 >
-> Shop Lalla → https://tizirirugs.com/rugs/lalla.html
+> Shop Assia → https://tizirirugs.com/rugs/assia.html
 
 **Hashtags:**
 `#beniourain #moroccanrug #ivoryrug #texturedrug #handwoven #onekind #tizirirugs #neutralhome #minimalinterior #woolrug`
@@ -275,7 +275,7 @@
 | Ouafa | https://tizirirugs.com/rugs/ouafa.html |
 | Bouchra | https://tizirirugs.com/rugs/bouchra.html |
 | Najoua | https://tizirirugs.com/rugs/najoua.html |
-| Lalla | https://tizirirugs.com/rugs/lalla.html |
+| Assia | https://tizirirugs.com/rugs/assia.html |
 | Sabrine | https://tizirirugs.com/rugs/sabrine.html |
 
 ## Extra slow-motion reels (spare content / Stories)

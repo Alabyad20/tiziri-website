@@ -82,6 +82,12 @@ Cache-Control = "public, max-age=0, must-revalidate"
 Accept-Ranges = "none"
 
 [[redirects]]
+from = "/rugs/lalla.html"
+to = "/rugs/souad.html"
+status = 301.0
+force = true
+
+[[redirects]]
 from = "/marketing/*"
 to = "/404.html"
 status = 404.0

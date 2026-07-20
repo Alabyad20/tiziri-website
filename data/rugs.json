@@ -579,30 +579,6 @@
     "color": "blue"
   },
   {
-    "slug": "lalla",
-    "name": "Lalla",
-    "style": "Beni Ourain",
-    "category": "beni-ourain",
-    "description": "A large all-ivory Beni Ourain with a nested concentric maze carved into the pile. Awaiting a proper photoshoot - dimensions and price to be confirmed.",
-    "origin": "High Atlas, Morocco",
-    "dimensions": "230 x 325 cm",
-    "material": "Undyed wool on cotton warp",
-    "pile": "High",
-    "age": "Contemporary (woven 2021–2024)",
-    "price": 650,
-    "currency": "USD",
-    "availability": "InStock",
-    "images": [
-      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0277.webp",
-      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0278.webp",
-      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0276.webp"
-    ],
-    "stripeLink": null,
-    "rating": null,
-    "reviews": [],
-    "color": "ivory"
-  },
-  {
     "slug": "lamia",
     "name": "Lamia",
     "style": "Beni Ourain",
@@ -1377,7 +1353,7 @@
     "name": "Souad",
     "style": "Beni Ourain",
     "category": "Beni Ourain Moroccan Rug",
-    "description": "A single motif — nested chevrons converging at the center — on a plain ivory ground. No color. No distraction.",
+    "description": "A large all-ivory Beni Ourain carved with a single nested motif - stepped chevrons converging at the centre on a plain ivory ground. No colour, no distraction: the pattern is pure relief, revealed by light and shadow.",
     "origin": "Morocco",
     "dimensions": "Made to order &mdash; from 5 x 7 ft (152 x 213 cm), see sizes below",
     "material": "Wool on cotton warp",
@@ -1387,6 +1363,8 @@
     "currency": "USD",
     "availability": "InStock",
     "images": [
+      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0276.webp",
+      "https://tizirirugs.com/rug-photos/IMG-20260530-WA0277.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0278.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0279.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0280.webp",
