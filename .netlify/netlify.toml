@@ -82,9 +82,15 @@ Cache-Control = "public, max-age=0, must-revalidate"
 Accept-Ranges = "none"
 
 [[redirects]]
+from = "/rugs/souad.html"
+to = "/collections/"
+status = 302.0
+force = true
+
+[[redirects]]
 from = "/rugs/lalla.html"
-to = "/rugs/souad.html"
-status = 301.0
+to = "/collections/"
+status = 302.0
 force = true
 
 [[redirects]]

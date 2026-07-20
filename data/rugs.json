@@ -1361,7 +1361,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "Discontinued",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0276.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0277.webp",
@@ -1373,7 +1373,9 @@
     "stripeLink": null,
     "rating": null,
     "reviews": [],
-    "color": "ivory"
+    "color": "ivory",
+    "reshoot_pending": true,
+    "note": "SET ASIDE 2026-07-20: the May-30 photos WA0276-0281 are actually THREE different near-identical ivory nested-maze rugs mixed across the old Lalla + Souad entries. Photos cannot be reliably assigned. Hold until Abdel reshoots all three separately. Then split back into 3 entries with correct photos/dims/prices."
   },
   {
     "slug": "tafat",
