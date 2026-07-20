@@ -1,14 +1,15 @@
+functionsDirectory = "C:\\Users\\nigel\\Moroccan-Rug-Website\\netlify\\functions"
+functionsDirectoryOrigin = "default"
 headersOrigin = "config"
 redirectsOrigin = "config"
 plugins = []
 
-[functions]
-
-[functions."*"]
-
 [build]
 publish = "C:\\Users\\nigel\\Moroccan-Rug-Website"
 publishOrigin = "config"
+commandOrigin = "config"
+command = "python3 scripts/schema_tools.py build && python3 scripts/generate_merchant_feed.py && python3 scripts/geo_tools.py build"
+functions = "C:\\Users\\nigel\\Moroccan-Rug-Website\\netlify\\functions"
 
 [build.environment]
 
@@ -24,11 +25,28 @@ publishOrigin = "config"
 
 [build.services]
 
+[functions]
+
+[functions."*"]
+
+[[headers]]
+for = "/*"
+
+[headers.values]
+Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' https://plausible.io https://assets.mailerlite.com https://groot.mailerlite.com https://assets.mlcdn.com https://static.mailerlite.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self' https://plausible.io https://assets.mailerlite.com https://groot.mailerlite.com https://assets.mlcdn.com https://static.mailerlite.com https://api.web3forms.com; form-action 'self' https://assets.mailerlite.com; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; upgrade-insecure-requests"
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+Referrer-Policy = "strict-origin-when-cross-origin"
+Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()"
+Cross-Origin-Opener-Policy = "same-origin"
+Strict-Transport-Security = "max-age=31536000; includeSubDomains"
+
 [[headers]]
 for = "/rug-photos/*"
 
 [headers.values]
 Cache-Control = "public, max-age=31536000, immutable"
+Access-Control-Allow-Origin = "*"
 
 [[headers]]
 for = "/css/*"
@@ -62,6 +80,48 @@ for = "/"
 [headers.values]
 Cache-Control = "public, max-age=0, must-revalidate"
 Accept-Ranges = "none"
+
+[[redirects]]
+from = "/marketing/*"
+to = "/404.html"
+status = 404.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/tiziri-studio/*"
+to = "/404.html"
+status = 404.0
+force = true
+
+[redirects.query]
+
+[[redirects]]
+from = "/tiziri-cinematographer/*"
+to = "/404.html"
+status = 404.0
+force = true
+
+[redirects.conditions]
+
+[redirects.headers]
+
+[[redirects]]
+from = "/brand-assets/*"
+to = "/404.html"
+status = 404.0
+force = true
+
+[redirects.query]
+
+[redirects.conditions]
+
+[redirects.headers]
 
 [[redirects]]
 from = "https://www.tizirirugs.com/*"

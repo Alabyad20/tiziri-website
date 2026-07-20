@@ -71,3 +71,10 @@ window.addEventListener('message', e => {
 1. Renew weekly. 2. Videos drag-drop by hand (FB blocks synthetic video uploads).
 3. Cross-post to groups (never VINTAGE ITEMS FOR SALE). 4. One-of-one rule: sold
    anywhere = delete on FB same day. 5. Never list Nawal; Rania awaits reshoot.
+
+## STATUS 2026-07-15: ALL DRAFTS PUBLISHED ✅
+Confirmed live via Chrome (Abdo Kindyman, 20+ active listings). The 6 rugs that were
+awaiting publish are all Active now: wahiba, itto, tilila, yenna, touda were already
+published earlier; **malak was the last remaining draft — published 2026-07-15**
+(lime-green orange diamond, $1,050, listing_id 1283539893856735, Active + posted to a
+rug group). No FB rug drafts remain. Older 7/8 catalog also confirmed live.

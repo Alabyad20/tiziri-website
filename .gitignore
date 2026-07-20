@@ -48,3 +48,12 @@ docs/
 designs/
 inspiration/
 .chairish-upload-temp/
+
+# Gallery backups created during re-curation (temp, do not deploy)
+rug-photos/Newly taken photos/*_pre0719/
+
+# Private / already-sent video working folders — never publish
+rug-videos/Private/
+rug-videos/Sent/
+rug-videos/Capture.PNG
+rug-videos/pexels-*.jpg
