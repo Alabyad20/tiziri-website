@@ -47,6 +47,17 @@ def is_ready_to_ship(rug):
         return "product__sizes" not in f.read()
 
 
+# Bump when a hero/gallery file is REPLACED under the same filename. Feed consumers
+# (Pinterest catalog, Google Merchant) cache by URL, so without this they keep
+# serving the old image forever after a file swap.
+IMAGE_VERSION = "14"
+
+
+def img_url(u):
+    """Append the cache-bust so re-fetches actually happen after a file swap."""
+    return u + ("&" if "?" in u else "?") + "v=" + IMAGE_VERSION
+
+
 def dims_short(rug):
     """'305 x 203 cm (10 ft 0 in × 6 ft 8 in)' -> '305 x 203 cm'"""
     m = re.match(r"([\d.]+)\s*[x×]\s*([\d.]+)\s*cm", clean_text(rug["dimensions"]), re.I)
@@ -74,10 +85,10 @@ def build_item(rug):
         f"      <g:title>{e(title[:150])}</g:title>",
         f"      <g:description>{e(description[:5000])}</g:description>",
         f"      <g:link>{SITE}/rugs/{e(slug)}.html</g:link>",
-        f"      <g:image_link>{e(images[0])}</g:image_link>" if images else None,
+        f"      <g:image_link>{e(img_url(images[0]))}</g:image_link>" if images else None,
     ]
     for img in images[1:1 + MAX_ADDITIONAL_IMAGES]:
-        lines.append(f"      <g:additional_image_link>{e(img)}</g:additional_image_link>")
+        lines.append(f"      <g:additional_image_link>{e(img_url(img))}</g:additional_image_link>")
     lines += [
         "      <g:availability>in_stock</g:availability>",
         f"      <g:price>{rug['price']:.2f} {rug.get('currency') or 'USD'}</g:price>",
