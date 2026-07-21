@@ -258,6 +258,20 @@
 
 ---
 
+## POST 18 - Wed 19 Aug - IG Reel + Facebook + Pinterest
+**Rug:** Hafsa - **Title:** Pink & Purple Diamond Beni Ourain Rug | Handwoven Moroccan Wool
+**Video:** `C:\Users\nigel\July 18th Photoshoot JPG\BUFFER-READY-JULY19\09_Hafsa.mp4`
+
+**Caption:**
+> Colour, softened. Hafsa's diamonds shift between rose, lilac and soft grey across a deep plush pile - a warm, uncommon palette in hand-knotted Atlas wool. 300 x 220 cm, one of one.
+>
+> Shop Hafsa -> https://tizirirugs.com/rugs/hafsa.html
+
+**Hashtags:**
+`#moroccanrug #pinkrug #beniourain #colorfulrug #handwoven #onekind #tizirirugs #plushrug #berberrug #woolrug`
+
+---
+
 ## All product links (quick reference)
 | Rug | Link |
 |---|---|
@@ -270,6 +284,7 @@
 | Yakout | https://tizirirugs.com/rugs/yakout.html |
 | Lina | https://tizirirugs.com/rugs/lina.html |
 | Dassine | https://tizirirugs.com/rugs/dassine.html |
+| Hafsa | https://tizirirugs.com/rugs/hafsa.html |
 | Kawtar | https://tizirirugs.com/rugs/kawtar.html |
 | Tislit ⭐new | https://tizirirugs.com/rugs/tislit.html |
 | Ouafa | https://tizirirugs.com/rugs/ouafa.html |
