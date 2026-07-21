@@ -3,7 +3,7 @@
 Authentic handwoven Moroccan rugs, sourced directly from Amazigh (Berber) artisans in the Atlas Mountains. Ready-to-ship rugs are physical, one-of-a-kind pieces: when one sells, it is delisted everywhere. Made-to-order designs are woven on commission in the size you choose.
 
 Store: https://tizirirugs.com · Contact: hello@tizirirugs.com
-Catalog generated: 2026-07-20 — prices and availability current as of this date.
+Catalog generated: 2026-07-21 — prices and availability current as of this date.
 
 ## Policies
 
