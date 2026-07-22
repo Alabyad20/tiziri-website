@@ -12,7 +12,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0021.webp"
     ],
@@ -34,7 +34,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0022.webp"
     ],
@@ -56,7 +56,7 @@
     "age": "Vintage (approx. 1990s)",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0420.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0419.webp",
@@ -81,7 +81,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0023.webp"
     ],
@@ -129,7 +129,7 @@
     "stripeLink": "https://buy.stripe.com/4gM00d6q132uc8gfhK2cg0g",
     "rating": null,
     "reviews": [],
-    "color": "pink"
+    "color": "ivory"
   },
   {
     "slug": "chaima",
@@ -144,7 +144,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0149.webp"
     ],
@@ -208,7 +208,7 @@
     "age": "Vintage (approx. 1980s)",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0417.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0418.webp",
@@ -232,7 +232,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0260.webp"
     ],
@@ -254,7 +254,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260618-WA0087.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260618-WA0088.webp",
@@ -278,7 +278,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0025.webp"
     ],
@@ -300,7 +300,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0026.webp"
     ],
@@ -322,7 +322,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0027.webp"
     ],
@@ -344,7 +344,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0028.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0029.webp"
@@ -409,7 +409,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0261.webp"
     ],
@@ -431,7 +431,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0031.webp"
     ],
@@ -453,7 +453,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0257.webp"
     ],
@@ -475,7 +475,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0033.webp"
     ],
@@ -497,7 +497,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0148.webp"
     ],
@@ -546,7 +546,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260608-WA0014.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260608-WA0033.webp"
@@ -569,7 +569,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0036.webp"
     ],
@@ -591,7 +591,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lamia/IMG_20260627_013135.webp",
       "https://tizirirugs.com/rug-photos/Newly%20taken%20photos/lamia/IMG_20260627_013136.webp",
@@ -657,7 +657,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0037.webp"
     ],
@@ -679,7 +679,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0038.webp"
     ],
@@ -732,7 +732,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0262.webp"
     ],
@@ -754,7 +754,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0004.webp"
     ],
@@ -809,7 +809,7 @@
     "age": "Vintage (approx. 1970s–1990s)",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0433.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0430.webp",
@@ -833,7 +833,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0005.webp"
     ],
@@ -855,7 +855,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0267.webp"
     ],
@@ -877,7 +877,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0006.webp"
     ],
@@ -949,7 +949,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0268.webp"
     ],
@@ -1071,7 +1071,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0008.webp"
     ],
@@ -1093,7 +1093,7 @@
     "age": "Contemporary (woven 2020–2023)",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0123.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0128.webp",
@@ -1118,7 +1118,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0011.webp"
     ],
@@ -1140,7 +1140,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0273.webp"
     ],
@@ -1192,7 +1192,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0012.webp"
     ],
@@ -1214,7 +1214,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0271.webp"
     ],
@@ -1236,7 +1236,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0013.webp"
     ],
@@ -1270,7 +1270,7 @@
     "stripeLink": "https://buy.stripe.com/aFacMZ3dP7iKb4c9Xq2cg02",
     "rating": null,
     "reviews": [],
-    "color": "pink"
+    "color": "ivory"
   },
   {
     "slug": "sabah",
@@ -1285,7 +1285,7 @@
     "age": "Vintage",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260621-WA0014.webp"
     ],
@@ -1307,7 +1307,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260530-WA0272.webp"
     ],
@@ -1430,7 +1430,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260608-WA0040.webp"
     ],
@@ -1485,7 +1485,7 @@
     "age": "New &mdash; made to order",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0146.webp"
     ],
@@ -1507,7 +1507,7 @@
     "age": "Contemporary (woven 2021–2024)",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260607-WA0147.webp"
     ],
@@ -1529,7 +1529,7 @@
     "age": "Contemporary",
     "price": 650,
     "currency": "USD",
-    "availability": "InStock",
+    "availability": "PreOrder",
     "images": [
       "https://tizirirugs.com/rug-photos/IMG-20260619-WA0007.webp",
       "https://tizirirugs.com/rug-photos/IMG-20260619-WA0003.webp",
@@ -1730,7 +1730,7 @@
     "stripeLink": "https://buy.stripe.com/14A00d29L6eGego7Pi2cg0k",
     "rating": null,
     "reviews": [],
-    "color": "green"
+    "color": "yellow"
   },
   {
     "slug": "assia",
