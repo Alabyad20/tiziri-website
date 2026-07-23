@@ -738,6 +738,11 @@ def build_sitemap(rugs, today_str):
     for rug in rugs:
         if rug["slug"] in sold_slugs:
             continue
+        # Only real, in-stock product pages belong in the sitemap. Made-to-order
+        # PreOrder placeholders are thin near-duplicates and Discontinued rugs are
+        # gone; including them dilutes the sitemap's quality signal.
+        if rug.get("availability") != "InStock":
+            continue
         images = [img.replace("&", "&amp;") for img in rug.get("images", [])]
         blocks.append(_sitemap_url(
             f"{SITE}/rugs/{rug['slug']}.html", today_str, "monthly", "0.9", images=images
