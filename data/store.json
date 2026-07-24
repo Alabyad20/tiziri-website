@@ -2,8 +2,13 @@
   "organization": {
     "@type": "Organization",
     "@id": "https://tizirirugs.com/#organization",
-    "name": "TIZIRI",
+    "name": "Tiziri Rugs",
+    "alternateName": "TIZIRI",
     "url": "https://tizirirugs.com",
+    "description": "Tiziri Rugs sells authentic, one-of-a-kind handwoven Moroccan rugs, each hand-knotted by Amazigh (Berber) weavers in the Atlas Mountains of Morocco from natural wool. Every rug is woven once, never repeated. The entire collection is already in stock in the United States and ships within 1-2 days.",
+    "slogan": "Handwoven in Morocco. Made for one home.",
+    "foundingDate": "2026",
+    "knowsAbout": ["Moroccan rugs", "Beni Ourain rugs", "Boujaad rugs", "Azilal rugs", "Berber weaving", "Amazigh craftsmanship"],
     "logo": {
       "@type": "ImageObject",
       "url": "https://tizirirugs.com/apple-touch-icon.png",
@@ -11,12 +16,29 @@
       "height": 180
     },
     "email": "hello@tizirirugs.com",
-    "telephone": "+16175105376",
+    "telephone": "+16172869140",
+    "contactPoint": [
+      {
+        "@type": "ContactPoint",
+        "telephone": "+16172869140",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": ["en", "fr", "ar"]
+      },
+      {
+        "@type": "ContactPoint",
+        "telephone": "+16175105376",
+        "contactType": "sales",
+        "url": "https://wa.me/16175105376",
+        "availableLanguage": ["en", "fr", "ar"]
+      }
+    ],
     "sameAs": [
       "https://www.instagram.com/tizirirugs",
       "https://www.pinterest.com/tizirirugs",
       "https://www.youtube.com/@tizirirugs",
-      "https://www.etsy.com/shop/TiziriRugs"
+      "https://www.etsy.com/shop/TiziriRugs",
+      "https://wa.me/16175105376"
     ]
   },
   "organizationRef": {
@@ -27,7 +49,8 @@
     "@type": "WebSite",
     "@id": "https://tizirirugs.com/#website",
     "url": "https://tizirirugs.com",
-    "name": "TIZIRI",
+    "name": "Tiziri Rugs",
+    "alternateName": "TIZIRI",
     "description": "Authentic handwoven Moroccan rugs sourced directly from Berber artisans in the Atlas region. One of a kind. Delivered worldwide.",
     "publisher": { "@id": "https://tizirirugs.com/#organization" },
     "potentialAction": {
