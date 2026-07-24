@@ -186,3 +186,81 @@ Wikidata only after press/blog coverage exists to cite.
 
 Expect Google to *start* showing you for buyer keywords over **2-3 months** as these
 accumulate — backlinks compound slowly. Pinterest + social are your traffic today.
+
+---
+
+## 7. "Best Moroccan rug shops" outreach (highest-ROI backlinks)
+
+**What these are:** existing blog/magazine articles that list where to buy Moroccan
+rugs. You email the author asking to be added. One inclusion in a good one is worth
+more than 100 directory links.
+
+**Two categories, don't confuse them:**
+- *Shops* (Revival, Nazmiyal, Berbero, Atlas Weavers, abc home) = your competitors,
+  NOT targets.
+- *Roundup articles* = the targets. Real ones found 2026-07-24:
+  - **MarocMama** — "Where to Buy Moroccan Rugs Online" (authoritative Morocco blog) ⭐ best fit
+  - **TechBullion** — "Best Moroccan Rug Buying Guide 2026"
+  - **Engineers & Architects of America (e-a-a.com)** — "10 Best Moroccan Rugs to Elevate Your Home Decor"
+
+**Find more** — Google these and email the author of each result:
+`best places to buy moroccan rugs online` · `best moroccan rug shops` ·
+`where to buy authentic moroccan rugs usa` · `best moroccan rug brands`.
+Find the contact: article byline → author/about page → email or contact form;
+if none, DM the publication on Instagram.
+
+### Outreach email (personalise every [bracket] — never send generic)
+
+> **Subject:** An addition for your "[article title]" guide?
+>
+> Hi [Name],
+>
+> I just read your "[article title]" — [one specific, genuine detail you liked, e.g.
+> "it's one of the few that actually explains the difference between Beni Ourain and
+> Boujaad"]. Really useful guide.
+>
+> I run **Tiziri Rugs**, a small US-based shop of one-of-a-kind handwoven Moroccan
+> rugs. One thing that might be worth a mention for your readers: unlike most sellers,
+> our whole collection is **already in the United States and ships in 1–2 days** — so
+> the rug in the photo is the exact rug that arrives, no 6–8 week wait from overseas.
+> Every piece is hand-knotted by Amazigh weavers in the Atlas Mountains, woven once and
+> never repeated, and ships free with a printed certificate of provenance.
+>
+> If we'd be a fit for [article title], I'd gladly send high-resolution photos, and I'm
+> happy to offer your readers an **exclusive discount code**. I can also give a short
+> expert quote on [authenticating a handmade rug / choosing the right size] if useful.
+>
+> Either way — thank you for the guide.
+>
+> Warm regards,
+> Abdel — Tiziri Rugs
+> tizirirugs.com · @tizirirugs
+
+### Follow-up (once, 7–10 days later)
+
+> Hi [Name] — floating this back up in case it's useful. Happy to send photos or set
+> up a reader discount whenever suits. Thanks again for the guide. — Abdel
+
+### Your value hooks (drop the 2–3 most relevant into each pitch)
+- **In stock in the USA, ships in 1–2 days** (vs. 6–8 weeks from overseas) — your #1 edge.
+- One-of-one; the exact rug photographed is the one that arrives.
+- Hand-knotted by Amazigh weavers, Atlas Mountains, natural wool.
+- Free US shipping, 14-day returns, printed **certificate of provenance** with each rug.
+- Small and curated — fewer, better pieces, honestly sold.
+
+---
+
+## ⚠ Home-based business — privacy + how to present address
+
+You sell mostly online from home in Revere (by appointment possible). Two things:
+
+1. **Don't broadcast your home street address across dozens of directories.** Use
+   **"Revere, MA"** (city + state) as the public location for directory listings and
+   outreach; give the full street address only where genuinely needed.
+2. **On Google Business Profile, switch to a "service-area business"** (GBP → Edit
+   profile → Business location → "I deliver goods and services to customers" and hide
+   the storefront address). You keep the local-Boston presence and Maps eligibility,
+   but your home address stops showing publicly. Set service area to "Greater Boston"
+   or "United States (online)".
+3. Framing everywhere: **"US-based · ships from Massachusetts · online, viewings by
+   appointment."** Never imply a walk-in storefront you don't run.
