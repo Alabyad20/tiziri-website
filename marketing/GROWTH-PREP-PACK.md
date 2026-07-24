@@ -264,3 +264,29 @@ You sell mostly online from home in Revere (by appointment possible). Two things
    or "United States (online)".
 3. Framing everywhere: **"US-based · ships from Massachusetts · online, viewings by
    appointment."** Never imply a walk-in storefront you don't run.
+
+---
+
+## 8. Reader discount code (makes the outreach "yes" much easier)
+
+A code does two jobs: it gives the blogger something for their readers (they love
+this — it makes their article more useful), and it gives **you attribution** — a
+unique code per publication tells you exactly which roundup drove a sale.
+
+**Set it up in Stripe (you already did this for WELCOME50):**
+1. Dashboard → **Product catalog → Coupons → New** → 10% off (choose "forever" so it
+   works whenever the reader buys).
+2. Create a **Promotion code** per publication, e.g. `MAROCMAMA10`, `TECHBULLION10`,
+   `EAA10`. (One universal code like `TIZIRIFRIENDS10` is simpler but blind — you
+   won't know which article converted.)
+3. On each **Payment Link → Edit → Options**, make sure **"Allow promotion codes"**
+   is ON (this is the hole that was closed for WELCOME50 — confirm it's on).
+4. **Test one at checkout** before sharing it.
+
+**Add to the outreach email:**
+> I'd be glad to offer your readers 10% off — I can set up a code just for
+> [Publication] (e.g. `[PUB]10`) so you can see the referrals it brings.
+
+**Margin note:** 10% off a $1,500 rug is $150. If you'd rather protect the headline
+price, offer **"free expedited shipping"** or **"$100 off"** instead — same
+psychological pull, different math. Never go below your floor.
